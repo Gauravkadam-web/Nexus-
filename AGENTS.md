@@ -178,11 +178,15 @@ main          ← production-ready only; auto-deploys to Render + Vercel
   - `fix/case/status-transition-validation`
   - `chore/flyway/V3-add-collaboration-tables`
 - **One branch = one US (User Story) or one focused task.** Do not mix unrelated work in a single branch.
-- **PR flow:**
-  1. Feature branch → `dev` PR (for integration + review)
-  2. `dev` → `main` PR (only when `dev` is stable and tested — production release)
-- **Before raising a PR**, all checks must pass locally: `./mvnw verify` + `dart analyze` + `flutter test`.
-- **Ask for permission** before pushing or opening a PR — never do it autonomously.
+- **Solo-Developer Fast Merge Workflow (Option 1):**
+  - Since the user operates as a solo developer, code integration from `feature/<scope>/...` into `dev` happens via local branch merge after all local tests pass:
+    ```bash
+    git checkout dev
+    git merge feature/<scope>/<short-description>
+    git push origin dev
+    ```
+  - GitHub PR self-merge is optional and not required for local developer velocity.
+- **Before merging to `dev`**, all checks must pass locally: `./mvnw test` / `./mvnw verify` + `dart analyze` + `flutter test`.
 - Commit messages follow **Conventional Commits**: `feat:`, `fix:`, `docs:`, `test:`, `refactor:`, `chore:` — always scoped to the US or area, e.g. `feat(case): add case creation endpoint (US-1)`.
 
 ### 6.2 General Workflow Rules
