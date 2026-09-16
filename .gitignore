@@ -1,0 +1,98 @@
+# ============================================================
+# NEXUS — .gitignore
+# Spring Boot (Java 21) + Flutter + Supabase PostgreSQL
+# ============================================================
+
+# ─────────────────────────────────────────
+# SECRETS — Never commit these
+# ─────────────────────────────────────────
+.env
+*.env
+!.env.example
+
+# Spring Boot env profiles with real values
+application-local.yml
+application-prod.yml
+
+# ─────────────────────────────────────────
+# BACKEND — Java / Maven / Spring Boot
+# ─────────────────────────────────────────
+target/
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+
+# Maven wrapper (keep mvnw scripts, ignore wrapper jar)
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+out/
+
+# ─────────────────────────────────────────
+# FRONTEND — Flutter / Dart
+# ─────────────────────────────────────────
+# Build outputs
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+pubspec.lock
+
+# Generated files
+*.g.dart
+*.freezed.dart
+*.gr.dart
+
+# Coverage
+coverage/
+lcov.info
+
+# ─────────────────────────────────────────
+# OS / SYSTEM
+# ─────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─────────────────────────────────────────
+# EDITOR / IDE
+# ─────────────────────────────────────────
+.vscode/
+*.swp
+*.swo
+*~
+
+# ─────────────────────────────────────────
+# LOGS
+# ─────────────────────────────────────────
+*.log
+logs/
+
+# ─────────────────────────────────────────
+# SESSION NOTES — Untracked by design (AGENTS.md §7)
+# ─────────────────────────────────────────
+SESSION_FEATURES_EXPLAINED.md
+
+# ─────────────────────────────────────────
+# DOCKER (local only)
+# ─────────────────────────────────────────
+docker-compose.override.yml
