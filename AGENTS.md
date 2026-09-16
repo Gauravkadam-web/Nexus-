@@ -9,6 +9,7 @@ This file defines the behavioral rules, architectural boundaries, workflow conve
 ## 0. Scope & Phase Discipline
 
 - Build **only** what is traced to the current delivery phase's User Stories (US-1 through US-35, as defined in PRD Appendix A and SRS §8).
+- **Execution Strategy — Backend-First:** All backend domains, entities, services, APIs, and tests for Phases 1–7 will be fully implemented, verified, and stabilized first. Once the entire backend is complete and tested, the Flutter frontend implementation will begin. Each phase backend lands in `dev` via its own dedicated feature branch.
 - The phases are:
 
   | Phase | Focus | User Stories |
