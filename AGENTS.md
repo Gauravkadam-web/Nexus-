@@ -181,9 +181,19 @@ main          ← production-ready only; auto-deploys to Render + Vercel
 - **Solo-Developer Fast Merge Workflow (Option 1):**
   - Since the user operates as a solo developer, code integration from `feature/<scope>/...` into `dev` happens via local branch merge after all local tests pass:
     ```bash
+    # 1. Commit and push feature branch
+    git add .
+    git commit -m "feat(<scope>): <description> (US-X)"
+    git push -u origin feature/<scope>/<short-description>
+
+    # 2. Merge into dev and push
     git checkout dev
     git merge feature/<scope>/<short-description>
     git push origin dev
+
+    # 3. Post-Merge Clean-Up (Delete merged feature branch locally & remotely)
+    git branch -d feature/<scope>/<short-description>
+    git push origin --delete feature/<scope>/<short-description>
     ```
   - GitHub PR self-merge is optional and not required for local developer velocity.
 - **Before merging to `dev`**, all checks must pass locally: `./mvnw test` / `./mvnw verify` + `dart analyze` + `flutter test`.
