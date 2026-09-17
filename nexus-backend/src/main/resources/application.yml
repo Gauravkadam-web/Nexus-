@@ -45,3 +45,4 @@ nexus:
     allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:*,http://127.0.0.1:*,https://*.vercel.app}
   ai:
     provider: ${AI_PROVIDER:mock}
+
