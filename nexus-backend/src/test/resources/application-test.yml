@@ -5,13 +5,19 @@ spring:
     url: jdbc:h2:mem:nexus_test_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
     driver-class-name: org.h2.Driver
     username: sa
-    password: 
+    password:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: create-drop
   flyway:
     enabled: false
+  autoconfigure:
+    exclude:
+      - org.springframework.ai.autoconfigure.openai.OpenAiAutoConfiguration
+  ai:
+    openai:
+      api-key: test-key-placeholder
 
 nexus:
   jwt:
@@ -20,3 +26,5 @@ nexus:
     refresh-token-expiration-ms: 120000
   cors:
     allowed-origins: "*"
+  ai:
+    provider: mock

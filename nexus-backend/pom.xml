@@ -89,6 +89,16 @@
             <version>${bucket4j.version}</version>
         </dependency>
 
+        <!-- Spring AI — ChatModel abstraction for AiProviderPort (US-11 to US-15)
+             Using spring-ai-core only; actual provider wired via AiProviderConfig.
+             MockAiProvider (default, AI_PROVIDER=mock) needs no real AI key.
+             SpringAiChatProvider activated only when AI_PROVIDER=openai/gemini/anthropic. -->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-core</artifactId>
+            <version>1.0.0-M6</version>
+        </dependency>
+
         <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -121,6 +131,18 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <!-- Spring Milestone repo — needed for spring-ai-core 1.0.0-M6 -->
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>

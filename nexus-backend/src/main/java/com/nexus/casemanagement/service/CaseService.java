@@ -1,6 +1,7 @@
 package com.nexus.casemanagement.service;
 
 import com.nexus.auth.security.UserPrincipal;
+import com.nexus.ai.event.CaseCreatedEvent;
 import com.nexus.casemanagement.dto.*;
 import com.nexus.casemanagement.entity.*;
 import com.nexus.casemanagement.repository.CaseAssignmentRepository;
@@ -14,6 +15,7 @@ import com.nexus.organization.repository.CategoryRepository;
 import com.nexus.organization.repository.TeamRepository;
 import com.nexus.user.entity.User;
 import com.nexus.user.repository.UserRepository;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
@@ -35,19 +37,22 @@ public class CaseService {
     private final TeamRepository teamRepository;
     private final UserRepository userRepository;
     private final CaseLifecycleService lifecycleService;
+    private final ApplicationEventPublisher eventPublisher;
 
     public CaseService(CaseRepository caseRepository,
                        CaseAssignmentRepository caseAssignmentRepository,
                        CategoryRepository categoryRepository,
                        TeamRepository teamRepository,
                        UserRepository userRepository,
-                       CaseLifecycleService lifecycleService) {
+                       CaseLifecycleService lifecycleService,
+                       ApplicationEventPublisher eventPublisher) {
         this.caseRepository = caseRepository;
         this.caseAssignmentRepository = caseAssignmentRepository;
         this.categoryRepository = categoryRepository;
         this.teamRepository = teamRepository;
         this.userRepository = userRepository;
         this.lifecycleService = lifecycleService;
+        this.eventPublisher = eventPublisher;
     }
 
     @Transactional
@@ -82,6 +87,12 @@ public class CaseService {
         }
 
         Case savedCase = caseRepository.save(newCase);
+
+        // US-11: Publish event to trigger AI analysis asynchronously.
+        // This runs after the case is persisted so the AI service can load it.
+        // If AI analysis fails, it is logged gracefully — case creation is unaffected (US-15).
+        eventPublisher.publishEvent(new CaseCreatedEvent(savedCase.getId()));
+
         Set<CaseStatus> nextStatuses = lifecycleService.getNextPossibleStatuses(savedCase.getStatus());
         return CaseDetailResponse.fromEntity(savedCase, nextStatuses);
     }
