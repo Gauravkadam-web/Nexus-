@@ -15,6 +15,7 @@ import com.nexus.organization.repository.CategoryRepository;
 import com.nexus.organization.repository.TeamRepository;
 import com.nexus.user.entity.User;
 import com.nexus.user.repository.UserRepository;
+import com.nexus.sla.service.SlaService;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -38,6 +39,7 @@ public class CaseService {
     private final UserRepository userRepository;
     private final CaseLifecycleService lifecycleService;
     private final ApplicationEventPublisher eventPublisher;
+    private final SlaService slaService;
 
     public CaseService(CaseRepository caseRepository,
                        CaseAssignmentRepository caseAssignmentRepository,
@@ -45,7 +47,8 @@ public class CaseService {
                        TeamRepository teamRepository,
                        UserRepository userRepository,
                        CaseLifecycleService lifecycleService,
-                       ApplicationEventPublisher eventPublisher) {
+                       ApplicationEventPublisher eventPublisher,
+                       SlaService slaService) {
         this.caseRepository = caseRepository;
         this.caseAssignmentRepository = caseAssignmentRepository;
         this.categoryRepository = categoryRepository;
@@ -53,6 +56,7 @@ public class CaseService {
         this.userRepository = userRepository;
         this.lifecycleService = lifecycleService;
         this.eventPublisher = eventPublisher;
+        this.slaService = slaService;
     }
 
     @Transactional
@@ -87,6 +91,9 @@ public class CaseService {
         }
 
         Case savedCase = caseRepository.save(newCase);
+
+        // Attach SLA policy and calculate deadlines (US-21)
+        slaService.attachSlaToCase(savedCase);
 
         // US-11: Publish event to trigger AI analysis asynchronously.
         // This runs after the case is persisted so the AI service can load it.
@@ -157,9 +164,14 @@ public class CaseService {
 
         if (request.getStatus() == CaseStatus.RESOLUTION_PROPOSED && c.getResolvedAt() == null) {
             c.setResolvedAt(Instant.now());
+            slaService.recordCaseResolution(caseId);
         }
         if (request.getStatus() == CaseStatus.CLOSED) {
             c.setClosedAt(Instant.now());
+            if (c.getResolvedAt() == null) {
+                c.setResolvedAt(Instant.now());
+            }
+            slaService.recordCaseResolution(caseId);
         }
         if (request.getStatus() == CaseStatus.REOPENED) {
             c.setClosedAt(null);

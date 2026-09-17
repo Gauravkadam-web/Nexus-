@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-09-17  
 > **Current Strategy:** Backend-First (Phases 0–7 Backend → Flutter Frontend)  
-> **Overall Status:** Phase 0, 1, 2, 3 & 4 Complete (100% Green Tests — 53/53 Passed)
+> **Overall Status:** Phase 0, 1, 2, 3, 4 & 5 Complete (100% Green Tests — 74/74 Passed)
 
 ---
 
@@ -14,9 +14,9 @@
 | **Phase 1** | **Core Case Management & Auth** | US-1 to US-5 | ✅ Complete | 11/11 Passed | Merged to `dev` |
 | **Phase 2** | **Communication, Evidence & Investigation** | US-6 to US-10 | ✅ Complete | 24/24 Passed | Merged to `dev` |
 | **Phase 3** | **AI Case Intelligence (Spring AI)** | US-11 to US-15 | ✅ Complete | 39/39 Passed | Merged to `dev` |
-| **Phase 4** | **Related Cases & Smart Operations** | US-16 to US-20 | ✅ Complete | 53/53 Passed | `feature/cases/related-cases-smart-operations` |
-| **Phase 5** | SLA, Risk & Escalation Automation | US-21 to US-25 | ⏳ Next | Pending | Phase 5 Roadmap |
-| **Phase 6** | Resolution, Problem Mgmt & AI Copilot | US-26 to US-30 | ⏹️ Queued | Pending | Phase 6 Roadmap |
+| **Phase 4** | **Related Cases & Smart Operations** | US-16 to US-20 | ✅ Complete | 53/53 Passed | Merged to `dev` |
+| **Phase 5** | **SLA, Risk & Escalation Automation** | US-21 to US-25 | ✅ Complete | 74/74 Passed | `feature/sla/risk-escalation-automation` |
+| **Phase 6** | Resolution, Problem Mgmt & AI Copilot | US-26 to US-30 | ⏳ Next | Pending | Phase 6 Roadmap |
 | **Phase 7** | Analytics, Audit & Security Hardening | US-31 to US-35 | ⏹️ Queued | Pending | Phase 7 Roadmap |
 | **Frontend** | Flutter Web & Mobile Client Application | US-1 to US-35 UI | ⏹️ Queued | Post-Backend | Flutter Pipeline |
 
@@ -117,8 +117,32 @@
 
 ---
 
-## 🎯 Immediate Next Milestone (Phase 5 Backend)
-1. **Flyway Migration `V6__create_sla_escalation_tables.sql`**: `sla_policies`, `sla_breaches`, `escalation_rules`, `escalations`.
-2. **SLA Policy Engine (US-21)**: Priority and severity-based response and resolution targets.
-3. **Automated SLA Breach & Risk Detection (US-22 & US-23)**: Idempotent `@Scheduled` background worker detecting SLA warning thresholds and breaches.
-4. **Escalation Hierarchy (US-24 & US-25)**: Multi-tier escalation management and notification triggers.
+### Phase 5: SLA, Risk & Escalation Automation (US-21 to US-25)
+- [x] **Flyway Migration `V6__create_sla_escalation_notifications_tables.sql`**:
+  - `sla_policies`, `case_sla`, `case_risk`, `escalation_rules`, `escalations`, `notifications` with relational indexes and check constraints.
+- [x] **SLA Policy Engine & Tracking (US-21)**:
+  - `SlaPolicy` & `CaseSla` entities, `SlaService`.
+  - Automatic deadline calculation on case creation and response/resolution tracking.
+  - `GET /api/v1/cases/{id}/sla` endpoint for real-time SLA countdowns and consumed percentages.
+  - Admin SLA Policies CRUD (`/api/v1/admin/sla-policies`).
+- [x] **Automated Case Risk Detection (US-22)**:
+  - `CaseRiskService`: Inactivity detection, deadline threshold warnings, and transparent risk explanations.
+  - `GET /api/v1/sla/at-risk`: Returns active cases with Medium/High risk.
+- [x] **Scheduled Breach Monitoring & Alerts (US-23 & US-24)**:
+  - `SlaSchedulerService`: `@Scheduled` scan running every 60s to transition status (`AT_RISK`, `BREACHED`).
+  - `GET /api/v1/sla/breached`: Management view of breached SLAs.
+  - In-app `NotificationService` and `NotificationController` with idempotency guards.
+- [x] **Configurable Multi-Tier Escalations (US-25)**:
+  - `EscalationRule` & `Escalation` entities, `EscalationService`.
+  - Rule-based system recommendations and human-confirmed escalations (`POST /api/v1/cases/{id}/escalate`, `POST /api/v1/escalations/{id}/confirm`).
+  - Automatic lifecycle state machine update to `ESCALATED`.
+  - Admin Escalation Rules CRUD (`/api/v1/admin/escalation-rules`).
+- [x] **Automated Tests**: 74/74 unit, service, scheduler, escalation, and controller integration tests passing cleanly.
+
+---
+
+## 🎯 Immediate Next Milestone (Phase 6 Backend)
+1. **Flyway Migration `V7__create_resolution_problems_tables.sql`**: `resolutions`, `problems`, `problem_incidents`, `ai_copilot_interactions`.
+2. **Resolution Workflow & Requester Confirmation (US-26 & US-27)**: Submission of resolution findings and requester confirmation/rejection (reopening).
+3. **Problem Management & Recurring Problem Detection (US-28)**: Root-cause tracking, recurring pattern identification, and incident linking.
+4. **AI Investigation Copilot & Draft Communication (US-29 & US-30)**: Case-scoped context Q&A assistance and AI-drafted customer communications.

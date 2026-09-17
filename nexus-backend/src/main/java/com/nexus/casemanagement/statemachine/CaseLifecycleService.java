@@ -30,6 +30,8 @@ public class CaseLifecycleService {
         ALLOWED_TRANSITIONS.put(CaseStatus.ASSIGNED, EnumSet.of(
                 CaseStatus.INVESTIGATING,
                 CaseStatus.WAITING_FOR_INFO,
+                CaseStatus.AT_RISK,
+                CaseStatus.ESCALATED,
                 CaseStatus.CANCELLED
         ));
 
