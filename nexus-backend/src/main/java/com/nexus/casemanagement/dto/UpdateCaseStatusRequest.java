@@ -14,6 +14,10 @@ public class UpdateCaseStatusRequest {
 
     public UpdateCaseStatusRequest() {}
 
+    public UpdateCaseStatusRequest(CaseStatus status) {
+        this.status = status;
+    }
+
     public UpdateCaseStatusRequest(CaseStatus status, String reason) {
         this.status = status;
         this.reason = reason;

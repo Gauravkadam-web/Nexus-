@@ -29,4 +29,10 @@ public interface CaseRepository extends JpaRepository<Case, UUID>, JpaSpecificat
 
     @Query("SELECT COUNT(c) FROM Case c WHERE c.caseNumber LIKE CONCAT('NEX-', :datePattern, '-%')")
     long countByDatePattern(@Param("datePattern") String datePattern);
+
+    long countByAssignedUserIdAndStatusIn(UUID assignedUserId, java.util.Collection<CaseStatus> statuses);
+
+    long countByAssignedTeamIdAndStatusIn(UUID assignedTeamId, java.util.Collection<CaseStatus> statuses);
+
+    long countByAssignedTeamIdAndStatus(UUID assignedTeamId, CaseStatus status);
 }
