@@ -1,4 +1,4 @@
-package com.nexus.auth.security;
+ package com.nexus.auth.security;
 
 import io.github.bucket4j.Bandwidth;
 import io.github.bucket4j.Bucket;
@@ -46,8 +46,9 @@ public class RateLimitingFilter extends OncePerRequestFilter {
         String path = request.getRequestURI();
         String clientIp = getClientIp(request);
 
-        // Bypass Actuator and Health check endpoints from strict rate limiting
-        if (path.startsWith("/api/v1/health") || path.startsWith("/actuator")) {
+        // Bypass Actuator, Health check, and Swagger UI from strict rate limiting
+        if (path.startsWith("/api/v1/health") || path.startsWith("/actuator") ||
+            path.startsWith("/swagger-ui") || path.startsWith("/v3/api-docs")) {
             filterChain.doFilter(request, response);
             return;
         }

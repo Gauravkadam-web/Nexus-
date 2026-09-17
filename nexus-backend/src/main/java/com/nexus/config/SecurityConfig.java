@@ -73,6 +73,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // Publicly accessible health check & actuator health
                         .requestMatchers("/api/v1/health", "/actuator/health", "/actuator/info").permitAll()
+                        // Public Swagger / OpenAPI Documentation & UI
+                        .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**", "/swagger-resources/**").permitAll()
                         // Public auth endpoints (login, register, token refresh only)
                         .requestMatchers("/api/v1/auth/login", "/api/v1/auth/register", "/api/v1/auth/refresh").permitAll()
                         // Any other request (including /api/v1/auth/me) requires authentication

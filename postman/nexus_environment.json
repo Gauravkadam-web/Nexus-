@@ -1,0 +1,61 @@
+{
+  "id": "nexus-environment-local",
+  "name": "Nexus Local Environment",
+  "values": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "accessToken",
+      "value": "",
+      "type": "secret",
+      "enabled": true
+    },
+    {
+      "key": "refreshToken",
+      "value": "",
+      "type": "secret",
+      "enabled": true
+    },
+    {
+      "key": "organizationId",
+      "value": "",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "categoryId",
+      "value": "",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "teamId",
+      "value": "",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "caseId",
+      "value": "",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "problemId",
+      "value": "",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "suggestionId",
+      "value": "",
+      "type": "default",
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "environment"
+}

@@ -41,6 +41,7 @@ public class AutomationEvent {
     @Column(name = "completed_at")
     private Instant completedAt;
 
+    @org.hibernate.annotations.JdbcTypeCode(org.hibernate.type.SqlTypes.JSON)
     @Column(name = "result", columnDefinition = "jsonb")
     private String result;
 

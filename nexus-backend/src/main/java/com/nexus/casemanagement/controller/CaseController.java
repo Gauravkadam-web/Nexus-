@@ -169,7 +169,7 @@ public class CaseController {
     /**
      * Assign case to user or team.
      */
-    @PostMapping("/{id}/assign")
+    @RequestMapping(value = "/{id}/assign", method = {RequestMethod.POST, RequestMethod.PATCH})
     @PreAuthorize("hasAnyRole('OPERATOR', 'TEAM_LEAD', 'MANAGER', 'ADMIN')")
     public ResponseEntity<ApiResponse<CaseDetailResponse>> assignCase(
             @PathVariable UUID id,

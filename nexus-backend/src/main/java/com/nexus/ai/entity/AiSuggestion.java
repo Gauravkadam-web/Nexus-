@@ -29,6 +29,7 @@ public class AiSuggestion {
     private SuggestionType suggestionType;
 
     /** JSON payload of the AI-suggested value, e.g. {"priority":"HIGH","confidence":0.82}. */
+    @org.hibernate.annotations.JdbcTypeCode(org.hibernate.type.SqlTypes.JSON)
     @Column(name = "suggested_value", nullable = false, columnDefinition = "jsonb")
     private String suggestedValue;
 
@@ -44,6 +45,7 @@ public class AiSuggestion {
     private String overrideReason;
 
     /** JSON payload of the operator's modified value, populated only when status = MODIFIED. */
+    @org.hibernate.annotations.JdbcTypeCode(org.hibernate.type.SqlTypes.JSON)
     @Column(name = "modified_value", columnDefinition = "jsonb")
     private String modifiedValue;
 

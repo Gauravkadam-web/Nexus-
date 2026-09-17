@@ -1,0 +1,996 @@
+{
+  "info": {
+    "name": "Nexus API Collection (US-1 to US-35)",
+    "_postman_id": "nexus-api-complete-suite",
+    "description": "Complete REST API test suite for Nexus — AI-Powered Case Management Platform.\nCovering Phases 0 to 7 (US-1 through US-35).\n\nAuthentication:\n- Run 'Auth / Register Admin' or 'Auth / Login' to automatically save the JWT token into {{accessToken}}.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{accessToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "0. Health & Infra",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "health"]
+            }
+          }
+        },
+        {
+          "name": "Actuator Health",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/actuator/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["actuator", "health"]
+            }
+          }
+        },
+        {
+          "name": "OpenAPI JSON Specs",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v3/api-docs",
+              "host": ["{{baseUrl}}"],
+              "path": ["v3", "api-docs"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "1. Authentication (com.nexus.auth)",
+      "item": [
+        {
+          "name": "Register User / Admin",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201 || pm.response.code === 200) {",
+                  "    var jsonData = pm.response.json();",
+                  "    if (jsonData.data && jsonData.data.accessToken) {",
+                  "        pm.environment.set('accessToken', jsonData.data.accessToken);",
+                  "        pm.environment.set('refreshToken', jsonData.data.refreshToken);",
+                  "        console.log('Access token saved to environment.');",
+                  "    }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Gaurav Kadam\",\n  \"email\": \"gaurav.admin@nexus.io\",\n  \"password\": \"Admin@123456\",\n  \"organizationName\": \"Nexus Enterprise\",\n  \"role\": \"ADMIN\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/auth/register",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    var jsonData = pm.response.json();",
+                  "    if (jsonData.data && jsonData.data.accessToken) {",
+                  "        pm.environment.set('accessToken', jsonData.data.accessToken);",
+                  "        pm.environment.set('refreshToken', jsonData.data.refreshToken);",
+                  "        console.log('Access token updated.');",
+                  "    }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"gaurav.admin@nexus.io\",\n  \"password\": \"Admin@123456\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Refresh Token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    var jsonData = pm.response.json();",
+                  "    if (jsonData.data && jsonData.data.accessToken) {",
+                  "        pm.environment.set('accessToken', jsonData.data.accessToken);",
+                  "    }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"{{refreshToken}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/auth/refresh",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "auth", "refresh"]
+            }
+          }
+        },
+        {
+          "name": "Get Current User (Me)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/auth/me",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "auth", "me"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Organization, Category & Teams",
+      "item": [
+        {
+          "name": "List Categories",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    var list = pm.response.json().data;",
+                  "    if (list && list.length > 0) {",
+                  "        pm.environment.set('categoryId', list[0].id);",
+                  "    }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/categories",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "categories"]
+            }
+          }
+        },
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Infrastructure & Cloud Services\",\n  \"description\": \"Server, cloud hostings, DNS, and networking tickets\",\n  \"defaultTeamId\": null\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/categories",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "categories"]
+            }
+          }
+        },
+        {
+          "name": "List Teams",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    var list = pm.response.json().data;",
+                  "    if (list && list.length > 0) {",
+                  "        pm.environment.set('teamId', list[0].id);",
+                  "    }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/teams",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "teams"]
+            }
+          }
+        },
+        {
+          "name": "Create Team",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Cloud Operations Squad\",\n  \"leadUserId\": null\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/teams",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "teams"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Core Case Management (US-1 to US-5, US-34)",
+      "item": [
+        {
+          "name": "US-1: Create Case",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    var data = pm.response.json().data;",
+                  "    pm.environment.set('caseId', data.id);",
+                  "    console.log('Created Case ID: ' + data.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"VPN Gateway Timeout across Frankfurt Region\",\n  \"description\": \"Engineers are experiencing 504 Gateway Timeouts when connecting to the EU-Central-1 VPN tunnel.\",\n  \"categoryId\": \"{{categoryId}}\",\n  \"priority\": \"HIGH\",\n  \"severity\": \"HIGH\",\n  \"location\": \"Frankfurt Data Center\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases"]
+            }
+          }
+        },
+        {
+          "name": "Get Case by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}"]
+            }
+          }
+        },
+        {
+          "name": "US-2: List My Submitted Cases",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/my?page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "my"],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "20" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "US-3: List Assigned Cases (Operator)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/assigned?page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "assigned"],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "20" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "US-5: List Team Cases",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/team?teamId={{teamId}}&page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "team"],
+              "query": [
+                { "key": "teamId", "value": "{{teamId}}" },
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "20" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "US-34: Advanced Case Search",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/search?query=VPN&priority=HIGH&page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "search"],
+              "query": [
+                { "key": "query", "value": "VPN" },
+                { "key": "priority", "value": "HIGH" },
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "20" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "US-4: Update Case Status",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"INVESTIGATING\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/status",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "status"]
+            }
+          }
+        },
+        {
+          "name": "Assign Case to Team/Operator",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"assignedTeamId\": \"{{teamId}}\",\n  \"assignedUserId\": null\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/assign",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "assign"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Communication & Investigation (US-6 to US-10)",
+      "item": [
+        {
+          "name": "US-8: Send Message (Public/Requester)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"Hello, we have started investigating the VPN gateway logs.\",\n  \"messageType\": \"GENERAL\",\n  \"visibleToRequester\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/messages",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "messages"]
+            }
+          }
+        },
+        {
+          "name": "US-6: Ask Question (Triggers WAITING_FOR_INFO)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"Can you provide the client IP and operating system version?\",\n  \"messageType\": \"QUESTION\",\n  \"visibleToRequester\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/messages",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "messages"]
+            }
+          }
+        },
+        {
+          "name": "US-7: Requester Answer (Triggers INVESTIGATING)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"Client is on Ubuntu 24.04, IP is 192.168.1.105.\",\n  \"messageType\": \"ANSWER\",\n  \"visibleToRequester\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/messages",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "messages"]
+            }
+          }
+        },
+        {
+          "name": "Get Case Messages",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/messages",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "messages"]
+            }
+          }
+        },
+        {
+          "name": "Add Operator Private Note",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"Checked switch port 4. Packet drops noticed on interface eth0.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/notes",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "notes"]
+            }
+          }
+        },
+        {
+          "name": "US-9: Create Investigation Task",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Inspect IPSec tunnel keepalive logs\",\n  \"description\": \"Verify if DPD packets are timing out between Gateway A and B.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/tasks",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "tasks"]
+            }
+          }
+        },
+        {
+          "name": "US-9: Record Structured Investigation Finding",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"observation\": \"High CPU observed on Gateway router\",\n  \"actionTaken\": \"Analyzed top processes and inspected IPSec SA table\",\n  \"finding\": \"Re-keying storm triggered due to MTU mismatch\",\n  \"evidenceRef\": \"LOGS-FRK-GW-9021.log\",\n  \"followUpNeeded\": false\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/investigations",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "investigations"]
+            }
+          }
+        },
+        {
+          "name": "US-10: Get Team Workload Overview",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/collaboration/workload/team?teamId={{teamId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "collaboration", "workload", "team"],
+              "query": [{ "key": "teamId", "value": "{{teamId}}" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. AI Case Intelligence (US-11 to US-15, US-29, US-30)",
+      "item": [
+        {
+          "name": "US-11: Get AI Analysis",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/ai/analysis",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "ai", "analysis"]
+            }
+          }
+        },
+        {
+          "name": "US-12: Get AI Case Summary",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/ai/summary",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "ai", "summary"]
+            }
+          }
+        },
+        {
+          "name": "US-12: Regenerate AI Summary",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/ai/summary/regenerate",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "ai", "summary", "regenerate"]
+            }
+          }
+        },
+        {
+          "name": "US-13: Get Missing Information Assessment",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/ai/missing-info",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "ai", "missing-info"]
+            }
+          }
+        },
+        {
+          "name": "US-14: Human Decision on AI Suggestion",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"ACCEPTED\",\n  \"operatorNotes\": \"Confirmed priority recommendation matches SLA impact.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/ai/suggestions/{{suggestionId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "ai", "suggestions", "{{suggestionId}}"]
+            }
+          }
+        },
+        {
+          "name": "US-29: AI Operator Copilot Q&A",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"question\": \"What was the primary root cause identified in the latest investigation findings?\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/ai/copilot",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "ai", "copilot"]
+            }
+          }
+        },
+        {
+          "name": "US-30: AI Draft Professional Communication",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"targetAudience\": \"REQUESTER\",\n  \"intent\": \"STATUS_UPDATE\",\n  \"specificInstructions\": \"Inform them that the MTU configuration fix is applied and ask them to retry.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/ai/draft-communication",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "ai", "draft-communication"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "6. Case Relations & Smart Operations (US-16 to US-20)",
+      "item": [
+        {
+          "name": "US-16 & US-17: Detect Duplicate Candidates",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/ai/duplicates",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "ai", "duplicates"]
+            }
+          }
+        },
+        {
+          "name": "Link Related / Duplicate Case",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"targetCaseId\": \"{{caseId}}\",\n  \"relationType\": \"RELATED\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/relations",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "relations"]
+            }
+          }
+        },
+        {
+          "name": "Get Case Relations",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/relations",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "relations"]
+            }
+          }
+        },
+        {
+          "name": "US-19 & US-20: Smart Assignment Recommendation",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/ai/assignment-recommendation",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "ai", "assignment-recommendation"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "7. SLA, Risk & Escalation (US-21 to US-25)",
+      "item": [
+        {
+          "name": "US-21: Get Case SLA Deadlines & Progress",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/sla",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "sla"]
+            }
+          }
+        },
+        {
+          "name": "US-22: List At-Risk Cases",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/sla/at-risk?page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "sla", "at-risk"],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "20" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "US-23: List Breached SLA Cases",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/sla/breached?page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "sla", "breached"],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "20" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "US-25: Escalate Case",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"escalationLevel\": \"TIER_2\",\n  \"reason\": \"SLA deadline reached 80% with no customer acknowledgement.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/escalate",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "escalate"]
+            }
+          }
+        },
+        {
+          "name": "US-24: List User Notifications",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/notifications?unreadOnly=false&page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "notifications"],
+              "query": [
+                { "key": "unreadOnly", "value": "false" },
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "20" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "8. Resolution & Problem Management (US-26 to US-28)",
+      "item": [
+        {
+          "name": "US-26: Submit Resolution (RESOLUTION_PROPOSED)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"whatWasDone\": \"Adjusted TCP MSS clamping to 1360 on all VPN tunnel endpoints.\",\n  \"findings\": \"Fragmented packets were causing silent drops during peak traffic.\",\n  \"evidenceRef\": \"KB-VPN-MSS-01\",\n  \"limitations\": \"Requires client-side MTU <= 1400.\",\n  \"resolutionMessage\": \"The gateway connectivity is restored. Please verify connection.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/resolution",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "resolution"]
+            }
+          }
+        },
+        {
+          "name": "US-27: Requester Confirms Resolution (CLOSED)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"feedback\": \"Works perfectly now, thank you!\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/resolution/confirm",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "resolution", "confirm"]
+            }
+          }
+        },
+        {
+          "name": "US-27: Requester Rejects Resolution (REOPENED)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rejectionReason\": \"The connection dropped again after 10 minutes.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/cases/{{caseId}}/resolution/reject",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "cases", "{{caseId}}", "resolution", "reject"]
+            }
+          }
+        },
+        {
+          "name": "US-28: Create Problem Record",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    var data = pm.response.json().data;",
+                  "    pm.environment.set('problemId', data.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"VPN Concentrator Firmware Fragmentation Defect\",\n  \"suspectedRootCause\": \"Known bug in router firmware 4.2.1 handling jumbo frames.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/problems",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "problems"]
+            }
+          }
+        },
+        {
+          "name": "US-28: Link Incident to Problem",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"caseId\": \"{{caseId}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/problems/{{problemId}}/incidents",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "problems", "{{problemId}}", "incidents"]
+            }
+          }
+        },
+        {
+          "name": "US-28: Detect Recurring Problem Patterns",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/problems/recurring-patterns",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "problems", "recurring-patterns"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "9. Analytics & Audit (US-31 to US-33)",
+      "item": [
+        {
+          "name": "US-31: Overview Performance KPIs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/analytics/overview",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "analytics", "overview"]
+            }
+          }
+        },
+        {
+          "name": "US-31: Daily Volume Trends",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/analytics/trends?days=7",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "analytics", "trends"],
+              "query": [{ "key": "days", "value": "7" }]
+            }
+          }
+        },
+        {
+          "name": "US-31: Category Velocity Breakdown",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/analytics/categories",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "analytics", "categories"]
+            }
+          }
+        },
+        {
+          "name": "US-31: Team Workloads & Capacity",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/analytics/teams",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "analytics", "teams"]
+            }
+          }
+        },
+        {
+          "name": "US-32: Operational Insights & Anomaly Signals",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/analytics/operational-insights",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "analytics", "operational-insights"]
+            }
+          }
+        },
+        {
+          "name": "US-33: Search System Audit Logs (Admin)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/audit-logs?entityType=CASE&page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "audit-logs"],
+              "query": [
+                { "key": "entityType", "value": "CASE" },
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "20" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "US-33: Get Case Audit Timeline",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/audit-logs/case/{{caseId}}/timeline",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "audit-logs", "case", "{{caseId}}", "timeline"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

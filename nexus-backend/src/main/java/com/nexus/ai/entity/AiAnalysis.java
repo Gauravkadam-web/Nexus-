@@ -47,6 +47,7 @@ public class AiAnalysis {
     /**
      * JSON array of detected missing information fields, e.g. ["error_code", "device_model"].
      */
+    @org.hibernate.annotations.JdbcTypeCode(org.hibernate.type.SqlTypes.JSON)
     @Column(name = "missing_information", columnDefinition = "jsonb")
     private String missingInformation;
 
@@ -56,9 +57,11 @@ public class AiAnalysis {
     /**
      * JSON array of related case IDs with similarity scores, e.g. [{"caseId":"...", "score":0.87}].
      */
+    @org.hibernate.annotations.JdbcTypeCode(org.hibernate.type.SqlTypes.JSON)
     @Column(name = "related_cases", columnDefinition = "jsonb")
     private String relatedCases;
 
+    @org.hibernate.annotations.JdbcTypeCode(org.hibernate.type.SqlTypes.JSON)
     @Column(name = "risk_information", columnDefinition = "jsonb")
     private String riskInformation;
 
