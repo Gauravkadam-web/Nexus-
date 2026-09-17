@@ -32,15 +32,21 @@ public class AiController {
     private final AiSuggestionService aiSuggestionService;
     private final AiSummaryService aiSummaryService;
     private final AiAnalysisRepository aiAnalysisRepository;
+    private final CaseDuplicateDetectionService duplicateDetectionService;
+    private final SmartAssignmentService smartAssignmentService;
 
     public AiController(AiAnalysisService aiAnalysisService,
                         AiSuggestionService aiSuggestionService,
                         AiSummaryService aiSummaryService,
-                        AiAnalysisRepository aiAnalysisRepository) {
+                        AiAnalysisRepository aiAnalysisRepository,
+                        CaseDuplicateDetectionService duplicateDetectionService,
+                        SmartAssignmentService smartAssignmentService) {
         this.aiAnalysisService = aiAnalysisService;
         this.aiSuggestionService = aiSuggestionService;
         this.aiSummaryService = aiSummaryService;
         this.aiAnalysisRepository = aiAnalysisRepository;
+        this.duplicateDetectionService = duplicateDetectionService;
+        this.smartAssignmentService = smartAssignmentService;
     }
 
     // ----------------------------------------------------------------
@@ -169,5 +175,41 @@ public class AiController {
                 .map(AiSuggestionResponse::from)
                 .collect(Collectors.toList());
         return ResponseEntity.ok(ApiResponse.success(suggestions));
+    }
+
+    // ----------------------------------------------------------------
+    // GET /cases/{id}/ai/duplicates — AI Duplicate Detection (US-16)
+    // ----------------------------------------------------------------
+
+    /**
+     * Identifies potential duplicate or related cases based on text and category similarity.
+     *
+     * @param caseId the UUID of the target case
+     * @return list of potential duplicate suggestions
+     */
+    @GetMapping("/cases/{id}/ai/duplicates")
+    @PreAuthorize("hasAnyRole('OPERATOR','TEAM_LEAD','MANAGER','ADMIN')")
+    public ResponseEntity<ApiResponse<List<DuplicateSuggestionResponse>>> getPotentialDuplicates(
+            @PathVariable("id") UUID caseId) {
+        List<DuplicateSuggestionResponse> duplicates = duplicateDetectionService.findPotentialDuplicates(caseId);
+        return ResponseEntity.ok(ApiResponse.success(duplicates));
+    }
+
+    // ----------------------------------------------------------------
+    // GET /cases/{id}/ai/assignment-recommendation — Smart Assignment (US-19, US-20)
+    // ----------------------------------------------------------------
+
+    /**
+     * Generates a smart operator assignment recommendation factoring category affinity and workload.
+     *
+     * @param caseId the UUID of the case
+     * @return recommended assignment details with reasoning
+     */
+    @GetMapping("/cases/{id}/ai/assignment-recommendation")
+    @PreAuthorize("hasAnyRole('OPERATOR','TEAM_LEAD','MANAGER','ADMIN')")
+    public ResponseEntity<ApiResponse<AssignmentRecommendationResponse>> getAssignmentRecommendation(
+            @PathVariable("id") UUID caseId) {
+        AssignmentRecommendationResponse recommendation = smartAssignmentService.recommendAssignment(caseId);
+        return ResponseEntity.ok(ApiResponse.success(recommendation));
     }
 }

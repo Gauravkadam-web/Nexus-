@@ -1,6 +1,7 @@
 package com.nexus.casemanagement.entity;
 
 import com.nexus.organization.entity.Category;
+import com.nexus.organization.entity.Organization;
 import com.nexus.organization.entity.Team;
 import com.nexus.user.entity.User;
 import jakarta.persistence.*;
@@ -220,5 +221,15 @@ public class Case {
 
     public void setUpdatedAt(Instant updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Organization getOrganization() {
+        if (this.category != null && this.category.getOrganization() != null) {
+            return this.category.getOrganization();
+        }
+        if (this.requester != null && this.requester.getOrganization() != null) {
+            return this.requester.getOrganization();
+        }
+        return null;
     }
 }

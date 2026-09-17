@@ -27,6 +27,8 @@ target/
 *.tar.gz
 *.rar
 hs_err_pid*
+uploads/
+**/uploads/
 
 # Maven wrapper (keep mvnw scripts, ignore wrapper jar)
 .mvn/wrapper/maven-wrapper.jar

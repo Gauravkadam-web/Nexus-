@@ -180,4 +180,40 @@ class AiControllerTest {
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.data.id", notNullValue()));
     }
+
+    @Test
+    @DisplayName("GET /cases/{id}/ai/duplicates — returns potential duplicates (US-16)")
+    void getDuplicates_returnsDuplicateList() throws Exception {
+        // Create a duplicate case
+        CreateCaseRequest dupReq = new CreateCaseRequest();
+        dupReq.setTitle("VPN error 401 connection failure");
+        dupReq.setDescription("Users getting 401 error on VPN login since morning");
+        dupReq.setCategoryId(categoryId);
+        dupReq.setPriority(Priority.MEDIUM);
+        dupReq.setSeverity(Severity.MEDIUM);
+
+        mockMvc.perform(post("/api/v1/cases")
+                        .header("Authorization", "Bearer " + requesterToken)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(dupReq)))
+                .andExpect(status().isCreated());
+
+        mockMvc.perform(get("/api/v1/cases/{id}/ai/duplicates", caseId)
+                        .header("Authorization", "Bearer " + operatorToken))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.success", is(true)))
+                .andExpect(jsonPath("$.data", isA(java.util.List.class)));
+    }
+
+    @Test
+    @DisplayName("GET /cases/{id}/ai/assignment-recommendation — returns recommendation (US-19, US-20)")
+    void getAssignmentRecommendation_returnsRecommendation() throws Exception {
+        mockMvc.perform(get("/api/v1/cases/{id}/ai/assignment-recommendation", caseId)
+                        .header("Authorization", "Bearer " + operatorToken))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.success", is(true)))
+                .andExpect(jsonPath("$.data.suggestedUserName", notNullValue()))
+                .andExpect(jsonPath("$.data.confidence", notNullValue()))
+                .andExpect(jsonPath("$.data.reasoning", notNullValue()));
+    }
 }
