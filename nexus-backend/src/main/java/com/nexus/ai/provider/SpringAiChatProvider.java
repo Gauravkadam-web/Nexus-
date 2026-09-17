@@ -83,6 +83,37 @@ public class SpringAiChatProvider implements AiProviderPort {
         }
     }
 
+    @Override
+    public String askCopilot(CaseContext context, String question) {
+        String prompt = buildCopilotPrompt(context, question);
+        try {
+            return chatModel.call(new Prompt(prompt))
+                    .getResult()
+                    .getOutput()
+                    .getText()
+                    .trim();
+        } catch (Exception ex) {
+            log.error("[SpringAI] askCopilot failed for case {}: {}", context.getCaseNumber(), ex.getMessage());
+            throw new AiUnavailableException("AI Copilot unavailable: " + ex.getMessage(), ex);
+        }
+    }
+
+    @Override
+    public String draftCommunication(CaseContext context, String audience, String intent, String instructions) {
+        String prompt = buildDraftCommunicationPrompt(context, audience, intent, instructions);
+        try {
+            return chatModel.call(new Prompt(prompt))
+                    .getResult()
+                    .getOutput()
+                    .getText()
+                    .trim();
+        } catch (Exception ex) {
+            log.error("[SpringAI] draftCommunication failed for case {}: {}", context.getCaseNumber(), ex.getMessage());
+            throw new AiUnavailableException("AI Communication drafting unavailable: " + ex.getMessage(), ex);
+        }
+    }
+
+
     // ---- Prompt builders ----
 
     private String buildAnalysisPrompt(CaseContext ctx) {
@@ -141,6 +172,44 @@ public class SpringAiChatProvider implements AiProviderPort {
                 ctx.getTitle(), ctx.getDescription(), ctx.getCategoryName()
         );
     }
+
+    private String buildCopilotPrompt(CaseContext ctx, String question) {
+        return String.format("""
+            You are an expert AI Operator Copilot assisting an incident response operator.
+            Answer the operator's question specifically using the provided case context and timeline.
+            Do not assume facts not present in the record. Present recommendations clearly.
+            
+            Case: %s (%s)
+            Description: %s
+            Status: %s | Priority: %s | Severity: %s
+            History & Timeline: %s
+            
+            Operator's Question: %s
+            """,
+                ctx.getCaseNumber(), ctx.getTitle(), ctx.getDescription(),
+                ctx.getCurrentStatus(), ctx.getCurrentPriority(), ctx.getCurrentSeverity(),
+                ctx.getConversationHistory(), question
+        );
+    }
+
+    private String buildDraftCommunicationPrompt(CaseContext ctx, String audience, String intent, String instructions) {
+        return String.format("""
+            Draft professional communication regarding the case below.
+            Audience: %s
+            Intent: %s
+            Special Instructions: %s
+            
+            Case: %s - %s
+            Description: %s
+            Status: %s
+            
+            Draft a polite, professional, and clear communication suitable for direct dispatch or operator review.
+            """,
+                audience, intent, instructions != null ? instructions : "None",
+                ctx.getCaseNumber(), ctx.getTitle(), ctx.getDescription(), ctx.getCurrentStatus()
+        );
+    }
+
 
     @SuppressWarnings("unchecked")
     private AiAnalysisResult parseAnalysisResponse(String rawJson, CaseContext ctx) {

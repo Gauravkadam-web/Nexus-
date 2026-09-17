@@ -216,4 +216,41 @@ class AiControllerTest {
                 .andExpect(jsonPath("$.data.confidence", notNullValue()))
                 .andExpect(jsonPath("$.data.reasoning", notNullValue()));
     }
+
+    @Test
+    @DisplayName("POST /cases/{id}/ai/copilot — Ask AI Operator Copilot (US-29)")
+    void askCopilot_returnsAnswer() throws Exception {
+        Map<String, String> copilotReq = Map.of("question", "What is the recommended next step?");
+
+        mockMvc.perform(post("/api/v1/cases/{id}/ai/copilot", caseId)
+                        .header("Authorization", "Bearer " + operatorToken)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(copilotReq)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.success", is(true)))
+                .andExpect(jsonPath("$.data.question").value("What is the recommended next step?"))
+                .andExpect(jsonPath("$.data.answer", notNullValue()))
+                .andExpect(jsonPath("$.data.sourcesUsed", notNullValue()));
+    }
+
+    @Test
+    @DisplayName("POST /cases/{id}/ai/draft-communication — Draft Professional Communication (US-30)")
+    void draftCommunication_returnsDraft() throws Exception {
+        Map<String, String> draftReq = Map.of(
+                "audience", "REQUESTER",
+                "intent", "STATUS_UPDATE",
+                "instructions", "Inform them we are investigating the VPN server"
+        );
+
+        mockMvc.perform(post("/api/v1/cases/{id}/ai/draft-communication", caseId)
+                        .header("Authorization", "Bearer " + operatorToken)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(draftReq)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.success", is(true)))
+                .andExpect(jsonPath("$.data.draftSubject", notNullValue()))
+                .andExpect(jsonPath("$.data.draftBody", notNullValue()))
+                .andExpect(jsonPath("$.data.recipientRole").value("REQUESTER"));
+    }
 }
+

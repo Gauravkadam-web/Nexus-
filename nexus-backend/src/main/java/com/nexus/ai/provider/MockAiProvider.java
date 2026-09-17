@@ -59,4 +59,37 @@ public class MockAiProvider implements AiProviderPort {
         return "The following information appears to be missing: exact error message or code, " +
                "device model and operating system version, and steps to reproduce the issue.";
     }
+
+    @Override
+    public String askCopilot(CaseContext context, String question) {
+        log.info("[MockAI] askCopilot called for case: {} with question: {}", context.getCaseNumber(), question);
+        return String.format(
+                "Copilot Analysis for Case %s (%s): Based on the current findings and history (%s), " +
+                "regarding your query '%s': The case is currently in status %s with priority %s. " +
+                "Recommended next step is to continue investigating logged findings.",
+                context.getCaseNumber(),
+                context.getTitle(),
+                context.getDescription(),
+                question,
+                context.getCurrentStatus(),
+                context.getCurrentPriority()
+        );
+    }
+
+    @Override
+    public String draftCommunication(CaseContext context, String audience, String intent, String instructions) {
+        log.info("[MockAI] draftCommunication called for case: {}, audience: {}, intent: {}", 
+                context.getCaseNumber(), audience, intent);
+        return String.format(
+                "Dear %s,\n\nWe are providing an update regarding Case %s: '%s'. " +
+                "Our team is actively handling this item (Status: %s). %s\n\n" +
+                "Thank you for your patience.\nNexus Support Team",
+                "REQUESTER".equalsIgnoreCase(audience) ? "Requester" : audience,
+                context.getCaseNumber(),
+                context.getTitle(),
+                context.getCurrentStatus(),
+                instructions != null && !instructions.isBlank() ? "Note: " + instructions : "We will notify you as soon as further progress is made."
+        );
+    }
 }
+

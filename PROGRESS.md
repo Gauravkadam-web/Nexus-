@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-09-17  
 > **Current Strategy:** Backend-First (Phases 0–7 Backend → Flutter Frontend)  
-> **Overall Status:** Phase 0, 1, 2, 3, 4 & 5 Complete (100% Green Tests — 74/74 Passed)
+> **Overall Status:** Phases 0, 1, 2, 3, 4, 5 & 6 Complete (100% Green Tests — 87/87 Passed)
 
 ---
 
@@ -15,10 +15,11 @@
 | **Phase 2** | **Communication, Evidence & Investigation** | US-6 to US-10 | ✅ Complete | 24/24 Passed | Merged to `dev` |
 | **Phase 3** | **AI Case Intelligence (Spring AI)** | US-11 to US-15 | ✅ Complete | 39/39 Passed | Merged to `dev` |
 | **Phase 4** | **Related Cases & Smart Operations** | US-16 to US-20 | ✅ Complete | 53/53 Passed | Merged to `dev` |
-| **Phase 5** | **SLA, Risk & Escalation Automation** | US-21 to US-25 | ✅ Complete | 74/74 Passed | `feature/sla/risk-escalation-automation` |
-| **Phase 6** | Resolution, Problem Mgmt & AI Copilot | US-26 to US-30 | ⏳ Next | Pending | Phase 6 Roadmap |
-| **Phase 7** | Analytics, Audit & Security Hardening | US-31 to US-35 | ⏹️ Queued | Pending | Phase 7 Roadmap |
+| **Phase 5** | **SLA, Risk & Escalation Automation** | US-21 to US-25 | ✅ Complete | 74/74 Passed | Merged to `dev` |
+| **Phase 6** | **Resolution, Problem Mgmt & AI Copilot** | US-26 to US-30 | ✅ Complete | 87/87 Passed | `feature/resolution-problem-mgmt-ai-copilot` |
+| **Phase 7** | Analytics, Audit & Security Hardening | US-31 to US-35 | ⏳ Next | Pending | Phase 7 Roadmap |
 | **Frontend** | Flutter Web & Mobile Client Application | US-1 to US-35 UI | ⏹️ Queued | Post-Backend | Flutter Pipeline |
+
 
 ---
 
@@ -137,12 +138,33 @@
   - Rule-based system recommendations and human-confirmed escalations (`POST /api/v1/cases/{id}/escalate`, `POST /api/v1/escalations/{id}/confirm`).
   - Automatic lifecycle state machine update to `ESCALATED`.
   - Admin Escalation Rules CRUD (`/api/v1/admin/escalation-rules`).
-- [x] **Automated Tests**: 74/74 unit, service, scheduler, escalation, and controller integration tests passing cleanly.
+### Phase 6: Resolution, Problem Management & AI Copilot (US-26 to US-30)
+- [x] **Flyway Migration `V7__create_resolution_problems_tables.sql`**:
+  - `resolutions`, `problems`, `problem_incident_relations` with foreign keys, checks, and unique constraints.
+- [x] **Resolution Workflow & Requester Confirmation (US-26 & US-27)**:
+  - `Resolution` entity, `ResolutionService`, `ResolutionController`.
+  - Operator submits resolution findings (`whatWasDone`, `findings`, `evidenceRef`, `limitations`, `resolutionMessage`), automatically advancing status to `RESOLUTION_PROPOSED` and recording SLA resolution.
+  - Requester confirms (`PUT /cases/{id}/resolution/confirm`) transitioning case to `CLOSED`.
+  - Requester rejects (`PUT /cases/{id}/resolution/reject`) transitioning case to `REOPENED` with feedback reasons.
+  - Automatic notification dispatch to requester and assigned operator.
+- [x] **Problem Management & Root-Cause Tracking (US-28)**:
+  - `Problem` & `ProblemIncidentRelation` entities, `ProblemService`, `ProblemController`.
+  - Formal problem records with `suspectedRootCause`, `confirmedRootCause`, `correctiveAction`, `preventiveAction`, and status (`OPEN`, `INVESTIGATING`, `RESOLVED`).
+  - Incident linking (`POST /api/v1/problems/{id}/incidents`).
+  - `RecurringProblemDetectionService` (`GET /api/v1/problems/recurring-patterns`): Automatic clustering of recurring incidents sharing category or common error keywords.
+- [x] **AI Investigation Copilot (US-29)**:
+  - `AiCopilotService`: Aggregates case context, full investigation notes, tasks, and message timeline to answer case-scoped operator questions.
+  - `POST /api/v1/cases/{id}/ai/copilot`: Returns structured copilot response with cited sources and confidence.
+- [x] **AI-Generated Professional Communication (US-30)**:
+  - `POST /api/v1/cases/{id}/ai/draft-communication`: Generates tailored communication drafts for requesters or internal teams based on operator intent and specific instructions.
+- [x] **Automated Tests**: 87/87 unit, service, resolution lifecycle, problem relation, copilot, and controller integration tests passing cleanly.
 
 ---
 
-## 🎯 Immediate Next Milestone (Phase 6 Backend)
-1. **Flyway Migration `V7__create_resolution_problems_tables.sql`**: `resolutions`, `problems`, `problem_incidents`, `ai_copilot_interactions`.
-2. **Resolution Workflow & Requester Confirmation (US-26 & US-27)**: Submission of resolution findings and requester confirmation/rejection (reopening).
-3. **Problem Management & Recurring Problem Detection (US-28)**: Root-cause tracking, recurring pattern identification, and incident linking.
-4. **AI Investigation Copilot & Draft Communication (US-29 & US-30)**: Case-scoped context Q&A assistance and AI-drafted customer communications.
+## 🎯 Immediate Next Milestone (Phase 7 Backend)
+1. **Flyway Migration `V8__create_audit_analytics_tables.sql`**: Application-level append-only `audit_logs` and query indexing.
+2. **Organization-Wide Analytics & Metrics (US-31 & US-32)**: Manager dashboard analytics (case volume, resolution velocity, SLA adherence %, team workload distributions, category trends).
+3. **Immutable Audit Trail & Timeline (US-33)**: Append-only audit logger capturing all case modifications, actor IDs, IP addresses, and state changes.
+4. **Advanced Full-Text & Multi-Filter Search (US-34)**: Multi-attribute case search with keyword, category, status, priority, and date range filters.
+5. **Security Hardening & Rate Limiting (US-35)**: Bucket4j rate limiting, header security, and final backend audit.
+

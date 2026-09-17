@@ -59,8 +59,10 @@ public class CaseLifecycleService {
 
         ALLOWED_TRANSITIONS.put(CaseStatus.RESOLUTION_PROPOSED, EnumSet.of(
                 CaseStatus.CLOSED,
+                CaseStatus.REOPENED,
                 CaseStatus.INVESTIGATING
         ));
+
 
         ALLOWED_TRANSITIONS.put(CaseStatus.CLOSED, EnumSet.of(
                 CaseStatus.REOPENED

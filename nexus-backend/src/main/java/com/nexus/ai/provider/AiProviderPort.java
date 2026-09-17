@@ -41,4 +41,27 @@ public interface AiProviderPort {
      * @throws AiUnavailableException if the provider is down
      */
     String detectMissingInformation(CaseContext context);
+
+    /**
+     * Ask the AI Operator Copilot a case-scoped question (US-29).
+     *
+     * @param context the full case context
+     * @param question the operator's question
+     * @return copilot answer response
+     * @throws AiUnavailableException if the provider is down
+     */
+    String askCopilot(CaseContext context, String question);
+
+    /**
+     * Draft professional communication based on case context and operator intent (US-30).
+     *
+     * @param context the case context
+     * @param audience intended audience (e.g. REQUESTER, INTERNAL, VENDOR)
+     * @param intent message intent (e.g. STATUS_UPDATE, REQUEST_INFO, RESOLUTION_EXPLANATION)
+     * @param instructions additional operator guidelines/instructions
+     * @return drafted message body
+     * @throws AiUnavailableException if the provider is down
+     */
+    String draftCommunication(CaseContext context, String audience, String intent, String instructions);
 }
+

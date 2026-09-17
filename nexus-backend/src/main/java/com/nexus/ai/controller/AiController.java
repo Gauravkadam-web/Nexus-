@@ -34,20 +34,24 @@ public class AiController {
     private final AiAnalysisRepository aiAnalysisRepository;
     private final CaseDuplicateDetectionService duplicateDetectionService;
     private final SmartAssignmentService smartAssignmentService;
+    private final AiCopilotService aiCopilotService;
 
     public AiController(AiAnalysisService aiAnalysisService,
                         AiSuggestionService aiSuggestionService,
                         AiSummaryService aiSummaryService,
                         AiAnalysisRepository aiAnalysisRepository,
                         CaseDuplicateDetectionService duplicateDetectionService,
-                        SmartAssignmentService smartAssignmentService) {
+                        SmartAssignmentService smartAssignmentService,
+                        AiCopilotService aiCopilotService) {
         this.aiAnalysisService = aiAnalysisService;
         this.aiSuggestionService = aiSuggestionService;
         this.aiSummaryService = aiSummaryService;
         this.aiAnalysisRepository = aiAnalysisRepository;
         this.duplicateDetectionService = duplicateDetectionService;
         this.smartAssignmentService = smartAssignmentService;
+        this.aiCopilotService = aiCopilotService;
     }
+
 
     // ----------------------------------------------------------------
     // POST /cases/{id}/ai/analyze — Trigger / re-trigger AI analysis (US-11)
@@ -212,4 +216,45 @@ public class AiController {
         AssignmentRecommendationResponse recommendation = smartAssignmentService.recommendAssignment(caseId);
         return ResponseEntity.ok(ApiResponse.success(recommendation));
     }
+
+    // ----------------------------------------------------------------
+    // POST /cases/{id}/ai/copilot — Ask AI Operator Copilot (US-29)
+    // ----------------------------------------------------------------
+
+    /**
+     * Interacts with the AI Operator Copilot to query case-scoped insights (US-29).
+     *
+     * @param caseId  the UUID of the case
+     * @param request the question payload
+     * @return 200 OK with the Copilot's answer and cited sources
+     */
+    @PostMapping("/cases/{id}/ai/copilot")
+    @PreAuthorize("hasAnyRole('OPERATOR','TEAM_LEAD','MANAGER','ADMIN')")
+    public ResponseEntity<ApiResponse<AiCopilotResponse>> askCopilot(
+            @PathVariable("id") UUID caseId,
+            @Valid @RequestBody AiCopilotRequest request) {
+        AiCopilotResponse response = aiCopilotService.askCopilot(caseId, request);
+        return ResponseEntity.ok(ApiResponse.success(response));
+    }
+
+    // ----------------------------------------------------------------
+    // POST /cases/{id}/ai/draft-communication — Draft Professional Communication (US-30)
+    // ----------------------------------------------------------------
+
+    /**
+     * Uses AI to draft context-aware messages for requesters or internal stakeholders (US-30).
+     *
+     * @param caseId  the UUID of the case
+     * @param request audience, intent, and operator guidelines
+     * @return 200 OK with the generated communication draft
+     */
+    @PostMapping("/cases/{id}/ai/draft-communication")
+    @PreAuthorize("hasAnyRole('OPERATOR','TEAM_LEAD','MANAGER','ADMIN')")
+    public ResponseEntity<ApiResponse<AiDraftCommunicationResponse>> draftCommunication(
+            @PathVariable("id") UUID caseId,
+            @Valid @RequestBody AiDraftCommunicationRequest request) {
+        AiDraftCommunicationResponse response = aiCopilotService.draftCommunication(caseId, request);
+        return ResponseEntity.ok(ApiResponse.success(response));
+    }
 }
+
