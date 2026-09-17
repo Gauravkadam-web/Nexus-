@@ -11,6 +11,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.time.Instant;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -35,4 +36,22 @@ public interface CaseRepository extends JpaRepository<Case, UUID>, JpaSpecificat
     long countByAssignedTeamIdAndStatusIn(UUID assignedTeamId, java.util.Collection<CaseStatus> statuses);
 
     long countByAssignedTeamIdAndStatus(UUID assignedTeamId, CaseStatus status);
+
+    List<Case> findByCategoryOrganizationId(UUID orgId);
+
+    long countByCategoryOrganizationId(UUID orgId);
+
+    long countByCategoryOrganizationIdAndStatus(UUID orgId, CaseStatus status);
+
+    long countByCategoryOrganizationIdAndStatusIn(UUID orgId, java.util.Collection<CaseStatus> statuses);
+
+    long countByCategoryOrganizationIdAndCreatedAtBetween(UUID orgId, Instant start, Instant end);
+
+    long countByCategoryOrganizationIdAndResolvedAtBetween(UUID orgId, Instant start, Instant end);
+
+    @Query("SELECT c.category.id, c.category.name, COUNT(c) FROM Case c WHERE c.category.organization.id = :orgId GROUP BY c.category.id, c.category.name")
+    List<Object[]> countCasesGroupedByCategory(@Param("orgId") UUID orgId);
+
+    @Query("SELECT c.assignedTeam.id, c.assignedTeam.name, COUNT(c) FROM Case c WHERE c.category.organization.id = :orgId AND c.assignedTeam IS NOT NULL GROUP BY c.assignedTeam.id, c.assignedTeam.name")
+    List<Object[]> countCasesGroupedByTeam(@Param("orgId") UUID orgId);
 }

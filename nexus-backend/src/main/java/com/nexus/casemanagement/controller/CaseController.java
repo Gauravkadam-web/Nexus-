@@ -133,6 +133,27 @@ public class CaseController {
     }
 
     /**
+     * US-34: Advanced multi-criteria Case Search.
+     */
+    @GetMapping("/search")
+    @PreAuthorize("hasAnyRole('OPERATOR', 'TEAM_LEAD', 'MANAGER', 'ADMIN')")
+    public ResponseEntity<ApiResponse<Page<CaseSummaryResponse>>> searchCases(
+            @ModelAttribute CaseSearchRequest request,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "20") int size,
+            @RequestParam(defaultValue = "createdAt") String sortBy,
+            @RequestParam(defaultValue = "desc") String sortDir,
+            @AuthenticationPrincipal UserPrincipal principal) {
+
+        Sort sort = sortDir.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
+        Pageable pageable = PageRequest.of(page, size, sort);
+
+        UUID orgId = principal != null ? principal.getOrganizationId() : null;
+        Page<CaseSummaryResponse> cases = caseService.searchCases(request, orgId, pageable);
+        return ResponseEntity.ok(ApiResponse.success(cases, "Cases matching search criteria retrieved successfully"));
+    }
+
+    /**
      * US-4: Operator updates case status with lifecycle transition validation.
      */
     @PatchMapping("/{id}/status")

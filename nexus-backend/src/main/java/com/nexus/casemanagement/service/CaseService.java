@@ -152,6 +152,16 @@ public class CaseService {
                 .map(CaseSummaryResponse::fromEntity);
     }
 
+    /**
+     * US-34: Advanced multi-criteria search and filter.
+     */
+    @Transactional(readOnly = true)
+    public Page<CaseSummaryResponse> searchCases(CaseSearchRequest request, UUID organizationId, Pageable pageable) {
+        Specification<Case> spec = CaseSpecification.withFilters(request, organizationId);
+        return caseRepository.findAll(spec, pageable)
+                .map(CaseSummaryResponse::fromEntity);
+    }
+
     @Transactional
     public CaseDetailResponse updateCaseStatus(UUID caseId, UpdateCaseStatusRequest request, UserPrincipal principal) {
         Case c = caseRepository.findById(caseId)
