@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import '../../features/admin/presentation/admin_sla_policy_builder_screen.dart';
+import '../../features/admin/presentation/admin_user_management_screen.dart';
 import '../../features/analytics/presentation/executive_analytics_kpi_screen.dart';
+import '../../features/audit/presentation/audit_trail_timeline_screen.dart';
 import '../../features/auth/presentation/auth_state_provider.dart';
 import '../../features/auth/presentation/login_screen.dart';
 import '../../features/auth/presentation/register_screen.dart';
@@ -13,6 +16,7 @@ import '../../features/dashboard/operator/operator_triage_feed_screen.dart';
 import '../../features/dashboard/requester/requester_dashboard_screen.dart';
 import '../../features/dashboard/team_lead/team_lead_command_screen.dart';
 import '../../features/investigation/presentation/operator_investigation_studio_screen.dart';
+import '../../features/notification/presentation/global_notification_center_screen.dart';
 import '../../features/problem/presentation/problem_management_hub_screen.dart';
 import '../../features/resolution/presentation/resolution_proposal_closure_screen.dart';
 import '../../features/sla/presentation/sla_risk_radar_console_screen.dart';
@@ -128,8 +132,26 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: '/problems',
         builder: (context, state) => const ProblemManagementHubScreen(),
       ),
+
+      // Batch 8: Admin User Management (SCR-15) & SLA Policy Builder (SCR-16)
+      GoRoute(
+        path: '/admin/users',
+        builder: (context, state) => const AdminUserManagementScreen(),
+      ),
+      GoRoute(
+        path: '/admin/policies',
+        builder: (context, state) => const AdminSlaPolicyBuilderScreen(),
+      ),
+
+      // Batch 9: Audit Trail Timeline (SCR-17) & Global Notification Center (SCR-18)
+      GoRoute(
+        path: '/admin/audit-logs',
+        builder: (context, state) => const AuditTrailTimelineScreen(),
+      ),
+      GoRoute(
+        path: '/notifications',
+        builder: (context, state) => const GlobalNotificationCenterScreen(),
+      ),
     ],
   );
 });
-
-

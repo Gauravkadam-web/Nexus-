@@ -52,62 +52,78 @@
 
   <!-- Screen Selector Tabs -->
   <nav class="max-w-7xl mx-auto w-full my-6 flex flex-wrap items-center justify-between gap-4">
-    <!-- Active Screens (Batch 1 + Batch 2) -->
+    <!-- Active Screens (Batch 1 to 9 - All 18 Screens) -->
     <div class="flex items-center gap-2 flex-wrap">
-      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider mr-1">Batch 1:</span>
-      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_01_auth_login_portal_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_01_auth_login_portal_refined/code.html', 'SCR-01: Auth & Login Portal', this)" class="screen-btn px-3 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider mr-1">B1:</span>
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_01_auth_login_portal_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_01_auth_login_portal_refined/code.html', 'SCR-01: Auth & Login Portal', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
         🔐 SCR-01 (Login)
       </button>
-      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_02_user_registration_onboarding_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_02_user_registration_onboarding/code.html', 'SCR-02: User Registration & Onboarding', this)" class="screen-btn px-3 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_02_user_registration_onboarding_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_02_user_registration_onboarding/code.html', 'SCR-02: User Registration & Onboarding', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
         📝 SCR-02 (Register)
       </button>
 
-      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider ml-3 mr-1">Batch 2:</span>
-      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_03_requester_self_service_dashboard_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_03_requester_self_service_dashboard/code.html', 'SCR-03: Requester Self-Service Dashboard', this)" class="screen-btn px-3 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
-        📊 SCR-03 (Requester Dashboard)
+      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider ml-2 mr-1">B2:</span>
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_03_requester_self_service_dashboard_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_03_requester_self_service_dashboard/code.html', 'SCR-03: Requester Self-Service Dashboard', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+        📊 SCR-03 (Requester)
       </button>
-      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_04_smart_case_creation_wizard_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_04_smart_case_creation_wizard/code.html', 'SCR-04: Smart Case Creation Wizard', this)" class="screen-btn px-3 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
-        ✨ SCR-04 (Case Creation Wizard)
-      </button>
-
-      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider ml-3 mr-1">Batch 3:</span>
-      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_05_requester_case_tracker_confirmation_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_05_requester_case_tracker_confirmation/code.html', 'SCR-05: Requester Case Tracker & Confirmation', this)" class="screen-btn px-3 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
-        🔍 SCR-05 (Case Tracker)
-      </button>
-      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_06_operator_triage_workstation_feed_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_06_operator_triage_workstation_feed/code.html', 'SCR-06: Operator Triage Workstation Feed', this)" class="screen-btn px-3 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
-        ⚡ SCR-06 (Operator Triage Feed)
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_04_smart_case_creation_wizard_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_04_smart_case_creation_wizard/code.html', 'SCR-04: Smart Case Creation Wizard', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+        ✨ SCR-04 (Wizard)
       </button>
 
-      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider ml-3 mr-1">Batch 4:</span>
-      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_07_operator_investigation_studio_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_07_operator_investigation_studio/code.html', 'SCR-07: Operator Investigation Studio', this)" class="screen-btn px-3 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
-        🔬 SCR-07 (Investigation Studio)
+      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider ml-2 mr-1">B3:</span>
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_05_requester_case_tracker_confirmation_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_05_requester_case_tracker_confirmation/code.html', 'SCR-05: Requester Case Tracker & Confirmation', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+        🔍 SCR-05 (Tracker)
       </button>
-      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_08_case_collaboration_evidence_hub_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_08_case_collaboration_evidence_hub/code.html', 'SCR-08: Case Collaboration & Evidence Hub', this)" class="screen-btn px-3 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
-        📂 SCR-08 (Evidence Hub)
-      </button>
-
-      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider ml-3 mr-1">Batch 5:</span>
-      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_09_ai_copilot_smart_drafter_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_09_ai_copilot_smart_drafter_refined/code.html', 'SCR-09: AI Copilot Smart Drafter', this)" class="screen-btn px-3 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
-        🤖 SCR-09 (Copilot Drafter)
-      </button>
-      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_10_resolution_proposal_closure_modal_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_10_resolution_proposal_closure_modal_refined/code.html', 'SCR-10: Resolution Proposal & Closure Modal', this)" class="screen-btn px-3 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
-        🤝 SCR-10 (Resolution & Closure)
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_06_operator_triage_workstation_feed_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_06_operator_triage_workstation_feed/code.html', 'SCR-06: Operator Triage Workstation Feed', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+        ⚡ SCR-06 (Triage)
       </button>
 
-      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider ml-3 mr-1">Batch 6:</span>
-      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_11_team_lead_command_workload_monitor_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_11_team_lead_command_workload_monitor/code.html', 'SCR-11: Team Lead Command & Workload Monitor', this)" class="screen-btn px-3 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
-        👑 SCR-11 (Lead Command)
+      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider ml-2 mr-1">B4:</span>
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_07_operator_investigation_studio_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_07_operator_3_column_investigation_studio/code.html', 'SCR-07: Operator Investigation Studio', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+        🔬 SCR-07 (Studio)
       </button>
-      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_12_sla_risk_radar_escalation_console_mobile_1/code.html', '/docs/stitch_screen_ui_generator_web/scr_12_sla_risk_radar_escalation_console/code.html', 'SCR-12: SLA Risk Radar & Escalation Console', this)" class="screen-btn px-3 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
-        🎯 SCR-12 (SLA Risk Radar)
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_08_case_collaboration_evidence_hub_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_08_case_collaboration_evidence_hub_refined/code.html', 'SCR-08: Case Collaboration & Evidence Hub', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+        📂 SCR-08 (Evidence)
       </button>
 
-      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider ml-3 mr-1">Batch 7:</span>
-      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_13_problem_management_root_cause_hub_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_13_problem_management_root_cause_hub_refined/code.html', 'SCR-13: Problem Management & Root Cause Hub', this)" class="screen-btn px-4 py-2 rounded-lg bg-[#6366F1] text-white text-sm font-semibold shadow hover:bg-[#4F46E5] transition-all">
-        🧠 SCR-13 (Problem Management Hub)
+      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider ml-2 mr-1">B5:</span>
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_09_ai_copilot_smart_drafter_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_09_ai_copilot_smart_drafter_refined/code.html', 'SCR-09: AI Copilot Smart Drafter', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+        🤖 SCR-09 (Copilot)
       </button>
-      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_14_executive_analytics_kpi_command_center_mobile_1/code.html', '/docs/stitch_screen_ui_generator_web/scr_14_executive_analytics_kpi_command_center/code.html', 'SCR-14: Executive Analytics & KPI Command Center', this)" class="screen-btn px-4 py-2 rounded-lg glass-card text-[#F0F6FC] text-sm font-medium hover:border-[#6366F1] transition-all">
-        📊 SCR-14 (Executive Analytics KPI)
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_10_resolution_proposal_closure_modal_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_10_resolution_proposal_closure_modal_refined/code.html', 'SCR-10: Resolution Proposal & Closure Modal', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+        🤝 SCR-10 (Resolution)
+      </button>
+
+      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider ml-2 mr-1">B6:</span>
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_11_team_lead_command_workload_monitor_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_11_team_lead_command_workload_monitor/code.html', 'SCR-11: Team Lead Command & Workload Monitor', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+        👑 SCR-11 (Command)
+      </button>
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_12_sla_risk_radar_escalation_console_mobile_1/code.html', '/docs/stitch_screen_ui_generator_web/scr_12_sla_risk_radar_escalation_console/code.html', 'SCR-12: SLA Risk Radar & Escalation Console', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+        🎯 SCR-12 (SLA Radar)
+      </button>
+
+      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider ml-2 mr-1">B7:</span>
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_13_problem_management_root_cause_hub_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_13_problem_management_root_cause_hub_refined/code.html', 'SCR-13: Problem Management & Root Cause Hub', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+        🧠 SCR-13 (Problem Hub)
+      </button>
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_14_executive_analytics_kpi_command_center_mobile_1/code.html', '/docs/stitch_screen_ui_generator_web/scr_14_executive_analytics_kpi_command_center/code.html', 'SCR-14: Executive Analytics & KPI Command Center', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+        📊 SCR-14 (Analytics)
+      </button>
+
+      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider ml-2 mr-1">B8:</span>
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_15_admin_configuration_user_management_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_15_admin_configuration_user_management_refined/code.html', 'SCR-15: Admin Configuration & User Management', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+        👥 SCR-15 (User Admin)
+      </button>
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_16_admin_sla_policy_escalation_rule_builder_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_16_admin_sla_policy_escalation_rule_builder_refined/code.html', 'SCR-16: Admin SLA Policy & Escalation Rule Builder', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+        ⚙️ SCR-16 (SLA Builder)
+      </button>
+
+      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider ml-2 mr-1">B9:</span>
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_17_audit_trail_immutable_timeline_explorer_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_17_audit_trail_immutable_timeline_explorer_refined/code.html', 'SCR-17: Audit Trail & Immutable Timeline Explorer', this)" class="screen-btn px-2.5 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
+        📜 SCR-17 (Audit Trail)
+      </button>
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_18_global_notification_center_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_18_global_notification_center_refined/code.html', 'SCR-18: Global Notification Center', this)" class="screen-btn px-2.5 py-1.5 rounded-lg bg-[#6366F1] text-white text-xs font-semibold shadow hover:bg-[#4F46E5] transition-all">
+        🔔 SCR-18 (Notifications)
       </button>
     </div>
 
@@ -128,8 +144,8 @@
   <main class="flex-1 max-w-7xl mx-auto w-full flex flex-col items-center justify-center">
     <!-- Active Screen Header -->
     <div class="w-full flex items-center justify-between mb-3 text-xs text-[#8B949E]">
-      <span id="active-title" class="text-sm font-semibold text-white">SCR-13: Problem Management & Root Cause Hub</span>
-      <a id="direct-link" href="/docs/stitch_screen_ui_generator_mob/scr_13_problem_management_root_cause_hub_mobile/code.html" target="_blank" class="text-[#818CF8] hover:underline flex items-center gap-1">
+      <span id="active-title" class="text-sm font-semibold text-white">SCR-18: Global Notification Center</span>
+      <a id="direct-link" href="/docs/stitch_screen_ui_generator_mob/scr_18_global_notification_center_mobile/code.html" target="_blank" class="text-[#818CF8] hover:underline flex items-center gap-1">
         <span>Open full screen ↗</span>
       </a>
     </div>
@@ -140,13 +156,13 @@
       <div id="notch" class="w-36 h-4 bg-[#30363D] rounded-full mb-2 shrink-0"></div>
       
       <!-- Live Iframe -->
-      <iframe id="preview-frame" src="/docs/stitch_screen_ui_generator_mob/scr_13_problem_management_root_cause_hub_mobile/code.html" class="w-full h-full rounded-[24px] bg-white border-0"></iframe>
+      <iframe id="preview-frame" src="/docs/stitch_screen_ui_generator_mob/scr_18_global_notification_center_mobile/code.html" class="w-full h-full rounded-[24px] bg-white border-0"></iframe>
     </div>
   </main>
 
   <script>
-    let currentMobileUrl = '/docs/stitch_screen_ui_generator_mob/scr_13_problem_management_root_cause_hub_mobile/code.html';
-    let currentDesktopUrl = '/docs/stitch_screen_ui_generator_web/scr_13_problem_management_root_cause_hub_refined/code.html';
+    let currentMobileUrl = '/docs/stitch_screen_ui_generator_mob/scr_18_global_notification_center_mobile/code.html';
+    let currentDesktopUrl = '/docs/stitch_screen_ui_generator_web/scr_18_global_notification_center_refined/code.html';
     let currentMode = 'mobile';
 
     function loadScreen(mobUrl, webUrl, title, element) {
