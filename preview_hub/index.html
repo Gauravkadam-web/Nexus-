@@ -55,7 +55,7 @@
     <!-- Active Screens (Batch 1 + Batch 2) -->
     <div class="flex items-center gap-2 flex-wrap">
       <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider mr-1">Batch 1:</span>
-      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_01_auth_login_portal_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_01_auth_login_portal_refined/code.html', 'SCR-01: Auth & Login Portal', this)" class="screen-btn px-4 py-2 rounded-lg bg-[#6366F1] text-white text-sm font-semibold shadow hover:bg-[#4F46E5] transition-all">
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_01_auth_login_portal_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_01_auth_login_portal_refined/code.html', 'SCR-01: Auth & Login Portal', this)" class="screen-btn px-3 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
         🔐 SCR-01 (Login)
       </button>
       <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_02_user_registration_onboarding_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_02_user_registration_onboarding/code.html', 'SCR-02: User Registration & Onboarding', this)" class="screen-btn px-3 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
@@ -68,6 +68,14 @@
       </button>
       <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_04_smart_case_creation_wizard_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_04_smart_case_creation_wizard/code.html', 'SCR-04: Smart Case Creation Wizard', this)" class="screen-btn px-3 py-1.5 rounded-lg glass-card text-[#F0F6FC] text-xs font-medium hover:border-[#6366F1] transition-all">
         ✨ SCR-04 (Case Creation Wizard)
+      </button>
+
+      <span class="text-xs font-semibold text-[#818CF8] uppercase tracking-wider ml-3 mr-1">Batch 3:</span>
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_05_requester_case_tracker_confirmation_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_05_requester_case_tracker_confirmation/code.html', 'SCR-05: Requester Case Tracker & Confirmation', this)" class="screen-btn px-4 py-2 rounded-lg bg-[#6366F1] text-white text-sm font-semibold shadow hover:bg-[#4F46E5] transition-all">
+        🔍 SCR-05 (Case Tracker)
+      </button>
+      <button onclick="loadScreen('/docs/stitch_screen_ui_generator_mob/scr_06_operator_triage_workstation_feed_mobile/code.html', '/docs/stitch_screen_ui_generator_web/scr_06_operator_triage_workstation_feed/code.html', 'SCR-06: Operator Triage Workstation Feed', this)" class="screen-btn px-4 py-2 rounded-lg glass-card text-[#F0F6FC] text-sm font-medium hover:border-[#6366F1] transition-all">
+        ⚡ SCR-06 (Operator Triage Feed)
       </button>
     </div>
 
@@ -88,8 +96,8 @@
   <main class="flex-1 max-w-7xl mx-auto w-full flex flex-col items-center justify-center">
     <!-- Active Screen Header -->
     <div class="w-full flex items-center justify-between mb-3 text-xs text-[#8B949E]">
-      <span id="active-title" class="text-sm font-semibold text-white">SCR-01: Auth & Login Portal</span>
-      <a id="direct-link" href="/docs/stitch_screen_ui_generator_mob/scr_01_auth_login_portal_mobile/code.html" target="_blank" class="text-[#818CF8] hover:underline flex items-center gap-1">
+      <span id="active-title" class="text-sm font-semibold text-white">SCR-05: Requester Case Tracker & Confirmation</span>
+      <a id="direct-link" href="/docs/stitch_screen_ui_generator_mob/scr_05_requester_case_tracker_confirmation_mobile/code.html" target="_blank" class="text-[#818CF8] hover:underline flex items-center gap-1">
         <span>Open full screen ↗</span>
       </a>
     </div>
@@ -100,13 +108,13 @@
       <div id="notch" class="w-36 h-4 bg-[#30363D] rounded-full mb-2 shrink-0"></div>
       
       <!-- Live Iframe -->
-      <iframe id="preview-frame" src="/docs/stitch_screen_ui_generator_mob/scr_01_auth_login_portal_mobile/code.html" class="w-full h-full rounded-[24px] bg-white border-0"></iframe>
+      <iframe id="preview-frame" src="/docs/stitch_screen_ui_generator_mob/scr_05_requester_case_tracker_confirmation_mobile/code.html" class="w-full h-full rounded-[24px] bg-white border-0"></iframe>
     </div>
   </main>
 
   <script>
-    let currentMobileUrl = '/docs/stitch_screen_ui_generator_mob/scr_01_auth_login_portal_mobile/code.html';
-    let currentDesktopUrl = '/docs/stitch_screen_ui_generator_web/scr_01_auth_login_portal_refined/code.html';
+    let currentMobileUrl = '/docs/stitch_screen_ui_generator_mob/scr_05_requester_case_tracker_confirmation_mobile/code.html';
+    let currentDesktopUrl = '/docs/stitch_screen_ui_generator_web/scr_05_requester_case_tracker_confirmation/code.html';
     let currentMode = 'mobile';
 
     function loadScreen(mobUrl, webUrl, title, element) {
