@@ -302,53 +302,24 @@
 <input checked="" class="w-4 h-4 rounded border-slate-300 text-[#6366f1] focus:ring-[#6366f1] focus:ring-offset-0 transition cursor-pointer" name="remember" type="checkbox"/>
 <span class="font-body-sm text-slate-500">Remember me for 30 days</span>
 </label>
-<a class="font-title-sm text-xs font-medium text-[#6366f1] hover:text-indigo-700 transition-colors" href="#forgot">
-                Forgot password?
+<a class="font-title-sm text-xs font-medium text-[#6366f1] hover:text-indigo-700 transition-colors" href="../scr_02_user_registration_onboarding/code.html">
+                New User? Create Account
               </a>
 </div>
 <!-- Solid Periwinkle CTA (#6366f1) 'Sign In' -->
 <div class="pt-2">
-<button class="w-full h-12 bg-[#6366f1] hover:bg-[#4f46e5] text-white rounded-lg font-title-sm text-sm font-semibold shadow-md shadow-indigo-200 transition-all duration-150 flex items-center justify-center gap-2 active:scale-[0.99]" type="submit">
-<span>Sign In</span>
+<button class="w-full h-12 bg-[#6366f1] hover:bg-[#4f46e5] text-white rounded-lg font-title-sm text-sm font-semibold shadow-md shadow-indigo-200 transition-all duration-150 flex items-center justify-center gap-2 active:scale-[0.99] cursor-pointer" onclick="window.location.href='../scr_03_requester_self_service_dashboard/code.html'" type="button">
+<span>Sign In to Workspace</span>
 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
 </button>
 </div>
+<div class="text-center pt-1">
+<span class="text-xs text-slate-500">Don't have an enterprise identity? </span>
+<a class="text-xs text-[#6366f1] font-semibold hover:underline" href="../scr_02_user_registration_onboarding/code.html">Register Onboarding</a>
+</div>
 </form>
-<!-- Unclustered Quick Persona Simulation (Airy gap, subtle pastel styling) -->
-<div class="pt-4 border-t border-slate-100 space-y-3">
-<div class="flex items-center justify-between">
-<span class="font-label-sm text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Quick Persona Preview</span>
-<span class="font-code-sm text-[11px] text-slate-400 font-mono tracking-tight">DEV MODE</span>
-</div>
-<!-- 5 Soft Pastel Pills with Airy Spacing -->
-<div class="flex flex-wrap items-center gap-2" id="personaPills">
-<button class="persona-btn flex-1 min-w-[62px] py-1.5 px-2.5 rounded-full text-center font-label-sm text-xs bg-slate-100/90 text-slate-600 hover:bg-slate-200/80 transition-all truncate border border-transparent" data-email="alyssa.chen@partner.internal" data-role="Requester" type="button">
-                Requester
-              </button>
-<button class="persona-btn flex-1 min-w-[62px] py-1.5 px-2.5 rounded-full text-center font-label-sm text-xs bg-indigo-50 text-[#6366f1] ring-1 ring-[#6366f1]/50 font-semibold transition-all truncate" data-email="elena.vance@nexuscorp.internal" data-role="Operator" type="button">
-                Operator
-              </button>
-<button class="persona-btn flex-1 min-w-[62px] py-1.5 px-2.5 rounded-full text-center font-label-sm text-xs bg-sky-50 text-sky-700 hover:bg-sky-100 transition-all truncate border border-sky-100" data-email="marcus.brody@nexuscorp.internal" data-role="Team Lead" type="button">
-                Lead
-              </button>
-<button class="persona-btn flex-1 min-w-[62px] py-1.5 px-2.5 rounded-full text-center font-label-sm text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 transition-all truncate border border-amber-100" data-email="sarah.connor@nexuscorp.internal" data-role="Manager" type="button">
-                Manager
-              </button>
-<button class="persona-btn flex-1 min-w-[62px] py-1.5 px-2.5 rounded-full text-center font-label-sm text-xs bg-purple-50 text-purple-700 hover:bg-purple-100 transition-all truncate border border-purple-100" data-email="root.admin@nexuscorp.internal" data-role="Admin" type="button">
-                Admin
-              </button>
-</div>
-<!-- Active Persona Hint -->
-<div class="bg-slate-50/80 rounded-lg py-2 px-3 border border-slate-100 flex items-center justify-between text-slate-600">
-<div class="flex items-center gap-2 truncate">
-<span class="w-1.5 h-1.5 rounded-full bg-[#6366f1] shrink-0"></span>
-<span class="font-code-sm text-xs font-mono truncate" id="activeRoleLabel">Operator: elena.vance@nexuscorp.internal</span>
-</div>
-<span class="font-code-sm text-[11px] text-teal-600 font-mono shrink-0 pl-2">Tier-3 Access</span>
-</div>
-</div>
 <!-- Cryptographic Compliance Micro Badge -->
-<div class="flex items-center justify-center gap-1.5 text-slate-400 pt-1">
+<div class="flex items-center justify-center gap-1.5 text-slate-400 pt-2 border-t border-slate-100">
 <span class="material-symbols-outlined text-[15px]">lock_clock</span>
 <span class="font-code-sm text-[11px] font-mono tracking-tight">256-bit AES End-to-End • FIPS 140-3 Validated</span>
 </div>

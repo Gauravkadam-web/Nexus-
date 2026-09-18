@@ -7,7 +7,6 @@ import '../../../core/theme/app_typography.dart';
 import '../../../core/widgets/nexus_button.dart';
 import '../../../core/widgets/responsive_layout.dart';
 import 'auth_state_provider.dart';
-import 'widgets/demo_role_switcher.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -381,23 +380,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 ),
               ],
             ),
-          ),
-          const SizedBox(height: AppSpacing.xl),
-
-          // Quick Demo Persona Switcher
-          const Divider(),
-          const SizedBox(height: AppSpacing.md),
-          Center(
-            child: Text(
-              'QUICK DEMO SIMULATION',
-              style: AppTypography.labelSmall(isDark),
-            ),
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          DemoRoleSwitcher(
-            onRoleSelected: (role) {
-              context.go('/dashboard');
-            },
           ),
         ],
       ),

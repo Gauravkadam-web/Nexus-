@@ -349,7 +349,7 @@
             Previous Step
           </button>
 <div class="flex items-center gap-3 w-full sm:w-auto justify-end">
-<a class="w-full sm:w-auto px-5 h-12 rounded-lg font-title-sm text-title-sm text-text-secondary-light hover:text-on-surface hover:bg-surface-elevated-light transition flex items-center justify-center" href="/auth/login">
+<a class="w-full sm:w-auto px-5 h-12 rounded-lg font-title-sm text-title-sm text-text-secondary-light hover:text-on-surface hover:bg-surface-elevated-light transition flex items-center justify-center" href="../scr_01_auth_login_portal_refined/code.html">
               Back to Sign In
             </a>
 <button class="w-full sm:w-auto px-6 h-12 rounded-lg bg-status-assigned-text hover:bg-primary text-on-primary font-title-sm text-title-sm font-semibold shadow-sm transition-all duration-200 flex items-center justify-center gap-2" id="nextOrSubmitBtn" onclick="nextOrSubmit()" type="button">
@@ -359,20 +359,6 @@
 </div>
 </div>
 </form>
-</div>
-<!-- Developer Demonstration Helper Bar -->
-<div class="max-w-4xl mx-auto rounded-xl p-4 bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-4">
-<div class="flex items-center gap-2.5">
-<span class="material-symbols-outlined text-secondary text-[20px]">terminal</span>
-<div class="text-left">
-<p class="font-title-sm text-title-sm text-on-surface font-semibold">Evaluation Environment</p>
-<p class="font-label-sm text-label-sm text-text-muted-light">Quick-populate with verified SOC-2 Operator credentials</p>
-</div>
-</div>
-<button class="w-full sm:w-auto px-4 py-2 rounded-lg bg-surface-container-lowest hover:bg-secondary-fixed text-on-surface font-label-md text-label-md font-medium shadow-sm transition flex items-center justify-center gap-2" onclick="prefillDemoCredentials()" type="button">
-<span class="material-symbols-outlined text-secondary text-[16px]">bolt</span>
-        Pre-fill with Demo Operator credentials
-      </button>
 </div>
 <!-- SSO SAML Modal Overlay (Hidden by Default) -->
 <div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden" id="ssoModal">
@@ -497,9 +483,8 @@
       btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">sync</span> Provisioning Workspace...';
       btn.disabled = true;
       setTimeout(() => {
-        alert('Nexus Enterprise Account provisioned successfully! Redirecting to live incident triage console...');
-        window.location.hash = '#/dashboard/triage';
-      }, 1200);
+        window.location.href = '../scr_03_requester_self_service_dashboard/code.html';
+      }, 500);
     }
   }
 

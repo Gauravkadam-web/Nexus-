@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html class="h-full" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <title>Create Support Case — Nexus AI</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface": "#131b2e",
+            "status-investigating-text": "#D97706",
+            "canvas-light": "#FAFAFC",
+            "status-breached-text": "#E11D48",
+            "outline": "#767586",
+            "surface-container-high": "#e2e7ff",
+            "on-secondary-container": "#fffbff",
+            "primary-fixed-dim": "#c0c1ff",
+            "status-resolution-bg": "#F3E8FF",
+            "tertiary-container": "#007bb9",
+            "text-muted-light": "#94A3B8",
+            "error-container": "#ffdad6",
+            "status-assigned-text": "#6366F1",
+            "secondary": "#831ada",
+            "status-closed-text": "#0D9488",
+            "on-error": "#ffffff",
+            "surface-elevated-light": "#F8FAFC",
+            "inverse-primary": "#c0c1ff",
+            "primary-fixed": "#e1e0ff",
+            "surface-light": "#FFFFFF",
+            "surface": "#faf8ff",
+            "status-resolution-text": "#7C3AED",
+            "ai-border": "#C084FC33",
+            "ai-bg-light": "#FAF5FF",
+            "status-breached-bg": "#FFE4E6",
+            "surface-tint": "#494bd6",
+            "on-secondary-fixed": "#2c0051",
+            "secondary-container": "#9e41f5",
+            "on-primary-fixed": "#07006c",
+            "inverse-on-surface": "#eef0ff",
+            "surface-variant": "#dae2fd",
+            "status-reported-text": "#64748B",
+            "status-waiting-bg": "#FFEDD5",
+            "status-waiting-text": "#EA580C",
+            "secondary-fixed-dim": "#ddb8ff",
+            "background": "#faf8ff",
+            "text-secondary-light": "#475569",
+            "primary-container": "#6063ee",
+            "surface-container-lowest": "#ffffff",
+            "on-surface-variant": "#464554",
+            "inverse-surface": "#283044",
+            "tertiary-fixed-dim": "#93ccff",
+            "status-reported-bg": "#F1F5F9",
+            "tertiary-fixed": "#cce5ff",
+            "surface-container-highest": "#dae2fd",
+            "tertiary": "#006194",
+            "status-assigned-bg": "#EEF2FF",
+            "primary": "#4648d4",
+            "on-primary-container": "#fffbff",
+            "on-background": "#131b2e",
+            "on-tertiary-fixed-variant": "#004b73",
+            "status-investigating-bg": "#FEF3C7",
+            "surface-container": "#eaedff",
+            "status-triage-text": "#0284C7",
+            "surface-dim": "#d2d9f4",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#f0dbff",
+            "border-light": "#E2E8F0",
+            "on-tertiary": "#ffffff",
+            "on-primary": "#ffffff",
+            "status-triage-bg": "#E0F2FE",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "outline-variant": "#c7c4d7",
+            "text-primary-light": "#0F172A",
+            "surface-bright": "#faf8ff",
+            "on-secondary-fixed-variant": "#6800b4",
+            "surface-container-low": "#f2f3ff",
+            "on-tertiary-fixed": "#001d31",
+            "on-error-container": "#93000a",
+            "on-tertiary-container": "#fdfcff",
+            "status-closed-bg": "#CCFBF1",
+            "on-secondary": "#ffffff"
+          },
+          fontFamily: {
+            "headline-lg": ["Outfit", "sans-serif"],
+            "headline-md": ["Outfit", "sans-serif"],
+            "headline-sm": ["Outfit", "sans-serif"],
+            "title-md": ["Inter", "sans-serif"],
+            "title-sm": ["Inter", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"],
+            "code-sm": ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #FAFAFC;
+      }
+      body {
+        overscroll-behavior-y: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .pb-safe { padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+    }
+    ::-webkit-scrollbar { display: none; }
+    * { -webkit-tap-highlight-color: transparent; }
+  </style>
+</head>
+<body class="bg-canvas-light text-text-primary-light font-body-md min-h-full flex flex-col selection:bg-primary-fixed">
+
+  <!-- Mobile Fixed Header -->
+  <header class="fixed top-0 w-full z-50 pt-safe bg-surface-light/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(15,23,42,0.04)] border-b border-border-light">
+    <div class="h-14 px-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <a href="../scr_03_requester_self_service_dashboard_mobile/code.html" class="w-9 h-9 rounded-lg flex items-center justify-center text-text-secondary-light hover:bg-surface-elevated-light active:scale-95 transition-all">
+          <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+        </a>
+        <div class="flex flex-col leading-tight">
+          <h1 class="font-headline-sm text-base font-semibold text-text-primary-light">New Support Case</h1>
+          <span class="font-label-sm text-[11px] text-text-muted-light">Acme Corp Portal • SRE</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-status-closed-bg text-status-closed-text text-[11px] font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-status-closed-text"></span>
+          Autosaved
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Scrollable Content Area -->
+  <main class="flex-1 flex flex-col w-full max-w-lg mx-auto pt-16 pb-32 px-4 gap-4">
+
+    <!-- AI Copilot Proactive Banner -->
+    <section class="bg-ai-bg-light rounded-xl p-3.5 shadow-sm border border-ai-border flex items-start gap-3">
+      <div class="w-8 h-8 rounded-lg bg-status-resolution-bg text-status-resolution-text flex items-center justify-center shrink-0">
+        <span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+      </div>
+      <div class="flex flex-col gap-0.5 flex-1 min-w-0">
+        <div class="flex items-center justify-between">
+          <span class="font-title-sm text-xs text-secondary font-semibold uppercase tracking-wider">AI Proactive Copilot</span>
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-status-resolution-bg text-status-resolution-text font-bold">96% Accuracy</span>
+        </div>
+        <p class="font-body-sm text-xs text-text-secondary-light">
+          Real-time incident classification, SLA breach forecasting & triage suggestions active.
+        </p>
+      </div>
+    </section>
+
+    <!-- Case Creation Form -->
+    <form class="flex flex-col gap-4" id="caseForm" onsubmit="event.preventDefault();">
+      
+      <!-- 1. Case Subject / Incident Title -->
+      <div class="bg-surface-light rounded-xl p-4 shadow-sm flex flex-col gap-2">
+        <div class="flex justify-between items-center">
+          <label class="font-title-sm text-xs font-semibold text-text-primary-light flex items-center gap-1" for="case-title">
+            Case Subject / Incident Summary <span class="text-status-breached-text">*</span>
+          </label>
+          <span class="font-code-sm text-[11px] text-text-muted-light" id="char-counter">56/100</span>
+        </div>
+        <div class="relative">
+          <input class="w-full h-11 px-3.5 rounded-lg bg-surface-elevated-light text-text-primary-light font-body-md text-sm focus:bg-surface-light focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-text-muted-light" id="case-title" placeholder="Briefly describe the operational issue..." type="text" value="Kubernetes ingress controller intermittent 502 Bad Gateway"/>
+        </div>
+        <div class="flex items-center gap-1.5 pt-0.5">
+          <span class="px-2 py-0.5 rounded bg-status-resolution-bg text-status-resolution-text font-label-sm text-[11px] font-medium flex items-center gap-1">
+            <span class="material-symbols-outlined text-[13px]">bolt</span> SRE Auto-Classified
+          </span>
+        </div>
+      </div>
+
+      <!-- 2. Classification Category Pills -->
+      <div class="bg-surface-light rounded-xl p-4 shadow-sm flex flex-col gap-2.5">
+        <label class="font-title-sm text-xs font-semibold text-text-primary-light">
+          Classification Category <span class="text-status-breached-text">*</span>
+        </label>
+        <div class="flex flex-wrap gap-1.5" id="category-selector">
+          <button class="category-chip px-3 py-1.5 rounded-full text-xs font-semibold bg-status-assigned-bg text-status-assigned-text shadow-xs flex items-center gap-1 transition-all" type="button">
+            <span class="w-1.5 h-1.5 rounded-full bg-status-assigned-text"></span>
+            IT Infrastructure
+          </button>
+          <button class="category-chip px-3 py-1.5 rounded-full text-xs bg-surface-elevated-light text-text-secondary-light hover:bg-surface-container transition-all" type="button">
+            Security & Auth
+          </button>
+          <button class="category-chip px-3 py-1.5 rounded-full text-xs bg-surface-elevated-light text-text-secondary-light hover:bg-surface-container transition-all" type="button">
+            Software Tools
+          </button>
+          <button class="category-chip px-3 py-1.5 rounded-full text-xs bg-surface-elevated-light text-text-secondary-light hover:bg-surface-container transition-all" type="button">
+            Facilities
+          </button>
+          <button class="category-chip px-3 py-1.5 rounded-full text-xs bg-surface-elevated-light text-text-secondary-light hover:bg-surface-container transition-all" type="button">
+            Network Engineering
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. Operational Severity -->
+      <div class="bg-surface-light rounded-xl p-4 shadow-sm flex flex-col gap-2.5">
+        <div class="flex items-center justify-between">
+          <label class="font-title-sm text-xs font-semibold text-text-primary-light">
+            Operational Severity <span class="text-status-breached-text">*</span>
+          </label>
+          <span class="font-label-sm text-[10px] text-status-breached-text font-semibold uppercase">P1 Triggers Immediate Triage</span>
+        </div>
+        <div class="grid grid-cols-4 gap-1.5 p-1 rounded-xl bg-surface-elevated-light">
+          <button class="severity-pill flex flex-col items-center justify-center py-2 px-1 rounded-lg bg-transparent text-text-secondary-light hover:bg-surface-light text-center transition-all" type="button">
+            <span class="font-title-sm text-xs font-medium">Low</span>
+            <span class="text-[10px] text-text-muted-light truncate">No impact</span>
+          </button>
+          <button class="severity-pill flex flex-col items-center justify-center py-2 px-1 rounded-lg bg-transparent text-text-secondary-light hover:bg-surface-light text-center transition-all" type="button">
+            <span class="font-title-sm text-xs font-medium">Medium</span>
+            <span class="text-[10px] text-text-muted-light truncate">Minor</span>
+          </button>
+          <button class="severity-pill flex flex-col items-center justify-center py-2 px-1 rounded-lg bg-transparent text-text-secondary-light hover:bg-surface-light text-center transition-all" type="button">
+            <span class="font-title-sm text-xs font-medium">High</span>
+            <span class="text-[10px] text-text-muted-light truncate">Degraded</span>
+          </button>
+          <button class="severity-pill flex flex-col items-center justify-center py-2 px-1 rounded-lg bg-status-breached-bg text-status-breached-text font-semibold shadow-xs text-center transition-all" type="button">
+            <div class="flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-status-breached-text animate-ping"></span>
+              <span class="font-title-sm text-xs">P1</span>
+            </div>
+            <span class="text-[10px] opacity-90 truncate">Critical</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 4. Incident Breakdown & Description -->
+      <div class="bg-surface-light rounded-xl p-4 shadow-sm flex flex-col gap-2">
+        <div class="flex items-center justify-between">
+          <label class="font-title-sm text-xs font-semibold text-text-primary-light">Incident Breakdown & Observations</label>
+          <button class="text-secondary flex items-center gap-1 text-xs font-semibold hover:underline" type="button">
+            <span class="material-symbols-outlined text-[15px]">auto_fix_high</span>
+            Format AI
+          </button>
+        </div>
+        <div class="rounded-lg bg-surface-elevated-light overflow-hidden flex flex-col">
+          <textarea class="w-full p-3 bg-transparent text-text-primary-light font-body-md text-xs focus:outline-none placeholder:text-text-muted-light resize-y" rows="5">Upstream ingress gateway started throwing intermittent 502s following canary deployment to prod-cluster-04 at 14:12 UTC. Client sessions report dropped connections during checkout.
+
+Envoy error: `upstream connect error or disconnect/reset before headers.`</textarea>
+          <!-- Detected Entities -->
+          <div class="px-3 py-1.5 bg-surface-container-low flex flex-wrap items-center gap-1.5 border-t border-border-light">
+            <span class="text-[10px] text-text-muted-light uppercase font-semibold">Entities:</span>
+            <span class="px-1.5 py-0.5 rounded bg-status-investigating-bg text-status-investigating-text text-[10px] font-mono">envoy:v1.28</span>
+            <span class="px-1.5 py-0.5 rounded bg-status-assigned-bg text-status-assigned-text text-[10px] font-mono">nginx-ingress</span>
+            <span class="px-1.5 py-0.5 rounded bg-status-resolution-bg text-status-resolution-text text-[10px] font-mono">502_reset</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Scope & Cluster Selection -->
+      <div class="bg-surface-light rounded-xl p-4 shadow-sm grid grid-cols-2 gap-3">
+        <div class="flex flex-col gap-1">
+          <label class="font-label-md text-xs font-medium text-text-secondary-light">Impacted Cluster</label>
+          <select class="w-full h-10 px-2.5 rounded-lg bg-surface-elevated-light text-text-primary-light text-xs focus:outline-none focus:ring-1 focus:ring-primary">
+            <option selected="">us-east-prod-04</option>
+            <option>us-west-prod-02</option>
+            <option>eu-central-prod-01</option>
+          </select>
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="font-label-md text-xs font-medium text-text-secondary-light">Impact Scope</label>
+          <select class="w-full h-10 px-2.5 rounded-lg bg-surface-elevated-light text-text-primary-light text-xs focus:outline-none focus:ring-1 focus:ring-primary">
+            <option selected="">Production Blocked</option>
+            <option>Degraded Performance</option>
+            <option>Non-Production</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 6. Diagnostic Telemetry Attachments -->
+      <div class="bg-surface-light rounded-xl p-4 shadow-sm flex flex-col gap-2.5">
+        <div class="flex items-center justify-between">
+          <label class="font-title-sm text-xs font-semibold text-text-primary-light">Diagnostic Telemetry & Logs</label>
+          <span class="text-[11px] text-text-muted-light">Max 50MB</span>
+        </div>
+        <div class="rounded-xl p-4 bg-surface-elevated-light flex flex-col items-center justify-center text-center border-2 border-dashed border-border-light cursor-pointer active:scale-[0.99] transition-all">
+          <span class="material-symbols-outlined text-[24px] text-primary mb-1">cloud_upload</span>
+          <p class="font-title-sm text-xs text-text-primary-light font-medium">Tap to attach log dumps or screenshots</p>
+          <p class="text-[11px] text-text-muted-light mt-0.5">Supports .log, .json, .har, .png</p>
+        </div>
+        <!-- Uploaded items -->
+        <div class="flex flex-col gap-1.5 pt-1">
+          <div class="flex items-center justify-between p-2 rounded-lg bg-surface-elevated-light">
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="material-symbols-outlined text-primary text-[18px]">description</span>
+              <div class="flex flex-col min-w-0">
+                <span class="font-code-sm text-xs font-medium truncate">ingress-envoy-err.log</span>
+                <span class="text-[10px] text-text-muted-light">2.4 MB • Telemetry Parsed</span>
+              </div>
+            </div>
+            <button class="text-text-muted-light hover:text-status-breached-text p-1" type="button">
+              <span class="material-symbols-outlined text-[16px]">close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Smart AI Guidance & Live SLA Target Box -->
+      <div class="bg-surface-light rounded-xl p-4 shadow-sm flex flex-col gap-3">
+        <div class="flex items-center justify-between">
+          <span class="font-title-sm text-xs font-semibold text-text-primary-light flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-primary text-[16px]">timelapse</span>
+            Predicted SLA Commitments
+          </span>
+          <span class="text-[11px] font-bold text-status-breached-text uppercase px-2 py-0.5 rounded bg-status-breached-bg">P1 SLA</span>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div class="p-2.5 rounded-lg bg-surface-elevated-light flex flex-col">
+            <span class="text-[10px] text-text-muted-light uppercase font-semibold">Response Target</span>
+            <span class="font-headline-sm text-base text-status-breached-text font-bold mt-0.5">&lt; 15 mins</span>
+          </div>
+          <div class="p-2.5 rounded-lg bg-surface-elevated-light flex flex-col">
+            <span class="text-[10px] text-text-muted-light uppercase font-semibold">Resolution Target</span>
+            <span class="font-headline-sm text-base text-primary font-bold mt-0.5">&lt; 4 hours</span>
+          </div>
+        </div>
+        <!-- Suggested Assignee -->
+        <div class="p-2.5 rounded-lg bg-surface-elevated-light flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <img class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsBk9m5tO_AJNLwVBqmWMfVUuwLhdokX9g5JIG8r7WOKLcDaYkIReiK3kgLgd0_i5ZWlxksV6dPePRRJ-m7W6g7_Kafap79ty0WLl4POgKayIHtu51Rfov7SauJTXqb2faiOrbBEDgZzGTs8r6qqs6Zod4x-y6n-UtHWzOuISBeHJSiJZjlyocUTQrj4pNQ2cGBhQkDbUbD9bZ3MvqS4qd88W5Tdy7NB15o3t75csd_eiM1rZ1Ka4V"/>
+            <div class="flex flex-col">
+              <span class="font-title-sm text-xs font-semibold text-text-primary-light">David Ross</span>
+              <span class="text-[10px] text-text-muted-light">DevOps & SRE Tier-2</span>
+            </div>
+          </div>
+          <span class="px-2 py-0.5 rounded-full bg-status-closed-bg text-status-closed-text text-[10px] font-bold">Auto-Assign</span>
+        </div>
+      </div>
+
+    </form>
+  </main>
+
+  <!-- Fixed Mobile Bottom Submission Bar -->
+  <footer class="fixed bottom-0 left-0 right-0 z-50 pb-safe bg-surface-light/95 backdrop-blur-xl border-t border-border-light shadow-[0_-2px_12px_rgba(15,23,42,0.06)] px-4 pt-3">
+    <div class="max-w-lg mx-auto flex items-center gap-2.5">
+      <button onclick="window.location.href='../scr_03_requester_self_service_dashboard_mobile/code.html'" class="px-3.5 h-11 rounded-xl bg-surface-elevated-light text-text-secondary-light font-title-sm text-xs font-medium hover:bg-surface-container active:scale-95 transition-all">
+        Discard
+      </button>
+      <button onclick="window.location.href='../scr_05_requester_case_tracker_confirmation_mobile/code.html'" class="flex-1 h-11 rounded-xl bg-primary hover:bg-primary-container text-white font-title-sm text-sm font-semibold flex items-center justify-center gap-2 shadow-md active:scale-[0.99] transition-all">
+        <span>Submit Incident Case</span>
+        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    // Character Counter
+    const titleInput = document.getElementById('case-title');
+    const charCounter = document.getElementById('char-counter');
+    if (titleInput && charCounter) {
+      titleInput.addEventListener('input', (e) => {
+        charCounter.textContent = `${e.target.value.length}/100`;
+      });
+    }
+
+    // Category Selector toggle
+    const categoryChips = document.querySelectorAll('.category-chip');
+    categoryChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        categoryChips.forEach(c => {
+          c.className = 'category-chip px-3 py-1.5 rounded-full text-xs bg-surface-elevated-light text-text-secondary-light hover:bg-surface-container transition-all';
+        });
+        chip.className = 'category-chip px-3 py-1.5 rounded-full text-xs font-semibold bg-status-assigned-bg text-status-assigned-text shadow-xs flex items-center gap-1 transition-all';
+      });
+    });
+
+    // Severity Pill toggle
+    const severityPills = document.querySelectorAll('.severity-pill');
+    severityPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        severityPills.forEach(p => {
+          p.className = 'severity-pill flex flex-col items-center justify-center py-2 px-1 rounded-lg bg-transparent text-text-secondary-light hover:bg-surface-light text-center transition-all';
+        });
+        pill.className = 'severity-pill flex flex-col items-center justify-center py-2 px-1 rounded-lg bg-status-breached-bg text-status-breached-text font-semibold shadow-xs text-center transition-all';
+      });
+    });
+  </script>
+</body>
+</html>
