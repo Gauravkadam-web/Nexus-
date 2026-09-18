@@ -6,8 +6,10 @@ import '../../features/auth/presentation/login_screen.dart';
 import '../../features/auth/presentation/register_screen.dart';
 import '../../features/case/presentation/case_create_wizard_screen.dart';
 import '../../features/case/presentation/case_tracker_screen.dart';
+import '../../features/collaboration/presentation/case_collaboration_evidence_hub_screen.dart';
 import '../../features/dashboard/operator/operator_triage_feed_screen.dart';
 import '../../features/dashboard/requester/requester_dashboard_screen.dart';
+import '../../features/investigation/presentation/operator_investigation_studio_screen.dart';
 
 final appRouterProvider = Provider<GoRouter>((ref) {
   final authState = ref.watch(authStateProvider);
@@ -41,7 +43,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => const OperatorTriageFeedScreen(),
       ),
 
-      // Case routes (SCR-04 & SCR-05)
+      // Case & Tracking routes (SCR-04 & SCR-05)
       GoRoute(
         path: '/cases/new',
         builder: (context, state) => const CaseCreateWizardScreen(),
@@ -51,6 +53,22 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         builder: (context, state) {
           final caseId = state.pathParameters['id'] ?? 'NEX-2026-0042';
           return CaseTrackerScreen(caseId: caseId);
+        },
+      ),
+
+      // Investigation & Collaboration routes (SCR-07 & SCR-08)
+      GoRoute(
+        path: '/cases/:id/investigation',
+        builder: (context, state) {
+          final caseId = state.pathParameters['id'] ?? 'NEX-2026-0104';
+          return OperatorInvestigationStudioScreen(caseId: caseId);
+        },
+      ),
+      GoRoute(
+        path: '/cases/:id/collaboration',
+        builder: (context, state) {
+          final caseId = state.pathParameters['id'] ?? 'NEX-2026-0104';
+          return CaseCollaborationEvidenceHubScreen(caseId: caseId);
         },
       ),
     ],
