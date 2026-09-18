@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import '../../features/analytics/presentation/executive_analytics_kpi_screen.dart';
 import '../../features/auth/presentation/auth_state_provider.dart';
 import '../../features/auth/presentation/login_screen.dart';
 import '../../features/auth/presentation/register_screen.dart';
@@ -12,6 +13,7 @@ import '../../features/dashboard/operator/operator_triage_feed_screen.dart';
 import '../../features/dashboard/requester/requester_dashboard_screen.dart';
 import '../../features/dashboard/team_lead/team_lead_command_screen.dart';
 import '../../features/investigation/presentation/operator_investigation_studio_screen.dart';
+import '../../features/problem/presentation/problem_management_hub_screen.dart';
 import '../../features/resolution/presentation/resolution_proposal_closure_screen.dart';
 import '../../features/sla/presentation/sla_risk_radar_console_screen.dart';
 
@@ -31,7 +33,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => const RegisterScreen(),
       ),
 
-      // Dashboard routes (SCR-03 & SCR-06 & SCR-11)
+      // Dashboard routes (SCR-03 & SCR-06 & SCR-11 & SCR-14)
       GoRoute(
         path: '/dashboard',
         builder: (context, state) {
@@ -53,6 +55,14 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/dashboard/team-lead',
         builder: (context, state) => const TeamLeadCommandScreen(),
+      ),
+      GoRoute(
+        path: '/dashboard/manager',
+        builder: (context, state) => const ExecutiveAnalyticsKpiScreen(),
+      ),
+      GoRoute(
+        path: '/analytics',
+        builder: (context, state) => const ExecutiveAnalyticsKpiScreen(),
       ),
 
       // Case & Tracking routes (SCR-04 & SCR-05)
@@ -112,7 +122,14 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: '/sla/risk-console',
         builder: (context, state) => const SlaRiskRadarConsoleScreen(),
       ),
+
+      // Problem Management & Root Cause Hub (SCR-13)
+      GoRoute(
+        path: '/problems',
+        builder: (context, state) => const ProblemManagementHubScreen(),
+      ),
     ],
   );
 });
+
 
