@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexus - Case Collaboration &amp; Evidence Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface-variant": "#464554",
+            "surface-bright": "#faf8ff",
+            "primary-container": "#6063ee",
+            "on-background": "#131b2e",
+            "inverse-primary": "#c0c1ff",
+            "on-error-container": "#93000a",
+            "background": "#faf8ff",
+            "on-tertiary-fixed": "#001d31",
+            "surface-elevated-light": "#F8FAFC",
+            "status-reported-bg": "#F1F5F9",
+            "surface-dim": "#d2d9f4",
+            "status-waiting-bg": "#FFEDD5",
+            "error": "#ba1a1a",
+            "status-closed-text": "#0D9488",
+            "inverse-surface": "#283044",
+            "primary": "#4648d4",
+            "on-tertiary": "#ffffff",
+            "status-closed-bg": "#CCFBF1",
+            "text-secondary-light": "#475569",
+            "on-primary-fixed": "#07006c",
+            "surface-container-low": "#f8faff",
+            "surface-container-high": "#e2e7ff",
+            "tertiary-fixed-dim": "#93ccff",
+            "status-reported-text": "#64748B",
+            "error-container": "#ffdad6",
+            "surface-variant": "#dae2fd",
+            "on-secondary-container": "#fffbff",
+            "secondary": "#831ada",
+            "status-assigned-bg": "#EEF2FF",
+            "status-resolution-text": "#7C3AED",
+            "on-primary": "#ffffff",
+            "secondary-fixed-dim": "#ddb8ff",
+            "status-investigating-bg": "#FEF3C7",
+            "on-surface": "#131b2e",
+            "tertiary-container": "#007bb9",
+            "primary-fixed-dim": "#c0c1ff",
+            "primary-fixed": "#e1e0ff",
+            "status-resolution-bg": "#F3E8FF",
+            "surface-container-lowest": "#ffffff",
+            "outline-variant": "#c7c4d7",
+            "status-triage-text": "#0284C7",
+            "on-secondary-fixed": "#2c0051",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "status-waiting-text": "#EA580C",
+            "canvas-light": "#F8FAFC",
+            "surface": "#faf8ff",
+            "on-secondary-fixed-variant": "#6800b4",
+            "border-light": "#E2E8F0",
+            "on-secondary": "#ffffff",
+            "tertiary": "#006194",
+            "surface-tint": "#494bd6",
+            "ai-bg-light": "#FAF5FF",
+            "on-tertiary-fixed-variant": "#004b73",
+            "tertiary-fixed": "#cce5ff",
+            "secondary-container": "#9e41f5",
+            "status-breached-text": "#E11D48",
+            "outline": "#767586",
+            "surface-light": "#FFFFFF",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container-highest": "#dae2fd",
+            "status-assigned-text": "#6366F1",
+            "on-error": "#ffffff",
+            "on-tertiary-container": "#fdfcff",
+            "status-breached-bg": "#FFE4E6",
+            "secondary-fixed": "#f0dbff",
+            "ai-border": "#C084FC33",
+            "surface-container": "#f1f4fb",
+            "text-muted-light": "#94A3B8",
+            "status-triage-bg": "#E0F2FE",
+            "on-primary-container": "#fffbff",
+            "text-primary-light": "#0F172A",
+            "status-investigating-text": "#D97706"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            headline: ["Outfit", "sans-serif"],
+            code: ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+<!-- ================= SIDEBAR ================= -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-white border-r border-slate-200 z-50 flex flex-col justify-between select-none">
+<div class="flex flex-col flex-1 overflow-y-auto">
+<!-- Logo header -->
+<div class="h-16 flex items-center px-6 border-b border-slate-100 gap-3">
+<div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-headline font-bold text-lg shadow-sm">
+          N
+        </div>
+<span class="font-headline text-lg text-slate-900 font-bold tracking-tight">Nexus</span>
+</div>
+<!-- Navigation groups -->
+<nav class="px-3 py-5 space-y-6">
+<!-- Workspace -->
+<div class="space-y-1">
+<p class="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400">Workspace</p>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-500">inbox</span>
+<span>Cases / Workstation</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-500">search_insights</span>
+<span>Investigation Studio</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-semibold bg-indigo-50 text-indigo-700 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-indigo-600">folder_shared</span>
+<span>Collaboration &amp; Evidence</span>
+</a>
+</div>
+<!-- Operations -->
+<div class="space-y-1">
+<p class="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400">Operations</p>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-500">radar</span>
+<span>SLA Risk Radar</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-500">pest_control</span>
+<span>Problem Hub</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-500">groups</span>
+<span>Team Command</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-500">bar_chart</span>
+<span>Executive Analytics</span>
+</a>
+</div>
+<!-- Requester Portal -->
+<div class="space-y-1">
+<p class="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400">Requester Portal</p>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-500">support_agent</span>
+<span>Self-Service</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-500">add_circle</span>
+<span>Create Case</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-500">timeline</span>
+<span>Case Tracker</span>
+</a>
+</div>
+<!-- Admin -->
+<div class="space-y-1">
+<p class="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400">Admin</p>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-500">manage_accounts</span>
+<span>User Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-500">rule</span>
+<span>SLA Policies</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-500">history</span>
+<span>Audit Trail</span>
+</a>
+</div>
+</nav>
+</div>
+<!-- Bottom Engine Pill -->
+<div class="p-4 border-t border-slate-200">
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-slate-50 border border-slate-200">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-600 text-base">verified_user</span>
+<span class="font-code text-xs text-slate-600">Core Engine 3.2</span>
+</div>
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+</div>
+</div>
+</aside>
+<!-- ================= MAIN CONTENT WRAPPER ================= -->
+<div class="pl-64 flex flex-col min-h-screen">
+<!-- Top Fixed Header -->
+<header class="fixed top-0 left-64 right-0 h-16 bg-white/95 backdrop-blur-md border-b border-slate-200 z-40 px-8 flex items-center justify-between">
+<div class="flex items-center flex-1 max-w-md">
+<button class="w-full flex items-center justify-between px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-lg text-slate-400 hover:border-slate-300 hover:bg-slate-100/70 transition-colors text-sm">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-lg text-slate-400">search</span>
+<span>Search cases, assets, requesters...</span>
+</div>
+<span class="font-code text-xs bg-white text-slate-500 px-2 py-0.5 rounded border border-slate-200 shadow-2xs">Ctrl + K</span>
+</button>
+</div>
+<div class="flex items-center gap-4 ml-auto">
+<button aria-label="Theme Switcher" class="p-2 text-slate-500 hover:text-slate-700 hover:bg-slate-50 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-xl">light_mode</span>
+</button>
+<button aria-label="Notifications" class="relative p-2 text-slate-500 hover:text-slate-700 hover:bg-slate-50 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-indigo-600 rounded-full ring-2 ring-white"></span>
+</button>
+<div class="h-5 w-px bg-slate-200 mx-1"></div>
+<div class="flex items-center gap-3 pl-1">
+<img alt="Elena Vance" class="w-8 h-8 rounded-full object-cover ring-1 ring-slate-200" src="https://lh3.googleusercontent.com/aida/AEtjO1XqVXG34mQqXmLKAYxAV0GC0632Yxg4LocLN54tAYvOpNWpCur7Ck60jTpTpaInj1Tol47zrjFsVpD4d_c7jysM0pSq9ftUvtIxulIr9Tym-c7lefVYububWdN8jc4vRZiNKhxQ0VeRaV1YbYL0Sujdmy4nStEqbGXgr93KjVdJSjBygKqfOCbFGm7cwXUrdXaBJtoDUlOiaM8p4FTwtwMPcGUJVXdEmMnAW8Ataeff7O9s3Ca9nqBvS7Q"/>
+<div class="hidden md:flex flex-col text-left">
+<span class="text-xs font-semibold text-slate-800 leading-none">Elena Vance</span>
+<span class="text-[11px] text-slate-400 mt-1">Case Director</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Body -->
+<main class="w-full pt-16 bg-[#F8FAFC] flex-1">
+<!-- Top Context Banner (Generous 32px padding) -->
+<div class="bg-white border-b border-slate-200 px-8 py-6">
+<!-- Breadcrumb & Top Actions -->
+<div class="flex flex-wrap items-center justify-between gap-4 pb-4">
+<!-- Breadcrumb and Pastel Status Chips -->
+<div class="flex items-center flex-wrap gap-2.5">
+<div class="flex items-center gap-1.5 font-code text-xs text-slate-400">
+<span>CASES</span>
+<span>/</span>
+<span class="text-indigo-600 font-semibold">NEX-2026-0104</span>
+<span>/</span>
+<span class="text-slate-600">COLLABORATION_HUB</span>
+</div>
+<div class="h-3.5 w-px bg-slate-200 mx-1"></div>
+<!-- Soft pastel badges -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+              INVESTIGATING
+            </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-rose-50 text-rose-700 border border-rose-200/60">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
+              P1 CRITICAL
+            </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-code bg-slate-100 text-slate-600 border border-slate-200">
+<span class="material-symbols-outlined text-xs">schedule</span>
+              SLA BREACH IN 42M
+            </span>
+</div>
+<!-- Utility Action Buttons -->
+<div class="flex items-center gap-2.5">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 text-xs font-medium transition-colors shadow-2xs">
+<span class="material-symbols-outlined text-sm">sync_alt</span>
+              Sync Jira / Slack
+            </button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 text-xs font-medium transition-colors shadow-2xs">
+<span class="material-symbols-outlined text-sm">file_download</span>
+              Export Dossier
+            </button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold transition-colors shadow-xs">
+<span class="material-symbols-outlined text-sm">person_add</span>
+              Add Collaborator
+            </button>
+</div>
+</div>
+<!-- Case Title & Cross-functional War-Room Strip -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pt-2">
+<div class="space-y-1.5">
+<div class="flex items-center gap-3">
+<h1 class="font-headline text-2xl font-bold text-slate-900 tracking-tight">
+                Authentication Gateway Timeout during SSO Federation
+              </h1>
+<span class="px-2 py-0.5 rounded bg-purple-50 text-purple-700 font-code text-xs font-medium border border-purple-200/60">
+                us-east-prod-04
+              </span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-500">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-slate-400">fingerprint</span>
+<span>Impacted Service: <strong class="font-medium text-slate-700">Core Envoy Mesh / SAML Handshake Broker</strong></span>
+</div>
+<span class="text-slate-300">•</span>
+<div>
+<span>Reported by: <strong class="font-medium text-slate-700">Global SOC Monitor</strong> (Automated Alarm)</span>
+</div>
+</div>
+</div>
+<!-- Active Participants Pill -->
+<div class="flex items-center gap-3.5 bg-slate-50 border border-slate-200/80 px-3.5 py-2 rounded-xl shrink-0">
+<div class="flex -space-x-2 overflow-hidden">
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" data-alt="Elena Vance Lead Incident Investigator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKBLiOfIHreGwwZY1mZMtt43Rj5aolIc8bjHRySw1LrOeLmTd9jcSqpiPn6NChpV7biCDWmem6HdmJM31gZe3X85N8CmmjI8FgyRQp_89fFVuKZxU2Cgr2nBNCm1aeprmnbqI3xRE28fU9I2mIHrrKW5l7ODo2Szp-6NH_vyWo1sBdoML0Gob_lUR9puJnpa9ixo7oFGZksXTcSDL6Es0j9iKGUgJYy8IUory6gPTbiqaFMl1yzvBc"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" data-alt="David Ross SRE" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcCe03W1VmXb2Vra2S25hS9lQWkB_VDB6wIThrbfiyYWsZ7TFM_-49N8RqBhdeBkyjaYdAFKmWVTub1nUrRL_GJBOxp57fBf9zlrEh7lbdt30Mv-sMpkDZGBJ6vo5rRSHvtgB37fEwaRDQ03YDQIPmAHSWj5wIK-DfDA3dMLDQev4yPKMarFy6ism6vzIvLNah7aQ7tyHt5K0gCDS8zGAcSZ_TWKh1v7wHBCGEaUeSphTQPYJmq5Ta"/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" data-alt="Sarah Jenkins DevOps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5cOyg-XZjiqkXuHXttluCrLDElG-hvRS-H-jwqim1vJMVW3620ZO-cq4dDBmxXu46iv5VLhlxAYCfBA8pkMOpWwZBQB1YNJk3a1qXTwUIbUUWkBbZOKuDefZrqNJ1QDiCfJSqOkJnTQUqw5Flg1niB2IbaFbLfan5HrMpCkp9Pu_xvexTx5Xvn1uFmz-tLY2lpVRvE5vfPHjyUFrbCKuvTYPcftcOpWGIo-ApSZbjRm2l249H-RXm"/>
+<div class="h-8 w-8 rounded-full bg-slate-200 text-slate-600 font-semibold text-xs flex items-center justify-center ring-2 ring-white">
+                +2
+              </div>
+</div>
+<div class="text-left">
+<p class="text-xs font-semibold text-slate-800 leading-tight">Elena Vance (Lead)</p>
+<p class="text-[11px] text-slate-400 mt-0.5 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 3 online in war room
+              </p>
+</div>
+<button class="p-1.5 ml-1 text-slate-400 hover:text-slate-700 hover:bg-white rounded-lg transition-colors border border-transparent hover:border-slate-200" title="Join Voice Huddle">
+<span class="material-symbols-outlined text-lg">headset_mic</span>
+</button>
+</div>
+</div>
+<!-- Navigation Sub-Tabs -->
+<div class="flex items-center gap-8 mt-6 -mb-6 border-t border-slate-100 pt-1">
+<button class="py-3 font-medium text-sm text-slate-500 hover:text-slate-900 flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-lg">overview</span>
+<span>Overview</span>
+</button>
+<button class="py-3 font-semibold text-sm text-indigo-600 flex items-center gap-2 border-b-2 border-indigo-600 relative">
+<span class="material-symbols-outlined text-lg">forum</span>
+<span>Tasks &amp; Collaboration</span>
+<span class="px-1.5 py-0.5 rounded-full font-code text-[11px] bg-indigo-50 text-indigo-700 font-semibold">4</span>
+</button>
+<button class="py-3 font-medium text-sm text-slate-500 hover:text-slate-900 flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-lg">timeline</span>
+<span>Audit &amp; Timeline</span>
+</button>
+<button class="py-3 font-medium text-sm text-slate-500 hover:text-slate-900 flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-lg">schema</span>
+<span>Topology &amp; Logs</span>
+</button>
+</div>
+</div>
+<!-- ================= 3-COLUMN WORKBENCH (32px gutter, 20px gaps, 24px card padding) ================= -->
+<div class="p-8">
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-5 items-start">
+<!-- ======================================================================= -->
+<!-- LEFT COLUMN: 30% (XL: 4 cols) - Automated & Manual Diagnostics Checklist -->
+<!-- ======================================================================= -->
+<section class="xl:col-span-4 flex flex-col gap-5">
+<!-- Tasks Checklist Card -->
+<div class="bg-white rounded-xl border border-slate-200 p-6 shadow-2xs flex flex-col gap-6">
+<!-- Card Header & Progress -->
+<div>
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600">
+<span class="material-symbols-outlined text-lg">fact_check</span>
+</div>
+<h2 class="font-headline font-semibold text-base text-slate-900">Investigation Tasks</h2>
+</div>
+<span class="font-code text-xs px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 font-medium border border-indigo-100">
+                    4 / 7 DONE
+                  </span>
+</div>
+<!-- Progress bar -->
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden mt-1">
+<div class="bg-indigo-600 h-full rounded-full" style="width: 57%;"></div>
+</div>
+</div>
+<!-- Automated Diagnostics Section -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-semibold tracking-wider uppercase text-slate-400 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-purple-600">smart_toy</span>
+                    Automated Diagnostics
+                  </span>
+<span class="font-code text-[11px] text-slate-400">Nexus Engine 3.2</span>
+</div>
+<!-- Auto Task 1 -->
+<div class="p-3.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-start gap-3 transition-colors hover:bg-slate-100/60">
+<span class="material-symbols-outlined text-teal-600 text-lg select-none mt-0.5">check_circle</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<p class="text-xs font-semibold text-slate-700 line-through opacity-70">Check Redis cache headroom</p>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-200/60 shrink-0">DONE</span>
+</div>
+<p class="font-code text-[11px] text-slate-500 mt-1 leading-relaxed">Memory: 98.4% allocation detected</p>
+</div>
+</div>
+<!-- Auto Task 2 -->
+<div class="p-3.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-start gap-3 transition-colors hover:bg-slate-100/60">
+<span class="material-symbols-outlined text-amber-500 text-lg animate-spin mt-0.5">progress_activity</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<p class="text-xs font-semibold text-slate-900">Test Envoy ingress proxy latency</p>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200/60 shrink-0">RUNNING</span>
+</div>
+<p class="font-code text-[11px] text-slate-500 mt-1 leading-relaxed">Sampling 12,000 pings across node pools</p>
+</div>
+</div>
+<!-- Auto Task 3 -->
+<div class="p-3.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-start gap-3 transition-colors hover:bg-slate-100/60">
+<span class="material-symbols-outlined text-slate-400 text-lg select-none mt-0.5">radio_button_unchecked</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<p class="text-xs font-medium text-slate-700">Dump JVM heap trace from broker</p>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200 shrink-0">PENDING</span>
+</div>
+<p class="font-code text-[11px] text-slate-400 mt-1 leading-relaxed">Requires root elevation approval</p>
+</div>
+</div>
+</div>
+<!-- Manual Verifications Section -->
+<div class="space-y-3 pt-1 border-t border-slate-100">
+<div class="flex items-center justify-between pt-1">
+<span class="text-[11px] font-semibold tracking-wider uppercase text-slate-400 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-indigo-600">person</span>
+                    Manual Verifications
+                  </span>
+<span class="font-code text-[11px] text-amber-600 font-medium">Due in 30m</span>
+</div>
+<!-- Manual Task 1 -->
+<div class="p-3.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-start gap-3 transition-colors hover:bg-slate-100/60">
+<input checked="" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-0 cursor-pointer accent-indigo-600" type="checkbox"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="text-xs font-semibold text-slate-900 leading-snug">Verify Okta IdP certificate thumbprint</span>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-200/60 shrink-0">VERIFIED</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<img class="w-4 h-4 rounded-full object-cover" data-alt="David Ross" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC5hSotr1yTsQ2trnLvpEAKJ9YCPX1s7b43kaiCMKtGynXNXUjbZGmyb4uQNzQ28cLKLyt5FDRbra2YijNz8JL1x3J7QDbbDnNVvEj2ApgwIT2xNIz52sV5nj4UUAY7dFIoP8_ckDrLHRzZTK9zELDngrjVnJM3z7zl0Y3TflO2otHUyTESxlEeBREIySOdaV3evlczi61uAQE8x6vt2XW9N94DnzmzO_ru1Cr9QIywtgr01U_9d5k"/>
+<span class="text-[11px] font-medium text-slate-600">David Ross</span>
+<span class="text-slate-300 text-xs">•</span>
+<span class="text-[11px] text-slate-400 font-code">14:10 UTC</span>
+</div>
+</div>
+</div>
+<!-- Manual Task 2 -->
+<div class="p-3.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-start gap-3 transition-colors hover:bg-slate-100/60">
+<input class="mt-0.5 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-0 cursor-pointer accent-indigo-600" type="checkbox"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="text-xs font-semibold text-slate-900 leading-snug">Scale Redis replica pods</span>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-orange-50 text-orange-700 border border-orange-200/60 shrink-0">IN REVIEW</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<img class="w-4 h-4 rounded-full object-cover" data-alt="Sarah Jenkins" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXrUDhir6-NzWtpxTNYywvd0n8fJRNqhGwNLTRww7EwyKVvJGIU1dRazWEFoTuVgN8hG6shooT7mWNtvwumrDptdBMlPeYzaUVHg5ofQcvXaPVu_xuaHz4aecgPM0dkmnoInrh2fBipVzaZgZakY3mSgYc38hN9cuBP0CYYq1anm-7aVPOUThGXpES0lzfne0Vcgxne8osfOMN7h0vnEdbHAgp1Ymo5f-B5cTCs4Vsvgu-a_8a6QU8"/>
+<span class="text-[11px] font-medium text-slate-600">Sarah Jenkins</span>
+<span class="text-slate-300 text-xs">•</span>
+<span class="text-[11px] text-orange-600 font-medium">Due in 15m</span>
+</div>
+</div>
+</div>
+<!-- Manual Task 3 -->
+<div class="p-3.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-start gap-3 transition-colors hover:bg-slate-100/60">
+<input class="mt-0.5 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-0 cursor-pointer accent-indigo-600" type="checkbox"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="text-xs font-medium text-slate-700 leading-snug">Draft status page communications</span>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200 shrink-0">STANDBY</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<img class="w-4 h-4 rounded-full object-cover" data-alt="Elena Vance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF-kAIAI-0YxW_xbuNgLpB-wt6Mq46Zi2d29mS_zHzHhZNrmW7yxqgjAZ46MB8AjdniKJIZ6BwqABaueuQ7YTqKtqpd7jKuYzunfgggeGp9vvOM7bnlymsLj67YrC1Mw2FNgsHzeKSXTnk01sFsXK71JjN5H_xDZjcoHLDTlwg0dmJxzqsaHIS5gmOOUsDjC9hjMK72XWpWd9sF9r2Ps4pm2CbcvOiykxipdw-CNARkzl0HwhjYRy6"/>
+<span class="text-[11px] font-medium text-slate-600">Elena Vance</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Add Task Button -->
+<button class="w-full py-2.5 px-3 rounded-lg border border-dashed border-slate-300 hover:border-indigo-400 hover:bg-indigo-50/40 text-slate-600 hover:text-indigo-600 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-base">add</span>
+                Add Investigation Subtask
+              </button>
+</div>
+<!-- Discreet Lilac AI Recommendation Micro-Card -->
+<div class="bg-[#FAF5FF] border border-purple-200/70 rounded-xl p-5 shadow-2xs flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-purple-600 text-sm">✨</span>
+<span class="text-xs font-bold text-purple-900 tracking-tight">Nexus Copilot Runbook Match</span>
+</div>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-white text-purple-700 border border-purple-200 shadow-2xs">96% MATCH</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+                Correlated with incident <span class="font-code text-indigo-700 font-semibold">INC-2025-8842</span>. Executing <code class="font-code bg-white text-purple-800 px-1.5 py-0.5 rounded border border-purple-100 text-[11px]">flushall async</code> on cold nodes resolved 94% of downstream connection drops.
+              </p>
+<div class="flex items-center gap-2 pt-1">
+<button class="px-3 py-1.5 bg-white hover:bg-purple-50 text-purple-700 border border-purple-200 rounded-lg text-xs font-semibold transition-colors shadow-2xs">
+                  Apply Runbook #409
+                </button>
+<button class="px-3 py-1.5 text-slate-500 hover:text-slate-800 text-xs font-medium transition-colors">
+                  Dismiss
+                </button>
+</div>
+</div>
+</section>
+<!-- ======================================================================= -->
+<!-- CENTER COLUMN: 45% (XL: 5 cols) - Internal War Room & Confidential Notes -->
+<!-- ======================================================================= -->
+<section class="xl:col-span-5 flex flex-col gap-5">
+<!-- War Room Banner -->
+<div class="bg-white rounded-xl border border-slate-200 px-6 py-4 flex items-center justify-between shadow-2xs">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center text-purple-700">
+<span class="material-symbols-outlined text-lg">lock</span>
+</div>
+<div>
+<h2 class="font-headline font-semibold text-base text-slate-900">Internal War Room &amp; Notes</h2>
+<p class="text-xs text-slate-500 leading-tight">Live cross-functional forensic exchange</p>
+</div>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-purple-50 text-purple-700 border border-purple-200/60 text-xs font-semibold tracking-wide">
+<span class="material-symbols-outlined text-xs">visibility_off</span>
+                HIDDEN FROM REQUESTER
+              </div>
+</div>
+<!-- Thread of Notes -->
+<div class="space-y-4">
+<!-- Card 1: Elena Vance -->
+<article class="bg-white rounded-xl border border-slate-200 p-6 shadow-2xs space-y-4 hover:border-slate-300 transition-all">
+<!-- User Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full object-cover ring-2 ring-indigo-100" data-alt="Elena Vance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAdjrVuJD6ITDDIh2Wa8osM6IRlQEtfjIy4mU9tfLsA7fVFUdAyFuVjXoBZ7l0HaZMycuLonZ14KKnEWlrDaj7DHSgpPqJnlWCxhBcd7wngqGLH94MPoHZkq1gZhUW60VZ4fT1uQhWaV9qePtaM17ttdHb2hxcocgcih8eJhAhUiZnAMyin_nwhTU1nFKE9ivdFK6291JYCU53xNwh331xA9uR84ZjynIGIatG45bxsZppDa9mOTEo"/>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold text-slate-900">Elena Vance</span>
+<span class="font-code text-[10px] px-1.5 py-0.2 bg-indigo-50 text-indigo-700 font-semibold rounded border border-indigo-100">Lead</span>
+</div>
+<span class="font-code text-[11px] text-slate-400">14:02:18 UTC • via Telemetry Hook</span>
+</div>
+</div>
+<button class="text-slate-400 hover:text-slate-700 p-1 rounded-md hover:bg-slate-50">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</div>
+<!-- Text with relaxed line height -->
+<p class="text-sm text-slate-700 leading-[1.6]">
+                  Triage update: Gateway errors peaked at 13:58. Downstream customers authenticated via Okta are receiving HTTP 504 Gateway Timeout after exactly 30,000ms. <span class="text-indigo-600 font-medium bg-indigo-50 px-1.5 py-0.5 rounded">@david</span> could you check connection pools on the Envoy sidecars?
+                </p>
+<!-- Clean Metric Visual -->
+<div class="bg-slate-50 border border-slate-200 rounded-lg p-3.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-rose-50 flex items-center justify-center text-rose-600">
+<span class="material-symbols-outlined text-lg">query_stats</span>
+</div>
+<div>
+<p class="text-[11px] uppercase font-semibold text-slate-400">Envoy Cluster Errors</p>
+<p class="text-sm font-bold text-rose-600">504 Gateway Timeout (4,180 req/s)</p>
+</div>
+</div>
+<!-- Sparkline SVG -->
+<div class="w-24 h-7">
+<svg class="w-full h-full text-rose-500" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 100 30">
+<path d="M0 25 L20 24 L40 22 L60 18 L70 20 L80 8 L90 3 L100 2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+<div class="flex items-center gap-4 pt-1 text-xs text-slate-500">
+<button class="flex items-center gap-1 hover:text-slate-900 font-medium">
+<span class="material-symbols-outlined text-sm">reply</span> Reply
+                  </button>
+<button class="flex items-center gap-1 hover:text-slate-900 font-medium">
+<span class="material-symbols-outlined text-sm">bookmark_border</span> Bookmark
+                  </button>
+<span class="font-code text-[11px] text-slate-400 ml-auto">2 revisions</span>
+</div>
+</article>
+<!-- Card 2: David Ross with Code Diff -->
+<article class="bg-white rounded-xl border border-slate-200 p-6 shadow-2xs space-y-4 hover:border-slate-300 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full object-cover ring-2 ring-slate-100" data-alt="David Ross" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK9zZYX8Rh_PKNegWxVmMVMBab9a7009JgZzAkObBhVmQOUDjogNcpW8jCXI_YBcIC5LtiNV89y8ocZByOYAUrHLmb-hnxJCA3X_-MSjuqr8lQZ1WhzyQ0kEwYxP0AGMW6QXzIeuKXF8pu_XCyJMWT8PkslbGYnOUpdDMYamWJ6hXkdclUVJspo-20STXDNeoQTpZ7I9yfmNWZa01eg7bv_WL3guv8w5PoAsudoTRV_ToMy5Mp8cVc"/>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold text-slate-900">David Ross</span>
+<span class="font-code text-[10px] px-1.5 py-0.2 bg-slate-100 text-slate-700 font-semibold rounded border border-slate-200">SRE Tier-2</span>
+</div>
+<span class="font-code text-[11px] text-slate-400">14:14:05 UTC • Verified Findings</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-teal-600 text-base" title="Signed Entry">verified</span>
+<button class="text-slate-400 hover:text-slate-700 p-1 rounded-md hover:bg-slate-50">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</div>
+</div>
+<p class="text-sm text-slate-700 leading-[1.6]">
+                  Found the root cause. <span class="text-indigo-600 font-medium bg-indigo-50 px-1 rounded">@elena</span> <span class="text-indigo-600 font-medium bg-indigo-50 px-1 rounded">@sarah</span> The Envoy connection pool exhausted active sessions because the upstream Redis token cache failed to return within timeout thresholds.
+                </p>
+<!-- Code Diff with clean lines and spacing -->
+<div class="rounded-lg overflow-hidden border border-slate-800 bg-[#1E293B] text-slate-200 font-code text-xs">
+<div class="px-3.5 py-2 bg-[#0F172A] flex items-center justify-between border-b border-slate-700/60 text-slate-400 text-[11px]">
+<span class="text-slate-300">envoy_ingress_production.yaml</span>
+<span>lines 142 - 149</span>
+</div>
+<div class="p-3.5 space-y-1 font-mono leading-relaxed overflow-x-auto text-[11px]">
+<div class="text-slate-400">  circuit_breakers:</div>
+<div class="text-slate-400">    thresholds:</div>
+<div class="bg-rose-950/60 text-rose-300 px-2 py-0.5 rounded -mx-1 border-l-2 border-rose-500">
+                      - max_connections: 1024 # [EXHAUSTED: current 1024/1024]
+                    </div>
+<div class="bg-teal-950/60 text-teal-300 px-2 py-0.5 rounded -mx-1 border-l-2 border-teal-500">
+                      + max_connections: 4096 # [RECOMMENDED HOT-PATCH]
+                    </div>
+<div class="text-slate-400">      max_pending_requests: 500</div>
+</div>
+</div>
+<!-- Attached Trace Preview -->
+<div class="flex items-center gap-2.5 p-2.5 rounded-lg bg-slate-50 border border-slate-200 hover:bg-slate-100/60 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-purple-600 text-lg">attach_file</span>
+<span class="font-code text-xs text-slate-800 truncate flex-1 font-medium">envoy_stack_dump_1412.trace</span>
+<span class="font-code text-[11px] text-slate-400">420 KB</span>
+<span class="material-symbols-outlined text-slate-400 text-base">download</span>
+</div>
+</article>
+</div>
+<!-- Rich Note Composer -->
+<div class="bg-white rounded-xl border border-slate-200 p-6 shadow-2xs space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5">
+<span class="material-symbols-outlined text-indigo-600 text-base">edit_note</span>
+                  Post Internal Note
+                </span>
+<span class="text-[11px] text-slate-400 font-medium">Markdown Supported</span>
+</div>
+<!-- Formatting Bar -->
+<div class="flex items-center gap-1 px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-lg">
+<button class="p-1 rounded hover:bg-white text-slate-500 hover:text-slate-800" title="Bold">
+<span class="material-symbols-outlined text-base">format_bold</span>
+</button>
+<button class="p-1 rounded hover:bg-white text-slate-500 hover:text-slate-800" title="Italic">
+<span class="material-symbols-outlined text-base">format_italic</span>
+</button>
+<button class="p-1 rounded hover:bg-white text-slate-500 hover:text-slate-800" title="Code snippet">
+<span class="material-symbols-outlined text-base">code</span>
+</button>
+<button class="p-1 rounded hover:bg-white text-slate-500 hover:text-slate-800" title="Bullet List">
+<span class="material-symbols-outlined text-base">format_list_bulleted</span>
+</button>
+<div class="h-4 w-px bg-slate-200 mx-1"></div>
+<button class="p-1 rounded hover:bg-white text-slate-500 hover:text-slate-800" title="Mention">
+<span class="material-symbols-outlined text-base">alternate_email</span>
+</button>
+<button class="p-1 rounded hover:bg-white text-slate-500 hover:text-slate-800" title="Attach file">
+<span class="material-symbols-outlined text-base">attach_file</span>
+</button>
+<button class="p-1 rounded hover:bg-purple-50 text-purple-600" title="Copilot Format">
+<span class="material-symbols-outlined text-base">auto_awesome</span>
+</button>
+</div>
+<!-- Input Area -->
+<textarea class="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-xs text-slate-800 placeholder:text-slate-400 focus:bg-white focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400 transition-all resize-none leading-relaxed" placeholder="Type confidential notes, tag investigators with @name, paste logs or traces..." rows="3"></textarea>
+<!-- Footer Bar -->
+<div class="flex items-center justify-between pt-1">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-code text-[11px] bg-purple-50 text-purple-700 border border-purple-200/60">
+<span class="material-symbols-outlined text-xs">shield</span>
+                  Encrypted at rest (AES-256)
+                </span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-slate-600 text-xs font-semibold transition-colors shadow-2xs">
+                    Save Draft
+                  </button>
+<button class="px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold transition-colors shadow-2xs flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">send</span>
+                    Post Note
+                  </button>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================================= -->
+<!-- RIGHT COLUMN: 25% (XL: 3 cols) - Evidence Locker & Health Nodes         -->
+<!-- ======================================================================= -->
+<section class="xl:col-span-3 flex flex-col gap-5">
+<!-- Root Cause Hypothesis Card -->
+<div class="bg-white rounded-xl border border-slate-200 p-6 shadow-2xs flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-bold text-purple-700 tracking-wider uppercase flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">psychology</span>
+                  Root Cause Hypothesis
+                </span>
+<span class="px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200 font-code text-[10px] font-semibold">
+                  UNCONFIRMED
+                </span>
+</div>
+<div class="p-3.5 bg-slate-50 border border-slate-200 rounded-lg space-y-2">
+<p class="text-xs text-slate-800 font-medium leading-[1.6]">
+                  Redis token cache memory exhaustion triggering connection pool starvation in cluster <span class="font-code text-indigo-700 font-semibold">us-east-prod-04</span>.
+                </p>
+<div class="flex items-center justify-between pt-1">
+<span class="font-code text-[11px] text-slate-400">Confidence Level</span>
+<span class="font-code text-xs text-teal-700 font-bold">89%</span>
+</div>
+<!-- Meter -->
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-teal-600 h-full rounded-full" style="width: 89%;"></div>
+</div>
+</div>
+<button class="w-full py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-semibold transition-colors shadow-2xs">
+                Confirm as Primary Cause
+              </button>
+</div>
+<!-- Evidence Locker Card -->
+<div class="bg-white rounded-xl border border-slate-200 p-6 shadow-2xs space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600">
+<span class="material-symbols-outlined text-base">folder_zip</span>
+</div>
+<h2 class="font-headline font-semibold text-sm text-slate-900">Evidence Locker</h2>
+</div>
+<span class="font-code text-xs text-slate-400 font-medium">3 items</span>
+</div>
+<!-- Evidence Items -->
+<div class="space-y-2.5">
+<!-- Item 1 -->
+<div class="p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-colors">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-indigo-600 text-base">description</span>
+<div class="min-w-0">
+<p class="text-xs font-semibold text-slate-900 truncate">vpn_client_trace.log</p>
+<p class="font-code text-[11px] text-slate-400">1.4 MB • Text/Log</p>
+</div>
+</div>
+<button class="p-1 text-slate-400 hover:text-indigo-600" title="Download">
+<span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+<div class="mt-2 flex items-center justify-between font-code text-[10px] bg-white border border-slate-200 px-2 py-1 rounded">
+<span class="flex items-center gap-1 text-teal-700 font-semibold">
+<span class="material-symbols-outlined text-[12px]">verified</span> SHA-256
+                    </span>
+<span class="text-slate-400 truncate max-w-[110px]" title="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855">
+                      e3b0c4...b855
+                    </span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-colors">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-amber-600 text-base">conversion_path</span>
+<div class="min-w-0">
+<p class="text-xs font-semibold text-slate-900 truncate">envoy_ingress_error_dump.pcap</p>
+<p class="font-code text-[11px] text-slate-400">12.8 MB • Wireshark Capture</p>
+</div>
+</div>
+<button class="p-1 text-slate-400 hover:text-indigo-600" title="Download">
+<span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+<div class="mt-2 flex items-center justify-between font-code text-[10px] bg-sky-50 text-sky-800 border border-sky-200/60 px-2 py-1 rounded">
+<span class="flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[12px]">manage_search</span> Packet Analyzed
+                    </span>
+<span>42K TCP Frames</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-colors">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-purple-600 text-base">data_object</span>
+<div class="min-w-0">
+<p class="text-xs font-semibold text-slate-900 truncate">okta_saml_response.json</p>
+<p class="font-code text-[11px] text-slate-400">45 KB • Token Payload</p>
+</div>
+</div>
+<button class="p-1 text-slate-400 hover:text-indigo-600" title="Download">
+<span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+<div class="mt-2 flex items-center justify-between font-code text-[10px] bg-white border border-slate-200 px-2 py-1 rounded">
+<span class="flex items-center gap-1 text-teal-700 font-semibold">
+<span class="material-symbols-outlined text-[12px]">verified</span> SHA-256
+                    </span>
+<span class="text-slate-400 truncate max-w-[110px]" title="98f13708210194c475687be6106a3b84eb0166ce">
+                      98f137...66ce
+                    </span>
+</div>
+</div>
+</div>
+<!-- Upload Drag & Drop Area -->
+<div class="p-4 rounded-xl border border-dashed border-slate-300 bg-slate-50 hover:bg-slate-100/70 hover:border-indigo-400 transition-all cursor-pointer text-center space-y-2 group">
+<div class="w-9 h-9 rounded-full bg-white border border-slate-200 mx-auto flex items-center justify-center text-indigo-600 group-hover:scale-110 transition-transform shadow-2xs">
+<span class="material-symbols-outlined text-lg">cloud_upload</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-slate-800">Upload Evidence File</p>
+<p class="font-code text-[11px] text-slate-400 mt-0.5">Drag PCAP, logs, or HAR files</p>
+</div>
+<p class="text-[10px] text-slate-500">Auto SHA-256 validation &amp; virus scan</p>
+</div>
+</div>
+<!-- Node Health Matrix Card -->
+<div class="bg-white rounded-xl border border-slate-200 p-6 shadow-2xs space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-headline font-semibold text-xs text-slate-900 uppercase tracking-wide">Pod Health Overview</span>
+<span class="font-code text-[11px] text-slate-400">us-east</span>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-4 gap-2 text-center">
+<div class="p-2 rounded-lg bg-teal-50 border border-teal-200/70 text-teal-700">
+<p class="font-code text-xs font-bold">Node 1</p>
+<span class="text-[10px] font-semibold">OK</span>
+</div>
+<div class="p-2 rounded-lg bg-teal-50 border border-teal-200/70 text-teal-700">
+<p class="font-code text-xs font-bold">Node 2</p>
+<span class="text-[10px] font-semibold">OK</span>
+</div>
+<div class="p-2 rounded-lg bg-rose-50 border border-rose-200/70 text-rose-700 animate-pulse">
+<p class="font-code text-xs font-bold">Node 3</p>
+<span class="text-[10px] font-semibold">FAIL</span>
+</div>
+<div class="p-2 rounded-lg bg-amber-50 border border-amber-200/70 text-amber-700">
+<p class="font-code text-xs font-bold">Node 4</p>
+<span class="text-[10px] font-semibold">WARN</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+</body></html>

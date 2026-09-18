@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "status-breached-text": "#E11D48", "on-primary-fixed": "#07006c", "outline-variant": "#c7c4d7", "tertiary-fixed-dim": "#93ccff", "on-surface-variant": "#464554", "inverse-surface": "#283044", "on-error-container": "#93000a", "status-resolution-bg": "#F3E8FF", "status-resolution-text": "#7C3AED", "on-error": "#ffffff", "surface-elevated-light": "#F8FAFC", "on-secondary-fixed": "#2c0051", "status-waiting-text": "#EA580C", "tertiary": "#006194", "inverse-primary": "#c0c1ff", "primary-fixed": "#e1e0ff", "secondary-fixed-dim": "#ddb8ff", "surface-container-high": "#e2e7ff", "tertiary-fixed": "#cce5ff", "background": "#faf8ff", "outline": "#767586", "status-triage-bg": "#E0F2FE", "on-tertiary": "#ffffff", "surface-container-lowest": "#ffffff", "status-reported-text": "#64748B", "status-triage-text": "#0284C7", "on-primary-fixed-variant": "#2f2ebe", "border-light": "#E2E8F0", "status-reported-bg": "#F1F5F9", "inverse-on-surface": "#eef0ff", "status-assigned-bg": "#EEF2FF", "on-tertiary-fixed-variant": "#004b73", "status-waiting-bg": "#FFEDD5", "secondary-fixed": "#f0dbff", "text-muted-light": "#94A3B8", "status-breached-bg": "#FFE4E6", "primary": "#4648d4", "status-investigating-text": "#D97706", "on-tertiary-fixed": "#001d31", "surface-dim": "#d2d9f4", "surface-tint": "#494bd6", "on-surface": "#131b2e", "surface-container-highest": "#dae2fd", "text-primary-light": "#0F172A", "surface-light": "#FFFFFF", "text-secondary-light": "#475569", "status-closed-bg": "#CCFBF1", "primary-fixed-dim": "#c0c1ff", "secondary": "#831ada", "on-secondary-fixed-variant": "#6800b4", "surface-container-low": "#f2f3ff", "on-secondary-container": "#fffbff", "on-tertiary-container": "#fdfcff", "error": "#ba1a1a", "on-primary": "#ffffff", "canvas-light": "#FAFAFC", "on-primary-container": "#fffbff", "surface-bright": "#faf8ff", "ai-border": "#C084FC33", "secondary-container": "#9e41f5", "status-investigating-bg": "#FEF3C7", "surface-container": "#eaedff", "status-closed-text": "#0D9488", "tertiary-container": "#007bb9", "surface": "#faf8ff", "surface-variant": "#dae2fd", "error-container": "#ffdad6", "ai-bg-light": "#FAF5FF", "on-background": "#131b2e", "on-secondary": "#ffffff", "primary-container": "#6063ee", "status-assigned-text": "#6366F1" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-xl": "2rem", "margin-tablet": "1.5rem", "margin": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "gutter-tablet": "1.5rem", "space-md": "1rem", "gutter": "2rem", "space-2xl": "2.5rem", "gutter-mobile": "1rem" }, "fontFamily": { "body-sm": ["Inter"], "headline-md": ["Outfit"], "label-sm": ["Inter"], "headline-sm": ["Outfit"], "display-lg": ["Outfit"], "title-sm": ["Inter"], "headline-lg-mobile": ["Outfit"], "body-md": ["Inter"], "title-md": ["Inter"], "display-lg-mobile": ["Outfit"], "code-sm": ["JetBrains Mono"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Outfit"] }, "fontSize": { "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg-mobile": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "code-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "500" }] } } } }</script><style>@layer base{html,body{min-height:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-canvas-light text-text-primary-light min-h-screen flex flex-col antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-light/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="Nexus AI brand mark" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XGdlqNOisKAEAh4fKQJjHh8ebgRa3Hn3XsOodJ-7cjhke9YFTxD4O5J386M71gJ_nx0O68xQlwqkTGDLThZOspvUXvHvBrXUJ7ReXzzN7FcSDHWhDcGFbR6me6Pg32xyEaFy_u410Kby8Ui4VYaMXcDfIaafPWtLvzWvBt_DPXZ-Wfs7wWNf2XP--8V3m4BZuQibzd8KgjX_wcv4YnakLYHCdgTrwR0vEvSJe_gZWG4SYfltjdQG4eYQw"/><div class="flex flex-col min-w-0"><span class="text-label-sm font-label-sm text-text-muted-light uppercase tracking-wider truncate">Nexus AI</span><span class="text-title-md font-title-md text-text-primary-light truncate leading-none">Studio</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Search incidents" class="w-11 h-11 flex items-center justify-center rounded-lg text-text-secondary-light hover:text-text-primary-light hover:bg-surface-elevated-light active:scale-95 transition-all"><span class="material-symbols-outlined text-[20px]">search</span></button><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-lg text-text-secondary-light hover:text-text-primary-light hover:bg-surface-elevated-light active:scale-95 transition-all"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-status-breached-text ring-2 ring-surface-light"></span></button><div class="pl-space-xs flex items-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-light shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1XqVXG34mQqXmLKAYxAV0GC0632Yxg4LocLN54tAYvOpNWpCur7Ck60jTpTpaInj1Tol47zrjFsVpD4d_c7jysM0pSq9ftUvtIxulIr9Tym-c7lefVYububWdN8jc4vRZiNKhxQ0VeRaV1YbYL0Sujdmy4nStEqbGXgr93KjVdJSjBygKqfOCbFGm7cwXUrdXaBJtoDUlOiaM8p4FTwtwMPcGUJVXdEmMnAW8Ataeff7O9s3Ca9nqBvS7Q"/></div></div></div></header><main class="flex-1 w-full bg-canvas-light pt-16 pb-20"><div class="flex flex-col w-full pb-8">
+<!-- Top Incident Alert & Urgency Banner -->
+<div class="px-gutter-mobile pt-3 pb-2">
+<div class="bg-status-breached-bg text-status-breached-text rounded-xl p-space-sm flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-[18px] animate-pulse shrink-0">emergency</span>
+<span class="font-code-sm text-code-sm font-semibold tracking-wide">NEX-2026-0104</span>
+<span class="bg-status-breached-text text-on-error font-label-sm text-label-sm px-2 py-0.5 rounded-full uppercase tracking-wider font-semibold shrink-0">P1 CRITICAL</span>
+</div>
+<div class="flex items-center gap-1 shrink-0 bg-surface-light/80 px-2 py-1 rounded-lg text-status-breached-text">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+<span class="font-label-sm text-label-sm uppercase font-semibold">BREACH IN 42M</span>
+</div>
+</div>
+</div>
+<!-- Incident Title & Meta Card -->
+<div class="px-gutter-mobile mb-3">
+<div class="bg-surface-light rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-space-xs mb-2 flex-wrap">
+<span class="bg-surface-container font-label-sm text-label-sm text-on-surface-variant px-2 py-0.5 rounded-full font-medium">us-east-prod-04</span>
+<span class="bg-status-investigating-bg text-status-investigating-text font-label-sm text-label-sm px-2 py-0.5 rounded-full font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-investigating-text animate-ping"></span>
+          SEV-1 ACTIVE
+        </span>
+</div>
+<h1 class="font-headline-sm text-headline-sm text-text-primary-light font-semibold leading-snug mb-3">
+        Authentication Gateway Timeout during SSO
+      </h1>
+<!-- War Room Live Voice Strip -->
+<div class="bg-surface-elevated-light rounded-lg p-space-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2 min-w-0">
+<div class="relative flex -space-x-1.5 shrink-0">
+<img class="w-6 h-6 rounded-full object-cover shadow-sm ring-2 ring-surface-light" data-alt="Portrait of lead engineer Elena Vance in a modern high-tech observability operations center with ambient lilac lighting reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALcogFOQehobcCm8KOKDjMdj_3lRsAZOARDTOaSVtGW3-gr50tNBiLwShWkukDzSMOPnjPCbNOQRbagpuk69T-ihL_z91mYZvXDpggBMRGEdm586pUHcB3sSJVQPQAgNnMs7cju-jmEAC1R7ha3UZAgDDqEG2m6OIo2scA2nek4tX4YBG9k3MYzSRpYs54kVTHtb6FCMgIidmnd4yzvt8hZgJF2WW8L9pDM8jSYMVNC9i50Fz9GVxP"/>
+<img class="w-6 h-6 rounded-full object-cover shadow-sm ring-2 ring-surface-light" data-alt="Portrait of senior SRE analyst Marcus Cole wearing audio headset inside a server room control bridge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmh0SRmCVms0Z8PRoKtUgCtNFQQcB0t-nSgMqPBs5uZFzZTaAWgFy_in5I6DZLkzuE9s80BhT39f1jQox3Mf_POXirvmi8sQjcA00mA0zPAO37CG2n0uhyQFe1om72PeGaiP9JIpLeBmLnFvI4AK3TZbHkl0jJy0hleSvJPagn5J2__mAiAO-Q6MG5o3D0AGAf2SVY2rGiTkbcRXWp_d4GguyXV-FraAwHWkqkfxM3VcoEWTgQx1Ek"/>
+<img class="w-6 h-6 rounded-full object-cover shadow-sm ring-2 ring-surface-light" data-alt="Portrait of security platform specialist Priya Patel in front of multi-monitor network telemetry dashboards" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcBFGk57m9R4NgyRSrPvwuIu4zasFhgA83dIfvrP-EnT4DFjqHuGPWP4hsnn_ULNUr8KygX5IJnAkptMcWVsTpwLQJoWbWtLtT0ohys0Ol1y4U-0WexnmQ7mcLd8XdizYmuBgNWQCV0VCRwHEhHDr5g2iAoabcNKEVkt3DW9MQ-Aev3yOV7xGwzVHGQCljxw882_woaBSH2LDFjeRDQsY_TQcM1qQ-seIUV-10caW9inFV78FDEK7Q"/>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-status-closed-text animate-pulse"></span>
+<p class="font-label-md text-label-md text-text-primary-light font-medium truncate">Live War Room (3 Online)</p>
+</div>
+<p class="font-label-sm text-label-sm text-text-muted-light truncate">Elena, Marcus, Priya</p>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-3 py-1.5 rounded-lg flex items-center gap-1.5 shrink-0 shadow-sm active:scale-95 transition-all" id="joinCallBtn">
+<span class="material-symbols-outlined text-[16px]">mic</span>
+<span>Join Bridge</span>
+</button>
+</div>
+</div>
+</div>
+<!-- AI Copilot Suggestion Card -->
+<div class="px-gutter-mobile mb-4">
+<div class="bg-ai-bg-light rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5 text-status-resolution-text">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider">AI Copilot Recommendation</span>
+</div>
+<span class="bg-status-resolution-bg text-status-resolution-text font-code-sm text-code-sm px-2 py-0.5 rounded-full font-medium">96% confidence</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light mb-3">
+        Detected identical cascade failure from Incident #3812. Elevated ingress pool saturation matches Envoy buffer deadlock.
+      </p>
+<div class="flex items-center justify-between gap-2 flex-wrap bg-surface-light/90 p-space-sm rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-status-resolution-text">receipt_long</span>
+<div>
+<p class="font-title-sm text-title-sm text-text-primary-light">Runbook #4099</p>
+<p class="font-label-sm text-label-sm text-text-muted-light">Hotpatch Ingress Max Connections</p>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="bg-status-resolution-bg hover:bg-surface-container-high text-status-resolution-text font-label-md text-label-md px-2.5 py-1 rounded-md transition-colors">Inspect</button>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-3 py-1 rounded-md shadow-sm active:scale-95 transition-all">Apply Runbook</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Segmented Navigation Tabs -->
+<div class="px-gutter-mobile mb-4">
+<div class="bg-surface-container rounded-xl p-1 flex items-center justify-between gap-1">
+<button class="tab-pill flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-center transition-all bg-surface-light text-text-primary-light shadow-sm font-semibold" id="tabBtn-tasks" onclick="switchTab('tasks')">
+        Tasks (4/7)
+      </button>
+<button class="tab-pill flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-center transition-all text-text-secondary-light hover:text-text-primary-light" id="tabBtn-warroom" onclick="switchTab('warroom')">
+        War Room &amp; Notes
+      </button>
+<button class="tab-pill flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-center transition-all text-text-secondary-light hover:text-text-primary-light" id="tabBtn-evidence" onclick="switchTab('evidence')">
+        Evidence (3)
+      </button>
+</div>
+</div>
+<!-- TAB 1: Investigation Tasks Checklist -->
+<div class="tab-pane flex flex-col gap-3 px-gutter-mobile" id="tabContent-tasks">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-text-primary-light">Remediation Checklist</h2>
+<span class="bg-status-assigned-bg text-status-assigned-text font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold">57% Done</span>
+</div>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold flex items-center gap-1 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Add Task</span>
+</button>
+</div>
+<!-- Task List Cards -->
+<div class="bg-surface-light rounded-xl shadow-sm p-space-sm flex flex-col gap-2">
+<!-- Item 1: Completed -->
+<div class="bg-surface-elevated-light p-3 rounded-lg flex items-start gap-3">
+<div class="mt-0.5 text-status-closed-text shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<p class="font-title-sm text-title-sm text-text-muted-light line-through truncate">Check Redis cache headroom</p>
+<span class="bg-status-closed-bg text-status-closed-text font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold shrink-0">COMPLETED</span>
+</div>
+<p class="font-code-sm text-code-sm text-text-secondary-light">98.4% memory allocation verified by automation agent</p>
+</div>
+</div>
+<!-- Item 2: Running -->
+<div class="bg-surface-elevated-light p-3 rounded-lg flex items-start gap-3">
+<div class="mt-0.5 text-status-triage-text shrink-0">
+<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<p class="font-title-sm text-title-sm text-text-primary-light truncate">Test Envoy ingress proxy latency</p>
+<span class="bg-status-triage-bg text-status-triage-text font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold shrink-0">RUNNING</span>
+</div>
+<div class="flex items-center justify-between text-text-secondary-light font-code-sm text-code-sm">
+<span>12k pings sent</span>
+<span class="text-status-breached-text font-medium">p99 = 2,410ms</span>
+</div>
+</div>
+</div>
+<!-- Item 3: Pending -->
+<div class="bg-surface-elevated-light p-3 rounded-lg flex items-start gap-3">
+<div class="mt-0.5 text-text-muted-light shrink-0">
+<span class="material-symbols-outlined text-[20px]">radio_button_unchecked</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<p class="font-title-sm text-title-sm text-text-primary-light truncate">Dump JVM heap trace from broker</p>
+<span class="bg-status-reported-bg text-status-reported-text font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold shrink-0">PENDING</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted-light">Assigned to Marcus Cole • Standby for container lock</p>
+</div>
+</div>
+<!-- Item 4: Verified -->
+<div class="bg-surface-elevated-light p-3 rounded-lg flex items-start gap-3">
+<div class="mt-0.5 text-status-closed-text shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<p class="font-title-sm text-title-sm text-text-primary-light truncate">Verify Okta IdP certificate</p>
+<span class="bg-status-closed-bg text-status-closed-text font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold shrink-0">VERIFIED</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light">TLS 1.3 handshake intact. Expiry: 184 days</p>
+</div>
+</div>
+<!-- Item 5: In Review -->
+<div class="bg-surface-elevated-light p-3 rounded-lg flex items-start gap-3">
+<div class="mt-0.5 text-status-investigating-text shrink-0">
+<span class="material-symbols-outlined text-[20px]">pending_actions</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<p class="font-title-sm text-title-sm text-text-primary-light truncate">Scale Redis replica pods</p>
+<span class="bg-status-investigating-bg text-status-investigating-text font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold shrink-0">IN REVIEW</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-status-waiting-text">
+<span>Pending architect signoff</span>
+<span class="font-semibold">Due in 15m</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 2: Internal War Room Notes -->
+<div class="tab-pane flex flex-col gap-3 px-gutter-mobile" id="tabContent-warroom">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-text-primary-light">Collaboration Thread</h2>
+<span class="bg-status-resolution-bg text-status-resolution-text font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold">CONFIDENTIAL</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted-light">Syncing Live</span>
+</div>
+<!-- Chat Card 1: Elena Vance -->
+<div class="bg-surface-light rounded-xl p-space-md shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover shadow-sm" data-alt="Professional avatar portrait of Elena Vance wearing glasses in modern tech office with soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzYyUzJnnW0K_Obbv7cUDzdE1QEYguEhFG5vZ95Ge8JpzzwLic00fBOY2A9SO9_4XYBJlpXyR-WRv0BphocK-avZpXx07NfF71qwoVo2pncNA8C0k83YbfIVk31TGGvLJlsD_vedeM9FC9kP3kiRHHffISXtRjP2Eh-4olU62jw0xiKVp6ohQgTr15EBhSuVqoUYpN8GcVq0YdnOH-WIyC5qsSCic2vSEr2OxTPa81wrVsVMTTUj_8"/>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm text-text-primary-light">Elena Vance</span>
+<span class="bg-status-triage-bg text-status-triage-text font-label-sm text-label-sm px-1.5 py-0.2 rounded font-semibold">LEAD</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted-light">14:02 UTC (6 mins ago)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-text-muted-light">push_pin</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary-light">
+        Triage update: Gateway errors peaked at 13:58. Okta timing out at 30,000ms. Ingress circuit breaker tripped immediately afterward.
+      </p>
+<!-- Code Snippet Block -->
+<div class="bg-surface-elevated-light rounded-lg p-3 font-code-sm text-code-sm">
+<div class="flex items-center justify-between text-text-muted-light mb-1.5 pb-1">
+<span class="font-medium">envoy-prod-cluster.yaml</span>
+<span class="text-status-breached-text font-semibold uppercase">Diff Detected</span>
+</div>
+<p class="text-text-secondary-light">circuit_breakers:</p>
+<p class="text-text-secondary-light pl-2">max_connections: <span class="bg-status-breached-bg text-status-breached-text px-1 rounded font-semibold">1024 [EXHAUSTED]</span></p>
+<p class="text-text-primary-light pl-2 font-semibold">-&gt; patch 4096 <span class="bg-status-closed-bg text-status-closed-text px-1 rounded">[HOT-PATCH READY]</span></p>
+</div>
+<div class="flex items-center gap-3 pt-1">
+<button class="text-text-secondary-light hover:text-primary font-label-sm text-label-sm flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">thumb_up</span>
+<span>4 acknowledged</span>
+</button>
+<button class="text-text-secondary-light hover:text-primary font-label-sm text-label-sm flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">reply</span>
+<span>Reply in thread</span>
+</button>
+</div>
+</div>
+<!-- Interactive Fast Reply Composer -->
+<div class="bg-surface-light rounded-xl p-space-sm shadow-sm flex flex-col gap-2">
+<div class="flex items-center gap-2 px-1">
+<span class="material-symbols-outlined text-[18px] text-primary">edit_note</span>
+<span class="font-label-md text-label-md font-semibold text-text-primary-light">Add Secure Investigation Note</span>
+</div>
+<div class="relative">
+<textarea class="w-full bg-surface-elevated-light rounded-lg p-3 font-body-sm text-body-sm text-text-primary-light placeholder-text-muted-light focus:outline-none focus:bg-surface-light transition-all resize-none" id="noteInput" placeholder="Post internal findings, hypotheses, or log offsets..." rows="2"></textarea>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 text-text-muted-light">
+<button class="p-1.5 rounded hover:bg-surface-container transition-colors" title="Attach log fragment">
+<span class="material-symbols-outlined text-[18px]">attachment</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container transition-colors" title="Insert code snippet">
+<span class="material-symbols-outlined text-[18px]">code</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container transition-colors" title="Tag responder">
+<span class="material-symbols-outlined text-[18px]">alternate_email</span>
+</button>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-title-sm text-title-sm px-4 py-1.5 rounded-lg flex items-center gap-1.5 shadow-sm active:scale-95 transition-all" onclick="submitNote()">
+<span>Post Note</span>
+<span class="material-symbols-outlined text-[16px]">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- TAB 3: Cryptographic Evidence Locker -->
+<div class="tab-pane flex flex-col gap-3 px-gutter-mobile" id="tabContent-evidence">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary-light">Evidence Locker</h2>
+<p class="font-label-sm text-label-sm text-text-muted-light">Immutable SHA-256 Audit Trail</p>
+</div>
+<span class="bg-status-assigned-bg text-status-assigned-text font-label-sm text-label-sm px-2.5 py-1 rounded-full font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+        Chain Intact
+      </span>
+</div>
+<!-- Evidence File 1 -->
+<div class="bg-surface-light rounded-xl p-space-md shadow-sm flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">description</span>
+</div>
+<div class="min-w-0">
+<p class="font-title-sm text-title-sm text-text-primary-light truncate">vpn_client_trace.log</p>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-text-secondary-light">
+<span>1.4 MB</span>
+<span>•</span>
+<span class="text-status-closed-text flex items-center gap-0.5 font-medium">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+              SHA-256 Verified
+            </span>
+</div>
+</div>
+</div>
+<button class="w-9 h-9 rounded-lg bg-surface-elevated-light hover:bg-surface-container text-text-secondary-light flex items-center justify-center shrink-0 active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+<!-- Evidence File 2 -->
+<div class="bg-surface-light rounded-xl p-space-md shadow-sm flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-status-resolution-bg flex items-center justify-center text-status-resolution-text shrink-0">
+<span class="material-symbols-outlined text-[24px]">hub</span>
+</div>
+<div class="min-w-0">
+<p class="font-title-sm text-title-sm text-text-primary-light truncate">envoy_ingress_error.pcapng</p>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-text-secondary-light">
+<span>12.8 MB</span>
+<span>•</span>
+<span>42K TCP frames analyzed</span>
+</div>
+</div>
+</div>
+<button class="w-9 h-9 rounded-lg bg-surface-elevated-light hover:bg-surface-container text-text-secondary-light flex items-center justify-center shrink-0 active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+<!-- Evidence File 3 -->
+<div class="bg-surface-light rounded-xl p-space-md shadow-sm flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[24px]">terminal</span>
+</div>
+<div class="min-w-0">
+<p class="font-title-sm text-title-sm text-text-primary-light truncate">okta_auth_headers_dump.json</p>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-text-secondary-light">
+<span>284 KB</span>
+<span>•</span>
+<span class="text-status-closed-text flex items-center gap-0.5 font-medium">
+<span class="material-symbols-outlined text-[12px]">fingerprint</span>
+              Signed by Vault
+            </span>
+</div>
+</div>
+</div>
+<button class="w-9 h-9 rounded-lg bg-surface-elevated-light hover:bg-surface-container text-text-secondary-light flex items-center justify-center shrink-0 active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+<!-- Upload Evidence Action Area -->
+<div class="bg-surface-light rounded-xl p-space-lg shadow-sm flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-[26px]">upload_file</span>
+</div>
+<p class="font-title-sm text-title-sm text-text-primary-light mb-0.5">Upload Forensic Artifact</p>
+<p class="font-body-sm text-body-sm text-text-muted-light mb-3">Tap to browse PCAP, core dumps, or network traces up to 250MB</p>
+<button class="w-full bg-surface-elevated-light hover:bg-surface-container text-text-primary-light font-title-sm text-title-sm py-2.5 rounded-lg flex items-center justify-center gap-2 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Attach Evidence Artifact</span>
+</button>
+</div>
+</div>
+<!-- Micro-interaction Toast Placeholder -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 px-4 py-2 bg-inverse-surface text-inverse-on-surface rounded-full shadow-lg font-label-md text-label-md flex items-center gap-2 transition-all duration-300 opacity-0 pointer-events-none translate-y-3 z-50" id="toastNotification">
+<span class="material-symbols-outlined text-[16px] text-status-closed-text">check_circle</span>
+<span id="toastMessage">Action completed successfully</span>
+</div>
+</div>
+<script>
+  // Tab Switching Micro-interaction
+  function switchTab(tabKey) {
+    const tabs = ['tasks', 'warroom', 'evidence'];
+    tabs.forEach(t => {
+      const pane = document.getElementById('tabContent-' + t);
+      const btn = document.getElementById('tabBtn-' + t);
+      if (t === tabKey) {
+        pane.classList.remove('hidden');
+        btn.className = 'tab-pill flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-center transition-all bg-surface-light text-text-primary-light shadow-sm font-semibold';
+      } else {
+        pane.classList.add('hidden');
+        btn.className = 'tab-pill flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-center transition-all text-text-secondary-light hover:text-text-primary-light';
+      }
+    });
+  }
+
+  // Quick Action Notification Helper
+  function showToast(message) {
+    const toast = document.getElementById('toastNotification');
+    const msg = document.getElementById('toastMessage');
+    if (!toast || !msg) return;
+    msg.textContent = message;
+    toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+    }, 2500);
+  }
+
+  function submitNote() {
+    const note = document.getElementById('noteInput');
+    if (note && note.value.trim().length > 0) {
+      note.value = '';
+      showToast('Internal note published to live War Room thread');
+    } else {
+      showToast('Please enter text before posting');
+    }
+  }
+
+  document.getElementById('joinCallBtn')?.addEventListener('click', function() {
+    this.classList.toggle('bg-status-breached-text');
+    if (this.textContent.includes('Join')) {
+      this.innerHTML = '<span class="material-symbols-outlined text-[16px]">call_end</span><span>Leave Voice</span>';
+      showToast('Connected to live bridge. Microphone active.');
+    } else {
+      this.innerHTML = '<span class="material-symbols-outlined text-[16px]">mic</span><span>Join Bridge</span>';
+      showToast('Disconnected from bridge.');
+    }
+  });
+
+  // Set default view on load
+  switchTab('tasks');
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-light/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.03)]" data-active-classes="text-primary font-title-sm"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-text-secondary-light hover:text-primary transition-colors" data-path="triage" href="#"><span class="material-symbols-outlined text-[22px] leading-none mb-0.5">inbox</span><span class="text-label-sm font-label-sm tracking-normal">Triage</span></a><a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 transition-colors text-primary font-title-sm" data-path="studio" href="#"><span class="material-symbols-outlined text-[22px] leading-none mb-0.5">forum</span><span class="text-label-sm font-label-sm tracking-normal">Studio</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-text-secondary-light hover:text-primary transition-colors" data-path="radar" href="#"><span class="material-symbols-outlined text-[22px] leading-none mb-0.5">radar</span><span class="text-label-sm font-label-sm tracking-normal">Radar</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-text-secondary-light hover:text-primary transition-colors" data-path="problems" href="#"><span class="material-symbols-outlined text-[22px] leading-none mb-0.5">extension</span><span class="text-label-sm font-label-sm tracking-normal">Problems</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-text-secondary-light hover:text-primary transition-colors" data-path="admin" href="#"><span class="material-symbols-outlined text-[22px] leading-none mb-0.5">tune</span><span class="text-label-sm font-label-sm tracking-normal">Admin</span></a></div></nav></body></html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "status-breached-text": "#E11D48", "on-primary-fixed": "#07006c", "outline-variant": "#c7c4d7", "tertiary-fixed-dim": "#93ccff", "on-surface-variant": "#464554", "inverse-surface": "#283044", "on-error-container": "#93000a", "status-resolution-bg": "#F3E8FF", "status-resolution-text": "#7C3AED", "on-error": "#ffffff", "surface-elevated-light": "#F8FAFC", "on-secondary-fixed": "#2c0051", "status-waiting-text": "#EA580C", "tertiary": "#006194", "inverse-primary": "#c0c1ff", "primary-fixed": "#e1e0ff", "secondary-fixed-dim": "#ddb8ff", "surface-container-high": "#e2e7ff", "tertiary-fixed": "#cce5ff", "background": "#faf8ff", "outline": "#767586", "status-triage-bg": "#E0F2FE", "on-tertiary": "#ffffff", "surface-container-lowest": "#ffffff", "status-reported-text": "#64748B", "status-triage-text": "#0284C7", "on-primary-fixed-variant": "#2f2ebe", "border-light": "#E2E8F0", "status-reported-bg": "#F1F5F9", "inverse-on-surface": "#eef0ff", "status-assigned-bg": "#EEF2FF", "on-tertiary-fixed-variant": "#004b73", "status-waiting-bg": "#FFEDD5", "secondary-fixed": "#f0dbff", "text-muted-light": "#94A3B8", "status-breached-bg": "#FFE4E6", "primary": "#4648d4", "status-investigating-text": "#D97706", "on-tertiary-fixed": "#001d31", "surface-dim": "#d2d9f4", "surface-tint": "#494bd6", "on-surface": "#131b2e", "surface-container-highest": "#dae2fd", "text-primary-light": "#0F172A", "surface-light": "#FFFFFF", "text-secondary-light": "#475569", "status-closed-bg": "#CCFBF1", "primary-fixed-dim": "#c0c1ff", "secondary": "#831ada", "on-secondary-fixed-variant": "#6800b4", "surface-container-low": "#f2f3ff", "on-secondary-container": "#fffbff", "on-tertiary-container": "#fdfcff", "error": "#ba1a1a", "on-primary": "#ffffff", "canvas-light": "#FAFAFC", "on-primary-container": "#fffbff", "surface-bright": "#faf8ff", "ai-border": "#C084FC33", "secondary-container": "#9e41f5", "status-investigating-bg": "#FEF3C7", "surface-container": "#eaedff", "status-closed-text": "#0D9488", "tertiary-container": "#007bb9", "surface": "#faf8ff", "surface-variant": "#dae2fd", "error-container": "#ffdad6", "ai-bg-light": "#FAF5FF", "on-background": "#131b2e", "on-secondary": "#ffffff", "primary-container": "#6063ee", "status-assigned-text": "#6366F1" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-xl": "2rem", "margin-tablet": "1.5rem", "margin": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "gutter-tablet": "1.5rem", "space-md": "1rem", "gutter": "2rem", "space-2xl": "2.5rem", "gutter-mobile": "1rem" }, "fontFamily": { "body-sm": ["Inter"], "headline-md": ["Outfit"], "label-sm": ["Inter"], "headline-sm": ["Outfit"], "display-lg": ["Outfit"], "title-sm": ["Inter"], "headline-lg-mobile": ["Outfit"], "body-md": ["Inter"], "title-md": ["Inter"], "display-lg-mobile": ["Outfit"], "code-sm": ["JetBrains Mono"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Outfit"] }, "fontSize": { "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg-mobile": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "code-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "500" }] } } } }</script><style>@layer base{html,body{min-height:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-canvas-light text-text-primary-light min-h-screen flex flex-col antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-light/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="Nexus AI brand mark" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XGdlqNOisKAEAh4fKQJjHh8ebgRa3Hn3XsOodJ-7cjhke9YFTxD4O5J386M71gJ_nx0O68xQlwqkTGDLThZOspvUXvHvBrXUJ7ReXzzN7FcSDHWhDcGFbR6me6Pg32xyEaFy_u410Kby8Ui4VYaMXcDfIaafPWtLvzWvBt_DPXZ-Wfs7wWNf2XP--8V3m4BZuQibzd8KgjX_wcv4YnakLYHCdgTrwR0vEvSJe_gZWG4SYfltjdQG4eYQw"/><div class="flex flex-col min-w-0"><span class="text-label-sm font-label-sm text-text-muted-light uppercase tracking-wider truncate">Nexus AI</span><span class="text-title-md font-title-md text-text-primary-light truncate leading-none">Admin</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Search incidents" class="w-11 h-11 flex items-center justify-center rounded-lg text-text-secondary-light hover:text-text-primary-light hover:bg-surface-elevated-light active:scale-95 transition-all"><span class="material-symbols-outlined text-[20px]">search</span></button><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-lg text-text-secondary-light hover:text-text-primary-light hover:bg-surface-elevated-light active:scale-95 transition-all"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-status-breached-text ring-2 ring-surface-light"></span></button><div class="pl-space-xs flex items-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-light shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1XqVXG34mQqXmLKAYxAV0GC0632Yxg4LocLN54tAYvOpNWpCur7Ck60jTpTpaInj1Tol47zrjFsVpD4d_c7jysM0pSq9ftUvtIxulIr9Tym-c7lefVYububWdN8jc4vRZiNKhxQ0VeRaV1YbYL0Sujdmy4nStEqbGXgr93KjVdJSjBygKqfOCbFGm7cwXUrdXaBJtoDUlOiaM8p4FTwtwMPcGUJVXdEmMnAW8Ataeff7O9s3Ca9nqBvS7Q"/></div></div></div></header><main class="flex-1 w-full bg-canvas-light pt-16 pb-20"><div class="flex flex-col w-full pb-8">
+<!-- Dynamic Sub-Header / Admin Context -->
+<section class="px-gutter-mobile pt-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="min-w-0">
+<h1 class="font-headline-md text-headline-md text-text-primary-light tracking-tight truncate">
+          Admin &amp; User Governance
+        </h1>
+<p class="font-body-sm text-body-sm text-text-secondary-light">
+          Manage directory federation, shift parity &amp; workload routing
+        </p>
+</div>
+<button class="shrink-0 inline-flex items-center gap-1.5 h-10 px-3.5 rounded-lg bg-primary text-on-primary font-title-sm text-title-sm shadow-sm active:scale-95 transition-transform" id="inviteBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>+ Invite User</span>
+</button>
+</div>
+<!-- Sub-tab Pills (Horizontal Scrollable) -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1">
+<button class="tab-pill active-tab shrink-0 px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-primary text-on-primary shadow-sm transition-all" type="button">
+        Personnel (48)
+      </button>
+<button class="tab-pill shrink-0 px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-low text-text-secondary-light hover:bg-surface-container transition-all" type="button">
+        Teams (6)
+      </button>
+<button class="tab-pill shrink-0 px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-low text-text-secondary-light hover:bg-surface-container transition-all" type="button">
+        Routing Rules
+      </button>
+<button class="tab-pill shrink-0 px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container-low text-text-secondary-light hover:bg-surface-container transition-all flex items-center gap-1" type="button">
+<span>SSO &amp; SCIM</span>
+<span class="w-1.5 h-1.5 rounded-full bg-status-closed-text"></span>
+</button>
+</div>
+</section>
+<!-- 2x2 Metric KPI Grid -->
+<section class="px-gutter-mobile pt-space-md">
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Metric 1: Total Users -->
+<div class="p-3.5 rounded-xl bg-surface-light shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-muted-light mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary-light">Total Users</span>
+<span class="material-symbols-outlined text-[18px] text-text-muted-light">group</span>
+</div>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-text-primary-light">48</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-closed-bg text-status-closed-text">All Active</span>
+</div>
+</div>
+<!-- Metric 2: On Shift -->
+<div class="p-3.5 rounded-xl bg-surface-light shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-muted-light mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary-light">On Shift</span>
+<span class="material-symbols-outlined text-[18px] text-status-investigating-text">timelapse</span>
+</div>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-text-primary-light">14</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-assigned-bg text-status-assigned-text">78% Load</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted-light mt-1">Across 3 Pods</span>
+</div>
+<!-- Metric 3: Approvals -->
+<div class="p-3.5 rounded-xl bg-surface-light shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-muted-light mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary-light">Approvals</span>
+<span class="material-symbols-outlined text-[18px] text-status-waiting-text">hourglass_top</span>
+</div>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-text-primary-light">2</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-waiting-bg text-status-waiting-text">Awaiting VP</span>
+</div>
+</div>
+<!-- Metric 4: MFA Status -->
+<div class="p-3.5 rounded-xl bg-surface-light shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-muted-light mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary-light">MFA Status</span>
+<span class="material-symbols-outlined text-[18px] text-primary">verified_user</span>
+</div>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-text-primary-light">100%</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-status-closed-bg text-status-closed-text">SOC-2</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Search & Filter Controls -->
+<section class="px-gutter-mobile pt-space-md">
+<div class="flex flex-col gap-2">
+<!-- Search Input -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[20px] text-text-muted-light">search</span>
+<input class="w-full h-11 pl-10 pr-16 bg-surface-light rounded-lg font-body-md text-body-md text-text-primary-light placeholder:text-text-muted-light shadow-sm focus:outline-none focus:bg-surface-container-low transition-colors" id="userSearch" placeholder="Filter by name, pod, or clearance..." type="text"/>
+<span class="absolute right-2.5 top-2.5 px-2 py-0.5 rounded bg-surface-container font-code-sm text-code-sm text-text-secondary-light select-none">
+          ⌘K
+        </span>
+</div>
+<!-- Filter Droplets -->
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<button class="w-full h-9 px-3 bg-surface-light rounded-lg shadow-sm flex items-center justify-between font-label-md text-label-md text-text-secondary-light" type="button">
+<span class="flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[16px] text-text-muted-light">badge</span>
+<span>Role: All Roles</span>
+</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<div class="relative flex-1">
+<button class="w-full h-9 px-3 bg-surface-light rounded-lg shadow-sm flex items-center justify-between font-label-md text-label-md text-text-secondary-light" type="button">
+<span class="flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[16px] text-text-muted-light">schedule</span>
+<span>Shift: Active (14)</span>
+</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- User Roster List Cards -->
+<section class="px-gutter-mobile pt-space-md flex flex-col gap-3" id="rosterList">
+<!-- Card 1: Elena Vance -->
+<article class="p-4 rounded-xl bg-surface-light shadow-sm flex flex-col gap-3 transition-all">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="relative shrink-0">
+<img alt="Elena Vance" class="w-12 h-12 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1XqVXG34mQqXmLKAYxAV0GC0632Yxg4LocLN54tAYvOpNWpCur7Ck60jTpTpaInj1Tol47zrjFsVpD4d_c7jysM0pSq9ftUvtIxulIr9Tym-c7lefVYububWdN8jc4vRZiNKhxQ0VeRaV1YbYL0Sujdmy4nStEqbGXgr93KjVdJSjBygKqfOCbFGm7cwXUrdXaBJtoDUlOiaM8p4FTwtwMPcGUJVXdEmMnAW8Ataeff7O9s3Ca9nqBvS7Q"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-status-closed-text ring-2 ring-surface-light"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-text-primary-light truncate">Elena Vance</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-status-resolution-bg text-status-resolution-text">Lead</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary-light truncate">SecOps &amp; Core SRE</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-status-closed-text"></span>
+<span class="font-label-sm text-label-sm text-status-closed-text">Online &amp; On Shift</span>
+</div>
+</div>
+</div>
+<button aria-label="More actions for Elena Vance" class="w-8 h-8 rounded-lg flex items-center justify-center text-text-muted-light hover:bg-surface-elevated-light active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<!-- Capacity Bar -->
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-secondary-light">Active Workload</span>
+<span class="font-code-sm text-code-sm text-text-primary-light">4 / 8 cases (50%)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 50%;"></div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex items-center justify-end gap-2 pt-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-text-secondary-light font-label-md text-label-md hover:bg-surface-container active:scale-95 transition-all" type="button">
+          Reassign Cases
+        </button>
+<button class="px-3 py-1.5 rounded-lg bg-primary-fixed text-on-primary-fixed font-label-md text-label-md hover:bg-primary hover:text-on-primary active:scale-95 transition-all" type="button">
+          Edit Role
+        </button>
+</div>
+</article>
+<!-- Card 2: David Ross -->
+<article class="p-4 rounded-xl bg-surface-light shadow-sm flex flex-col gap-3 transition-all">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="relative shrink-0 w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-headline-sm text-headline-sm shadow-sm">
+<span>DR</span>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-status-closed-text ring-2 ring-surface-light"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-text-primary-light truncate">David Ross</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-status-assigned-bg text-status-assigned-text">Senior SRE</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary-light truncate">Cloud Infrastructure</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-status-closed-text"></span>
+<span class="font-label-sm text-label-sm text-status-closed-text">Online &amp; On Shift</span>
+</div>
+</div>
+</div>
+<button aria-label="More actions for David Ross" class="w-8 h-8 rounded-lg flex items-center justify-center text-text-muted-light hover:bg-surface-elevated-light active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<!-- Capacity Bar: Warning Amber -->
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-status-investigating-text flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>Capacity Warning</span>
+</span>
+<span class="font-code-sm text-code-sm text-status-investigating-text font-medium">6 / 8 cases (75%)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full rounded-full bg-status-investigating-text" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex items-center justify-end gap-2 pt-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-text-secondary-light font-label-md text-label-md hover:bg-surface-container active:scale-95 transition-all" type="button">
+          View Incidents
+        </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-primary-fixed-variant font-label-md text-label-md hover:bg-primary-fixed transition-all" type="button">
+          Manage Shift
+        </button>
+</div>
+</article>
+<!-- Card 3: Michael Chang (Overload Alert) -->
+<article class="p-4 rounded-xl bg-surface-light shadow-sm flex flex-col gap-3 transition-all">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="relative shrink-0 w-12 h-12 rounded-full bg-status-breached-bg flex items-center justify-center text-status-breached-text font-headline-sm text-headline-sm shadow-sm">
+<span>MC</span>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-status-closed-text ring-2 ring-surface-light"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-text-primary-light truncate">Michael Chang</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-status-triage-bg text-status-triage-text">DBA Specialist</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary-light truncate">Data Engineering</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-status-closed-text"></span>
+<span class="font-label-sm text-label-sm text-status-closed-text">Online &amp; On Shift</span>
+</div>
+</div>
+</div>
+<button aria-label="More actions for Michael Chang" class="w-8 h-8 rounded-lg flex items-center justify-center text-text-muted-light hover:bg-surface-elevated-light active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<!-- Capacity Bar: Alert Coral -->
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-status-breached-text flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[14px]">error</span>
+<span>Peak Overload</span>
+</span>
+<span class="font-code-sm text-code-sm text-status-breached-text font-semibold">8 / 8 cases (100%)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full rounded-full bg-status-breached-text" style="width: 100%;"></div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-status-breached-text">Queues throttled</span>
+<button class="px-3 py-1.5 rounded-lg bg-status-breached-bg text-status-breached-text font-label-md text-label-md active:scale-95 transition-all" type="button">
+          Shed Load
+        </button>
+</div>
+</article>
+<!-- Card 4: Sarah Jenkins (Off Shift) -->
+<article class="p-4 rounded-xl bg-surface-light shadow-sm flex flex-col gap-3 transition-all">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="relative shrink-0 w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant font-headline-sm text-headline-sm shadow-sm">
+<span>SJ</span>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-text-muted-light ring-2 ring-surface-light"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-text-primary-light truncate">Sarah Jenkins</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">DevOps</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary-light truncate">Platform Reliability</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-text-muted-light"></span>
+<span class="font-label-sm text-label-sm text-text-muted-light">Off Shift (Next: Tomorrow 08:00)</span>
+</div>
+</div>
+</div>
+<button aria-label="More actions for Sarah Jenkins" class="w-8 h-8 rounded-lg flex items-center justify-center text-text-muted-light hover:bg-surface-elevated-light active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<!-- Capacity Bar: Calm -->
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-secondary-light">Passive Handover</span>
+<span class="font-code-sm text-code-sm text-text-secondary-light">1 / 6 cases (16%)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full rounded-full bg-outline-variant" style="width: 16%;"></div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex items-center justify-end gap-2 pt-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-text-secondary-light font-label-md text-label-md hover:bg-surface-container transition-all" type="button">
+          On-Call Schedule
+        </button>
+</div>
+</article>
+</section>
+<!-- Bottom Section: Automated Shift Coverage & Okta SCIM Enclave -->
+<section class="px-gutter-mobile pt-space-xl flex flex-col gap-3">
+<!-- Ambient AI Spillover Suggestion Micro-Card -->
+<div class="p-4 rounded-xl bg-ai-bg-light shadow-sm flex flex-col gap-3 transition-all duration-300" id="aiRecommendationCard">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-status-resolution-bg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[18px]">auto_awesome</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Spillover Copilot</span>
+<span class="font-title-sm text-title-sm text-text-primary-light">Balance Workload Parity</span>
+</div>
+</div>
+<button aria-label="Dismiss suggestion" class="text-text-muted-light hover:text-status-breached-text" id="dismissAiBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light">
+        Michael Chang hit 100% capacity in Data Engineering. Sarah Jenkins can absorb 3 standby query telemetry tickets.
+      </p>
+<div class="flex items-center justify-between gap-2 pt-1">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span class="font-label-sm text-label-sm font-semibold">Auto-reassign 3 cases</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-status-resolution-bg text-status-resolution-text hover:bg-secondary-fixed font-label-md text-label-md font-semibold active:scale-95 transition-all" id="applyAiBtn" type="button">
+            Apply
+          </button>
+</div>
+</div>
+</div>
+<!-- Okta SCIM & SSO Health Tray -->
+<div class="p-4 rounded-xl bg-surface-light shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+<h2 class="font-title-sm text-title-sm text-text-primary-light">Okta SCIM &amp; SSO Enclave</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-status-closed-bg text-status-closed-text font-semibold">Federated</span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-text-secondary-light">Directory Sync</span>
+<div class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-closed-text shrink-0"></span>
+<span class="font-body-sm text-body-sm font-medium text-text-primary-light truncate">In Sync</span>
+</div>
+<span class="font-code-sm text-code-sm text-text-muted-light">Today 14:15 UTC</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-text-secondary-light">SAML Certificate</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-status-closed-text text-[14px]">lock</span>
+<span class="font-body-sm text-body-sm font-medium text-text-primary-light truncate">321 days</span>
+</div>
+<span class="font-code-sm text-code-sm text-text-muted-light">Expires Nov 2026</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 font-body-sm text-body-sm text-text-secondary-light">
+<span class="text-text-muted-light">Enforce SCIM push on user offboarding</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-light after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Interactive Toast Notification -->
+<div class="fixed bottom-20 left-4 right-4 z-40 transform translate-y-32 opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-between p-3.5 rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl" id="toastNotification">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-status-closed-text text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm" id="toastMessage">Action executed smoothly</span>
+</div>
+<button class="text-outline-variant hover:text-inverse-on-surface" onclick="hideToast()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<script>
+  // Toast Helper
+  const toast = document.getElementById('toastNotification');
+  const toastMsg = document.getElementById('toastMessage');
+  let toastTimeout;
+
+  function showToast(text) {
+    if (!toast) return;
+    toastMsg.textContent = text;
+    toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(hideToast, 3500);
+  }
+
+  function hideToast() {
+    if (!toast) return;
+    toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+  }
+
+  // Invite Button Micro-interaction
+  document.getElementById('inviteBtn')?.addEventListener('click', () => {
+    showToast('Invite modal opened (Workstation clearance provisioned)');
+  });
+
+  // AI Reassign Apply Micro-interaction
+  document.getElementById('applyAiBtn')?.addEventListener('click', () => {
+    const aiCard = document.getElementById('aiRecommendationCard');
+    if (aiCard) {
+      aiCard.style.opacity = '0.5';
+      setTimeout(() => {
+        aiCard.classList.add('hidden');
+        showToast('Workload rebalanced: 3 DBA cases rerouted to Sarah Jenkins');
+      }, 300);
+    }
+  });
+
+  // AI Dismiss
+  document.getElementById('dismissAiBtn')?.addEventListener('click', () => {
+    const aiCard = document.getElementById('aiRecommendationCard');
+    if (aiCard) {
+      aiCard.classList.add('hidden');
+      showToast('Recommendation deferred for next shift rotation');
+    }
+  });
+
+  // Live filter preview in console or local interaction
+  document.getElementById('userSearch')?.addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase();
+    const cards = document.querySelectorAll('#rosterList article');
+    cards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      if (text.includes(q)) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-light/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.03)]" data-active-classes="text-primary font-title-sm"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-text-secondary-light hover:text-primary transition-colors" data-path="triage" href="#"><span class="material-symbols-outlined text-[22px] leading-none mb-0.5">inbox</span><span class="text-label-sm font-label-sm tracking-normal">Triage</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-text-secondary-light hover:text-primary transition-colors" data-path="studio" href="#"><span class="material-symbols-outlined text-[22px] leading-none mb-0.5">forum</span><span class="text-label-sm font-label-sm tracking-normal">Studio</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-text-secondary-light hover:text-primary transition-colors" data-path="radar" href="#"><span class="material-symbols-outlined text-[22px] leading-none mb-0.5">radar</span><span class="text-label-sm font-label-sm tracking-normal">Radar</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-text-secondary-light hover:text-primary transition-colors" data-path="problems" href="#"><span class="material-symbols-outlined text-[22px] leading-none mb-0.5">extension</span><span class="text-label-sm font-label-sm tracking-normal">Problems</span></a><a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 transition-colors text-primary font-title-sm" data-path="admin" href="#"><span class="material-symbols-outlined text-[22px] leading-none mb-0.5">tune</span><span class="text-label-sm font-label-sm tracking-normal">Admin</span></a></div></nav></body></html>

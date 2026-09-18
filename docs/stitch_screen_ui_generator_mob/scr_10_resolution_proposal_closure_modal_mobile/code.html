@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#FAFAFC;}body{overscroll-behavior-y:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}.pb-safe{padding-bottom:max(env(safe-area-inset-bottom,0px),12px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}*{-webkit-tap-highlight-color:transparent;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "status-assigned-text": "#6366F1", "status-investigating-bg": "#FEF3C7", "on-tertiary-fixed-variant": "#004b73", "surface-dim": "#d2d9f4", "ai-bg-light": "#FAF5FF", "outline-variant": "#c7c4d7", "text-muted-light": "#94A3B8", "status-resolution-text": "#7C3AED", "surface-container": "#eaedff", "secondary-container": "#9e41f5", "primary-fixed-dim": "#c0c1ff", "surface-light": "#FFFFFF", "secondary-fixed-dim": "#ddb8ff", "on-error": "#ffffff", "status-triage-text": "#0284C7", "status-reported-bg": "#F1F5F9", "on-primary-fixed-variant": "#2f2ebe", "surface": "#faf8ff", "surface-container-lowest": "#ffffff", "on-surface": "#131b2e", "tertiary-fixed-dim": "#93ccff", "surface-container-high": "#e2e7ff", "inverse-on-surface": "#eef0ff", "error-container": "#ffdad6", "status-waiting-text": "#EA580C", "tertiary": "#006194", "on-primary-fixed": "#07006c", "surface-bright": "#faf8ff", "surface-tint": "#494bd6", "border-light": "#E2E8F0", "on-error-container": "#93000a", "on-primary-container": "#fffbff", "on-tertiary": "#ffffff", "status-reported-text": "#64748B", "outline": "#767586", "primary-container": "#6063ee", "inverse-primary": "#c0c1ff", "status-assigned-bg": "#EEF2FF", "canvas-light": "#FAFAFC", "on-tertiary-fixed": "#001d31", "tertiary-fixed": "#cce5ff", "inverse-surface": "#283044", "text-secondary-light": "#475569", "surface-container-low": "#f2f3ff", "background": "#faf8ff", "status-closed-bg": "#CCFBF1", "status-breached-bg": "#FFE4E6", "error": "#ba1a1a", "primary-fixed": "#e1e0ff", "primary": "#4648d4", "tertiary-container": "#007bb9", "ai-border": "#C084FC33", "on-secondary-fixed": "#2c0051", "status-triage-bg": "#E0F2FE", "status-breached-text": "#E11D48", "on-tertiary-container": "#fdfcff", "status-waiting-bg": "#FFEDD5", "secondary-fixed": "#f0dbff", "on-secondary-container": "#fffbff", "status-resolution-bg": "#F3E8FF", "surface-variant": "#dae2fd", "on-surface-variant": "#464554", "on-secondary-fixed-variant": "#6800b4", "on-background": "#131b2e", "status-closed-text": "#0D9488", "text-primary-light": "#0F172A", "status-investigating-text": "#D97706", "surface-container-highest": "#dae2fd", "on-primary": "#ffffff", "secondary": "#831ada", "surface-elevated-light": "#F8FAFC", "on-secondary": "#ffffff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-2xl": "2.5rem", "margin-mobile": "1rem", "gutter": "2rem", "space-xs": "0.25rem", "gutter-tablet": "1.5rem", "margin": "2rem", "space-lg": "1.5rem", "space-xl": "2rem", "space-md": "1rem", "margin-tablet": "1.5rem", "gutter-mobile": "1rem", "space-sm": "0.5rem" }, fontFamily: { "body-lg": ["Inter"], "body-md": ["Inter"], "title-sm": ["Inter"], "display-lg-mobile": ["Outfit"], "headline-md": ["Outfit"], "label-md": ["Inter"], "body-sm": ["Inter"], "headline-sm": ["Outfit"], "headline-lg-mobile": ["Outfit"], "title-md": ["Inter"], "headline-lg": ["Outfit"], "code-sm": ["JetBrains Mono"], "label-sm": ["Inter"], "display-lg": ["Outfit"] }, fontSize: { "body-lg": ["16px", { lineHeight: "26px", letterSpacing: "0em", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "22px", letterSpacing: "0em", fontWeight: "400" }], "title-sm": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "600" }], "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "-0.015em", fontWeight: "500" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }], "body-sm": ["13px", { lineHeight: "18px", letterSpacing: "0.005em", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "500" }], "headline-lg-mobile": ["22px", { lineHeight: "30px", letterSpacing: "-0.015em", fontWeight: "500" }], "title-md": ["16px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "500" }], "code-sm": ["12px", { lineHeight: "16px", letterSpacing: "0em", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "600" }], "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.025em", fontWeight: "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-canvas-light text-text-primary-light font-body-md min-h-full flex flex-col selection:bg-primary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-light/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(15,23,42,0.03)]"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #6366f1
+- Font: outfit
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XGdlqNOisKAEAh4fKQJjHh8ebgRa3Hn3XsOodJ-7cjhke9YFTxD4O5J386M71gJ_nx0O68xQlwqkTGDLThZOspvUXvHvBrXUJ7ReXzzN7FcSDHWhDcGFbR6me6Pg32xyEaFy_u410Kby8Ui4VYaMXcDfIaafPWtLvzWvBt_DPXZ-Wfs7wWNf2XP--8V3m4BZuQibzd8KgjX_wcv4YnakLYHCdgTrwR0vEvSJe_gZWG4SYfltjdQG4eYQw"/><div class="flex flex-col leading-none"><span class="font-headline-sm text-headline-sm text-text-primary-light tracking-tight">Nexus AI</span><span class="font-label-sm text-label-sm text-text-muted-light mt-0.5 uppercase tracking-wider">Studio</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Search cases and knowledge base" class="w-11 h-11 flex items-center justify-center rounded-lg text-text-secondary-light hover:text-text-primary-light hover:bg-canvas-light transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">search</span></button><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-lg text-text-secondary-light hover:text-text-primary-light hover:bg-canvas-light transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-status-breached-text ring-2 ring-surface-light"></span></button><div class="pl-space-xs flex items-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-light" src="https://lh3.googleusercontent.com/aida/AEtjO1XqVXG34mQqXmLKAYxAV0GC0632Yxg4LocLN54tAYvOpNWpCur7Ck60jTpTpaInj1Tol47zrjFsVpD4d_c7jysM0pSq9ftUvtIxulIr9Tym-c7lefVYububWdN8jc4vRZiNKhxQ0VeRaV1YbYL0Sujdmy4nStEqbGXgr93KjVdJSjBygKqfOCbFGm7cwXUrdXaBJtoDUlOiaM8p4FTwtwMPcGUJVXdEmMnAW8Ataeff7O9s3Ca9nqBvS7Q"/></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 px-space-md bg-canvas-light"><div class="flex flex-col w-full">
+<!-- Subtle Modal Scrim Backing -->
+<div class="fixed inset-0 bg-on-surface/20 backdrop-blur-[2px] pointer-events-none z-30"></div>
+<!-- Bottom Sheet Container Viewport: 390px native framing -->
+<div class="relative z-40 w-full max-w-[420px] mx-auto bg-surface-light rounded-t-2xl shadow-xl flex flex-col overflow-hidden">
+<!-- Drag Handle Area -->
+<div class="w-full flex items-center justify-center pt-3 pb-2 cursor-grab active:cursor-grabbing">
+<div class="w-10 h-1 rounded-full bg-outline-variant/60"></div>
+</div>
+<!-- Modal Header -->
+<div class="px-space-md pt-1 pb-space-sm flex flex-col gap-space-xs">
+<!-- Tag Meta Row -->
+<div class="flex items-center justify-between flex-wrap gap-1.5">
+<div class="flex items-center gap-1.5">
+<span class="font-code-sm text-code-sm text-text-secondary-light bg-surface-container-low px-2 py-0.5 rounded">NEX-2026-0104</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-status-assigned-bg text-status-assigned-text font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-status-assigned-text"></span>
+            Ready for Handshake
+          </span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-status-closed-bg text-status-closed-text font-label-sm text-label-sm uppercase tracking-wider">
+          Level 3 Fix
+        </span>
+</div>
+<!-- Title & Incident Summary -->
+<div class="mt-1">
+<h2 class="font-headline-sm text-headline-sm text-text-primary-light font-semibold tracking-tight">Propose Resolution &amp; Close Case</h2>
+<p class="font-body-sm text-body-sm text-text-secondary-light mt-1">
+<span class="font-medium text-text-primary-light">“Authentication Gateway Timeout during SSO federation”</span> — verified system stabilization.
+        </p>
+</div>
+</div>
+<!-- Interactive Scroll Area -->
+<div class="px-space-md py-space-sm flex flex-col gap-space-md overflow-y-auto max-h-[calc(85vh-160px)]">
+<!-- AI Resolution Copilot Digest Card -->
+<div class="bg-ai-bg-light rounded-xl p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide uppercase">Nexus Copilot Root-Cause</span>
+</div>
+<span class="font-code-sm text-code-sm text-text-muted-light">Model v4.2</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light leading-relaxed">
+          Redis token cache exhaustion mitigated by hotpatch #4099. Connection pool limits expanded from <span class="font-code-sm text-code-sm text-text-primary-light font-semibold">1024</span> to <span class="font-code-sm text-code-sm text-text-primary-light font-semibold">4096</span>. Error budget recovered to <span class="text-status-closed-text font-semibold">99.98%</span>.
+        </p>
+<!-- Inline Toggle -->
+<label class="flex items-start gap-2.5 mt-1 pt-2 cursor-pointer select-none">
+<input checked="" class="mt-0.5 h-4 w-4 rounded accent-primary text-on-primary cursor-pointer" id="includeRcaCheck" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-text-primary-light">
+            Include AI automated RCA summary in customer closure notice
+          </span>
+</label>
+</div>
+<!-- Structured Resolution Form -->
+<div class="flex flex-col gap-space-sm">
+<!-- Root Cause Category -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary-light" for="root-cause">Root Cause Category</label>
+<div class="relative bg-surface-container-lowest rounded-lg">
+<div class="h-11 px-3 flex items-center justify-between bg-surface-container-low rounded-lg text-text-primary-light font-body-sm text-body-sm">
+<span class="truncate">Infrastructure &gt; Connection Pool Exhaustion</span>
+<span class="material-symbols-outlined text-text-muted-light text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Remediation Type Radio Pills -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary-light">Remediation Classification</label>
+<div class="grid grid-cols-3 gap-1.5 p-1 bg-surface-container-low rounded-lg text-center" id="pillSelector">
+<button class="py-2 px-1 rounded font-label-sm text-label-sm transition-all text-text-secondary-light" onclick="selectRemediation(this, 'workaround')" type="button">
+              Workaround
+            </button>
+<button class="py-2 px-1 rounded font-label-sm text-label-sm bg-surface-light text-primary font-semibold shadow-sm transition-all" onclick="selectRemediation(this, 'permanent')" type="button">
+              Permanent Patch
+            </button>
+<button class="py-2 px-1 rounded font-label-sm text-label-sm transition-all text-text-secondary-light" onclick="selectRemediation(this, 'rollback')" type="button">
+              Config Rollback
+            </button>
+</div>
+</div>
+<!-- Customer-Facing Resolution Summary -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary-light" for="resolution-summary">Customer-Facing Note</label>
+<span class="font-label-sm text-label-sm text-text-muted-light">Dual Audited</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3">
+<textarea class="w-full bg-transparent resize-none font-body-sm text-body-sm text-text-primary-light focus:outline-none placeholder:text-text-muted-light leading-[18px]" id="resolution-summary" rows="3">Ingress Envoy connection limits have been re-calibrated. All affected regional pods have returned to nominal latency (&lt;12ms).</textarea>
+</div>
+</div>
+<!-- KEDB Publication Option -->
+<label class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-low cursor-pointer select-none">
+<input checked="" class="h-4 w-4 rounded accent-primary cursor-pointer" id="kedbExport" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-text-primary-light leading-tight">Publish to KEDB (Known Error Database)</span>
+<span class="font-body-sm text-body-sm text-text-secondary-light truncate">Enables autonomous triage matching for incident recurrence</span>
+</div>
+</label>
+</div>
+<!-- Verification & Sign-off Checklist -->
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary-light">Stabilization Gates</span>
+<div class="flex flex-col gap-1.5">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-status-closed-bg flex items-center justify-center text-status-closed-text">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</span>
+<span class="font-body-sm text-body-sm text-text-primary-light">Synthetic probe telemetry passing</span>
+</div>
+<span class="font-code-sm text-code-sm text-status-closed-text font-medium">100/100</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-status-closed-bg flex items-center justify-center text-status-closed-text">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</span>
+<span class="font-body-sm text-body-sm text-text-primary-light">Requester dual sign-off requested</span>
+</div>
+<span class="font-label-sm text-label-sm text-status-assigned-text font-semibold uppercase">Pending</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Action Footer -->
+<div class="p-space-md bg-surface-light flex flex-col gap-2 shadow-[0_-4px_16px_rgba(15,23,42,0.03)]">
+<!-- Primary Action -->
+<button class="w-full h-12 rounded-lg bg-status-assigned-text text-on-primary font-title-sm text-title-sm flex items-center justify-center gap-2 active:scale-[0.99] transition-transform" id="submitResolutionBtn" onclick="triggerHandshake()" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Submit Resolution to Requester</span>
+</button>
+<!-- Ghost / Dismiss Options -->
+<div class="flex items-center justify-between px-1">
+<button class="font-label-sm text-label-sm text-text-secondary-light hover:text-text-primary-light py-2 transition-colors" onclick="handleMonitoring()" type="button">
+          Keep Open in Monitoring Mode
+        </button>
+<button class="font-label-sm text-label-sm text-status-breached-text hover:opacity-80 py-2 transition-opacity" onclick="dismissModal()" type="button">
+          Cancel
+        </button>
+</div>
+</div>
+</div>
+<!-- Toast Notification Feedback -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 transform opacity-0 translate-y-4 pointer-events-none" id="toastNotification">
+<div class="bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-full shadow-lg flex items-center gap-2 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-status-closed-text text-[18px]">check_circle</span>
+<span id="toastMessage">Resolution proposal dispatched</span>
+</div>
+</div>
+</div>
+<script>
+  function selectRemediation(element, type) {
+    const parent = document.getElementById('pillSelector');
+    if (!parent) return;
+    const buttons = parent.querySelectorAll('button');
+    buttons.forEach(btn => {
+      btn.className = 'py-2 px-1 rounded font-label-sm text-label-sm transition-all text-text-secondary-light';
+    });
+    element.className = 'py-2 px-1 rounded font-label-sm text-label-sm bg-surface-light text-primary font-semibold shadow-sm transition-all';
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toastNotification');
+    const label = document.getElementById('toastMessage');
+    if (!toast || !label) return;
+    label.innerText = msg;
+    toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+      toast.classList.remove('opacity-100', 'translate-y-0');
+    }, 2800);
+  }
+
+  function triggerHandshake() {
+    const btn = document.getElementById('submitResolutionBtn');
+    if (btn) {
+      btn.disabled = true;
+      btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span><span>Dispatching Handshake...</span>';
+      setTimeout(() => {
+        btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span><span>Dispatched Successfully</span>';
+        showToast('Resolution proposal sent to requester');
+      }, 700);
+    }
+  }
+
+  function handleMonitoring() {
+    showToast('Case flagged: 24h Telemetry Monitoring');
+  }
+
+  function dismissModal() {
+    showToast('Closure proposal canceled');
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-light/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(15,23,42,0.04)]" data-active-classes="text-status-assigned-text font-semibold"><div class="h-16 flex items-center justify-around px-space-xs"><a class="flex flex-col items-center justify-center w-16 h-12 text-text-secondary-light hover:text-text-primary-light transition-colors" data-path="triage" href="#"><span class="material-symbols-outlined text-[22px]">inbox</span><span class="font-label-sm text-label-sm mt-1">Triage</span></a><a aria-current="page" class="flex flex-col items-center justify-center w-16 h-12 transition-colors text-status-assigned-text font-semibold" data-path="studio" href="#"><span class="material-symbols-outlined text-[22px]">auto_awesome</span><span class="font-label-sm text-label-sm mt-1">Studio</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-text-secondary-light hover:text-text-primary-light transition-colors" data-path="radar" href="#"><span class="material-symbols-outlined text-[22px]">radar</span><span class="font-label-sm text-label-sm mt-1">Radar</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-text-secondary-light hover:text-text-primary-light transition-colors" data-path="problems" href="#"><span class="material-symbols-outlined text-[22px]">warning</span><span class="font-label-sm text-label-sm mt-1">Problems</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-text-secondary-light hover:text-text-primary-light transition-colors" data-path="admin" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="font-label-sm text-label-sm mt-1">Admin</span></a></div></nav></body></html>

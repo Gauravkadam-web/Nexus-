@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "status-breached-text": "#E11D48", "on-primary-fixed": "#07006c", "outline-variant": "#c7c4d7", "tertiary-fixed-dim": "#93ccff", "on-surface-variant": "#464554", "inverse-surface": "#283044", "on-error-container": "#93000a", "status-resolution-bg": "#F3E8FF", "status-resolution-text": "#7C3AED", "on-error": "#ffffff", "surface-elevated-light": "#F8FAFC", "on-secondary-fixed": "#2c0051", "status-waiting-text": "#EA580C", "tertiary": "#006194", "inverse-primary": "#c0c1ff", "primary-fixed": "#e1e0ff", "secondary-fixed-dim": "#ddb8ff", "surface-container-high": "#e2e7ff", "tertiary-fixed": "#cce5ff", "background": "#faf8ff", "outline": "#767586", "status-triage-bg": "#E0F2FE", "on-tertiary": "#ffffff", "surface-container-lowest": "#ffffff", "status-reported-text": "#64748B", "status-triage-text": "#0284C7", "on-primary-fixed-variant": "#2f2ebe", "border-light": "#E2E8F0", "status-reported-bg": "#F1F5F9", "inverse-on-surface": "#eef0ff", "status-assigned-bg": "#EEF2FF", "on-tertiary-fixed-variant": "#004b73", "status-waiting-bg": "#FFEDD5", "secondary-fixed": "#f0dbff", "text-muted-light": "#94A3B8", "status-breached-bg": "#FFE4E6", "primary": "#4648d4", "status-investigating-text": "#D97706", "on-tertiary-fixed": "#001d31", "surface-dim": "#d2d9f4", "surface-tint": "#494bd6", "on-surface": "#131b2e", "surface-container-highest": "#dae2fd", "text-primary-light": "#0F172A", "surface-light": "#FFFFFF", "text-secondary-light": "#475569", "status-closed-bg": "#CCFBF1", "primary-fixed-dim": "#c0c1ff", "secondary": "#831ada", "on-secondary-fixed-variant": "#6800b4", "surface-container-low": "#f2f3ff", "on-secondary-container": "#fffbff", "on-tertiary-container": "#fdfcff", "error": "#ba1a1a", "on-primary": "#ffffff", "canvas-light": "#FAFAFC", "on-primary-container": "#fffbff", "surface-bright": "#faf8ff", "ai-border": "#C084FC33", "secondary-container": "#9e41f5", "status-investigating-bg": "#FEF3C7", "surface-container": "#eaedff", "status-closed-text": "#0D9488", "tertiary-container": "#007bb9", "surface": "#faf8ff", "surface-variant": "#dae2fd", "error-container": "#ffdad6", "ai-bg-light": "#FAF5FF", "on-background": "#131b2e", "on-secondary": "#ffffff", "primary-container": "#6063ee", "status-assigned-text": "#6366F1" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-xl": "2rem", "margin-tablet": "1.5rem", "margin": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "gutter-tablet": "1.5rem", "space-md": "1rem", "gutter": "2rem", "space-2xl": "2.5rem", "gutter-mobile": "1rem" }, "fontFamily": { "body-sm": ["Inter"], "headline-md": ["Outfit"], "label-sm": ["Inter"], "headline-sm": ["Outfit"], "display-lg": ["Outfit"], "title-sm": ["Inter"], "headline-lg-mobile": ["Outfit"], "body-md": ["Inter"], "title-md": ["Inter"], "display-lg-mobile": ["Outfit"], "code-sm": ["JetBrains Mono"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Outfit"] }, "fontSize": { "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg-mobile": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "code-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "500" }] } } } }</script><style>@layer base{html,body{min-height:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-canvas-light text-text-primary-light min-h-screen flex flex-col antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-light/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="Nexus AI brand mark" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XGdlqNOisKAEAh4fKQJjHh8ebgRa3Hn3XsOodJ-7cjhke9YFTxD4O5J386M71gJ_nx0O68xQlwqkTGDLThZOspvUXvHvBrXUJ7ReXzzN7FcSDHWhDcGFbR6me6Pg32xyEaFy_u410Kby8Ui4VYaMXcDfIaafPWtLvzWvBt_DPXZ-Wfs7wWNf2XP--8V3m4BZuQibzd8KgjX_wcv4YnakLYHCdgTrwR0vEvSJe_gZWG4SYfltjdQG4eYQw"/><div class="flex flex-col min-w-0"><span class="text-label-sm font-label-sm text-text-muted-light uppercase tracking-wider truncate">Nexus AI</span><span class="text-title-md font-title-md text-text-primary-light truncate leading-none">Problems</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Search incidents" class="w-11 h-11 flex items-center justify-center rounded-lg text-text-secondary-light hover:text-text-primary-light hover:bg-surface-elevated-light active:scale-95 transition-all"><span class="material-symbols-outlined text-[20px]">search</span></button><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-lg text-text-secondary-light hover:text-text-primary-light hover:bg-surface-elevated-light active:scale-95 transition-all"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-status-breached-text ring-2 ring-surface-light"></span></button><div class="pl-space-xs flex items-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-light shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1XqVXG34mQqXmLKAYxAV0GC0632Yxg4LocLN54tAYvOpNWpCur7Ck60jTpTpaInj1Tol47zrjFsVpD4d_c7jysM0pSq9ftUvtIxulIr9Tym-c7lefVYububWdN8jc4vRZiNKhxQ0VeRaV1YbYL0Sujdmy4nStEqbGXgr93KjVdJSjBygKqfOCbFGm7cwXUrdXaBJtoDUlOiaM8p4FTwtwMPcGUJVXdEmMnAW8Ataeff7O9s3Ca9nqBvS7Q"/></div></div></div></header><main class="flex-1 w-full bg-canvas-light pt-16 pb-20"><div class="flex flex-col w-full">
+<div class="px-gutter-mobile pt-space-md pb-space-lg flex flex-col gap-space-md">
+<section class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between gap-space-xs flex-wrap">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-resolution-bg text-status-resolution-text">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">sync</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">ITIL v4 KEDB Synced</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted-light flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-closed-text animate-pulse"></span>
+          Vector Model Active
+        </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light">
+        Autonomous telemetry pattern clustering and root-cause correlation hub.
+      </p>
+</section>
+<!-- Top KPI Grid (2x2) -->
+<section aria-label="System Health Metrics" class="grid grid-cols-2 gap-space-sm">
+<!-- KPI 1 -->
+<div class="bg-surface-light p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-text-secondary-light uppercase tracking-wider">Active Problems</span>
+<span class="material-symbols-outlined text-[18px] text-primary">psychology</span>
+</div>
+<div>
+<div class="font-display-lg-mobile text-display-lg-mobile text-text-primary-light font-headline-md tracking-tight leading-tight">18</div>
+<p class="font-body-sm text-body-sm text-status-investigating-text font-medium mt-0.5 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-investigating-text"></span>
+            4 in 5-Whys
+          </p>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-light p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-text-secondary-light uppercase tracking-wider">Linked Incidents</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary">hub</span>
+</div>
+<div>
+<div class="font-display-lg-mobile text-display-lg-mobile text-text-primary-light font-headline-md tracking-tight leading-tight">142</div>
+<p class="font-body-sm text-body-sm text-status-closed-text font-medium mt-0.5 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_down</span>
+            -12% MoM
+          </p>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-light p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-text-secondary-light uppercase tracking-wider">Pattern Defense</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">security</span>
+</div>
+<div>
+<div class="font-display-lg-mobile text-display-lg-mobile text-text-primary-light font-headline-md tracking-tight leading-tight">84%</div>
+<p class="font-body-sm text-body-sm text-status-closed-text font-medium mt-0.5 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-closed-text"></span>
+            Mitigated
+          </p>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-light p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-text-secondary-light uppercase tracking-wider">Avg RCA Time</span>
+<span class="material-symbols-outlined text-[18px] text-status-assigned-text">timer</span>
+</div>
+<div>
+<div class="font-display-lg-mobile text-display-lg-mobile text-text-primary-light font-headline-md tracking-tight leading-tight">1.8d</div>
+<p class="font-body-sm text-body-sm text-text-muted-light mt-0.5">
+            Target &lt;3.0d
+          </p>
+</div>
+</div>
+</section>
+<!-- Visual telemetry context photo card -->
+<div class="relative w-full rounded-xl overflow-hidden shadow-sm bg-surface-light p-space-sm flex items-center gap-space-sm">
+<img class="w-16 h-16 rounded-lg object-cover shrink-0" data-alt="Futuristic server datacenter with glowing purple and indigo LED telemetry indicators, minimal aesthetic, pristine enterprise engineering, rack units reflecting ambient lavender lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgWOucyNq8x-GE3r2s5vMH9T13YO-eWJFDvAa0a2iOhdBvlDrezUS1B4wkI9fpxAKWw0D4IKHc9CbGIVnbZJOiPZYNXJmEAu6xcl54L_g6bm7_9A6DsTdWWtgKvnrTOy7XO2aOQn1yvSFTzZJOCWni7BUO_BD1yvcJL0WGXDOJKBYdYKERVV-DZxmzyyaH7T4FJ84G6WY3h2MHtwphMkI67Cb0Y9qilIa8PVRL8y46ivOpxFf7yYV9"/>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1 text-primary text-label-sm font-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]">memory</span>
+          Vector Space Engine
+        </div>
+<span class="font-title-sm text-title-sm text-text-primary-light truncate">Global Core Topology v4.9</span>
+<span class="font-body-sm text-body-sm text-text-secondary-light truncate">1,248 nodes monitored in 500-dim hyperspace</span>
+</div>
+</div>
+<!-- Section 1: AI Vector Anomaly Detection micro-card -->
+<section class="bg-ai-bg-light rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="text-[18px] leading-none select-none">✨</span>
+<span class="font-title-sm text-title-sm text-status-resolution-text">Cluster #VEC-098</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-status-resolution-bg text-status-resolution-text font-label-sm text-label-sm uppercase">
+          96.4% Similarity
+        </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light">
+        3 incidents in last 48h share identical Redis cache memory leak signature:
+      </p>
+<!-- Linked incident pill tags -->
+<div class="flex flex-wrap gap-space-xs items-center">
+<span class="px-2.5 py-1 rounded-full bg-surface-light font-code-sm text-code-sm text-primary shadow-sm">NEX-0104</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-light font-code-sm text-code-sm text-primary shadow-sm">NEX-0098</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-light font-code-sm text-code-sm text-primary shadow-sm">NEX-0087</span>
+</div>
+<!-- Action buttons -->
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 min-h-[40px] px-3 py-2 rounded-lg bg-surface-light text-status-resolution-text hover:bg-status-resolution-bg font-label-md text-label-md transition-all active:scale-95 shadow-sm flex items-center justify-center gap-1" id="inspect-vector-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">bubble_chart</span>
+          Inspect Vector
+        </button>
+<button class="flex-1 min-h-[40px] px-3 py-2 rounded-lg bg-status-assigned-text text-on-primary font-label-md text-label-md hover:bg-primary transition-all active:scale-95 shadow-sm flex items-center justify-center gap-1" id="create-record-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+          Create Record
+        </button>
+</div>
+<div class="hidden font-body-sm text-body-sm text-status-resolution-text bg-status-resolution-bg px-space-sm py-1.5 rounded-lg text-center" id="vector-feedback">
+        Telemetry correlation pipeline anchored to canvas.
+      </div>
+</section>
+<!-- Section 2: Master Problems Active List -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-text-primary-light">Master Problems</h2>
+<span class="font-label-sm text-label-sm text-text-muted-light">3 of 18 Active</span>
+</div>
+<!-- Search & Filter Bar -->
+<div class="flex items-center gap-space-xs">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted-light text-[18px]">search</span>
+<input class="w-full h-11 pl-9 pr-3 rounded-lg bg-surface-light text-text-primary-light font-body-sm text-body-sm focus:outline-none shadow-sm placeholder:text-text-muted-light placeholder:font-body-sm placeholder:text-body-sm" id="problem-search" placeholder="Filter root causes, IDs or services..." type="text"/>
+</div>
+<button aria-label="Toggle Problem Filters" class="h-11 w-11 shrink-0 rounded-lg bg-surface-light text-text-secondary-light flex items-center justify-center shadow-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+<!-- Problem Cards List -->
+<div class="flex flex-col gap-space-sm" id="problems-container">
+<!-- Card 1 -->
+<article class="problem-item bg-surface-light rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs active:scale-[0.99] transition-transform">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-code-sm text-code-sm text-text-muted-light">PRB-2026-0012</span>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-status-breached-bg text-status-breached-text font-label-sm text-label-sm uppercase font-semibold">P1 Critical</span>
+<span class="px-2 py-0.5 rounded-full bg-status-closed-bg text-status-closed-text font-label-sm text-label-sm uppercase font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+                Fix Deployed
+              </span>
+</div>
+</div>
+<h3 class="font-title-sm text-title-sm text-text-primary-light">Redis Cluster Token Cache Memory Leak</h3>
+<div class="flex items-center justify-between text-text-secondary-light font-body-sm text-body-sm pt-space-xs">
+<span class="inline-flex items-center gap-1 font-code-sm text-code-sm text-text-secondary-light">
+<span class="material-symbols-outlined text-[14px]">dns</span>
+              auth-session-svc
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-status-assigned-bg text-status-assigned-text font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">device_hub</span>
+              6 Linked
+            </span>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="problem-item bg-surface-light rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs active:scale-[0.99] transition-transform">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-code-sm text-code-sm text-text-muted-light">PRB-2026-0011</span>
+<span class="px-2 py-0.5 rounded-full bg-status-investigating-bg text-status-investigating-text font-label-sm text-label-sm uppercase font-semibold">P2 High</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-text-primary-light">Postgres Read-Replica Lag during Batch Triage</h3>
+<div class="flex items-center justify-between text-text-secondary-light font-body-sm text-body-sm pt-space-xs">
+<span class="inline-flex items-center gap-1 font-code-sm text-code-sm text-text-secondary-light">
+<span class="material-symbols-outlined text-[14px]">database</span>
+              db-core-replica-02
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-status-assigned-bg text-status-assigned-text font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">device_hub</span>
+              14 Linked
+            </span>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="problem-item bg-surface-light rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs active:scale-[0.99] transition-transform">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-code-sm text-code-sm text-text-muted-light">PRB-2026-0009</span>
+<span class="px-2 py-0.5 rounded-full bg-status-investigating-bg text-status-investigating-text font-label-sm text-label-sm uppercase font-semibold">P2 High</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-text-primary-light">Edge TLS Handshake Degradation on Gateway nodes</h3>
+<div class="flex items-center justify-between text-text-secondary-light font-body-sm text-body-sm pt-space-xs">
+<span class="inline-flex items-center gap-1 font-code-sm text-code-sm text-text-secondary-light">
+<span class="material-symbols-outlined text-[14px]">router</span>
+              gw-edge-cluster
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-status-assigned-bg text-status-assigned-text font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">device_hub</span>
+              9 Linked
+            </span>
+</div>
+</article>
+</div>
+</section>
+<!-- Section 3: Known Error Database (KEDB) Quick Solutions -->
+<section class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary">library_books</span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary-light">KEDB Solutions</h2>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium cursor-pointer">View Index (412)</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Solution 1 -->
+<div class="bg-surface-light rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-text-muted-light">KEDB-ART-0089</span>
+<span class="px-2.5 py-0.5 rounded-full bg-status-resolution-bg text-status-resolution-text font-label-sm text-label-sm uppercase font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">smart_toy</span>
+              Automated Runbook
+            </span>
+</div>
+<h4 class="font-title-sm text-title-sm text-text-primary-light">Session Pool Connection Saturation Recovery</h4>
+<p class="font-body-sm text-body-sm text-text-secondary-light">
+            Recovers stalled socket pools by triggering connection pool garbage sweep and back-off throttling.
+          </p>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-status-closed-text font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+              Avg execution: 420ms
+            </span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-elevated-light text-primary hover:bg-primary hover:text-on-primary font-label-md text-label-md transition-colors flex items-center gap-1" type="button">
+<span>Execute Runbook</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Solution 2 -->
+<div class="bg-surface-light rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-text-muted-light">KEDB-ART-0074</span>
+<span class="px-2.5 py-0.5 rounded-full bg-status-reported-bg text-status-reported-text font-label-sm text-label-sm uppercase font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">menu_book</span>
+              Manual Playbook
+            </span>
+</div>
+<h4 class="font-title-sm text-title-sm text-text-primary-light">Kafka Offset Rollback on Dead-Letter Spikes</h4>
+<p class="font-body-sm text-body-sm text-text-secondary-light">
+            Step-by-step checklist to safely drain downstream dead-letter topics and re-point partition consumer groups.
+          </p>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-muted-light flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+              Estimated 12 mins
+            </span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-elevated-light text-text-primary-light hover:bg-border-light font-label-md text-label-md transition-colors flex items-center gap-1" type="button">
+<span>Open Playbook</span>
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Team Collaboration preview placeholder -->
+<div class="bg-surface-light rounded-xl p-space-md shadow-sm flex items-center gap-space-md">
+<img class="w-14 h-14 rounded-lg object-cover shrink-0" data-alt="Close up of modern enterprise collaborative UX workspace with subtle graph nodes and incident metrics on a clean tablet screen, minimal design studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBWS6wsE6yzn6y-Ch11kxzUMgLK07bz9UiobsfAayClEr9VrPZy9L_F5q6uFBoReGHYwFM07YCQqXNNorZakR-gEstC326mXbfyNO9GFM5aKfMVJsIPUBzjCagzRzeKxL_vX3m5W_6oysPe6pHTkLOr78P0o9TpJL035putEUFsDrsuLw8ViD7eBj8v-doVRuwdh0GDemAtgLl_3MxWMeFaP6Vdig8NK7Mb3XC4xb-qraFSBoGRqVF"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase text-text-muted-light">Continuous Improvement</span>
+<span class="font-title-sm text-title-sm text-text-primary-light truncate">Weekly RCA Knowledge Exchange</span>
+<span class="font-body-sm text-body-sm text-text-secondary-light">Tomorrow, 14:00 UTC · 8 Engineers Attending</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const searchInput = document.getElementById('problem-search');
+    const problemItems = document.querySelectorAll('.problem-item');
+    const inspectBtn = document.getElementById('inspect-vector-btn');
+    const createBtn = document.getElementById('create-record-btn');
+    const feedback = document.getElementById('vector-feedback');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function(e) {
+        const query = e.target.value.toLowerCase().trim();
+        problemItems.forEach(item => {
+          const text = item.textContent.toLowerCase();
+          if (text.includes(query)) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    if (inspectBtn && feedback) {
+      inspectBtn.addEventListener('click', function() {
+        feedback.textContent = 'Opening 3D Vector Space: Cluster #VEC-098 pinpointed.';
+        feedback.classList.remove('hidden');
+        setTimeout(() => feedback.classList.add('hidden'), 3500);
+      });
+    }
+
+    if (createBtn && feedback) {
+      createBtn.addEventListener('click', function() {
+        feedback.textContent = 'Problem Record PRB-2026-0013 drafted with 3 linked events!';
+        feedback.classList.remove('hidden');
+        setTimeout(() => feedback.classList.add('hidden'), 3500);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-light/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.03)]" data-active-classes="text-primary font-title-sm"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-text-secondary-light hover:text-primary transition-colors" data-path="triage" href="#"><span class="material-symbols-outlined text-[22px] leading-none mb-0.5">inbox</span><span class="text-label-sm font-label-sm tracking-normal">Triage</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-text-secondary-light hover:text-primary transition-colors" data-path="studio" href="#"><span class="material-symbols-outlined text-[22px] leading-none mb-0.5">forum</span><span class="text-label-sm font-label-sm tracking-normal">Studio</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-text-secondary-light hover:text-primary transition-colors" data-path="radar" href="#"><span class="material-symbols-outlined text-[22px] leading-none mb-0.5">radar</span><span class="text-label-sm font-label-sm tracking-normal">Radar</span></a><a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 transition-colors text-primary font-title-sm" data-path="problems" href="#"><span class="material-symbols-outlined text-[22px] leading-none mb-0.5">extension</span><span class="text-label-sm font-label-sm tracking-normal">Problems</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-text-secondary-light hover:text-primary transition-colors" data-path="admin" href="#"><span class="material-symbols-outlined text-[22px] leading-none mb-0.5">tune</span><span class="text-label-sm font-label-sm tracking-normal">Admin</span></a></div></nav></body></html>

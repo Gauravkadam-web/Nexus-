@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><title>Nexus AI Operations</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400&amp;family=Outfit:wght@500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "status-investigating-bg": "#FEF3C7", "outline-variant": "#c7c4d7", "ai-bg-light": "#FAF5FF", "status-breached-text": "#E11D48", "status-closed-bg": "#CCFBF1", "status-reported-text": "#64748B", "outline": "#767586", "tertiary-container": "#007bb9", "on-secondary-fixed-variant": "#6800b4", "status-resolution-bg": "#F3E8FF", "secondary-fixed": "#f0dbff", "on-secondary": "#ffffff", "surface-tint": "#494bd6", "secondary-fixed-dim": "#ddb8ff", "surface": "#faf8ff", "surface-container": "#eaedff", "status-investigating-text": "#D97706", "surface-bright": "#faf8ff", "on-primary-container": "#fffbff", "inverse-on-surface": "#eef0ff", "on-secondary-container": "#fffbff", "on-tertiary-fixed-variant": "#004b73", "on-primary-fixed-variant": "#2f2ebe", "surface-light": "#FFFFFF", "error": "#ba1a1a", "background": "#faf8ff", "primary-fixed": "#e1e0ff", "surface-variant": "#dae2fd", "text-secondary-light": "#475569", "surface-dim": "#d2d9f4", "status-breached-bg": "#FFE4E6", "on-tertiary": "#ffffff", "on-surface": "#131b2e", "surface-container-lowest": "#ffffff", "secondary": "#831ada", "on-error": "#ffffff", "error-container": "#ffdad6", "status-waiting-bg": "#FFEDD5", "tertiary-fixed": "#cce5ff", "border-light": "#E2E8F0", "on-tertiary-container": "#fdfcff", "inverse-surface": "#283044", "status-reported-bg": "#F1F5F9", "surface-elevated-light": "#F8FAFC", "status-resolution-text": "#7C3AED", "on-error-container": "#93000a", "secondary-container": "#9e41f5", "text-muted-light": "#94A3B8", "on-primary-fixed": "#07006c", "status-triage-text": "#0284C7", "status-assigned-bg": "#EEF2FF", "status-closed-text": "#0D9488", "primary-container": "#6063ee", "surface-container-high": "#e2e7ff", "status-triage-bg": "#E0F2FE", "tertiary": "#006194", "on-surface-variant": "#464554", "inverse-primary": "#c0c1ff", "text-primary-light": "#0F172A", "status-assigned-text": "#6366F1", "on-tertiary-fixed": "#001d31", "surface-container-low": "#f2f3ff", "primary-fixed-dim": "#c0c1ff", "canvas-light": "#FAFAFC", "on-secondary-fixed": "#2c0051", "primary": "#4648d4", "ai-border": "#C084FC33", "tertiary-fixed-dim": "#93ccff", "on-primary": "#ffffff", "on-background": "#131b2e", "surface-container-highest": "#dae2fd", "status-waiting-text": "#EA580C" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "margin-mobile": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter": "2rem", "margin": "2rem", "space-2xl": "2.5rem", "gutter-mobile": "1rem", "space-xl": "2rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", "gutter-tablet": "1.5rem" }, "fontFamily": { "display-lg": ["Outfit"], "headline-md": ["Outfit"], "title-md": ["Inter"], "code-sm": ["JetBrains Mono"], "body-sm": ["Inter"], "body-lg": ["Inter"], "display-lg-mobile": ["Outfit"], "title-sm": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "headline-sm": ["Outfit"], "label-md": ["Inter"], "headline-lg": ["Outfit"], "headline-lg-mobile": ["Outfit"] }, "fontSize": { "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600"}], "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "500"}], "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "code-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400"}], "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400"}], "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}], "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "title-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600"}], "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}], "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "500"}], "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}], "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "500"}], "headline-lg-mobile": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "500"}] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#FAF8FF;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-light/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #6366f1
+- Font: outfit
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XGdlqNOisKAEAh4fKQJjHh8ebgRa3Hn3XsOodJ-7cjhke9YFTxD4O5J386M71gJ_nx0O68xQlwqkTGDLThZOspvUXvHvBrXUJ7ReXzzN7FcSDHWhDcGFbR6me6Pg32xyEaFy_u410Kby8Ui4VYaMXcDfIaafPWtLvzWvBt_DPXZ-Wfs7wWNf2XP--8V3m4BZuQibzd8KgjX_wcv4YnakLYHCdgTrwR0vEvSJe_gZWG4SYfltjdQG4eYQw"/><div class="flex flex-col justify-center leading-none"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-text-primary-light font-semibold">Nexus AI</span></div><span class="font-label-sm text-label-sm tracking-widest text-text-muted-light font-semibold uppercase">OPERATIONS</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Search cases and operations" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-text-secondary-light hover:text-text-primary-light transition-colors"><span class="material-symbols-outlined text-[22px]">search</span></button><button aria-label="Notifications" class="relative w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-text-secondary-light hover:text-text-primary-light transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-status-breached-text ring-2 ring-surface-light"></span></button><div class="pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XqVXG34mQqXmLKAYxAV0GC0632Yxg4LocLN54tAYvOpNWpCur7Ck60jTpTpaInj1Tol47zrjFsVpD4d_c7jysM0pSq9ftUvtIxulIr9Tym-c7lefVYububWdN8jc4vRZiNKhxQ0VeRaV1YbYL0Sujdmy4nStEqbGXgr93KjVdJSjBygKqfOCbFGm7cwXUrdXaBJtoDUlOiaM8p4FTwtwMPcGUJVXdEmMnAW8Ataeff7O9s3Ca9nqBvS7Q"/></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface px-margin-mobile"><div class="flex flex-col w-full pb-6">
+<!-- Investigation Studio Top Context Panel -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-sm">
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-[18px] text-primary">terminal</span>
+<span class="font-code-sm text-code-sm text-text-secondary-light tracking-wide truncate">NEX-2026-0104</span>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="bg-status-breached-bg text-status-breached-text font-label-sm text-label-sm px-2.5 py-0.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-breached-text"></span>
+          P1 CRITICAL
+        </span>
+<span class="bg-status-investigating-bg text-status-investigating-text font-label-sm text-label-sm px-2.5 py-0.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-investigating-text animate-pulse"></span>
+          INVESTIGATING
+        </span>
+</div>
+</div>
+<h1 class="font-headline-sm text-headline-sm text-text-primary-light font-medium tracking-tight mb-space-sm">
+      Authentication Gateway Timeout during SSO federation
+    </h1>
+<div class="flex items-center justify-between pt-space-xs text-text-secondary-light">
+<div class="flex items-center gap-1.5 font-code-sm text-code-sm text-status-breached-text bg-status-breached-bg/40 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+<span class="font-semibold" id="sla-timer">02:45:10 rem.</span>
+</div>
+<div class="flex items-center gap-1 font-label-md text-label-md bg-surface-container px-2.5 py-1 rounded-lg text-text-secondary-light">
+<span class="material-symbols-outlined text-[14px] text-tertiary">dns</span>
+<span>SSO-Cluster-04</span>
+</div>
+</div>
+</section>
+<!-- Segmented Tabs Rail -->
+<div class="bg-surface-container-low p-1 rounded-xl flex items-center justify-between mb-space-md gap-1 shadow-sm">
+<button class="flex-1 py-1.5 px-2 rounded-lg text-center font-label-md text-label-md text-secondary-container bg-ai-bg-light flex items-center justify-center gap-1 transition-all active:scale-95" type="button">
+<span class="text-[12px]">✨</span>
+<span>AI Triage</span>
+</button>
+<button class="flex-1 py-1.5 px-2 rounded-lg text-center font-label-md text-label-md font-semibold text-primary bg-surface-light shadow-sm flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">forum</span>
+<span>Activity (3)</span>
+</button>
+<button class="flex-1 py-1.5 px-2 rounded-lg text-center font-label-md text-label-md text-text-secondary-light hover:text-text-primary-light flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">checklist</span>
+<span>Tasks (3)</span>
+</button>
+</div>
+<!-- Live Activity & War Room Feed -->
+<div class="flex flex-col gap-space-sm mb-space-md">
+<!-- Card 1: Requester Inbound Message -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-space-sm mb-space-xs">
+<img class="w-8 h-8 rounded-full object-cover shrink-0" data-alt="Close up professional portrait of Sarah Jenkins, a DevOps engineer wearing dark modern tech office apparel in soft diffused indoor lighting, calm focused expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmQF2lzTt9_nqDYdxUMarY8aRIrxBmI-QKxzSZhYt8T_ydGbPOhSeXWjvDeWOW3uec1B7zZMgrtbtxo6Eay-VVua4iOZcoOoF73PXQgm2D9FWI7NWj65jVmbro1cEmWAEbKrJspl6VHVjXc0YzhGbzzVf5u3-OsDZTdcwrFb9PoCILnkOq8b9AWzdznA57NK08T5nGZsBCHVTiiKzVQghha6PpbhQ7Jcffa1j59gge7klJeDK_gFAr"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h2 class="font-title-sm text-title-sm text-text-primary-light truncate">Sarah Jenkins</h2>
+<time class="font-code-sm text-code-sm text-text-muted-light">10:14 AM</time>
+</div>
+<p class="font-label-sm text-label-sm text-text-muted-light truncate">Requester • DevOps Team</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-text-secondary-light leading-relaxed mb-space-sm">
+        Users on Okta SSO are experiencing 504 Gateway timeouts when authenticating through the regional gateway. Issue surfaced right after the 10:00 AM canary deployment.
+      </p>
+<div class="inline-flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg text-text-secondary-light hover:text-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-[16px] text-tertiary">description</span>
+<span class="font-code-sm text-code-sm font-medium">sso_trace_error.log</span>
+<span class="font-label-sm text-label-sm text-text-muted-light group-hover:text-primary">• 1.4 MB</span>
+<span class="material-symbols-outlined text-[15px] text-text-muted-light group-hover:text-primary ml-1">download</span>
+</div>
+</article>
+<!-- System Event Notification: Priority Escalation -->
+<div class="bg-status-breached-bg/60 rounded-xl p-3 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-status-breached-text text-[18px] shrink-0 mt-0.5">priority_high</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-status-breached-text font-semibold">Priority Escalated • MEDIUM to CRITICAL</p>
+<p class="font-body-sm text-body-sm text-text-secondary-light">System anomaly engine correlated 84 downstream microservice retries.</p>
+</div>
+</div>
+<!-- Card 2: Lead Operator Note -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-space-sm mb-space-xs">
+<img class="w-8 h-8 rounded-full object-cover shrink-0" data-alt="Authentic headshot portrait of Elena Vance, incident manager and lead engineer with warm confident demeanor, natural light, contemporary office studio environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5NMfUSBeAEpBPRq48WTMkGWkLzoUrwroZiQmPfoVH3twOJC9GrM96N4WXbNiYc0ASNIWHw5F2KnOt-qy1ROf3peq6AS0STpi_SpKMm6L_ZmlKnnRToochzGN4vISFr-RMCh0wWaRtTabjC25iVU5gPflFdmfKNe46T8PQCHcukA5RWKMyIPEftRqJTxp1r9ZFXxoXxqfVkhGxVIOZTqrODImf9ZvF0JIB8LOnPBSK0ydzHaiYP_Vv"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h2 class="font-title-sm text-title-sm text-text-primary-light truncate">Elena Vance</h2>
+<time class="font-code-sm text-code-sm text-text-muted-light">10:22 AM</time>
+</div>
+<p class="font-label-sm text-label-sm text-primary font-medium truncate">Lead Operator</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-text-secondary-light leading-relaxed">
+        Understood Sarah. Triage started. Checking Redis cache latency and Envoy ingress routes right now. Canary routing is being isolated to prevent spillover.
+      </p>
+</article>
+<!-- Synthetic Probe Diagnostics Box -->
+<div class="bg-status-investigating-bg/50 rounded-xl p-3 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-status-investigating-text text-[18px] shrink-0 mt-0.5">warning</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-status-investigating-text font-semibold">Synthetic Probe Alert</p>
+<p class="font-body-sm text-body-sm text-text-secondary-light">Cluster <span class="font-code-sm text-code-sm font-medium">us-east-prod-04</span> reported 3 consecutive failed SAML handshake checks.</p>
+</div>
+</div>
+<!-- AI Smart Drafter Suggestion Card -->
+<section class="bg-ai-bg-light rounded-xl p-space-md shadow-sm relative overflow-hidden transition-all duration-300" id="ai-drafter-card">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-1.5 text-secondary-container">
+<span class="text-[14px]">✨</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider uppercase">AI DRAFTER SUGGESTION</span>
+</div>
+<span class="font-code-sm text-code-sm text-text-muted-light">Just now</span>
+</div>
+<div class="bg-surface-container-lowest/80 rounded-lg p-3 mb-space-sm">
+<p class="font-body-sm text-body-sm text-text-primary-light italic leading-relaxed" id="ai-draft-content">
+          “We have identified packet drop during the Okta token validation stage on ingress pod-04. Traffic has been routed to standby pod-02 while we rollback.”
+        </p>
+</div>
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg text-text-muted-light hover:text-status-breached-text font-label-md text-label-md transition-colors" id="dismiss-draft-btn" type="button">
+          Dismiss
+        </button>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-medium shadow-sm hover:bg-primary-container active:scale-95 transition-all flex items-center gap-1.5" id="apply-draft-btn" type="button">
+<span>✨ Apply Draft</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Realtime Network Diagnostic Visualizer -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">analytics</span>
+<span class="font-title-sm text-title-sm text-text-primary-light">Ingress Gateway Health</span>
+</div>
+<span class="font-code-sm text-code-sm text-status-breached-text bg-status-breached-bg px-2 py-0.5 rounded-full">94.2% Latency Spike</span>
+</div>
+<!-- Inline Diagnostic Sparkline Chart -->
+<div class="w-full h-14 relative flex items-end pt-2">
+<svg class="w-full h-full text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 320 40">
+<path d="M0,32 Q25,28 50,30 T100,24 T150,28 T200,32 T240,6 T270,4 T300,12 T320,18" fill="none" stroke="#4648d4" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0,32 Q25,28 50,30 T100,24 T150,28 T200,32 T240,6 T270,4 T300,12 T320,18 L320,40 L0,40 Z" fill="url(#blue-grad)" opacity="0.15"></path>
+<defs>
+<lineargradient id="blue-grad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#4648d4"></stop>
+<stop offset="100%" stop-color="#4648d4" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<circle cx="255" cy="5" fill="#e11d48" r="3.5"></circle>
+</svg>
+</div>
+<div class="flex justify-between text-text-muted-light font-code-sm text-code-sm pt-1">
+<span>10:00 (Canary)</span>
+<span>10:15 (Degraded)</span>
+<span class="text-status-breached-text font-semibold">10:28 (Now)</span>
+</div>
+</section>
+<!-- Message & Note Composer -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md">
+<!-- Channel Scope Selector -->
+<div class="flex items-center justify-between pb-space-xs mb-space-xs">
+<div class="flex items-center gap-1.5 bg-surface-container-low p-1 rounded-lg">
+<button class="px-2.5 py-1 rounded-md font-label-md text-label-md font-medium text-text-primary-light bg-surface-light shadow-sm" id="tab-public" type="button">
+          Public Message
+        </button>
+<button class="px-2.5 py-1 rounded-md font-label-md text-label-md text-text-muted-light hover:text-text-primary-light flex items-center gap-1 transition-colors" id="tab-internal" type="button">
+<span>Internal Note</span>
+<span class="material-symbols-outlined text-[13px]">lock</span>
+</button>
+</div>
+<span class="font-code-sm text-code-sm text-text-muted-light flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-closed-text"></span>
+        TLS 1.3
+      </span>
+</div>
+<!-- Input Text Area -->
+<div class="relative mb-2">
+<textarea class="w-full bg-surface-container-low text-text-primary-light placeholder:text-text-muted-light font-body-md text-body-md rounded-xl p-3 resize-none outline-none focus:bg-surface-light focus:shadow-inner transition-all" id="composer-input" placeholder="Type an update to Sarah Jenkins..." rows="3"></textarea>
+</div>
+<!-- Composer Footer Actions -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 text-text-secondary-light">
+<button aria-label="Add file attachment" class="p-2 hover:text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+<button aria-label="Markdown formatting helper" class="p-2 hover:text-primary transition-colors active:scale-90" type="button">
+<span class="material-symbols-outlined text-[20px]">code_blocks</span>
+</button>
+<button aria-label="AI auto complete" class="p-2 text-secondary-container hover:scale-110 transition-transform" id="sparkle-assist-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</button>
+</div>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-lg font-title-sm text-title-sm font-medium flex items-center gap-1.5 shadow-sm active:scale-95 transition-all" id="send-update-btn" type="button">
+<span>Send Update</span>
+<span class="material-symbols-outlined text-[16px]">send</span>
+</button>
+</div>
+</section>
+<!-- Sticky Tactical Bottom Action Suite -->
+<section class="flex items-center gap-2 pt-space-xs">
+<button class="flex-1 py-3 px-3 rounded-xl bg-status-closed-bg text-status-closed-text font-title-sm text-title-sm font-semibold flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">task_alt</span>
+<span class="truncate">Propose Resolution</span>
+</button>
+<button class="flex-1 py-3 px-3 rounded-xl bg-status-breached-bg text-status-breached-text font-title-sm text-title-sm font-semibold flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_upward</span>
+<span class="truncate">Escalate Tier-3</span>
+</button>
+</section>
+</div>
+<script>
+  (function() {
+    const applyDraftBtn = document.getElementById('apply-draft-btn');
+    const dismissDraftBtn = document.getElementById('dismiss-draft-btn');
+    const drafterCard = document.getElementById('ai-drafter-card');
+    const composerInput = document.getElementById('composer-input');
+    const sendUpdateBtn = document.getElementById('send-update-btn');
+    const tabPublic = document.getElementById('tab-public');
+    const tabInternal = document.getElementById('tab-internal');
+    const draftText = "We have identified packet drop during the Okta token validation stage on ingress pod-04. Traffic has been routed to standby pod-02 while we rollback.";
+
+    if (applyDraftBtn && composerInput) {
+      applyDraftBtn.addEventListener('click', function() {
+        composerInput.value = draftText;
+        composerInput.focus();
+        if (drafterCard) {
+          drafterCard.style.opacity = '0.5';
+          drafterCard.style.pointerEvents = 'none';
+        }
+      });
+    }
+
+    if (dismissDraftBtn && drafterCard) {
+      dismissDraftBtn.addEventListener('click', function() {
+        drafterCard.style.display = 'none';
+      });
+    }
+
+    if (sendUpdateBtn && composerInput) {
+      sendUpdateBtn.addEventListener('click', function() {
+        if (composerInput.value.trim() !== '') {
+          const originalText = sendUpdateBtn.innerHTML;
+          sendUpdateBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">sync</span> Sent!';
+          setTimeout(() => {
+            composerInput.value = '';
+            sendUpdateBtn.innerHTML = originalText;
+          }, 800);
+        }
+      });
+    }
+
+    if (tabPublic && tabInternal) {
+      tabPublic.addEventListener('click', function() {
+        tabPublic.className = 'px-2.5 py-1 rounded-md font-label-md text-label-md font-medium text-text-primary-light bg-surface-light shadow-sm';
+        tabInternal.className = 'px-2.5 py-1 rounded-md font-label-md text-label-md text-text-muted-light hover:text-text-primary-light flex items-center gap-1 transition-colors';
+        composerInput.placeholder = 'Type an update to Sarah Jenkins...';
+      });
+
+      tabInternal.addEventListener('click', function() {
+        tabInternal.className = 'px-2.5 py-1 rounded-md font-label-md text-label-md font-medium text-text-primary-light bg-surface-light shadow-sm flex items-center gap-1';
+        tabPublic.className = 'px-2.5 py-1 rounded-md font-label-md text-label-md text-text-muted-light hover:text-text-primary-light transition-colors';
+        composerInput.placeholder = 'Write internal operator note (Hidden from requester)...';
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-light/90 backdrop-blur-xl shadow-[0_-1px_10px_rgba(0,0,0,0.03)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-1 text-text-muted-light transition-colors" data-path="triage" href="#"><span class="material-symbols-outlined text-[22px]">inbox</span><span class="font-label-sm text-label-sm">Triage</span></a><a aria-current="page" class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-1 transition-colors text-primary font-semibold" data-path="studio" href="#"><span class="material-symbols-outlined text-[22px]">dataset</span><span class="font-label-sm text-label-sm">Studio</span></a><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-1 text-text-muted-light transition-colors" data-path="radar" href="#"><span class="material-symbols-outlined text-[22px]">radar</span><span class="font-label-sm text-label-sm">Radar</span></a><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-1 text-text-muted-light transition-colors" data-path="lead" href="#"><span class="material-symbols-outlined text-[22px]">group</span><span class="font-label-sm text-label-sm">Lead</span></a><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-1 text-text-muted-light transition-colors" data-path="portal" href="#"><span class="material-symbols-outlined text-[22px]">admin_panel_settings</span><span class="font-label-sm text-label-sm">Portal</span></a></div></nav></body></html>

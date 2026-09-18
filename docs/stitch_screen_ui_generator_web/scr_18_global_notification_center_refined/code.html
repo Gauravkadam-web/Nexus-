@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface-variant": "#464554",
+            "surface-bright": "#faf8ff",
+            "primary-container": "#6063ee",
+            "on-background": "#131b2e",
+            "inverse-primary": "#c0c1ff",
+            "on-error-container": "#93000a",
+            "background": "#faf8ff",
+            "on-tertiary-fixed": "#001d31",
+            "surface-elevated-light": "#F8FAFC",
+            "status-reported-bg": "#F1F5F9",
+            "surface-dim": "#d2d9f4",
+            "status-waiting-bg": "#FFEDD5",
+            "error": "#ba1a1a",
+            "status-closed-text": "#0D9488",
+            "inverse-surface": "#283044",
+            "primary": "#4648d4",
+            "on-tertiary": "#ffffff",
+            "status-closed-bg": "#CCFBF1",
+            "text-secondary-light": "#475569",
+            "on-primary-fixed": "#07006c",
+            "surface-container-low": "#f2f3ff",
+            "surface-container-high": "#e2e7ff",
+            "tertiary-fixed-dim": "#93ccff",
+            "status-reported-text": "#64748B",
+            "error-container": "#ffdad6",
+            "surface-variant": "#dae2fd",
+            "on-secondary-container": "#fffbff",
+            "secondary": "#831ada",
+            "status-assigned-bg": "#EEF2FF",
+            "status-resolution-text": "#7C3AED",
+            "on-primary": "#ffffff",
+            "secondary-fixed-dim": "#ddb8ff",
+            "status-investigating-bg": "#FEF3C7",
+            "on-surface": "#131b2e",
+            "tertiary-container": "#007bb9",
+            "primary-fixed-dim": "#c0c1ff",
+            "primary-fixed": "#e1e0ff",
+            "status-resolution-bg": "#F3E8FF",
+            "surface-container-lowest": "#ffffff",
+            "outline-variant": "#c7c4d7",
+            "status-triage-text": "#0284C7",
+            "on-secondary-fixed": "#2c0051",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "status-waiting-text": "#EA580C",
+            "canvas-light": "#FAFAFC",
+            "surface": "#faf8ff",
+            "on-secondary-fixed-variant": "#6800b4",
+            "border-light": "#E2E8F0",
+            "on-secondary": "#ffffff",
+            "tertiary": "#006194",
+            "surface-tint": "#494bd6",
+            "ai-bg-light": "#FAF5FF",
+            "on-tertiary-fixed-variant": "#004b73",
+            "tertiary-fixed": "#cce5ff",
+            "secondary-container": "#9e41f5",
+            "status-breached-text": "#E11D48",
+            "outline": "#767586",
+            "surface-light": "#FFFFFF",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container-highest": "#dae2fd",
+            "status-assigned-text": "#6366F1",
+            "on-error": "#ffffff",
+            "on-tertiary-container": "#fdfcff",
+            "status-breached-bg": "#FFE4E6",
+            "secondary-fixed": "#f0dbff",
+            "ai-border": "#C084FC33",
+            "surface-container": "#eaedff",
+            "text-muted-light": "#94A3B8",
+            "status-triage-bg": "#E0F2FE",
+            "on-primary-container": "#fffbff",
+            "text-primary-light": "#0F172A",
+            "status-investigating-text": "#D97706"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            "title-sm": ["Inter"],
+            "display-lg": ["Outfit"],
+            "title-md": ["Inter"],
+            "headline-sm": ["Outfit"],
+            "label-sm": ["Inter"],
+            "headline-md": ["Outfit"],
+            "body-md": ["Inter"],
+            "label-md": ["Inter"],
+            "code-sm": ["JetBrains Mono"],
+            "body-sm": ["Inter"],
+            "headline-lg": ["Outfit"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-canvas-light text-on-surface antialiased font-body-md selection:bg-primary-fixed selection:text-primary">
+<!-- Main Navigation Shell Sidebar -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest border-r border-border-light z-50 flex flex-col justify-between">
+<div class="flex flex-col flex-1 overflow-y-auto">
+<div class="h-16 flex items-center px-6 border-b border-border-light gap-3">
+<img alt="Nexus Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XGdlqNOisKAEAh4fKQJjHh8ebgRa3Hn3XsOodJ-7cjhke9YFTxD4O5J386M71gJ_nx0O68xQlwqkTGDLThZOspvUXvHvBrXUJ7ReXzzN7FcSDHWhDcGFbR6me6Pg32xyEaFy_u410Kby8Ui4VYaMXcDfIaafPWtLvzWvBt_DPXZ-Wfs7wWNf2XP--8V3m4BZuQibzd8KgjX_wcv4YnakLYHCdgTrwR0vEvSJe_gZWG4SYfltjdQG4eYQw"/>
+<span class="font-headline-sm text-lg text-text-primary-light font-bold tracking-tight">Nexus</span>
+</div>
+<nav class="px-3 py-5 space-y-6">
+<div class="space-y-1">
+<p class="px-3 pb-1.5 font-label-sm text-[11px] uppercase tracking-wider text-text-muted-light font-semibold">Workspace</p>
+<div class="space-y-0.5">
+<a class="block px-3 py-2 rounded-lg font-body-sm text-[13px] text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors" data-path="cases-workstation" href="#">Cases / Workstation</a>
+<a class="block px-3 py-2 rounded-lg font-body-sm text-[13px] text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors" data-path="investigation-studio" href="#">Investigation Studio</a>
+<a class="block px-3 py-2 rounded-lg font-body-sm text-[13px] text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors" data-path="collaboration-evidence" href="#">Collaboration &amp; Evidence</a>
+<a class="block px-3 py-2 rounded-lg font-body-sm text-[13px] text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors" data-path="ai-copilot-drawer" href="#">AI Copilot Drawer</a>
+</div>
+</div>
+<div class="space-y-1">
+<p class="px-3 pb-1.5 font-label-sm text-[11px] uppercase tracking-wider text-text-muted-light font-semibold">Operations</p>
+<div class="space-y-0.5">
+<a class="block px-3 py-2 rounded-lg font-body-sm text-[13px] text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors" data-path="problem-hub" href="#">Problem Hub</a>
+<a class="block px-3 py-2 rounded-lg font-body-sm text-[13px] text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors" data-path="sla-risk-radar" href="#">SLA Risk Radar</a>
+<a class="block px-3 py-2 rounded-lg font-body-sm text-[13px] text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors" data-path="team-command" href="#">Team Command</a>
+<a class="block px-3 py-2 rounded-lg font-body-sm text-[13px] text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors" data-path="executive-analytics" href="#">Executive Analytics</a>
+<a aria-current="page" class="flex items-center justify-between px-3 py-2 rounded-lg font-body-sm text-[13px] bg-primary-fixed text-primary font-semibold transition-colors" data-path="global-notification-center" href="#">
+<span>Global Notification Center</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</a>
+</div>
+</div>
+<div class="space-y-1">
+<p class="px-3 pb-1.5 font-label-sm text-[11px] uppercase tracking-wider text-text-muted-light font-semibold">Requester Portal</p>
+<div class="space-y-0.5">
+<a class="block px-3 py-2 rounded-lg font-body-sm text-[13px] text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors" data-path="self-service-portal" href="#">Self-Service</a>
+<a class="block px-3 py-2 rounded-lg font-body-sm text-[13px] text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors" data-path="create-case" href="#">Create Case</a>
+<a class="block px-3 py-2 rounded-lg font-body-sm text-[13px] text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors" data-path="case-tracker" href="#">Case Tracker</a>
+</div>
+</div>
+<div class="space-y-1">
+<p class="px-3 pb-1.5 font-label-sm text-[11px] uppercase tracking-wider text-text-muted-light font-semibold">Admin</p>
+<div class="space-y-0.5">
+<a class="block px-3 py-2 rounded-lg font-body-sm text-[13px] text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors" data-path="admin-configuration-user-management" href="#">Admin Configuration &amp; Users</a>
+<a class="block px-3 py-2 rounded-lg font-body-sm text-[13px] text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors" data-path="admin-sla-policies" href="#">Admin SLA Policies</a>
+<a class="block px-3 py-2 rounded-lg font-body-sm text-[13px] text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors" data-path="audit-trail-immutable-timeline" href="#">Audit Trail &amp; Timeline</a>
+</div>
+</div>
+</nav>
+</div>
+<div class="p-4 border-t border-border-light">
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-elevated-light border border-border-light">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-closed-text text-base">verified_user</span>
+<span class="font-code-sm text-xs text-text-secondary-light font-medium">Core Engine 3.2</span>
+</div>
+<span class="inline-block w-2 h-2 rounded-full bg-status-closed-text animate-pulse"></span>
+</div>
+</div>
+</aside>
+<!-- Workspace Frame with 64 (256px) offset -->
+<div class="pl-64 flex flex-col min-h-screen">
+<!-- Master Header -->
+<header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md border-b border-border-light z-40 px-8 flex items-center justify-between">
+<div class="flex items-center flex-1 max-w-md">
+<button class="w-full flex items-center justify-between px-3.5 py-1.5 bg-surface-elevated-light border border-border-light rounded-lg text-text-muted-light hover:border-outline-variant transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-lg text-text-secondary-light">search</span>
+<span class="font-body-sm text-[13px]">Search cases, alerts, logs...</span>
+</div>
+<span class="font-code-sm text-[11px] bg-status-reported-bg text-status-reported-text px-1.5 py-0.5 rounded border border-border-light">Ctrl + K</span>
+</button>
+</div>
+<div class="flex items-center gap-4 ml-auto">
+<button aria-label="Theme Switcher" class="p-2 text-text-secondary-light hover:text-text-primary-light hover:bg-surface-elevated-light rounded-lg transition-colors">
+<span class="material-symbols-outlined text-xl">light_mode</span>
+</button>
+<a aria-label="Notifications" class="relative p-2 text-primary hover:bg-surface-elevated-light rounded-lg transition-colors" data-path="global-notification-center" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-primary rounded-full ring-2 ring-surface-container-lowest"></span>
+</a>
+<div class="h-5 w-px bg-border-light"></div>
+<div class="flex items-center gap-2.5">
+<img alt="Elena Vance Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-light" src="https://lh3.googleusercontent.com/aida/AEtjO1XqVXG34mQqXmLKAYxAV0GC0632Yxg4LocLN54tAYvOpNWpCur7Ck60jTpTpaInj1Tol47zrjFsVpD4d_c7jysM0pSq9ftUvtIxulIr9Tym-c7lefVYububWdN8jc4vRZiNKhxQ0VeRaV1YbYL0Sujdmy4nStEqbGXgr93KjVdJSjBygKqfOCbFGm7cwXUrdXaBJtoDUlOiaM8p4FTwtwMPcGUJVXdEmMnAW8Ataeff7O9s3Ca9nqBvS7Q"/>
+<div class="hidden md:flex flex-col text-left leading-tight">
+<span class="font-title-sm text-[13px] text-text-primary-light font-semibold">Elena Vance</span>
+<span class="font-label-sm text-[11px] text-text-muted-light">Case Director</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Workspace Content (32px padding gutters) -->
+<main class="w-full pt-16 flex-1 bg-canvas-light">
+<div class="p-8 max-w-[1600px] mx-auto space-y-6">
+<!-- Page Header Unit -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-surface-container-lowest rounded-xl p-6 border border-border-light">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-status-breached-bg text-status-breached-text">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+</span>
+<span class="font-label-sm text-[11px] uppercase tracking-widest text-text-muted-light font-bold">Dispatcher Telemetry</span>
+<span class="w-1.5 h-1.5 rounded-full bg-status-closed-text animate-pulse"></span>
+<span class="font-code-sm text-xs text-text-secondary-light">Nexus Gateway: Live</span>
+</div>
+<h1 class="font-headline-lg text-2xl font-bold text-text-primary-light tracking-tight">Global Notification Center</h1>
+<p class="font-body-md text-sm text-text-secondary-light">
+              Real-time alert streams, SLA warning dispatches, team mentions, and system advisories across operational clusters.
+            </p>
+</div>
+<div class="flex items-center gap-2.5 self-start md:self-center">
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-elevated-light text-text-primary-light hover:bg-surface-container border border-border-light font-title-sm text-xs font-semibold transition-all" onclick="markAllAsRead()">
+<span class="material-symbols-outlined text-base text-status-closed-text">done_all</span>
+<span>Mark All as Read</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-title-sm text-xs font-semibold transition-all shadow-sm">
+<span class="material-symbols-outlined text-base">tune</span>
+<span>Notification Settings</span>
+</button>
+</div>
+</div>
+<!-- Filter Pill Rail (Airy 8px gap with soft periwinkle active states) -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none" id="filter-tabs-container">
+<button class="filter-tab inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-fixed text-primary font-semibold text-xs transition-all cursor-pointer border border-primary/20" onclick="filterStream('all', this)">
+<span>All Notifications</span>
+<span class="bg-surface-container-lowest font-code-sm text-[11px] px-1.5 py-0.2 rounded-full font-medium text-primary shadow-xs">12</span>
+</button>
+<button class="filter-tab inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-text-secondary-light hover:bg-surface-elevated-light font-medium text-xs transition-all cursor-pointer border border-border-light" onclick="filterStream('unread', this)">
+<span class="w-2 h-2 rounded-full bg-status-breached-text"></span>
+<span>Unread</span>
+<span class="bg-status-breached-bg text-status-breached-text font-code-sm text-[11px] px-1.5 py-0.2 rounded-full font-semibold" id="unread-counter-badge">4</span>
+</button>
+<button class="filter-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-text-secondary-light hover:bg-surface-elevated-light font-medium text-xs transition-all cursor-pointer border border-border-light" onclick="filterStream('sla', this)">
+<span class="material-symbols-outlined text-sm text-status-breached-text">warning</span>
+<span>SLA &amp; Escalations</span>
+<span class="bg-status-breached-bg text-status-breached-text font-code-sm text-[11px] px-1.5 py-0.2 rounded-full font-semibold">3</span>
+</button>
+<button class="filter-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-text-secondary-light hover:bg-surface-elevated-light font-medium text-xs transition-all cursor-pointer border border-border-light" onclick="filterStream('collaboration', this)">
+<span class="material-symbols-outlined text-sm text-status-assigned-text">forum</span>
+<span>Mentions</span>
+<span class="bg-status-assigned-bg text-status-assigned-text font-code-sm text-[11px] px-1.5 py-0.2 rounded-full font-semibold">5</span>
+</button>
+<button class="filter-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-text-secondary-light hover:bg-surface-elevated-light font-medium text-xs transition-all cursor-pointer border border-border-light" onclick="filterStream('ai', this)">
+<span class="material-symbols-outlined text-sm text-secondary">auto_awesome</span>
+<span>AI Insights</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-code-sm text-[11px] px-1.5 py-0.2 rounded-full font-semibold">2</span>
+</button>
+<button class="filter-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-text-secondary-light hover:bg-surface-elevated-light font-medium text-xs transition-all cursor-pointer border border-border-light" onclick="filterStream('security', this)">
+<span class="material-symbols-outlined text-sm text-tertiary">shield</span>
+<span>Security</span>
+<span class="bg-surface-container-high text-on-surface-variant font-code-sm text-[11px] px-1.5 py-0.2 rounded-full font-medium">2</span>
+</button>
+</div>
+<!-- 2-Column Split: 68% Main Stream / 32% Right Panel with 24px gap -->
+<div class="grid grid-cols-1 lg:grid-cols-100 gap-6 items-start">
+<!-- Column 1: Main Notification Stream (68%) -->
+<div class="lg:col-span-68 space-y-3">
+<!-- Item 1: SLA Breach Warning -->
+<div class="notification-card relative flex items-start gap-4 p-5 mb-3 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all overflow-hidden" data-category="sla" data-status="unread">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-status-breached-text"></div>
+<!-- Clean Icon Frame -->
+<div class="flex-shrink-0 w-10 h-10 rounded-lg bg-status-breached-bg text-status-breached-text flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">emergency_home</span>
+</div>
+<!-- Content Body -->
+<div class="flex-1 min-w-0 space-y-2.5">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="unread-indicator w-2 h-2 rounded-full bg-status-breached-text"></span>
+<h3 class="font-title-md text-[15px] text-text-primary-light font-semibold">SLA Breach Warning (&lt;20m remaining)</h3>
+<span class="px-2 py-0.5 rounded text-[11px] bg-status-breached-bg text-status-breached-text font-label-sm uppercase font-bold tracking-wide">P1 Critical</span>
+</div>
+<div class="flex items-center gap-1 text-text-muted-light font-code-sm text-xs shrink-0">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>3 mins ago</span>
+</div>
+</div>
+<p class="font-body-md text-sm text-text-secondary-light leading-relaxed">
+                  Case <a class="font-code-sm text-xs font-semibold text-primary hover:underline" href="#">NEX-2026-0087</a> (<span class="text-text-primary-light font-medium">Kubernetes ingress 502</span>) is 88% into its resolution timebox. Auto-escalation to Tier-2 Incident Command triggers in 12 minutes.
+                </p>
+<!-- SLA Metric Gauge -->
+<div class="bg-surface-elevated-light border border-border-light rounded-lg p-3 space-y-2">
+<div class="flex justify-between items-center text-xs">
+<span class="text-text-secondary-light font-medium">Target Adherence SLA (Tier 1 P1)</span>
+<span class="font-code-sm text-status-breached-text font-bold">18m 42s remaining</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-status-breached-text rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<!-- Spacious Quick Actions -->
+<div class="flex items-center gap-3 pt-1">
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-status-breached-bg text-status-breached-text hover:bg-status-breached-text hover:text-white font-title-sm text-xs font-semibold transition-colors" href="#">
+<span>Open Case</span>
+<span class="material-symbols-outlined text-sm">arrow_outward</span>
+</a>
+<button class="px-3 py-1.5 rounded-lg bg-surface-elevated-light text-text-primary-light hover:bg-surface-container border border-border-light font-title-sm text-xs font-medium transition-colors">
+                    Reassign
+                  </button>
+<button class="px-3 py-1.5 rounded-lg text-text-muted-light hover:text-text-primary-light font-title-sm text-xs font-medium transition-colors">
+                    Acknowledge
+                  </button>
+</div>
+</div>
+</div>
+<!-- Item 2: AI Copilot Insight -->
+<div class="notification-card relative flex items-start gap-4 p-5 mb-3 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all overflow-hidden" data-category="ai" data-status="unread">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<div class="flex-shrink-0 w-10 h-10 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="flex-1 min-w-0 space-y-2.5">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="unread-indicator w-2 h-2 rounded-full bg-secondary"></span>
+<h3 class="font-title-md text-[15px] text-text-primary-light font-semibold">AI Triage Correlation Detected</h3>
+<span class="px-2 py-0.5 rounded text-[11px] bg-secondary-fixed text-on-secondary-fixed font-label-sm uppercase font-bold tracking-wide">96% Match</span>
+</div>
+<div class="flex items-center gap-1 text-text-muted-light font-code-sm text-xs shrink-0">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>14 mins ago</span>
+</div>
+</div>
+<p class="font-body-md text-sm text-text-secondary-light leading-relaxed">
+                  Incoming ticket <a class="font-code-sm text-xs font-semibold text-primary hover:underline" href="#">NEX-2026-0104</a> correlates with 3 historical Redis token exhaustion incidents with high semantic confidence. Automated remediation playbook is available.
+                </p>
+<!-- RCA Context Chip -->
+<div class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-elevated-light border border-border-light text-text-secondary-light font-code-sm text-xs">
+<span class="material-symbols-outlined text-secondary text-base">psychology</span>
+<span class="truncate">Suggested RCA: `maxmemory-policy: noeviction` buffer overflow under spike</span>
+</div>
+<!-- Spacious Quick Actions -->
+<div class="flex items-center gap-3 pt-1">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-secondary text-on-secondary hover:bg-secondary-container font-title-sm text-xs font-semibold transition-colors">
+<span class="material-symbols-outlined text-sm">auto_fix_high</span>
+<span>Apply Playbook #409</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-elevated-light text-text-primary-light hover:bg-surface-container border border-border-light font-title-sm text-xs font-medium transition-colors">
+                    Review Correlation
+                  </button>
+<button class="px-3 py-1.5 rounded-lg text-text-muted-light hover:text-error font-title-sm text-xs font-medium transition-colors">
+                    Dismiss
+                  </button>
+</div>
+</div>
+</div>
+<!-- Item 3: Collaboration & Mentions -->
+<div class="notification-card relative flex items-start gap-4 p-5 mb-3 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all overflow-hidden" data-category="collaboration" data-status="unread">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex-shrink-0 w-10 h-10 rounded-lg bg-status-assigned-bg text-status-assigned-text flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">alternate_email</span>
+</div>
+<div class="flex-1 min-w-0 space-y-2.5">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="unread-indicator w-2 h-2 rounded-full bg-primary"></span>
+<h3 class="font-title-md text-[15px] text-text-primary-light font-semibold">David Ross mentioned you in War Room</h3>
+<span class="px-2 py-0.5 rounded text-[11px] bg-status-assigned-bg text-status-assigned-text font-label-sm uppercase font-bold tracking-wide">War Room #3</span>
+</div>
+<div class="flex items-center gap-1 text-text-muted-light font-code-sm text-xs shrink-0">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>28 mins ago</span>
+</div>
+</div>
+<!-- Quote Message Block -->
+<div class="p-3 rounded-lg bg-surface-elevated-light border-l-2 border-primary/40 text-text-primary-light font-body-md text-sm leading-relaxed">
+<span class="font-title-sm text-primary font-semibold">@elena.vance</span> I have uploaded the Wireshark pcap traces into the evidence locker. Check lines 142-149 for the TCP RST stream from the external payment microservice.
+                </div>
+<!-- Attachment Details -->
+<div class="flex items-center gap-2 text-text-secondary-light font-body-sm text-xs">
+<span class="material-symbols-outlined text-text-muted-light text-base">attachment</span>
+<span class="font-code-sm bg-surface-elevated-light border border-border-light px-2 py-0.5 rounded text-text-primary-light font-medium">auth-gateway-dump-04.pcapng (14.2 MB)</span>
+<span class="text-text-muted-light">• Verified Hash SHA-256</span>
+</div>
+<!-- Spacious Quick Actions -->
+<div class="flex items-center gap-3 pt-1">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-title-sm text-xs font-semibold transition-colors">
+<span class="material-symbols-outlined text-sm">reply</span>
+<span>Reply Directly</span>
+</button>
+<a class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-elevated-light text-text-primary-light hover:bg-surface-container border border-border-light font-title-sm text-xs font-medium transition-colors" href="#">
+<span>View Evidence Locker</span>
+<span class="material-symbols-outlined text-sm">inventory_2</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Item 4: Requester Resolution Accepted (Read) -->
+<div class="notification-card relative flex items-start gap-4 p-5 mb-3 rounded-xl border border-slate-200 bg-white shadow-sm opacity-90 transition-all overflow-hidden" data-category="security" data-status="read">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-status-closed-text"></div>
+<div class="flex-shrink-0 w-10 h-10 rounded-lg bg-status-closed-bg text-status-closed-text flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">check_circle</span>
+</div>
+<div class="flex-1 min-w-0 space-y-2.5">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-title-md text-[15px] text-text-primary-light font-semibold">Resolution Accepted by Requester</h3>
+<span class="px-2 py-0.5 rounded text-[11px] bg-status-closed-bg text-status-closed-text font-label-sm uppercase font-bold tracking-wide">Closed</span>
+</div>
+<div class="flex items-center gap-1 text-text-muted-light font-code-sm text-xs shrink-0">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>2 hours ago</span>
+</div>
+</div>
+<p class="font-body-md text-sm text-text-secondary-light leading-relaxed">
+<span class="text-text-primary-light font-medium">Sarah Jenkins</span> confirmed resolution for <a class="font-code-sm text-xs font-semibold text-primary hover:underline" href="#">NEX-2026-0082</a>. Case has been permanently closed with 100% SLA adherence score and 5/5 CSAT feedback.
+                </p>
+<div class="flex items-center gap-2 pt-0.5 text-text-muted-light font-code-sm text-xs">
+<span class="material-symbols-outlined text-sm text-status-closed-text">verified</span>
+<span>Immutable audit trail hash: <span class="text-text-secondary-light">#c8812e9-4402a</span></span>
+</div>
+</div>
+</div>
+<!-- Empty State Container -->
+<div class="hidden flex-col items-center justify-center p-12 bg-surface-container-lowest rounded-xl border border-border-light text-center space-y-3" id="empty-state-notice">
+<div class="w-12 h-12 rounded-full bg-surface-elevated-light flex items-center justify-center text-text-muted-light">
+<span class="material-symbols-outlined text-2xl">notifications_off</span>
+</div>
+<div class="space-y-1">
+<h4 class="font-title-md text-sm font-bold text-text-primary-light">No notifications in this filter</h4>
+<p class="font-body-sm text-xs text-text-secondary-light">All alerts in this view have been processed or resolved.</p>
+</div>
+</div>
+<!-- Footer Pagination -->
+<div class="flex items-center justify-between pt-3 pb-6 text-text-secondary-light text-xs">
+<span class="font-body-sm">Displaying 4 of 12 real-time dispatches</span>
+<button class="flex items-center gap-1 font-title-sm text-primary hover:text-primary-container font-semibold transition-colors">
+<span>Load Archive History</span>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Column 2: Delivery Channels & Quiet Hours Configuration Panel (32%) -->
+<div class="lg:col-span-32 space-y-6">
+<!-- Delivery Channels Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-slate-200 shadow-sm space-y-5">
+<div class="flex items-center justify-between pb-1 border-b border-border-light">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">cell_tower</span>
+<h3 class="font-title-md text-[15px] text-text-primary-light font-bold">Delivery Channels</h3>
+</div>
+<span class="font-label-sm text-[11px] uppercase bg-status-closed-bg text-status-closed-text px-2 py-0.5 rounded-full font-bold">Active Synced</span>
+</div>
+<p class="font-body-sm text-xs text-text-secondary-light leading-relaxed">
+                Manage telemetry fan-out across operational integrations and critical escalation endpoints.
+              </p>
+<!-- Generously spaced channel items -->
+<div class="space-y-3 pt-1">
+<!-- Channel 1: In-App Desktop -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-elevated-light border border-border-light hover:border-slate-300 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-white border border-border-light flex items-center justify-center text-text-primary-light shrink-0">
+<span class="material-symbols-outlined text-lg">desktop_windows</span>
+</div>
+<div>
+<h4 class="font-title-sm text-xs text-text-primary-light font-semibold">In-App Desktop</h4>
+<p class="font-body-sm text-[11px] text-text-muted-light">Real-time toasts &amp; modal alerts</p>
+</div>
+</div>
+<button aria-label="Toggle In-App Desktop" class="w-10 h-5 rounded-full bg-primary relative transition-colors focus:outline-none shrink-0" data-state="true" onclick="toggleChannel(this)">
+<span class="toggle-dot inline-block w-4 h-4 rounded-full bg-white shadow transform translate-x-5 transition-transform"></span>
+</button>
+</div>
+<!-- Channel 2: Slack Ops Bot -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-elevated-light border border-border-light hover:border-slate-300 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-white border border-border-light flex items-center justify-center text-text-primary-light shrink-0">
+<span class="material-symbols-outlined text-lg">chat</span>
+</div>
+<div>
+<h4 class="font-title-sm text-xs text-text-primary-light font-semibold">Slack Bot (#ops-alerts)</h4>
+<p class="font-body-sm text-[11px] text-text-muted-light">Bidirectional triage sync</p>
+</div>
+</div>
+<button aria-label="Toggle Slack Bot" class="w-10 h-5 rounded-full bg-primary relative transition-colors focus:outline-none shrink-0" data-state="true" onclick="toggleChannel(this)">
+<span class="toggle-dot inline-block w-4 h-4 rounded-full bg-white shadow transform translate-x-5 transition-transform"></span>
+</button>
+</div>
+<!-- Channel 3: Email Digest -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-elevated-light border border-border-light hover:border-slate-300 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-white border border-border-light flex items-center justify-center text-text-primary-light shrink-0">
+<span class="material-symbols-outlined text-lg">mail</span>
+</div>
+<div>
+<h4 class="font-title-sm text-xs text-text-primary-light font-semibold">Email Digest</h4>
+<p class="font-body-sm text-[11px] text-text-muted-light">Daily summary &amp; P1 immediate</p>
+</div>
+</div>
+<button aria-label="Toggle Email Digest" class="w-10 h-5 rounded-full bg-slate-300 relative transition-colors focus:outline-none shrink-0" data-state="false" onclick="toggleChannel(this)">
+<span class="toggle-dot inline-block w-4 h-4 rounded-full bg-white shadow transform translate-x-0.5 transition-transform"></span>
+</button>
+</div>
+<!-- Channel 4: PagerDuty Sync -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-elevated-light border border-border-light hover:border-slate-300 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-status-breached-bg text-status-breached-text flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg">ring_volume</span>
+</div>
+<div>
+<h4 class="font-title-sm text-xs text-text-primary-light font-semibold">PagerDuty Sync</h4>
+<p class="font-body-sm text-[11px] text-text-muted-light">On-call escalation protocol</p>
+</div>
+</div>
+<button aria-label="Toggle PagerDuty Sync" class="w-10 h-5 rounded-full bg-primary relative transition-colors focus:outline-none shrink-0" data-state="true" onclick="toggleChannel(this)">
+<span class="toggle-dot inline-block w-4 h-4 rounded-full bg-white shadow transform translate-x-5 transition-transform"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quiet Hours Configuration Panel -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-slate-200 shadow-sm space-y-4">
+<div class="flex items-center justify-between pb-1 border-b border-border-light">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">bedtime</span>
+<h3 class="font-title-md text-[15px] text-text-primary-light font-bold">Quiet Hours</h3>
+</div>
+<span class="font-code-sm text-[11px] px-2 py-0.5 rounded bg-surface-elevated-light border border-border-light text-text-secondary-light font-medium">UTC-8</span>
+</div>
+<p class="font-body-sm text-xs text-text-secondary-light leading-relaxed">
+                Non-critical notifications are paused. Critical P1 escalations bypass Quiet Hours automatically.
+              </p>
+<!-- Weekly Calendar Schedule Widget -->
+<div class="bg-surface-elevated-light border border-border-light rounded-xl p-4 space-y-3.5">
+<div class="flex items-center justify-between text-xs">
+<span class="font-semibold text-text-primary-light">Active Window</span>
+<span class="font-code-sm text-xs text-secondary font-bold">22:00 — 07:30</span>
+</div>
+<!-- Weekly Grid Layout (M to S) -->
+<div class="grid grid-cols-7 gap-2">
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-label-sm text-[11px] text-text-muted-light">M</span>
+<div class="w-full h-8 bg-secondary-fixed text-on-secondary-fixed rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">check</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-label-sm text-[11px] text-text-muted-light">T</span>
+<div class="w-full h-8 bg-secondary-fixed text-on-secondary-fixed rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">check</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-label-sm text-[11px] text-text-muted-light">W</span>
+<div class="w-full h-8 bg-secondary-fixed text-on-secondary-fixed rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">check</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-label-sm text-[11px] text-text-muted-light">T</span>
+<div class="w-full h-8 bg-secondary-fixed text-on-secondary-fixed rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">check</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-label-sm text-[11px] text-text-muted-light">F</span>
+<div class="w-full h-8 bg-secondary-fixed text-on-secondary-fixed rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">check</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-label-sm text-[11px] text-primary font-bold">S</span>
+<div class="w-full h-8 bg-primary text-white rounded flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-xs">nightlight</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-label-sm text-[11px] text-text-muted-light">S</span>
+<div class="w-full h-8 bg-secondary-fixed text-on-secondary-fixed rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">check</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-text-muted-light font-code-sm text-[11px] pt-1">
+<span>Status: Inactive</span>
+<span>Next: 22:00 PST</span>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-elevated-light hover:bg-surface-container border border-border-light text-text-primary-light font-title-sm text-xs font-semibold transition-colors text-center">
+                Configure Quiet Schedule
+              </button>
+</div>
+<!-- Duty Lead Context Box -->
+<div class="bg-surface-container-low border border-border-light rounded-xl p-4 flex items-center gap-3.5">
+<img alt="Elena Vance" class="w-10 h-10 rounded-full object-cover shadow-sm flex-shrink-0 ring-1 ring-border-light" src="https://lh3.googleusercontent.com/aida/AEtjO1XqVXG34mQqXmLKAYxAV0GC0632Yxg4LocLN54tAYvOpNWpCur7Ck60jTpTpaInj1Tol47zrjFsVpD4d_c7jysM0pSq9ftUvtIxulIr9Tym-c7lefVYububWdN8jc4vRZiNKhxQ0VeRaV1YbYL0Sujdmy4nStEqbGXgr93KjVdJSjBygKqfOCbFGm7cwXUrdXaBJtoDUlOiaM8p4FTwtwMPcGUJVXdEmMnAW8Ataeff7O9s3Ca9nqBvS7Q"/>
+<div class="min-w-0">
+<h4 class="font-title-sm text-xs text-text-primary-light font-bold truncate">Duty Commander</h4>
+<p class="font-body-sm text-[11px] text-text-secondary-light truncate">Elena Vance (Tier-1 Incident Lead)</p>
+<div class="flex items-center gap-1.5 pt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-status-closed-text"></span>
+<span class="font-code-sm text-[10px] text-text-muted-light">Shift ends in 3h 18m</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Toast Notification -->
+<div class="fixed bottom-6 right-8 bg-inverse-surface text-inverse-on-surface px-5 py-3 rounded-xl shadow-2xl flex items-center gap-2.5 transform translate-y-4 opacity-0 transition-all duration-300 z-50 pointer-events-none" id="live-toast">
+<span class="material-symbols-outlined text-status-closed-text">check_circle</span>
+<div class="font-body-md text-sm">
+<span class="font-semibold">Stream Updated:</span> All operational alerts marked as read.
+    </div>
+</div>
+<!-- Dynamic Control Logic -->
+<script>
+    // Custom tailwind grid column utility for 68/32 split
+    tailwind.config.theme.extend.gridTemplateColumns = {
+      '100': 'repeat(100, minmax(0, 1fr))',
+    };
+    tailwind.config.theme.extend.gridColumn = {
+      'span-68': 'span 68 / span 68',
+      'span-32': 'span 32 / span 32',
+    };
+
+    function filterStream(category, btn) {
+      document.querySelectorAll('.filter-tab').forEach(el => {
+        el.classList.remove('bg-primary-fixed', 'text-primary', 'font-semibold', 'border-primary/20');
+        el.classList.add('bg-surface-container-lowest', 'text-text-secondary-light', 'hover:bg-surface-elevated-light', 'border-border-light');
+      });
+      btn.classList.add('bg-primary-fixed', 'text-primary', 'font-semibold', 'border-primary/20');
+      btn.classList.remove('bg-surface-container-lowest', 'text-text-secondary-light', 'hover:bg-surface-elevated-light', 'border-border-light');
+
+      const cards = document.querySelectorAll('.notification-card');
+      cards.forEach(card => {
+        if (category === 'all') {
+          card.style.display = 'flex';
+        } else if (category === 'unread') {
+          card.style.display = card.dataset.status === 'unread' ? 'flex' : 'none';
+        } else {
+          card.style.display = card.dataset.category === category ? 'flex' : 'none';
+        }
+      });
+      const visible = Array.from(cards).filter(c => c.style.display !== 'none');
+      const emptyState = document.getElementById('empty-state-notice');
+      if (emptyState) {
+        emptyState.classList.toggle('hidden', visible.length > 0);
+      }
+    }
+
+    function markAllAsRead() {
+      document.querySelectorAll('.notification-card[data-status="unread"]').forEach(card => {
+        card.setAttribute('data-status', 'read');
+        const badge = card.querySelector('.unread-indicator');
+        if (badge) badge.remove();
+        card.classList.add('opacity-90');
+      });
+      const unreadCount = document.getElementById('unread-counter-badge');
+      if (unreadCount) unreadCount.textContent = '0';
+      const toast = document.getElementById('live-toast');
+      if (toast) {
+        toast.classList.remove('opacity-0', 'translate-y-4');
+        setTimeout(() => toast.classList.add('opacity-0', 'translate-y-4'), 3200);
+      }
+    }
+
+    function toggleChannel(el) {
+      const dot = el.querySelector('.toggle-dot');
+      const isOn = el.getAttribute('data-state') === 'true';
+      if (isOn) {
+        el.setAttribute('data-state', 'false');
+        el.classList.remove('bg-primary');
+        el.classList.add('bg-slate-300');
+        dot.classList.remove('translate-x-5');
+        dot.classList.add('translate-x-0.5');
+      } else {
+        el.setAttribute('data-state', 'true');
+        el.classList.add('bg-primary');
+        el.classList.remove('bg-slate-300');
+        dot.classList.add('translate-x-5');
+        dot.classList.remove('translate-x-0.5');
+      }
+    }
+  </script>
+</body></html>

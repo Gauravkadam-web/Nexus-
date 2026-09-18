@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface": "#131b2e", "status-investigating-text": "#D97706", "canvas-light": "#FAFAFC", "status-breached-text": "#E11D48", "outline": "#767586", "surface-container-high": "#e2e7ff", "on-secondary-container": "#fffbff", "primary-fixed-dim": "#c0c1ff", "status-resolution-bg": "#F3E8FF", "tertiary-container": "#007bb9", "text-muted-light": "#94A3B8", "error-container": "#ffdad6", "status-assigned-text": "#6366F1", "secondary": "#831ada", "status-closed-text": "#0D9488", "on-error": "#ffffff", "surface-elevated-light": "#F8FAFC", "inverse-primary": "#c0c1ff", "primary-fixed": "#e1e0ff", "surface-light": "#FFFFFF", "surface": "#faf8ff", "status-resolution-text": "#7C3AED", "ai-border": "#C084FC33", "ai-bg-light": "#FAF5FF", "status-breached-bg": "#FFE4E6", "surface-tint": "#494bd6", "on-secondary-fixed": "#2c0051", "secondary-container": "#9e41f5", "on-primary-fixed": "#07006c", "inverse-on-surface": "#eef0ff", "surface-variant": "#dae2fd", "status-reported-text": "#64748B", "status-waiting-bg": "#FFEDD5", "status-waiting-text": "#EA580C", "secondary-fixed-dim": "#ddb8ff", "background": "#faf8ff", "text-secondary-light": "#475569", "primary-container": "#6063ee", "surface-container-lowest": "#ffffff", "on-surface-variant": "#464554", "inverse-surface": "#283044", "tertiary-fixed-dim": "#93ccff", "status-reported-bg": "#F1F5F9", "tertiary-fixed": "#cce5ff", "surface-container-highest": "#dae2fd", "tertiary": "#006194", "status-assigned-bg": "#EEF2FF", "primary": "#4648d4", "on-primary-container": "#fffbff", "on-background": "#131b2e", "on-tertiary-fixed-variant": "#004b73", "status-investigating-bg": "#FEF3C7", "surface-container": "#eaedff", "status-triage-text": "#0284C7", "surface-dim": "#d2d9f4", "error": "#ba1a1a", "secondary-fixed": "#f0dbff", "border-light": "#E2E8F0", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "status-triage-bg": "#E0F2FE", "on-primary-fixed-variant": "#2f2ebe", "outline-variant": "#c7c4d7", "text-primary-light": "#0F172A", "surface-bright": "#faf8ff", "on-secondary-fixed-variant": "#6800b4", "surface-container-low": "#f2f3ff", "on-tertiary-fixed": "#001d31", "on-error-container": "#93000a", "on-tertiary-container": "#fdfcff", "status-closed-bg": "#CCFBF1", "on-secondary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "gutter-mobile": "1rem", "space-lg": "1.5rem", "margin-tablet": "1.5rem", "space-md": "1rem", "space-xs": "0.25rem", "gutter-tablet": "1.5rem", "space-xl": "2rem", "margin-mobile": "1rem", "margin": "2rem", "gutter": "2rem", "space-2xl": "2.5rem" }, "fontFamily": { "code-sm": [ "JetBrains Mono" ], "display-lg-mobile": [ "Outfit" ], "body-sm": [ "Inter" ], "headline-sm": [ "Outfit" ], "label-sm": [ "Inter" ], "body-md": [ "Inter" ], "title-sm": [ "Inter" ], "headline-lg": [ "Outfit" ], "body-lg": [ "Inter" ], "headline-md": [ "Outfit" ], "label-md": [ "Inter" ], "headline-lg-mobile": [ "Outfit" ], "title-md": [ "Inter" ], "display-lg": [ "Outfit" ] }, "fontSize": { "code-sm": [ "12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" } ], "display-lg-mobile": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "body-sm": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" } ], "headline-sm": [ "18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" } ], "body-md": [ "14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ], "title-sm": [ "14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "500" } ], "body-lg": [ "16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-md": [ "22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "500" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "headline-lg-mobile": [ "22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "500" } ], "title-md": [ "16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "display-lg": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-canvas-light text-on-surface font-body-md text-body-md antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-light border-r border-border-light z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between border-b border-border-light flex-shrink-0"><div class="flex items-center gap-space-sm"><img alt="Nexus Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XGdlqNOisKAEAh4fKQJjHh8ebgRa3Hn3XsOodJ-7cjhke9YFTxD4O5J386M71gJ_nx0O68xQlwqkTGDLThZOspvUXvHvBrXUJ7ReXzzN7FcSDHWhDcGFbR6me6Pg32xyEaFy_u410Kby8Ui4VYaMXcDfIaafPWtLvzWvBt_DPXZ-Wfs7wWNf2XP--8V3m4BZuQibzd8KgjX_wcv4YnakLYHCdgTrwR0vEvSJe_gZWG4SYfltjdQG4eYQw"/><span class="font-headline-sm text-headline-sm text-text-primary-light">Nexus</span></div><span class="font-code-sm text-code-sm px-space-xs py-0.5 rounded bg-surface-container-low text-text-secondary-light border border-border-light">v3.0</span></div><div class="p-space-md flex-shrink-0"><div class="flex items-center justify-between px-space-sm py-space-xs rounded-lg bg-ai-bg-light border border-ai-border"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[18px]">auto_awesome</span><span class="font-label-sm text-label-sm text-secondary uppercase">AI Copilot Active</span></div><span class="h-2 w-2 rounded-full bg-secondary"></span></div></div><div class="px-space-md mb-space-xs"><span class="font-label-sm text-label-sm text-text-muted-light uppercase tracking-wider px-space-sm">Operations</span></div><nav class="flex flex-col gap-1 px-space-md mb-space-md" data-active-classes="bg-status-assigned-bg text-status-assigned-text font-title-sm text-title-sm"><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors font-title-sm text-title-sm" data-path="cases-workstation" href="#">Cases / Workstation</a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors font-title-sm text-title-sm" data-path="investigation-studio" href="#">Investigation Studio</a><a aria-current="page" class="flex items-center px-space-sm py-2 rounded-lg transition-colors bg-status-assigned-bg text-status-assigned-text font-title-sm text-title-sm" data-path="sla-risk-console" href="#">SLA Risk Radar</a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors font-title-sm text-title-sm" data-path="team-command" href="#">Team Command</a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors font-title-sm text-title-sm" data-path="executive-analytics" href="#">Executive Analytics</a></nav><div class="px-space-md mb-space-xs"><span class="font-label-sm text-label-sm text-text-muted-light uppercase tracking-wider px-space-sm">Requester Hub</span></div><nav class="flex flex-col gap-1 px-space-md mb-space-md" data-active-classes="bg-status-assigned-bg text-status-assigned-text font-title-sm text-title-sm"><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors font-title-sm text-title-sm" data-path="cases-new" href="#">Create New Case</a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors font-title-sm text-title-sm" data-path="cases-track" href="#">Case Tracker &amp; Confirmation</a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors font-title-sm text-title-sm" data-path="requester-portal" href="#">Requester Portal</a></nav></div><div class="p-space-md border-t border-border-light flex flex-col gap-space-sm flex-shrink-0"><div class="flex items-center justify-between text-text-muted-light"><span class="font-label-sm text-label-sm uppercase">Simulate Role</span><span class="font-label-sm text-label-sm text-primary">Live</span></div><div class="grid grid-cols-2 gap-1 p-0.5 rounded-lg bg-surface-elevated-light border border-border-light text-center"><button class="py-1 rounded font-label-sm text-label-sm text-text-secondary-light hover:bg-surface-light hover:text-text-primary-light transition-all">Requester</button><button class="py-1 rounded font-label-sm text-label-sm bg-surface-light text-primary font-semibold shadow-sm">Operator</button><button class="py-1 rounded font-label-sm text-label-sm text-text-secondary-light hover:bg-surface-light hover:text-text-primary-light transition-all">Team Lead</button><button class="py-1 rounded font-label-sm text-label-sm text-text-secondary-light hover:bg-surface-light hover:text-text-primary-light transition-all">Manager</button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-light/95 backdrop-blur border-b border-border-light z-40 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-md flex-1 max-w-lg"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted-light text-[20px]">search</span><input class="w-full h-10 pl-10 pr-20 rounded-lg border border-border-light bg-surface-elevated-light font-body-sm text-body-sm text-text-primary-light placeholder:text-text-muted-light focus:outline-none focus:border-primary focus:bg-surface-light transition-all" placeholder="Search cases, operators, SLAs, intelligence..." type="text"/><div class="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-light border border-border-light shadow-sm text-text-secondary-light font-code-sm text-code-sm"><span>Ctrl</span><span>+</span><span>K</span></div></div></div><div class="flex items-center gap-space-md"><div class="flex items-center rounded-full p-1 bg-surface-elevated-light border border-border-light"><button class="p-1.5 rounded-full bg-surface-light text-text-primary-light shadow-sm flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">light_mode</span></button><button class="p-1.5 rounded-full text-text-muted-light hover:text-text-primary-light transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button></div><button class="relative p-2 rounded-lg text-text-secondary-light hover:bg-surface-elevated-light hover:text-text-primary-light transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-status-breached-text ring-2 ring-surface-light"></span></button><div class="h-6 w-px bg-border-light"></div><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-border-light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCne_WYEObEKlPd9geyjWtUs81FrA4N92-il3ObSLZuzUuyn-ao-c-BFY9b2KJdshjmW5j4QakLbEdDUV4DKmBCxefJtWJbS8DaRqsG1GvgPSP_1cwDGlbexfwEKLd5nUJeswMIj_8liwTC9-n-2JsILYp9uDmm-xh0IcFV6sK_nITPPboC6roOf-45kwLwKArzp-owrCEipJ5R0AWaEXYxg9AZCDuJyC4PQEOwsSAylCRPFZ54dPCH"/><div class="flex flex-col text-left"><span class="font-title-sm text-title-sm text-text-primary-light leading-none">Elena Vance</span><span class="font-label-sm text-label-sm text-text-muted-light leading-tight mt-0.5">Lead Operator</span></div><span class="material-symbols-outlined text-text-muted-light text-[18px]">expand_more</span></div></div></header><main class="w-full pt-16 min-h-screen bg-canvas-light"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow Element -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-24 right-16 w-96 h-96 rounded-full bg-status-breached-bg/60 blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-48 left-12 w-80 h-80 rounded-full bg-secondary-fixed/40 blur-3xl pointer-events-none -z-10"></div>
+<div class="p-gutter flex flex-col gap-space-xl">
+<!-- Console Header Section -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-code-sm text-code-sm px-2.5 py-1 rounded-full bg-status-breached-bg text-status-breached-text font-semibold uppercase tracking-wider flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-status-breached-text animate-ping"></span>
+              Live Telemetry
+            </span>
+<span class="text-text-muted-light font-body-sm text-body-sm">•</span>
+<span class="font-code-sm text-code-sm text-text-muted-light">CLUSTER: US-EAST-SYS04</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-text-primary-light tracking-tight">SLA Risk Radar &amp; Escalation Console</h1>
+<p class="font-body-md text-body-md text-text-secondary-light max-w-3xl">
+            Proactive countdown telemetry, breach risk projections, and automated multi-tier escalation triggers across high-velocity operational pipelines.
+          </p>
+</div>
+<!-- Header Interactive Actions -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Tier Filter Segmented Control -->
+<div class="flex items-center bg-surface-elevated-light p-1 rounded-lg shadow-sm">
+<button class="filter-tier active px-3 py-1.5 rounded-md font-label-md text-label-md font-semibold bg-surface-light text-primary shadow-sm transition-all" data-tier="all">All Tiers</button>
+<button class="filter-tier px-3 py-1.5 rounded-md font-label-md text-label-md font-medium text-text-secondary-light hover:text-text-primary-light transition-all" data-tier="p1">P1 Critical</button>
+<button class="filter-tier px-3 py-1.5 rounded-md font-label-md text-label-md font-medium text-text-secondary-light hover:text-text-primary-light transition-all" data-tier="p2">P2 High</button>
+</div>
+<!-- Live Sync Auto-Refresh Toggle -->
+<div class="flex items-center gap-2 bg-surface-light px-3.5 py-2 rounded-lg shadow-sm">
+<div aria-checked="true" class="relative flex items-center cursor-pointer" id="sync-switch" role="switch">
+<span class="w-8 h-4.5 bg-primary rounded-full transition-colors flex items-center px-0.5">
+<span class="w-3.5 h-3.5 bg-surface-light rounded-full shadow-sm transform translate-x-3.5 transition-transform" id="sync-dot"></span>
+</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-primary-light font-semibold leading-none">Live Sync</span>
+<span class="font-code-sm text-code-sm text-text-muted-light leading-none mt-0.5" id="sync-counter">Every 10s (8s)</span>
+</div>
+</div>
+<!-- Configure Policies Trigger -->
+<button class="flex items-center gap-1.5 px-4 py-2 bg-surface-light hover:bg-surface-elevated-light text-text-primary-light rounded-lg shadow-sm font-title-sm text-title-sm transition-all">
+<span class="material-symbols-outlined text-[18px] text-text-secondary-light">tune</span>
+            Configure SLA Policies
+          </button>
+</div>
+</div>
+<!-- Top Overview Metrics Quad -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- 1. Imminent Risk -->
+<div class="relative bg-surface-light rounded-xl p-space-lg shadow-sm overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-4 -top-4 w-24 h-24 rounded-full bg-status-breached-bg/80 blur-xl"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-secondary-light uppercase tracking-wider font-semibold">Imminent Risk</span>
+<span class="font-code-sm text-code-sm text-status-breached-text font-medium">&lt; 30m Remaining</span>
+</div>
+<div class="w-9 h-9 rounded-full bg-status-breached-bg flex items-center justify-center text-status-breached-text animate-pulse">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+</div>
+<div class="mt-space-lg flex items-baseline justify-between">
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-status-breached-text tracking-tight font-bold">3</span>
+<span class="font-title-sm text-title-sm text-text-secondary-light font-medium">Cases</span>
+</div>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-status-breached-bg text-status-breached-text font-semibold">+1 past hour</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-status-breached-text h-full rounded-full" style="width: 25%"></div>
+</div>
+</div>
+<!-- 2. Moderate Watch -->
+<div class="bg-surface-light rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-secondary-light uppercase tracking-wider font-semibold">Moderate Watch</span>
+<span class="font-code-sm text-code-sm text-status-investigating-text font-medium">&lt; 2h Remaining</span>
+</div>
+<div class="w-9 h-9 rounded-full bg-status-investigating-bg flex items-center justify-center text-status-investigating-text">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+</div>
+<div class="mt-space-lg flex items-baseline justify-between">
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-text-primary-light tracking-tight font-bold">7</span>
+<span class="font-title-sm text-title-sm text-text-secondary-light font-medium">Cases</span>
+</div>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-status-investigating-bg text-status-investigating-text font-semibold">Steady flow</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-status-investigating-text h-full rounded-full" style="width: 48%"></div>
+</div>
+</div>
+<!-- 3. Healthy SLA -->
+<div class="bg-surface-light rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-secondary-light uppercase tracking-wider font-semibold">Healthy SLA</span>
+<span class="font-code-sm text-code-sm text-status-closed-text font-medium">&gt; 4h Remaining</span>
+</div>
+<div class="w-9 h-9 rounded-full bg-status-closed-bg flex items-center justify-center text-status-closed-text">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+</div>
+<div class="mt-space-lg flex items-baseline justify-between">
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-text-primary-light tracking-tight font-bold">32</span>
+<span class="font-title-sm text-title-sm text-text-secondary-light font-medium">Cases</span>
+</div>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-status-closed-bg text-status-closed-text font-semibold">76.2% safe</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-status-closed-text h-full rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<!-- 4. Breaches Avoided Today -->
+<div class="bg-surface-light rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-secondary-light uppercase tracking-wider font-semibold">Breaches Defended</span>
+<span class="font-code-sm text-code-sm text-status-assigned-text font-medium">Today / Cycle</span>
+</div>
+<div class="w-9 h-9 rounded-full bg-status-assigned-bg flex items-center justify-center text-status-assigned-text">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</div>
+</div>
+<div class="mt-space-lg flex items-baseline justify-between">
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-primary tracking-tight font-bold">14</span>
+<span class="font-title-sm text-title-sm text-text-secondary-light font-medium">Resolved</span>
+</div>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-status-assigned-bg text-status-assigned-text font-semibold">100% On-Target</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 93%"></div>
+</div>
+</div>
+</div>
+<!-- Main Visual Grid (Left 40% / Right 60%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column: Health Distribution & Breach Predictor (40% approx. -> 5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Card: SLA Health Distribution Donut -->
+<div class="bg-surface-light rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-text-primary-light">SLA Health Distribution</h3>
+<span class="font-label-md text-label-md text-text-muted-light">Total 42 Active Workstation Incidents</span>
+</div>
+<span class="font-code-sm text-code-sm bg-surface-elevated-light text-text-secondary-light px-2 py-1 rounded">Telemetry</span>
+</div>
+<!-- SVG Clean Donut Chart -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-space-lg py-space-sm">
+<div class="relative w-44 h-44 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<!-- Background Ring -->
+<circle cx="18" cy="18" fill="none" r="15.9155" stroke="#F1F5F9" stroke-width="3"></circle>
+<!-- Safe Slice (78%) -> stroke-dasharray 78 22 -->
+<circle cx="18" cy="18" fill="none" r="15.9155" stroke="#0D9488" stroke-dasharray="78 22" stroke-dashoffset="0" stroke-width="3"></circle>
+<!-- Moderate Watch Slice (16%) -> stroke-dasharray 16 84 -->
+<circle cx="18" cy="18" fill="none" r="15.9155" stroke="#D97706" stroke-dasharray="16 84" stroke-dashoffset="-78" stroke-width="3"></circle>
+<!-- Imminent Slice (6%) -> stroke-dasharray 6 94 -->
+<circle cx="18" cy="18" fill="none" r="15.9155" stroke="#E11D48" stroke-dasharray="6 94" stroke-dashoffset="-94" stroke-width="3.6"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+<span class="font-display-lg text-headline-lg font-bold text-text-primary-light leading-none">94%</span>
+<span class="font-label-sm text-label-sm text-text-muted-light uppercase mt-1">Compliance</span>
+</div>
+</div>
+<!-- Minimal Legend -->
+<div class="flex flex-col gap-2.5 w-full">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-elevated-light/70">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-status-closed-text"></span>
+<span class="font-title-sm text-title-sm text-text-secondary-light">Safe (&gt; 4h)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm font-semibold text-text-primary-light">32</span>
+<span class="font-label-sm text-label-sm text-text-muted-light">78%</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-elevated-light/70">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-status-investigating-text"></span>
+<span class="font-title-sm text-title-sm text-text-secondary-light">Moderate Watch</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm font-semibold text-text-primary-light">7</span>
+<span class="font-label-sm text-label-sm text-text-muted-light">16%</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-elevated-light/70">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-status-breached-text"></span>
+<span class="font-title-sm text-title-sm text-text-secondary-light">Critical Imminent</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm font-semibold text-status-breached-text">3</span>
+<span class="font-label-sm text-label-sm text-status-breached-text">6%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card: Breach Probability Predictor by Category -->
+<div class="bg-surface-light rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">auto_awesome</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary-light">Breach Probability Predictor</h3>
+</div>
+<span class="font-label-md text-label-md text-text-muted-light">ML projection based on velocity &amp; agent allocation</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-ai-bg-light px-2.5 py-1 rounded-full font-semibold uppercase">Trained Model</span>
+</div>
+<!-- Category Bars -->
+<div class="flex flex-col gap-4 mt-space-xs">
+<!-- IT Infrastructure -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-breached-text text-[18px]">dns</span>
+<span class="font-title-sm text-title-sm text-text-primary-light font-medium">IT Infrastructure</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-status-breached-text font-bold">12.8%</span>
+<span class="font-label-sm text-label-sm text-status-breached-text uppercase font-semibold">Elevated</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-status-breached-text h-full rounded-full transition-all duration-500" style="width: 12.8%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted-light">Primary driver: replica database failovers &amp; ingress network congestion</span>
+</div>
+<!-- Software Tools -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-investigating-text text-[18px]">terminal</span>
+<span class="font-title-sm text-title-sm text-text-primary-light font-medium">Software Tools</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-status-investigating-text font-bold">4.2%</span>
+<span class="font-label-sm text-label-sm text-status-investigating-text uppercase font-semibold">Moderate</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-status-investigating-text h-full rounded-full transition-all duration-500" style="width: 4.2%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted-light">Stable backlog; IDE licenses and internal proxy configs resolving nominally</span>
+</div>
+<!-- Security Operations -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-closed-text text-[18px]">verified_user</span>
+<span class="font-title-sm text-title-sm text-text-primary-light font-medium">Security</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-status-closed-text font-bold">2.1%</span>
+<span class="font-label-sm text-label-sm text-status-closed-text uppercase font-semibold">Nominal</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-status-closed-text h-full rounded-full transition-all duration-500" style="width: 2.1%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted-light">No critical zero-day anomalies flagged across SOC pipelines</span>
+</div>
+</div>
+<!-- AI Copilot Suggestion Micro-Card -->
+<div class="mt-space-xs bg-ai-bg-light rounded-lg p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">tips_and_updates</span>
+<span class="font-title-sm text-title-sm text-secondary font-semibold">Smart Rebalance Recommended</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light">
+                Reallocating 2 DevOps engineers from Software Tools to Infrastructure will lower current IT breach probability by 8.4%.
+              </p>
+<div class="flex items-center gap-2 pt-1">
+<button class="px-3 py-1 bg-surface-light text-secondary hover:bg-status-resolution-bg rounded-md font-label-sm text-label-sm font-semibold transition-all shadow-sm">
+                  Apply Rebalance
+                </button>
+<button class="px-2 py-1 text-text-muted-light hover:text-text-primary-light rounded font-label-sm text-label-sm transition-all">
+                  Dismiss
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Active At-Risk Cases Watchlist (60% approx. -> 7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<div class="bg-surface-light rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<!-- Table Header Section -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-text-primary-light">Active At-Risk Cases Watchlist</h3>
+<span class="px-2 py-0.5 rounded-full bg-status-breached-bg text-status-breached-text font-code-sm text-code-sm font-bold">4 Priority</span>
+</div>
+<span class="font-label-md text-label-md text-text-muted-light">Real-time countdown telemetry synchronized with Tier 1-3 triggers</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-elevated-light hover:bg-surface-container-high text-text-secondary-light font-label-sm text-label-sm flex items-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[16px]">download</span>
+                  Export Incident Log
+                </button>
+</div>
+</div>
+<!-- Table Component -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-elevated-light text-text-secondary-light font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-4 rounded-l-lg">Incident Details</th>
+<th class="py-3 px-3">Severity</th>
+<th class="py-3 px-3">SLA Countdown</th>
+<th class="py-3 px-3">Assignee</th>
+<th class="py-3 px-4 text-right rounded-r-lg">Escalation Triggers</th>
+</tr>
+</thead>
+<tbody class="divide-y-0" id="watchlist-body">
+<!-- Row 1: NEX-2026-0087 (Critical Imminent) -->
+<tr class="hover:bg-surface-elevated-light/60 transition-colors group">
+<td class="py-4 px-4 align-middle">
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm font-semibold text-primary">NEX-2026-0087</span>
+<span class="font-title-sm text-title-sm text-text-primary-light font-medium group-hover:text-primary transition-colors">Kubernetes ingress 502</span>
+<span class="font-label-sm text-label-sm text-text-muted-light">Production API gateway failover loop</span>
+</div>
+</td>
+<td class="py-4 px-3 align-middle whitespace-nowrap">
+<span class="px-2.5 py-1 rounded-full bg-status-breached-bg text-status-breached-text font-label-sm text-label-sm uppercase font-bold flex items-center gap-1 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-status-breached-text"></span>
+                        P1 Critical
+                      </span>
+</td>
+<td class="py-4 px-3 align-middle whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm font-bold text-status-breached-text flex items-center gap-1" id="timer-row-1">
+<span class="material-symbols-outlined text-[15px] animate-spin">hourglass_top</span>
+                          14m 20s
+                        </span>
+<span class="font-label-sm text-label-sm text-status-breached-text">95.4% Elapsed</span>
+</div>
+</td>
+<td class="py-4 px-3 align-middle whitespace-nowrap">
+<div class="flex items-center gap-2">
+<img class="w-7 h-7 rounded-full object-cover" data-alt="Close up professional headshot portrait of David Ross, an enterprise IT systems engineer, smiling warmly against a soft studio backdrop with soft blue and periwinkle illumination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNy7fB7ujidYD_VBqRDBPVCE23LTS9sHZ2cp-DV_pXJXsjOzYE9L-TULEXrFCY867H_gt4Z0iWO84SyEmkhjSh5HDutPzgjBge4_hppbgwBShSMS0NvyawaGXrXplj7ud4PVRGepkJ87ExcSsDXCv6Trb9a_qygZ_mVNTr-BiUP56SWOhFeKh3fpUG5UrwzKXT6fjh7na8glvOuX4Xeg13OfkpexB-qAz-cnVC6SXSSWVr0v8BioeD"/>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-text-primary-light leading-none">David Ross</span>
+<span class="font-label-sm text-label-sm text-text-muted-light mt-0.5">Infra Lead</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 align-middle text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1.5 bg-status-breached-bg hover:bg-status-breached-text hover:text-surface-light text-status-breached-text rounded-md font-label-sm text-label-sm font-bold transition-all shadow-sm flex items-center gap-1" title="Instantly trigger on-call leadership paging">
+<span class="material-symbols-outlined text-[14px]">crisis_alert</span>
+                          Tier-3 Trigger
+                        </button>
+<button class="px-2 py-1.5 bg-surface-elevated-light hover:bg-surface-container-high text-text-secondary-light rounded-md font-label-sm text-label-sm transition-all" title="Rebalance Assignee">
+                          Rebalance
+                        </button>
+</div>
+</td>
+</tr>
+<!-- Row 2: NEX-2026-0098 (P2 High Imminent) -->
+<tr class="hover:bg-surface-elevated-light/60 transition-colors group">
+<td class="py-4 px-4 align-middle">
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm font-semibold text-primary">NEX-2026-0098</span>
+<span class="font-title-sm text-title-sm text-text-primary-light font-medium group-hover:text-primary transition-colors">Postgres WAL replica lag 350ms</span>
+<span class="font-label-sm text-label-sm text-text-muted-light">Sync threshold exceeded in multi-region replica</span>
+</div>
+</td>
+<td class="py-4 px-3 align-middle whitespace-nowrap">
+<span class="px-2.5 py-1 rounded-full bg-status-waiting-bg text-status-waiting-text font-label-sm text-label-sm uppercase font-bold flex items-center gap-1 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-status-waiting-text"></span>
+                        P2 High
+                      </span>
+</td>
+<td class="py-4 px-3 align-middle whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm font-bold text-status-breached-text flex items-center gap-1" id="timer-row-2">
+<span class="material-symbols-outlined text-[15px]">hourglass_bottom</span>
+                          28m 45s
+                        </span>
+<span class="font-label-sm text-label-sm text-status-breached-text">90.2% Elapsed</span>
+</div>
+</td>
+<td class="py-4 px-3 align-middle whitespace-nowrap">
+<div class="flex items-center gap-2">
+<img class="w-7 h-7 rounded-full object-cover" data-alt="Portrait photo of Michael Chang, data infrastructure engineer, focused expression, modern clean workspace in soft background with lilac and lavender tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDifk8mOvgw4MPYJLRVP4IdcXRyHX0MP2sx6mPgm9x-LCDdAzCciIDbezMlB2EIBCVKV4Yy_Q_ULupLHimSsrBh7GCuCJchursOMUaU3JC_BiTEPVGSqSBVpW5_BCKjHPsxrCt5tTFd2K3wdUKAGrIWLnzSQWsc1CbAUc_qzIyvRE8Iu5A1DVJHFsApPA09LhA15lWzLqM3hW-lU5QKc8C4z_adM7P30PPyQM-syUGZ3GwVeIOK4kqU"/>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-text-primary-light leading-none">Michael Chang</span>
+<span class="font-label-sm text-label-sm text-text-muted-light mt-0.5">Database Eng</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 align-middle text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1.5 bg-status-assigned-bg hover:bg-status-assigned-text hover:text-surface-light text-status-assigned-text rounded-md font-label-sm text-label-sm font-semibold transition-all shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">notifications_active</span>
+                          Notify Lead
+                        </button>
+<button class="px-2 py-1.5 bg-surface-elevated-light hover:bg-surface-container-high text-text-secondary-light rounded-md font-label-sm text-label-sm transition-all">
+                          Extend SLA
+                        </button>
+</div>
+</td>
+</tr>
+<!-- Row 3: NEX-2026-0104 (P1 Moderate Watch) -->
+<tr class="hover:bg-surface-elevated-light/60 transition-colors group">
+<td class="py-4 px-4 align-middle">
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm font-semibold text-primary">NEX-2026-0104</span>
+<span class="font-title-sm text-title-sm text-text-primary-light font-medium group-hover:text-primary transition-colors">Authentication Gateway Timeout</span>
+<span class="font-label-sm text-label-sm text-text-muted-light">OAuth token verification response spike</span>
+</div>
+</td>
+<td class="py-4 px-3 align-middle whitespace-nowrap">
+<span class="px-2.5 py-1 rounded-full bg-status-breached-bg text-status-breached-text font-label-sm text-label-sm uppercase font-bold flex items-center gap-1 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-status-breached-text"></span>
+                        P1 Critical
+                      </span>
+</td>
+<td class="py-4 px-3 align-middle whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm font-semibold text-status-investigating-text flex items-center gap-1" id="timer-row-3">
+<span class="material-symbols-outlined text-[15px]">timer</span>
+                          42m 10s
+                        </span>
+<span class="font-label-sm text-label-sm text-status-investigating-text">82.5% Elapsed</span>
+</div>
+</td>
+<td class="py-4 px-3 align-middle whitespace-nowrap">
+<div class="flex items-center gap-2">
+<img class="w-7 h-7 rounded-full object-cover" data-alt="Corporate headshot of Elena Vance, Lead Security Systems Operator, confident expression, natural indoor lighting with slight subtle pastel background ambiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv9T06FCoi6NmPAi4V2VqR9CmxUw1fgb5EAKJ_8vWrBl4JhUfp8wsPULH4847wOkNMs5ADvGPU4MMr8KNM7zi2GpG4dWtpEqGRZK7b1dmpHlLRzUmnhG_iYTugY2J-3D-M-MH1f8fH3ENhrXU2OzN62oI_KyUk4dDU03pLVt0Tsux9nX9SyfGGCZs-o6tM2gM47Sv_wAe8phWGpFghO4uki7X86pN279yWPQElJA3--oobzRUHLweL"/>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-text-primary-light leading-none">Elena Vance</span>
+<span class="font-label-sm text-label-sm text-text-muted-light mt-0.5">Lead Operator</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 align-middle text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-3 py-1.5 bg-surface-elevated-light hover:bg-surface-container-high text-text-primary-light rounded-md font-label-sm text-label-sm font-semibold transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+                          Inspect
+                        </button>
+</div>
+</td>
+</tr>
+<!-- Row 4: NEX-2026-0091 (P2 Moderate Watch) -->
+<tr class="hover:bg-surface-elevated-light/60 transition-colors group">
+<td class="py-4 px-4 align-middle">
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm font-semibold text-primary">NEX-2026-0091</span>
+<span class="font-title-sm text-title-sm text-text-primary-light font-medium group-hover:text-primary transition-colors">VPN split tunneling drops</span>
+<span class="font-label-sm text-label-sm text-text-muted-light">Remote staff regional peering bottleneck</span>
+</div>
+</td>
+<td class="py-4 px-3 align-middle whitespace-nowrap">
+<span class="px-2.5 py-1 rounded-full bg-status-waiting-bg text-status-waiting-text font-label-sm text-label-sm uppercase font-bold flex items-center gap-1 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-status-waiting-text"></span>
+                        P2 High
+                      </span>
+</td>
+<td class="py-4 px-3 align-middle whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm font-semibold text-status-investigating-text flex items-center gap-1" id="timer-row-4">
+<span class="material-symbols-outlined text-[15px]">timer</span>
+                          01h 15m 00s
+                        </span>
+<span class="font-label-sm text-label-sm text-status-investigating-text">68.0% Elapsed</span>
+</div>
+</td>
+<td class="py-4 px-3 align-middle whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-status-assigned-bg text-status-assigned-text font-semibold font-label-sm text-label-sm flex items-center justify-center">
+                          PS
+                        </div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-text-primary-light leading-none">Priya Sharma</span>
+<span class="font-label-sm text-label-sm text-text-muted-light mt-0.5">NetOps Specialist</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 align-middle text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-3 py-1.5 bg-surface-elevated-light hover:bg-surface-container-high text-text-primary-light rounded-md font-label-sm text-label-sm font-semibold transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+                          Inspect
+                        </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Quick Pagination Info -->
+<div class="flex items-center justify-between pt-space-xs text-text-muted-light">
+<span class="font-label-sm text-label-sm">Showing 4 of 10 at-risk incidents</span>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 text-text-secondary-light hover:bg-surface-elevated-light rounded text-label-sm font-label-sm transition-colors">Previous</button>
+<span class="font-code-sm text-code-sm text-primary font-bold">1</span>
+<button class="px-2.5 py-1 text-text-secondary-light hover:bg-surface-elevated-light rounded text-label-sm font-label-sm transition-colors">Next</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Card: Multi-Tier Escalation Policy Rules Summary -->
+<div class="bg-surface-light rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md mb-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">alt_route</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary-light">Multi-Tier Escalation Policy Rules</h3>
+</div>
+<p class="font-body-md text-body-md text-text-secondary-light">
+              Automated deterministic policy matrix triggering graduated alert protocols based on remaining SLA thresholds.
+            </p>
+</div>
+<span class="font-code-sm text-code-sm px-3 py-1 rounded-full bg-surface-elevated-light text-text-secondary-light">Policy Matrix: v4.2.1 Active</span>
+</div>
+<!-- Tier Rules Grid / Table -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-xs">
+<!-- Tier 1 -->
+<div class="bg-surface-elevated-light rounded-xl p-space-md flex flex-col justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-text-primary-light">Tier 1</span>
+<span class="font-code-sm text-code-sm px-2.5 py-0.5 rounded-full bg-status-assigned-bg text-status-assigned-text font-bold">75% SLA</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary-light font-semibold uppercase">Operational Proximity Alert</span>
+<p class="font-body-sm text-body-sm text-text-secondary-light">
+                Direct automated ping and desktop priority banner triggered to currently assigned operator. Requires operational heartbeat acknowledgment within 10 minutes.
+              </p>
+</div>
+<div class="flex flex-col gap-1.5 pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-text-muted-light">
+<span>Mediums:</span>
+<span class="font-code-sm text-code-sm text-text-primary-light font-medium">Slack Copilot Bot + In-App</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-text-muted-light">
+<span>Ack Window:</span>
+<span class="font-code-sm text-code-sm text-text-primary-light font-medium">10 Minutes</span>
+</div>
+</div>
+</div>
+<!-- Tier 2 -->
+<div class="bg-surface-elevated-light rounded-xl p-space-md flex flex-col justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-text-primary-light">Tier 2</span>
+<span class="font-code-sm text-code-sm px-2.5 py-0.5 rounded-full bg-status-investigating-bg text-status-investigating-text font-bold">85% SLA</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary-light font-semibold uppercase">Leadership Notification</span>
+<p class="font-body-sm text-body-sm text-text-secondary-light">
+                Automated escalation broadcast dispatched to Team Lead &amp; Duty Manager. Initiates active peer-pairing and auto-reserves rebalance engineering capacity.
+              </p>
+</div>
+<div class="flex flex-col gap-1.5 pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-text-muted-light">
+<span>Mediums:</span>
+<span class="font-code-sm text-code-sm text-text-primary-light font-medium">SMS + Team Lead Console</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-text-muted-light">
+<span>Ack Window:</span>
+<span class="font-code-sm text-code-sm text-text-primary-light font-medium">5 Minutes</span>
+</div>
+</div>
+</div>
+<!-- Tier 3 -->
+<div class="bg-surface-elevated-light rounded-xl p-space-md flex flex-col justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-status-breached-text">Tier 3</span>
+<span class="font-code-sm text-code-sm px-2.5 py-0.5 rounded-full bg-status-breached-bg text-status-breached-text font-bold">95% SLA</span>
+</div>
+<span class="font-label-sm text-label-sm text-status-breached-text font-semibold uppercase">Executive Incident Command</span>
+<p class="font-body-sm text-body-sm text-text-secondary-light">
+                Critical incident bridge instantiation. Immediate high-priority pager activation for On-Call VP of Engineering, automated client advisory draft generation.
+              </p>
+</div>
+<div class="flex flex-col gap-1.5 pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-text-muted-light">
+<span>Mediums:</span>
+<span class="font-code-sm text-code-sm text-text-primary-light font-medium">PagerDuty + Voice Call Bridge</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-text-muted-light">
+<span>Ack Window:</span>
+<span class="font-code-sm text-code-sm text-status-breached-text font-bold">Immediate (&lt; 2m)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    // Dynamic countdown timer simulator for real-time risk radar feel
+    let row1Seconds = 14 * 60 + 20;
+    let row2Seconds = 28 * 60 + 45;
+    let row3Seconds = 42 * 60 + 10;
+    let row4Seconds = 75 * 60;
+    let syncTick = 8;
+
+    function formatTime(totalSec) {
+      if (totalSec <= 0) return "BREACHED";
+      const h = Math.floor(totalSec / 3600);
+      const m = Math.floor((totalSec % 3600) / 60);
+      const s = totalSec % 60;
+      if (h > 0) {
+        return (h < 10 ? '0' + h : h) + 'h ' + (m < 10 ? '0' + m : m) + 'm ' + (s < 10 ? '0' + s : s) + 's';
+      }
+      return (m < 10 ? '0' + m : m) + 'm ' + (s < 10 ? '0' + s : s) + 's';
+    }
+
+    const t1 = document.getElementById('timer-row-1');
+    const t2 = document.getElementById('timer-row-2');
+    const t3 = document.getElementById('timer-row-3');
+    const t4 = document.getElementById('timer-row-4');
+    const syncCounter = document.getElementById('sync-counter');
+
+    setInterval(() => {
+      row1Seconds = Math.max(0, row1Seconds - 1);
+      row2Seconds = Math.max(0, row2Seconds - 1);
+      row3Seconds = Math.max(0, row3Seconds - 1);
+      row4Seconds = Math.max(0, row4Seconds - 1);
+
+      if (t1) t1.innerHTML = '<span class="material-symbols-outlined text-[15px] animate-spin">hourglass_top</span> ' + formatTime(row1Seconds);
+      if (t2) t2.innerHTML = '<span class="material-symbols-outlined text-[15px]">hourglass_bottom</span> ' + formatTime(row2Seconds);
+      if (t3) t3.innerHTML = '<span class="material-symbols-outlined text-[15px]">timer</span> ' + formatTime(row3Seconds);
+      if (t4) t4.innerHTML = '<span class="material-symbols-outlined text-[15px]">timer</span> ' + formatTime(row4Seconds);
+
+      syncTick--;
+      if (syncTick <= 0) syncTick = 10;
+      if (syncCounter) syncCounter.textContent = `Every 10s (${syncTick}s)`;
+    }, 1000);
+
+    // Interactive Tier Filtering
+    const filterButtons = document.querySelectorAll('.filter-tier');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-surface-light', 'text-primary', 'shadow-sm', 'font-semibold');
+          b.classList.add('text-text-secondary-light', 'font-medium');
+        });
+        btn.classList.add('bg-surface-light', 'text-primary', 'shadow-sm', 'font-semibold');
+        btn.classList.remove('text-text-secondary-light', 'font-medium');
+      });
+    });
+
+    // Toggle live sync visually
+    const syncSwitch = document.getElementById('sync-switch');
+    const syncDot = document.getElementById('sync-dot');
+    let isLive = true;
+    if (syncSwitch && syncDot) {
+      syncSwitch.addEventListener('click', () => {
+        isLive = !isLive;
+        if (isLive) {
+          syncDot.classList.add('translate-x-3.5');
+          syncDot.classList.remove('translate-x-0');
+          syncSwitch.querySelector('span').classList.remove('bg-text-muted-light');
+          syncSwitch.querySelector('span').classList.add('bg-primary');
+        } else {
+          syncDot.classList.remove('translate-x-3.5');
+          syncDot.classList.add('translate-x-0');
+          syncSwitch.querySelector('span').classList.remove('bg-primary');
+          syncSwitch.querySelector('span').classList.add('bg-text-muted-light');
+        }
+      });
+    }
+  })();
+</script></main></div></body></html>

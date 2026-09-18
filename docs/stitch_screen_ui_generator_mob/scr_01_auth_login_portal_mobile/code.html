@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#FAFAFC;}body{overscroll-behavior-y:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}.pb-safe{padding-bottom:max(env(safe-area-inset-bottom,0px),12px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}*{-webkit-tap-highlight-color:transparent;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "status-assigned-text": "#6366F1", "status-investigating-bg": "#FEF3C7", "on-tertiary-fixed-variant": "#004b73", "surface-dim": "#d2d9f4", "ai-bg-light": "#FAF5FF", "outline-variant": "#c7c4d7", "text-muted-light": "#94A3B8", "status-resolution-text": "#7C3AED", "surface-container": "#eaedff", "secondary-container": "#9e41f5", "primary-fixed-dim": "#c0c1ff", "surface-light": "#FFFFFF", "secondary-fixed-dim": "#ddb8ff", "on-error": "#ffffff", "status-triage-text": "#0284C7", "status-reported-bg": "#F1F5F9", "on-primary-fixed-variant": "#2f2ebe", "surface": "#faf8ff", "surface-container-lowest": "#ffffff", "on-surface": "#131b2e", "tertiary-fixed-dim": "#93ccff", "surface-container-high": "#e2e7ff", "inverse-on-surface": "#eef0ff", "error-container": "#ffdad6", "status-waiting-text": "#EA580C", "tertiary": "#006194", "on-primary-fixed": "#07006c", "surface-bright": "#faf8ff", "surface-tint": "#494bd6", "border-light": "#E2E8F0", "on-error-container": "#93000a", "on-primary-container": "#fffbff", "on-tertiary": "#ffffff", "status-reported-text": "#64748B", "outline": "#767586", "primary-container": "#6063ee", "inverse-primary": "#c0c1ff", "status-assigned-bg": "#EEF2FF", "canvas-light": "#FAFAFC", "on-tertiary-fixed": "#001d31", "tertiary-fixed": "#cce5ff", "inverse-surface": "#283044", "text-secondary-light": "#475569", "surface-container-low": "#f2f3ff", "background": "#faf8ff", "status-closed-bg": "#CCFBF1", "status-breached-bg": "#FFE4E6", "error": "#ba1a1a", "primary-fixed": "#e1e0ff", "primary": "#4648d4", "tertiary-container": "#007bb9", "ai-border": "#C084FC33", "on-secondary-fixed": "#2c0051", "status-triage-bg": "#E0F2FE", "status-breached-text": "#E11D48", "on-tertiary-container": "#fdfcff", "status-waiting-bg": "#FFEDD5", "secondary-fixed": "#f0dbff", "on-secondary-container": "#fffbff", "status-resolution-bg": "#F3E8FF", "surface-variant": "#dae2fd", "on-surface-variant": "#464554", "on-secondary-fixed-variant": "#6800b4", "on-background": "#131b2e", "status-closed-text": "#0D9488", "text-primary-light": "#0F172A", "status-investigating-text": "#D97706", "surface-container-highest": "#dae2fd", "on-primary": "#ffffff", "secondary": "#831ada", "surface-elevated-light": "#F8FAFC", "on-secondary": "#ffffff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-2xl": "2.5rem", "margin-mobile": "1rem", "gutter": "2rem", "space-xs": "0.25rem", "gutter-tablet": "1.5rem", "margin": "2rem", "space-lg": "1.5rem", "space-xl": "2rem", "space-md": "1rem", "margin-tablet": "1.5rem", "gutter-mobile": "1rem", "space-sm": "0.5rem" }, fontFamily: { "body-lg": ["Inter"], "body-md": ["Inter"], "title-sm": ["Inter"], "display-lg-mobile": ["Outfit"], "headline-md": ["Outfit"], "label-md": ["Inter"], "body-sm": ["Inter"], "headline-sm": ["Outfit"], "headline-lg-mobile": ["Outfit"], "title-md": ["Inter"], "headline-lg": ["Outfit"], "code-sm": ["JetBrains Mono"], "label-sm": ["Inter"], "display-lg": ["Outfit"] }, fontSize: { "body-lg": ["16px", { lineHeight: "26px", letterSpacing: "0em", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "22px", letterSpacing: "0em", fontWeight: "400" }], "title-sm": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "600" }], "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "-0.015em", fontWeight: "500" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }], "body-sm": ["13px", { lineHeight: "18px", letterSpacing: "0.005em", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "500" }], "headline-lg-mobile": ["22px", { lineHeight: "30px", letterSpacing: "-0.015em", fontWeight: "500" }], "title-md": ["16px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "500" }], "code-sm": ["12px", { lineHeight: "16px", letterSpacing: "0em", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "600" }], "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.025em", fontWeight: "600" }] } } } };</script></head><body class="bg-canvas-light text-text-primary-light font-body-md min-h-full flex flex-col selection:bg-primary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-light/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(15,23,42,0.03)]"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #6366f1
+- Font: outfit
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XGdlqNOisKAEAh4fKQJjHh8ebgRa3Hn3XsOodJ-7cjhke9YFTxD4O5J386M71gJ_nx0O68xQlwqkTGDLThZOspvUXvHvBrXUJ7ReXzzN7FcSDHWhDcGFbR6me6Pg32xyEaFy_u410Kby8Ui4VYaMXcDfIaafPWtLvzWvBt_DPXZ-Wfs7wWNf2XP--8V3m4BZuQibzd8KgjX_wcv4YnakLYHCdgTrwR0vEvSJe_gZWG4SYfltjdQG4eYQw"/><div class="flex flex-col leading-none"><span class="font-headline-sm text-headline-sm text-text-primary-light tracking-tight">Nexus AI</span><span class="font-label-sm text-label-sm text-text-muted-light mt-0.5 uppercase tracking-wider">Triage</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Search cases and knowledge base" class="w-11 h-11 flex items-center justify-center rounded-lg text-text-secondary-light hover:text-text-primary-light hover:bg-canvas-light transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">search</span></button><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-lg text-text-secondary-light hover:text-text-primary-light hover:bg-canvas-light transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-status-breached-text ring-2 ring-surface-light"></span></button><div class="pl-space-xs flex items-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-light" src="https://lh3.googleusercontent.com/aida/AEtjO1XqVXG34mQqXmLKAYxAV0GC0632Yxg4LocLN54tAYvOpNWpCur7Ck60jTpTpaInj1Tol47zrjFsVpD4d_c7jysM0pSq9ftUvtIxulIr9Tym-c7lefVYububWdN8jc4vRZiNKhxQ0VeRaV1YbYL0Sujdmy4nStEqbGXgr93KjVdJSjBygKqfOCbFGm7cwXUrdXaBJtoDUlOiaM8p4FTwtwMPcGUJVXdEmMnAW8Ataeff7O9s3Ca9nqBvS7Q"/></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 px-space-md bg-canvas-light"><div class="flex flex-col w-full pb-8">
+<!-- Subtle ambient decorative glow strictly without borders -->
+<div class="relative w-full flex flex-col items-center pt-2 pb-4">
+<div class="absolute -top-10 w-48 h-48 bg-primary-fixed/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- Top Identity: Brand Mark & SOC-2 Badge -->
+<div class="flex flex-col items-center text-center">
+<div class="relative p-1.5 rounded-2xl bg-surface-container-low shadow-sm">
+<img alt="Nexus Enterprise Logo" class="w-14 h-14 object-contain rounded-xl shadow-xs" src="https://lh3.googleusercontent.com/aida/AEtjO1XGdlqNOisKAEAh4fKQJjHh8ebgRa3Hn3XsOodJ-7cjhke9YFTxD4O5J386M71gJ_nx0O68xQlwqkTGDLThZOspvUXvHvBrXUJ7ReXzzN7FcSDHWhDcGFbR6me6Pg32xyEaFy_u410Kby8Ui4VYaMXcDfIaafPWtLvzWvBt_DPXZ-Wfs7wWNf2XP--8V3m4BZuQibzd8KgjX_wcv4YnakLYHCdgTrwR0vEvSJe_gZWG4SYfltjdQG4eYQw"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-status-closed-bg flex items-center justify-center shadow-xs">
+<span class="w-2 h-2 rounded-full bg-status-closed-text"></span>
+</div>
+</div>
+<div class="mt-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-assigned-bg text-status-assigned-text font-label-sm text-label-sm tracking-wider uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+<span>V4.8 SOC-2 TYPE II</span>
+</div>
+<!-- Main Headline & Subtitle -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-text-primary-light mt-4 tracking-tight px-1 font-semibold">
+        Intelligent Case Management with Complete Human Oversight
+      </h1>
+<p class="font-body-sm text-body-sm text-text-secondary-light mt-2 px-2 max-w-sm leading-relaxed">
+        Deterministic operations, autonomous triage workflows, and cryptographic compliance orchestrating mission-critical incident responses at scale.
+      </p>
+</div>
+</div>
+<!-- Feature Highlights (Refined Cards without hard borders) -->
+<div class="flex flex-col gap-2.5 my-3">
+<!-- Feature 1 -->
+<div class="flex items-center gap-3 p-3 rounded-xl bg-surface-light shadow-sm transition-all duration-200 hover:bg-surface-container-low">
+<div class="w-8 h-8 rounded-lg bg-status-triage-bg flex items-center justify-center shrink-0 text-status-triage-text">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-text-primary-light truncate">Deterministic SLA Telemetry</span>
+<span class="font-label-md text-label-md text-text-muted-light">Real-time sub-second latency analytics</span>
+</div>
+</div>
+<!-- Feature 2: Lilac AI Highlight -->
+<div class="flex items-center gap-3 p-3 rounded-xl bg-ai-bg-light shadow-sm transition-all duration-200">
+<div class="w-8 h-8 rounded-lg bg-status-resolution-bg flex items-center justify-center shrink-0 text-status-resolution-text">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-text-primary-light truncate">Autonomous AI Triage with Operator-in-the-loop</span>
+<span class="font-label-md text-label-md text-text-muted-light">Calibrated copilot recommendations</span>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="flex items-center gap-3 p-3 rounded-xl bg-surface-light shadow-sm transition-all duration-200 hover:bg-surface-container-low">
+<div class="w-8 h-8 rounded-lg bg-status-assigned-bg flex items-center justify-center shrink-0 text-status-assigned-text">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-text-primary-light truncate">Tamper-evident Audit Trails &amp; Compliance</span>
+<span class="font-label-md text-label-md text-text-muted-light">SHA-256 state hashing &amp; export</span>
+</div>
+</div>
+</div>
+<!-- Sign In Form Panel -->
+<div class="mt-3 bg-surface-light rounded-2xl p-5 shadow-sm flex flex-col gap-4">
+<!-- SSO Primary Option -->
+<button class="w-full h-11 px-4 rounded-lg bg-surface-container-low hover:bg-surface-container text-text-primary-light font-title-sm text-title-sm flex items-center justify-center gap-2.5 transition-colors shadow-xs active:scale-[0.99]" type="button">
+<svg class="w-4 h-4 shrink-0 text-status-assigned-text" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 15c-2.761 0-5-2.239-5-5s2.239-5 5-5 5 2.239 5 5-2.239 5-5 5z"></path>
+</svg>
+<span>Sign In with SSO / Okta</span>
+<span class="material-symbols-outlined text-[16px] text-text-muted-light ml-auto">open_in_new</span>
+</button>
+<!-- Subtle Tonal Divider -->
+<div class="relative flex items-center justify-center py-1">
+<div class="w-full h-[1px] bg-surface-container-high"></div>
+<span class="absolute px-3 bg-surface-light font-label-sm text-label-sm text-text-muted-light tracking-wider uppercase">
+        OR CONTINUE WITH DIRECT KEY
+      </span>
+</div>
+<!-- Credentials Form -->
+<form class="flex flex-col gap-3.5" onsubmit="event.preventDefault();">
+<!-- Enterprise Email Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary-light font-medium flex items-center justify-between" for="enterprise-email">
+<span>Enterprise Email</span>
+<span class="text-status-triage-text text-[11px] font-normal">Internal Directory</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-[18px] text-text-muted-light absolute left-3 pointer-events-none">alternate_email</span>
+<input class="w-full h-11 pl-9 pr-3 rounded-lg bg-surface-container-low text-text-primary-light font-body-sm text-body-sm focus:outline-none focus:bg-surface-light focus:shadow-[0_0_0_2px_#6366F1] transition-all" id="enterprise-email" placeholder="elena.vance@nexuscorp.internal" type="email" value="elena.vance@nexuscorp.internal"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary-light font-medium" for="security-password">Security Password</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-[18px] text-text-muted-light absolute left-3 pointer-events-none">lock</span>
+<input class="w-full h-11 pl-9 pr-10 rounded-lg bg-surface-container-low text-text-primary-light font-body-sm text-body-sm focus:outline-none focus:bg-surface-light focus:shadow-[0_0_0_2px_#6366F1] transition-all" id="security-password" placeholder="Enter direct key credentials" type="password" value="••••••••••••••••"/>
+<button aria-label="Toggle password visibility" class="absolute right-2.5 w-7 h-7 flex items-center justify-center text-text-muted-light hover:text-text-primary-light rounded transition-colors" id="toggle-pwd-btn" type="button">
+<span class="material-symbols-outlined text-[18px]" id="pwd-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Auxiliary Links & Checkbox -->
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-status-assigned-text bg-surface-container-low accent-status-assigned-text cursor-pointer focus:ring-0" type="checkbox"/>
+<span class="font-label-md text-label-md text-text-secondary-light">Remember 30 days</span>
+</label>
+<a class="font-label-md text-label-md text-status-assigned-text hover:underline font-medium" href="#">Forgot key?</a>
+</div>
+<!-- Primary Action CTA -->
+<button class="mt-1.5 w-full h-12 rounded-lg bg-primary hover:bg-primary-container active:scale-[0.99] text-on-primary font-title-sm text-title-sm flex items-center justify-center gap-2 shadow-sm transition-all" type="submit">
+<span>Sign In</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+</div>
+<!-- Persona Switcher (Dev Mode Preview) -->
+<div class="mt-4 p-3.5 bg-surface-container-low rounded-xl flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-text-secondary-light">terminal</span>
+<span class="font-label-sm text-label-sm text-text-secondary-light uppercase tracking-wider font-semibold">Dev Mode Simulator</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-status-investigating-bg text-status-investigating-text font-label-sm text-label-sm font-medium">Tier-3 Access</span>
+</div>
+<!-- Scrollable Horizontal Pill Selector -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5" id="persona-container">
+<button class="persona-pill px-3 py-1.5 rounded-lg bg-surface-light text-text-secondary-light font-label-md text-label-md whitespace-nowrap transition-all" data-persona="Requester" type="button">
+        Requester
+      </button>
+<button class="persona-pill px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-xs whitespace-nowrap transition-all" data-persona="Operator" type="button">
+        Operator
+      </button>
+<button class="persona-pill px-3 py-1.5 rounded-lg bg-surface-light text-text-secondary-light font-label-md text-label-md whitespace-nowrap transition-all" data-persona="Lead" type="button">
+        Lead
+      </button>
+<button class="persona-pill px-3 py-1.5 rounded-lg bg-surface-light text-text-secondary-light font-label-md text-label-md whitespace-nowrap transition-all" data-persona="Manager" type="button">
+        Manager
+      </button>
+<button class="persona-pill px-3 py-1.5 rounded-lg bg-surface-light text-text-secondary-light font-label-md text-label-md whitespace-nowrap transition-all" data-persona="Admin" type="button">
+        Admin
+      </button>
+</div>
+</div>
+<!-- Security Guarantee Footer -->
+<div class="mt-5 flex flex-col items-center text-center gap-1.5 px-2">
+<div class="flex items-center justify-center gap-1.5 text-text-secondary-light font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px] text-status-closed-text">lock</span>
+<span>256-bit AES End-to-End • FIPS 140-3 Validated</span>
+</div>
+<div class="flex items-center justify-center gap-1.5 text-text-muted-light font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-status-closed-text animate-pulse"></span>
+<span>99.98% System Availability • 42 Active Nodes</span>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    // Password reveal micro-interaction
+    const pwdInput = document.getElementById('security-password');
+    const toggleBtn = document.getElementById('toggle-pwd-btn');
+    const pwdIcon = document.getElementById('pwd-icon');
+
+    if (toggleBtn && pwdInput && pwdIcon) {
+      toggleBtn.addEventListener('click', () => {
+        const isPassword = pwdInput.type === 'password';
+        pwdInput.type = isPassword ? 'text' : 'password';
+        pwdIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+      });
+    }
+
+    // Persona switch preview interaction
+    const pills = document.querySelectorAll('.persona-pill');
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => {
+          p.classList.remove('bg-primary', 'text-on-primary', 'font-semibold', 'shadow-xs');
+          p.classList.add('bg-surface-light', 'text-text-secondary-light');
+        });
+        pill.classList.remove('bg-surface-light', 'text-text-secondary-light');
+        pill.classList.add('bg-primary', 'text-on-primary', 'font-semibold', 'shadow-xs');
+      });
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-light/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(15,23,42,0.04)]" data-active-classes="text-status-assigned-text font-semibold"><div class="h-16 flex items-center justify-around px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center w-16 h-12 transition-colors text-status-assigned-text font-semibold" data-path="triage" href="#"><span class="material-symbols-outlined text-[22px]">inbox</span><span class="font-label-sm text-label-sm mt-1">Triage</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-text-secondary-light hover:text-text-primary-light transition-colors" data-path="studio" href="#"><span class="material-symbols-outlined text-[22px]">auto_awesome</span><span class="font-label-sm text-label-sm mt-1">Studio</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-text-secondary-light hover:text-text-primary-light transition-colors" data-path="radar" href="#"><span class="material-symbols-outlined text-[22px]">radar</span><span class="font-label-sm text-label-sm mt-1">Radar</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-text-secondary-light hover:text-text-primary-light transition-colors" data-path="problems" href="#"><span class="material-symbols-outlined text-[22px]">warning</span><span class="font-label-sm text-label-sm mt-1">Problems</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-text-secondary-light hover:text-text-primary-light transition-colors" data-path="admin" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="font-label-sm text-label-sm mt-1">Admin</span></a></div></nav></body></html>

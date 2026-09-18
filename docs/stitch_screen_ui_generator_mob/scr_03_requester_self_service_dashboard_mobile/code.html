@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><title>Nexus AI Operations</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400&amp;family=Outfit:wght@500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "status-investigating-bg": "#FEF3C7", "outline-variant": "#c7c4d7", "ai-bg-light": "#FAF5FF", "status-breached-text": "#E11D48", "status-closed-bg": "#CCFBF1", "status-reported-text": "#64748B", "outline": "#767586", "tertiary-container": "#007bb9", "on-secondary-fixed-variant": "#6800b4", "status-resolution-bg": "#F3E8FF", "secondary-fixed": "#f0dbff", "on-secondary": "#ffffff", "surface-tint": "#494bd6", "secondary-fixed-dim": "#ddb8ff", "surface": "#faf8ff", "surface-container": "#eaedff", "status-investigating-text": "#D97706", "surface-bright": "#faf8ff", "on-primary-container": "#fffbff", "inverse-on-surface": "#eef0ff", "on-secondary-container": "#fffbff", "on-tertiary-fixed-variant": "#004b73", "on-primary-fixed-variant": "#2f2ebe", "surface-light": "#FFFFFF", "error": "#ba1a1a", "background": "#faf8ff", "primary-fixed": "#e1e0ff", "surface-variant": "#dae2fd", "text-secondary-light": "#475569", "surface-dim": "#d2d9f4", "status-breached-bg": "#FFE4E6", "on-tertiary": "#ffffff", "on-surface": "#131b2e", "surface-container-lowest": "#ffffff", "secondary": "#831ada", "on-error": "#ffffff", "error-container": "#ffdad6", "status-waiting-bg": "#FFEDD5", "tertiary-fixed": "#cce5ff", "border-light": "#E2E8F0", "on-tertiary-container": "#fdfcff", "inverse-surface": "#283044", "status-reported-bg": "#F1F5F9", "surface-elevated-light": "#F8FAFC", "status-resolution-text": "#7C3AED", "on-error-container": "#93000a", "secondary-container": "#9e41f5", "text-muted-light": "#94A3B8", "on-primary-fixed": "#07006c", "status-triage-text": "#0284C7", "status-assigned-bg": "#EEF2FF", "status-closed-text": "#0D9488", "primary-container": "#6063ee", "surface-container-high": "#e2e7ff", "status-triage-bg": "#E0F2FE", "tertiary": "#006194", "on-surface-variant": "#464554", "inverse-primary": "#c0c1ff", "text-primary-light": "#0F172A", "status-assigned-text": "#6366F1", "on-tertiary-fixed": "#001d31", "surface-container-low": "#f2f3ff", "primary-fixed-dim": "#c0c1ff", "canvas-light": "#FAFAFC", "on-secondary-fixed": "#2c0051", "primary": "#4648d4", "ai-border": "#C084FC33", "tertiary-fixed-dim": "#93ccff", "on-primary": "#ffffff", "on-background": "#131b2e", "surface-container-highest": "#dae2fd", "status-waiting-text": "#EA580C" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "margin-mobile": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter": "2rem", "margin": "2rem", "space-2xl": "2.5rem", "gutter-mobile": "1rem", "space-xl": "2rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", "gutter-tablet": "1.5rem" }, "fontFamily": { "display-lg": ["Outfit"], "headline-md": ["Outfit"], "title-md": ["Inter"], "code-sm": ["JetBrains Mono"], "body-sm": ["Inter"], "body-lg": ["Inter"], "display-lg-mobile": ["Outfit"], "title-sm": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "headline-sm": ["Outfit"], "label-md": ["Inter"], "headline-lg": ["Outfit"], "headline-lg-mobile": ["Outfit"] }, "fontSize": { "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600"}], "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "500"}], "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "code-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400"}], "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400"}], "body-lg": ["16px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}], "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "title-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600"}], "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}], "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "500"}], "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}], "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "500"}], "headline-lg-mobile": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "500"}] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#FAF8FF;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-light/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #6366f1
+- Font: outfit
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XGdlqNOisKAEAh4fKQJjHh8ebgRa3Hn3XsOodJ-7cjhke9YFTxD4O5J386M71gJ_nx0O68xQlwqkTGDLThZOspvUXvHvBrXUJ7ReXzzN7FcSDHWhDcGFbR6me6Pg32xyEaFy_u410Kby8Ui4VYaMXcDfIaafPWtLvzWvBt_DPXZ-Wfs7wWNf2XP--8V3m4BZuQibzd8KgjX_wcv4YnakLYHCdgTrwR0vEvSJe_gZWG4SYfltjdQG4eYQw"/><div class="flex flex-col justify-center leading-none"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-text-primary-light font-semibold">Nexus AI</span></div><span class="font-label-sm text-label-sm tracking-widest text-text-muted-light font-semibold uppercase">OPERATIONS</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Search cases and operations" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-text-secondary-light hover:text-text-primary-light transition-colors"><span class="material-symbols-outlined text-[22px]">search</span></button><button aria-label="Notifications" class="relative w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-text-secondary-light hover:text-text-primary-light transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-status-breached-text ring-2 ring-surface-light"></span></button><div class="pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XqVXG34mQqXmLKAYxAV0GC0632Yxg4LocLN54tAYvOpNWpCur7Ck60jTpTpaInj1Tol47zrjFsVpD4d_c7jysM0pSq9ftUvtIxulIr9Tym-c7lefVYububWdN8jc4vRZiNKhxQ0VeRaV1YbYL0Sujdmy4nStEqbGXgr93KjVdJSjBygKqfOCbFGm7cwXUrdXaBJtoDUlOiaM8p4FTwtwMPcGUJVXdEmMnAW8Ataeff7O9s3Ca9nqBvS7Q"/></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface px-margin-mobile"><div class="flex flex-col w-full pb-6 space-y-4">
+<!-- Greeting & Portal Status Bar -->
+<section class="bg-surface-container-lowest rounded-xl p-4 shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-1.5 bg-status-closed-bg text-status-closed-text px-2.5 py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-status-closed-text animate-pulse"></span>
+<span>Operational</span>
+</div>
+<span class="font-label-md text-label-md text-text-secondary-light font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">domain</span>
+        Acme Corp Portal
+      </span>
+</div>
+<div class="flex items-center justify-between gap-3 pt-1">
+<div class="flex-1 min-w-0">
+<h1 class="font-headline-md text-headline-md text-text-primary-light truncate">Welcome back, Sarah</h1>
+<p class="font-body-sm text-body-sm text-text-secondary-light truncate">Live summary of your workplace requests</p>
+</div>
+<div class="relative flex-shrink-0">
+<div class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-headline-sm text-headline-sm font-semibold shadow-sm">
+          SP
+        </div>
+<span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-primary flex items-center justify-center text-white" title="Design Ops">
+<span class="material-symbols-outlined text-[10px]">palette</span>
+</span>
+</div>
+</div>
+</section>
+<!-- 2x2 Metric Grid -->
+<section class="grid grid-cols-2 gap-3">
+<!-- Active Cases -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between gap-1 mb-2">
+<span class="font-label-md text-label-md text-text-secondary-light font-medium">Active Cases</span>
+<span class="bg-status-triage-bg text-status-triage-text px-2 py-0.5 rounded-full font-label-sm text-label-sm">3 Open</span>
+</div>
+<div class="flex items-baseline gap-1.5">
+<span class="font-display-lg-mobile text-display-lg-mobile text-text-primary-light font-semibold">3</span>
+<span class="font-code-sm text-code-sm text-status-triage-text">in progress</span>
+</div>
+</div>
+<!-- Awaiting Reply -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between gap-1 mb-2">
+<span class="font-label-md text-label-md text-text-secondary-light font-medium">Awaiting Reply</span>
+<span class="bg-status-waiting-bg text-status-waiting-text px-2 py-0.5 rounded-full font-label-sm text-label-sm">1 Urgent</span>
+</div>
+<div class="flex items-baseline gap-1.5">
+<span class="font-display-lg-mobile text-display-lg-mobile text-status-waiting-text font-semibold">1</span>
+<span class="font-code-sm text-code-sm text-status-waiting-text">needs you</span>
+</div>
+</div>
+<!-- Resolved -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between gap-1 mb-2">
+<span class="font-label-md text-label-md text-text-secondary-light font-medium">Resolved</span>
+<span class="bg-status-closed-bg text-status-closed-text px-2 py-0.5 rounded-full font-label-sm text-label-sm">14 Closed</span>
+</div>
+<div class="flex items-baseline gap-1.5">
+<span class="font-display-lg-mobile text-display-lg-mobile text-text-primary-light font-semibold">14</span>
+<span class="font-code-sm text-code-sm text-status-closed-text">this quarter</span>
+</div>
+</div>
+<!-- Avg Turnaround -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between gap-1 mb-2">
+<span class="font-label-md text-label-md text-text-secondary-light font-medium">Avg Turnaround</span>
+<span class="material-symbols-outlined text-[16px] text-text-muted-light">speed</span>
+</div>
+<div class="flex items-baseline gap-1.5">
+<span class="font-display-lg-mobile text-display-lg-mobile text-text-primary-light font-semibold">4.2</span>
+<span class="font-body-sm text-body-sm text-text-secondary-light">hrs</span>
+</div>
+</div>
+</section>
+<!-- Urgent Action Needed Card -->
+<section class="bg-status-waiting-bg rounded-xl p-4 shadow-sm relative">
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-1.5 text-status-waiting-text">
+<span class="material-symbols-outlined text-[18px] animate-bounce">notifications_active</span>
+<span class="font-label-sm text-label-sm uppercase font-semibold tracking-wider">Action Needed • NEX-2026-0104</span>
+</div>
+<span class="font-code-sm text-code-sm text-status-waiting-text font-medium">SLA: 28m left</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-primary-light mb-3">
+      Operator <span class="font-semibold text-text-primary-light">Elena Vance</span> requested VPN / Envoy debug logs to unblock connection routing.
+    </p>
+<button class="w-full h-11 bg-status-waiting-text text-white rounded-lg font-title-sm text-title-sm flex items-center justify-center gap-2 active:scale-[0.98] transition-transform shadow-sm" id="btn-upload-log">
+<span class="material-symbols-outlined text-[20px]">file_upload</span>
+<span>Reply &amp; Upload Log</span>
+</button>
+</section>
+<!-- Primary Action: Report New Support Case -->
+<button class="w-full h-12 bg-primary text-white rounded-xl font-title-md text-title-md flex items-center justify-center gap-2 shadow-md active:scale-[0.99] transition-all" id="btn-new-case">
+<span class="material-symbols-outlined text-[22px]">add_circle</span>
+<span>Report a New Support Case</span>
+</button>
+<!-- My Submitted Cases Section -->
+<section class="space-y-3 pt-1">
+<div class="flex items-center justify-between px-0.5">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary-light font-semibold">My Submitted Cases</h2>
+<p class="font-body-sm text-body-sm text-text-muted-light">Track real-time engineering resolution</p>
+</div>
+<button class="font-title-sm text-title-sm text-primary flex items-center gap-0.5 hover:underline py-1">
+<span>Archive</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<!-- Filter Pills -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+<button class="case-filter px-3 py-1.5 rounded-full font-label-md text-label-md bg-primary text-white shadow-sm whitespace-nowrap" data-filter="all">
+        All (17)
+      </button>
+<button class="case-filter px-3 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-text-secondary-light hover:text-text-primary-light whitespace-nowrap" data-filter="active">
+        Active (3)
+      </button>
+<button class="case-filter px-3 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-text-secondary-light hover:text-text-primary-light whitespace-nowrap" data-filter="action">
+        Needs Action (1)
+      </button>
+</div>
+<!-- Case Card 1: In-Flight with Stepper -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm space-y-3.5">
+<div class="flex items-start justify-between gap-2">
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-text-muted-light">NEX-2026-0104</span>
+<span class="bg-status-investigating-bg text-status-investigating-text px-2 py-0.5 rounded-full font-label-sm text-label-sm uppercase">Investigating</span>
+</div>
+<h3 class="font-title-md text-title-md text-text-primary-light pt-0.5 line-clamp-1">Authentication Gateway Timeout on us-east-1</h3>
+</div>
+</div>
+<!-- 4-Stage Horizontal Milestone Progress Stepper -->
+<div class="bg-surface-container-low rounded-lg p-3">
+<div class="flex items-center justify-between relative">
+<!-- Step 1 -->
+<div class="flex flex-col items-center gap-1 z-10">
+<div class="w-6 h-6 rounded-full bg-status-closed-bg text-status-closed-text flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-status-closed-text font-semibold">Reported</span>
+</div>
+<div class="h-0.5 flex-1 bg-status-closed-bg -mt-4"></div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center gap-1 z-10">
+<div class="w-6 h-6 rounded-full bg-status-closed-bg text-status-closed-text flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-status-closed-text font-semibold">Triaged</span>
+</div>
+<div class="h-0.5 flex-1 bg-status-investigating-bg -mt-4"></div>
+<!-- Step 3 (Active) -->
+<div class="flex flex-col items-center gap-1 z-10">
+<div class="w-6 h-6 rounded-full bg-status-investigating-bg text-status-investigating-text flex items-center justify-center relative">
+<span class="w-2 h-2 rounded-full bg-status-investigating-text animate-ping absolute"></span>
+<span class="w-2 h-2 rounded-full bg-status-investigating-text relative"></span>
+</div>
+<span class="font-label-sm text-label-sm text-status-investigating-text font-semibold">Investigating</span>
+</div>
+<div class="h-0.5 flex-1 bg-surface-container-high -mt-4"></div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center gap-1 z-10">
+<div class="w-6 h-6 rounded-full bg-surface-container text-text-muted-light flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-text-muted-light/60"></span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted-light font-normal">Pending</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-md text-label-md text-text-muted-light flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+          Updated 14 mins ago
+        </span>
+<button class="px-3 h-8 rounded-lg bg-surface-container text-text-primary-light font-title-sm text-title-sm flex items-center gap-1 hover:bg-surface-container-high transition-colors">
+<span>Track Case</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Case Card 2: Waiting Info -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm space-y-3">
+<div class="flex items-start justify-between gap-2">
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-text-muted-light">NEX-2026-0095</span>
+<span class="bg-status-waiting-bg text-status-waiting-text px-2 py-0.5 rounded-full font-label-sm text-label-sm uppercase">Waiting for Info</span>
+</div>
+<h3 class="font-title-md text-title-md text-text-primary-light pt-0.5">Figma Enterprise workspace SSO licenses</h3>
+</div>
+</div>
+<div class="bg-surface-elevated-light rounded-lg p-3">
+<p class="font-body-sm text-body-sm text-text-secondary-light">
+          IT Helpdesk requested departmental cost-center approval ID before seat activation.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-text-secondary-light font-label-sm text-label-sm font-semibold">
+            LC
+          </div>
+<span class="font-label-md text-label-md text-text-secondary-light truncate">Assigned to Liam Chen</span>
+</div>
+<button class="px-3 h-8 rounded-lg bg-status-waiting-bg text-status-waiting-text font-title-sm text-title-sm flex items-center gap-1 hover:brightness-95 transition-all">
+<span class="material-symbols-outlined text-[16px]">reply</span>
+<span>Reply</span>
+</button>
+</div>
+</article>
+<!-- Case Card 3: Resolution Proposed -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm space-y-3">
+<div class="flex items-start justify-between gap-2">
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-text-muted-light">NEX-2026-0082</span>
+<span class="bg-status-resolution-bg text-status-resolution-text px-2 py-0.5 rounded-full font-label-sm text-label-sm uppercase">Resolution Proposed</span>
+</div>
+<h3 class="font-title-md text-title-md text-text-primary-light pt-0.5">Secondary monitor display flickering via Thunderbolt dock</h3>
+</div>
+</div>
+<!-- AI Remediation Micro-Card -->
+<div class="bg-ai-bg-light rounded-xl p-3.5 space-y-2">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider">AI Remediation Applied</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light">
+          DisplayLink 1.9 firmware update applied remotely. Please verify resolution on your workstation.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1 gap-2">
+<span class="font-label-md text-label-md text-text-muted-light truncate">Pending confirmation</span>
+<button class="px-3.5 h-8.5 py-1.5 rounded-lg bg-status-closed-text text-white font-title-sm text-title-sm flex items-center gap-1.5 shadow-sm active:scale-95 transition-transform" id="btn-confirm-resolution">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+<span>Confirm Resolution</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Quick Knowledgebase Guides -->
+<section class="space-y-2.5 pt-2">
+<div class="flex items-center justify-between px-0.5">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary-light font-semibold">Self-Service Guides</h2>
+<p class="font-body-sm text-body-sm text-text-muted-light">Fast solutions verified by IT Ops</p>
+</div>
+<button class="font-title-sm text-title-sm text-primary flex items-center gap-0.5 hover:underline py-1">
+<span>Browse All</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<div class="space-y-2">
+<!-- Guide 1 -->
+<a class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex items-center gap-3 active:scale-[0.99] transition-transform" href="#">
+<div class="w-10 h-10 rounded-lg bg-status-triage-bg text-status-triage-text flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">phonelink_lock</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-title-sm text-title-sm text-text-primary-light truncate">How to reset Okta multi-factor auth on a new work device</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm text-text-muted-light">Security &amp; IAM</span>
+<span class="w-1 h-1 rounded-full bg-text-muted-light"></span>
+<span class="font-label-sm text-label-sm text-status-triage-text">3 min read</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted-light text-[20px] flex-shrink-0">chevron_right</span>
+</a>
+<!-- Guide 2 -->
+<a class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex items-center gap-3 active:scale-[0.99] transition-transform" href="#">
+<div class="w-10 h-10 rounded-lg bg-status-resolution-bg text-status-resolution-text flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">vpn_key</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-title-sm text-title-sm text-text-primary-light truncate">Configuring VPN client for remote edge clusters</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm text-text-muted-light">Network Infrastructure</span>
+<span class="w-1 h-1 rounded-full bg-text-muted-light"></span>
+<span class="font-label-sm text-label-sm text-status-resolution-text">5 min read</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted-light text-[20px] flex-shrink-0">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- Delightful Help Support Banner -->
+<section class="bg-surface-container rounded-xl p-4 flex items-center justify-between gap-3 mt-1">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container text-white flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</div>
+<div>
+<p class="font-title-sm text-title-sm text-text-primary-light">Need assistance right now?</p>
+<p class="font-body-sm text-body-sm text-text-secondary-light">IT Ops AI Concierge is active</p>
+</div>
+</div>
+<button class="px-3 h-8 rounded-lg bg-surface-container-lowest text-primary font-title-sm text-title-sm shadow-sm hover:bg-surface-elevated-light transition-colors whitespace-nowrap">
+      Chat Live
+    </button>
+</section>
+</div>
+<script>
+  // Simple micro-interactions for Requester Dashboard
+  document.querySelectorAll('.case-filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.case-filter').forEach(b => {
+        b.classList.remove('bg-primary', 'text-white');
+        b.classList.add('bg-surface-container', 'text-text-secondary-light');
+      });
+      btn.classList.add('bg-primary', 'text-white');
+      btn.classList.remove('bg-surface-container', 'text-text-secondary-light');
+    });
+  });
+
+  const confirmBtn = document.getElementById('btn-confirm-resolution');
+  if (confirmBtn) {
+    confirmBtn.addEventListener('click', function() {
+      this.innerHTML = '<span class="material-symbols-outlined text-[16px]">check_circle</span><span>Confirmed</span>';
+      this.classList.remove('bg-status-closed-text');
+      this.classList.add('bg-status-closed-bg', 'text-status-closed-text');
+      this.disabled = true;
+    });
+  }
+
+  const uploadBtn = document.getElementById('btn-upload-log');
+  if (uploadBtn) {
+    uploadBtn.addEventListener('click', function() {
+      const originalText = this.innerHTML;
+      this.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Preparing Secure Uploader...</span>';
+      setTimeout(() => {
+        this.innerHTML = originalText;
+      }, 1200);
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-light/90 backdrop-blur-xl shadow-[0_-1px_10px_rgba(0,0,0,0.03)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-1 text-text-muted-light transition-colors" data-path="triage" href="#"><span class="material-symbols-outlined text-[22px]">inbox</span><span class="font-label-sm text-label-sm">Triage</span></a><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-1 text-text-muted-light transition-colors" data-path="studio" href="#"><span class="material-symbols-outlined text-[22px]">dataset</span><span class="font-label-sm text-label-sm">Studio</span></a><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-1 text-text-muted-light transition-colors" data-path="radar" href="#"><span class="material-symbols-outlined text-[22px]">radar</span><span class="font-label-sm text-label-sm">Radar</span></a><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-1 text-text-muted-light transition-colors" data-path="lead" href="#"><span class="material-symbols-outlined text-[22px]">group</span><span class="font-label-sm text-label-sm">Lead</span></a><a aria-current="page" class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-1 transition-colors text-primary font-semibold" data-path="portal" href="#"><span class="material-symbols-outlined text-[22px]">admin_panel_settings</span><span class="font-label-sm text-label-sm">Portal</span></a></div></nav></body></html>

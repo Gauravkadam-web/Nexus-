@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"surface-container-high":"#e2e7ff","secondary-fixed":"#f0dbff","surface-container-highest":"#dae2fd","background":"#faf8ff","inverse-surface":"#283044","surface-container-low":"#f2f3ff","on-error-container":"#93000a","outline-variant":"#c7c4d7","status-breached-text":"#E11D48","tertiary":"#006194","on-secondary-fixed":"#2c0051","tertiary-container":"#007bb9","surface-elevated-light":"#F8FAFC","status-resolution-bg":"#F3E8FF","on-secondary-container":"#fffbff","on-secondary":"#ffffff","border-light":"#E2E8F0","status-breached-bg":"#FFE4E6","error-container":"#ffdad6","status-investigating-bg":"#FEF3C7","text-primary-light":"#0F172A","inverse-on-surface":"#eef0ff","status-reported-bg":"#F1F5F9","outline":"#767586","status-reported-text":"#64748B","on-tertiary-fixed-variant":"#004b73","surface-container-lowest":"#ffffff","on-surface-variant":"#464554","surface-variant":"#dae2fd","status-assigned-bg":"#EEF2FF","on-surface":"#131b2e","surface-bright":"#faf8ff","surface-tint":"#494bd6","tertiary-fixed-dim":"#93ccff","error":"#ba1a1a","text-muted-light":"#94A3B8","primary":"#4648d4","on-primary-fixed":"#07006c","on-secondary-fixed-variant":"#6800b4","primary-fixed":"#e1e0ff","surface-light":"#FFFFFF","on-primary-container":"#fffbff","status-closed-bg":"#CCFBF1","surface-dim":"#d2d9f4","status-waiting-text":"#EA580C","status-waiting-bg":"#FFEDD5","inverse-primary":"#c0c1ff","status-assigned-text":"#6366F1","primary-fixed-dim":"#c0c1ff","secondary-fixed-dim":"#ddb8ff","on-primary":"#ffffff","on-error":"#ffffff","on-tertiary-fixed":"#001d31","on-tertiary-container":"#fdfcff","status-triage-text":"#0284C7","secondary-container":"#9e41f5","secondary":"#831ada","on-background":"#131b2e","status-investigating-text":"#D97706","primary-container":"#6063ee","status-resolution-text":"#7C3AED","tertiary-fixed":"#cce5ff","surface-container":"#eaedff","on-primary-fixed-variant":"#2f2ebe","canvas-light":"#FAFAFC","ai-border":"#C084FC33","ai-bg-light":"#FAF5FF","on-tertiary":"#ffffff","status-closed-text":"#0D9488","text-secondary-light":"#475569","status-triage-bg":"#E0F2FE","surface":"#faf8ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"1rem","space-sm":"0.5rem","space-xl":"2rem","gutter-tablet":"1.5rem","space-xs":"0.25rem","gutter":"2rem","space-lg":"1.5rem","space-md":"1rem","space-2xl":"2.5rem","gutter-mobile":"1rem","margin-tablet":"1.5rem","margin":"2rem"},"fontFamily":{"body-lg":["Inter"],"headline-lg":["Outfit"],"label-sm":["Inter"],"display-lg-mobile":["Outfit"],"headline-lg-mobile":["Outfit"],"headline-sm":["Outfit"],"label-md":["Inter"],"body-sm":["Inter"],"code-sm":["JetBrains Mono"],"title-md":["Inter"],"display-lg":["Outfit"],"title-sm":["Inter"],"body-md":["Inter"],"headline-md":["Outfit"]},"fontSize":{"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"display-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-lg-mobile":["22px",{"lineHeight":"30px","letterSpacing":"-0.015em","fontWeight":"500"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"500"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0.005em","fontWeight":"400"}],"code-sm":["12px",{"lineHeight":"16px","letterSpacing":"0em","fontWeight":"400"}],"title-md":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.025em","fontWeight":"600"}],"title-sm":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"500"}]}}}</script></head><body class="bg-canvas-light text-on-surface antialiased min-h-screen"><main class="w-full min-h-screen"><div class="flex flex-col w-full px-6 py-8 md:px-12 md:py-12 max-w-7xl mx-auto">
+<!-- Subtle Ambient Backdrop Accent -->
+<div class="relative w-full">
+<div class="absolute -top-16 left-1/2 -translate-x-1/2 w-3/4 h-56 bg-gradient-to-r from-primary-fixed-dim/20 via-secondary-fixed/20 to-surface-container-high/30 blur-3xl -z-10 pointer-events-none rounded-full"></div>
+<!-- Header Section -->
+<header class="flex flex-col items-center text-center max-w-3xl mx-auto mb-10">
+<div class="inline-flex items-center gap-3 mb-6 p-2 rounded-xl bg-surface-container-lowest shadow-sm">
+<img alt="Nexus Platform Brand Logo" class="w-10 h-10 object-contain rounded-md" src="https://lh3.googleusercontent.com/aida/AEtjO1XGdlqNOisKAEAh4fKQJjHh8ebgRa3Hn3XsOodJ-7cjhke9YFTxD4O5J386M71gJ_nx0O68xQlwqkTGDLThZOspvUXvHvBrXUJ7ReXzzN7FcSDHWhDcGFbR6me6Pg32xyEaFy_u410Kby8Ui4VYaMXcDfIaafPWtLvzWvBt_DPXZ-Wfs7wWNf2XP--8V3m4BZuQibzd8KgjX_wcv4YnakLYHCdgTrwR0vEvSJe_gZWG4SYfltjdQG4eYQw"/>
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">Nexus Enterprise</span>
+<span class="bg-status-assigned-bg text-status-assigned-text font-label-sm text-label-sm px-2.5 py-0.5 rounded-full uppercase tracking-wider">v4.8 SOC-2 Type II</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight mb-3">
+        Create your Nexus Enterprise Account
+      </h1>
+<p class="font-body-lg text-body-lg text-text-secondary-light">
+        Join your team to streamline autonomous incident triage and SLA defense with deterministic audit guarantees.
+      </p>
+</header>
+<!-- Multi-Step Stepper Header -->
+<div class="max-w-4xl mx-auto mb-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-2 bg-surface-container-low rounded-xl">
+<!-- Step 1 Indicator -->
+<button class="flex items-center gap-3.5 p-3 rounded-lg bg-surface-container-lowest shadow-sm transition-all duration-200 text-left" id="step-tab-1" onclick="goToStep(1)" type="button">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md shrink-0" id="step-icon-1">1</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Step 1</p>
+<p class="font-title-sm text-title-sm text-on-surface truncate">Identity & Credentials</p>
+</div>
+</button>
+<!-- Step 2 Indicator -->
+<button class="flex items-center gap-3.5 p-3 rounded-lg text-text-secondary-light hover:bg-surface-container-lowest/60 transition-all duration-200 text-left" id="step-tab-2" onclick="goToStep(2)" type="button">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-md text-label-md shrink-0" id="step-icon-2">2</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted-light font-semibold">Step 2</p>
+<p class="font-title-sm text-title-sm text-on-surface-variant truncate">Workspace & Org</p>
+</div>
+</button>
+<!-- Step 3 Indicator -->
+<button class="flex items-center gap-3.5 p-3 rounded-lg text-text-secondary-light hover:bg-surface-container-lowest/60 transition-all duration-200 text-left" id="step-tab-3" onclick="goToStep(3)" type="button">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-md text-label-md shrink-0" id="step-icon-3">3</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted-light font-semibold">Step 3</p>
+<p class="font-title-sm text-title-sm text-on-surface-variant truncate">Role & Permissions</p>
+</div>
+</button>
+</div>
+</div>
+<!-- Main Form Surface Card -->
+<div class="max-w-4xl mx-auto bg-surface-container-lowest rounded-xl shadow-sm p-6 sm:p-10 mb-8 transition-all">
+<form class="space-y-8" id="nexusRegistrationForm" onsubmit="event.preventDefault(); nextOrSubmit();">
+<!-- ================= STEP 1: IDENTITY & CREDENTIALS ================= -->
+<div class="space-y-6" id="step-content-1">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 pb-4">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Personal & Security Credentials</h2>
+<p class="font-body-sm text-body-sm text-text-secondary-light">Verify identity to bind incident triage authority to your cryptokey vault.</p>
+</div>
+<a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-primary hover:text-primary-container font-medium self-start md:self-auto py-1.5 px-3 rounded-lg bg-status-assigned-bg" href="#sso" onclick="triggerSSOModal()">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+              Use Corporate SAML / SSO
+            </a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Full Name -->
+<div class="space-y-2">
+<label class="block font-title-sm text-title-sm text-on-surface" for="fullName">Full Legal Name <span class="text-error">*</span></label>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-lg bg-surface-elevated-light text-on-surface font-body-md text-body-md placeholder:text-text-muted-light focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-sm transition" id="fullName" name="fullName" oninput="validateName(this)" placeholder="e.g. Dr. Alexandra Vance" required="" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-status-closed-text opacity-0 transition-opacity" id="nameCheck">check_circle</span>
+</div>
+<p class="font-label-sm text-label-sm text-text-muted-light" id="nameValidationHint">Matches your corporate directory listing.</p>
+</div>
+<!-- Corporate Email -->
+<div class="space-y-2">
+<label class="block font-title-sm text-title-sm text-on-surface" for="corporateEmail">Corporate Email Domain <span class="text-error">*</span></label>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-lg bg-surface-elevated-light text-on-surface font-body-md text-body-md placeholder:text-text-muted-light focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-sm transition" id="corporateEmail" name="corporateEmail" oninput="validateCorporateEmail(this)" placeholder="name@enterprise.org" required="" type="email"/>
+<span class="absolute right-3 top-2.5 hidden bg-status-closed-bg text-status-closed-text font-label-sm text-label-sm px-2 py-1 rounded-full items-center gap-1 font-semibold" id="emailDomainBadge">
+<span class="material-symbols-outlined text-[14px]">domain_verification</span> Verified Domain
+                </span>
+</div>
+<p class="font-label-sm text-label-sm text-text-muted-light" id="emailValidationMsg">Must be an allowed corporate enclave domain (e.g. acme.com, nexus.io).</p>
+</div>
+</div>
+<!-- Password & Strength Meter -->
+<div class="space-y-4 pt-2">
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="block font-title-sm text-title-sm text-on-surface" for="masterPassword">Master Incident Vault Passphrase <span class="text-error">*</span></label>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold text-text-muted-light" id="strengthLabel">Complexity: Idle</span>
+</div>
+<div class="relative">
+<input class="w-full h-12 px-4 pr-12 rounded-lg bg-surface-elevated-light text-on-surface font-body-md text-body-md placeholder:text-text-muted-light focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-sm transition" id="masterPassword" name="masterPassword" oninput="evaluatePasswordStrength(this.value)" placeholder="Min. 14 chars with mixed case, glyphs & entropy" type="password"/>
+<button class="absolute right-3 top-3 text-text-muted-light hover:text-on-surface" onclick="togglePasswordVisibility('masterPassword', this)" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Animated Pastel Password Strength Bar -->
+<div class="space-y-2 p-4 rounded-xl bg-surface-container-low">
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden flex">
+<div class="h-full w-0 transition-all duration-500 rounded-full bg-status-breached-text" id="strengthBar"></div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-2 font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-text-secondary-light">
+<span class="w-2 h-2 rounded-full bg-text-muted-light" id="ruleLength"></span> 14+ characters
+                </span>
+<span class="flex items-center gap-1 text-text-secondary-light">
+<span class="w-2 h-2 rounded-full bg-text-muted-light" id="ruleUpper"></span> Upper & lower
+                </span>
+<span class="flex items-center gap-1 text-text-secondary-light">
+<span class="w-2 h-2 rounded-full bg-text-muted-light" id="ruleSpecial"></span> Symbols & digits
+                </span>
+<span class="flex items-center gap-1 text-status-closed-text font-semibold">
+<span class="material-symbols-outlined text-[14px]">lock_clock</span> SLA Hardened
+                </span>
+</div>
+</div>
+</div>
+<!-- 2FA Preference Segmented Control -->
+<div class="space-y-3 pt-2">
+<label class="block font-title-sm text-title-sm text-on-surface">Primary Multi-Factor Verification Key (Required)</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<label class="flex items-start gap-3.5 p-4 rounded-xl cursor-pointer bg-surface-elevated-light hover:bg-surface-container-low transition shadow-sm">
+<input checked="" class="mt-1 accent-primary text-primary focus:ring-0" name="mfaPreference" type="radio" value="fido2"/>
+<div class="space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">key</span>
+<span class="font-title-sm text-title-sm text-on-surface">FIDO2 / Hardware Security Key</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light">YubiKey, Apple Touch ID, or Windows Hello. Zero-phishing resistance.</p>
+</div>
+</label>
+<label class="flex items-start gap-3.5 p-4 rounded-xl cursor-pointer bg-surface-elevated-light hover:bg-surface-container-low transition shadow-sm">
+<input class="mt-1 accent-primary text-primary focus:ring-0" name="mfaPreference" type="radio" value="authenticator"/>
+<div class="space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-text-secondary-light text-[20px]">phonelink_lock</span>
+<span class="font-title-sm text-title-sm text-on-surface">Enterprise Authenticator TOTP</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light">Time-based rolling 6-digit codes via Okta Verify, 1Password, or Google Authenticator.</p>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- ================= STEP 2: WORKSPACE & ORGANIZATION ================= -->
+<div class="space-y-6 hidden" id="step-content-2">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Workspace Allocation & Data Boundary</h2>
+<p class="font-body-sm text-body-sm text-text-secondary-light">Choose your enterprise cluster tenancy to align autonomous investigation workloads.</p>
+</div>
+<!-- Organization / Tenant Selector Dropdown -->
+<div class="space-y-2">
+<label class="block font-title-sm text-title-sm text-on-surface" for="tenantSelect">Target Enterprise Tenant <span class="text-error">*</span></label>
+<div class="relative">
+<select class="w-full h-12 px-4 rounded-lg bg-surface-elevated-light text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-sm appearance-none" id="tenantSelect" name="tenantSelect" onchange="updateTenantPreview(this.value)">
+<option selected="" value="acme">Acme Corp Enterprise Global (US-East / EU-Central Dual Region)</option>
+<option value="fintech">FinTech US Core (Dedicated Hardware Enclave - FedRAMP High)</option>
+<option value="healthtech">HealthTech Ingestion (HIPAA / HITECH Isolation Tier)</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-3 pointer-events-none text-text-muted-light">expand_more</span>
+</div>
+<p class="font-label-sm text-label-sm text-text-muted-light">Determines incident routing fabric, data sovereignty boundaries, and encryption keys.</p>
+</div>
+<!-- Tenant Attributes Bento Cards -->
+<div class="p-5 rounded-xl bg-surface-container-low space-y-4" id="tenantMetaCard">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+                Cluster Infrastructure Matrix
+              </span>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-status-closed-bg text-status-closed-text uppercase font-semibold">Active Mesh</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+<div class="p-3 bg-surface-container-lowest rounded-lg">
+<p class="font-label-sm text-label-sm text-text-muted-light uppercase tracking-wider">SLA Threshold</p>
+<p class="font-title-md text-title-md text-on-surface font-semibold mt-0.5">99.995% (< 2m)</p>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-lg">
+<p class="font-label-sm text-label-sm text-text-muted-light uppercase tracking-wider">Audit Trail</p>
+<p class="font-title-md text-title-md text-on-surface font-semibold mt-0.5">WORM Immutable</p>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-lg">
+<p class="font-label-sm text-label-sm text-text-muted-light uppercase tracking-wider">Copilot Tier</p>
+<p class="font-title-md text-title-md text-secondary font-semibold mt-0.5">Autonomous L3</p>
+</div>
+</div>
+</div>
+<!-- Department / Pod Routing -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block font-title-sm text-title-sm text-on-surface" for="departmentSelect">Departmental Squad <span class="text-error">*</span></label>
+<select class="w-full h-12 px-4 rounded-lg bg-surface-elevated-light text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-sm appearance-none" id="departmentSelect">
+<option>Site Reliability Engineering (SRE)</option>
+<option>Security Operations Center (SecOps)</option>
+<option>FinOps & Cloud Governance</option>
+<option>Core Payment Infrastructure</option>
+<option>Clinical Systems Triage</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block font-title-sm text-title-sm text-on-surface" for="escalationEscort">Duty On-Call Rotation</label>
+<select class="w-full h-12 px-4 rounded-lg bg-surface-elevated-light text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-sm appearance-none" id="escalationEscort">
+<option>Primary Tier 1 Escort (PagerDuty Sync)</option>
+<option>Secondary Shadow (Opsgenie Bridge)</option>
+<option>Observer / Post-Mortem Auditor</option>
+</select>
+</div>
+</div>
+<!-- Ambient Intelligence Copilot Onboarding Wash -->
+<div class="p-5 rounded-xl bg-ai-bg-light space-y-3">
+<div class="flex items-center gap-2 text-secondary font-title-sm text-title-sm font-medium">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+<span>Autonomous Assistant Pre-Provisioning</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light">
+              Nexus AI will observe your organization's historic triage playbooks to formulate inline auto-remediations for your assigned pod.
+            </p>
+<div class="flex items-center gap-2 pt-1">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary bg-surface-container-lowest px-2.5 py-1 rounded-md shadow-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span> Zero Data Retention (ZDR)
+              </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-text-secondary-light bg-surface-container-lowest px-2.5 py-1 rounded-md shadow-sm">
+                Isolated Tensor Cores
+              </span>
+</div>
+</div>
+</div>
+<!-- ================= STEP 3: ROLE & DEPARTMENT ASSIGNMENT ================= -->
+<div class="space-y-6 hidden" id="step-content-3">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Security Role Assignment & Policy Seal</h2>
+<p class="font-body-sm text-body-sm text-text-secondary-light">Specify operational clearance level. Roles define cryptographic signing rights on incidents.</p>
+</div>
+<!-- Security Role Selector Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5">
+<!-- Requester -->
+<label class="relative flex flex-col justify-between p-4 rounded-xl cursor-pointer bg-surface-elevated-light hover:bg-surface-container-low transition shadow-sm role-card">
+<input class="sr-only" name="securityRole" onchange="updateRoleBadge(this.value)" type="radio" value="Requester"/>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-title-sm text-title-sm text-on-surface">Requester</span>
+<span class="material-symbols-outlined text-[18px] text-text-muted-light role-check">radio_button_unchecked</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light">Submit tickets, view telemetry status, monitor personal case lifecycle.</p>
+</div>
+<div class="mt-4 pt-2">
+<span class="font-label-sm text-label-sm text-text-muted-light font-code-sm">Read + Create</span>
+</div>
+</label>
+<!-- Operator (Default Selected) -->
+<label class="relative flex flex-col justify-between p-4 rounded-xl cursor-pointer bg-surface-container-high transition shadow-sm role-card">
+<input checked="" class="sr-only" name="securityRole" onchange="updateRoleBadge(this.value)" type="radio" value="Operator"/>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-title-sm text-title-sm text-primary font-semibold">Operator</span>
+<span class="material-symbols-outlined text-[18px] text-primary role-check">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light">Triage live alerts, trigger runbooks, review AI diagnosis, execute rollback.</p>
+</div>
+<div class="mt-4 pt-2">
+<span class="font-label-sm text-label-sm text-primary font-semibold font-code-sm">Standard Ops</span>
+</div>
+</label>
+<!-- Team Lead -->
+<label class="relative flex flex-col justify-between p-4 rounded-xl cursor-pointer bg-surface-elevated-light hover:bg-surface-container-low transition shadow-sm role-card">
+<input class="sr-only" name="securityRole" onchange="updateRoleBadge(this.value)" type="radio" value="Team Lead"/>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-title-sm text-title-sm text-on-surface">Team Lead</span>
+<span class="material-symbols-outlined text-[18px] text-text-muted-light role-check">radio_button_unchecked</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light">Reassign SLA priorities, manage team on-call rosters, bypass gate checks.</p>
+</div>
+<div class="mt-4 pt-2">
+<span class="font-label-sm text-label-sm text-text-muted-light font-code-sm">Pod Authority</span>
+</div>
+</label>
+<!-- Manager -->
+<label class="relative flex flex-col justify-between p-4 rounded-xl cursor-pointer bg-surface-elevated-light hover:bg-surface-container-low transition shadow-sm role-card">
+<input class="sr-only" name="securityRole" onchange="updateRoleBadge(this.value)" type="radio" value="Manager"/>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-title-sm text-title-sm text-on-surface">Manager</span>
+<span class="material-symbols-outlined text-[18px] text-text-muted-light role-check">radio_button_unchecked</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light">Approve budget changes, review compliance reports, modify SLA breach flags.</p>
+</div>
+<div class="mt-4 pt-2">
+<span class="font-label-sm text-label-sm text-text-muted-light font-code-sm">Governance</span>
+</div>
+</label>
+<!-- Administrator -->
+<label class="relative flex flex-col justify-between p-4 rounded-xl cursor-pointer bg-surface-elevated-light hover:bg-surface-container-low transition shadow-sm role-card sm:col-span-2 md:col-span-2">
+<input class="sr-only" name="securityRole" onchange="updateRoleBadge(this.value)" type="radio" value="Administrator"/>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-title-sm text-title-sm text-on-surface">Administrator</span>
+<span class="material-symbols-outlined text-[18px] text-text-muted-light role-check">radio_button_unchecked</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light">Full tenant management, cryptographic root key rotators, SAML SSO directory sync & audit ledger exports.</p>
+</div>
+<div class="mt-4 pt-2 flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-error font-semibold font-code-sm">Unrestricted Root</span>
+<span class="font-label-sm text-label-sm bg-status-breached-bg text-status-breached-text px-2 py-0.5 rounded-full font-semibold">Requires Approval</span>
+</div>
+</label>
+</div>
+<!-- Dynamic Permission Summary Badge -->
+<div class="p-4 rounded-xl bg-surface-container-low flex items-center justify-between flex-wrap gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+<div>
+<p class="font-title-sm text-title-sm text-on-surface" id="selectedRoleName">Active Clearance: Operator</p>
+<p class="font-body-sm text-body-sm text-text-secondary-light" id="selectedRoleScope">Scope: Autonomous SLA Defense, Runbook Execution & Triage Queues</p>
+</div>
+</div>
+<span class="bg-status-assigned-bg text-status-assigned-text font-label-sm text-label-sm px-3 py-1 rounded-full uppercase tracking-wider font-semibold" id="selectedRoleTag">
+              Policy Set #418-SEC
+            </span>
+</div>
+<!-- Terms of Service & Cryptographic Audit Compliance Checkbox -->
+<div class="space-y-3 pt-2">
+<label class="flex items-start gap-3 cursor-pointer select-none">
+<input class="mt-1 w-4 h-4 rounded text-primary accent-primary focus:ring-0 cursor-pointer" id="termsCheckbox" name="termsCheckbox" required="" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">
+                I accept the <a class="text-primary underline" href="#">Nexus Master Services Agreement</a>, Data Processing Addendum, and agree to have my identity linked to the cryptographic tamper-evident incident audit chain.
+              </span>
+</label>
+<div class="ml-7 p-3 rounded-lg bg-surface-container-low">
+<p class="font-label-sm text-label-sm text-text-secondary-light font-code-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-status-closed-text text-[16px]">lock</span>
+                Signature Hash: <span class="text-on-surface">SHA256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Wizard Navigation Action Bar -->
+<div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+<button class="w-full sm:w-auto px-5 h-12 rounded-lg font-title-sm text-title-sm text-text-secondary-light hover:bg-surface-elevated-light transition flex items-center justify-center gap-2 opacity-50 cursor-not-allowed" disabled="" id="prevButton" onclick="previousStep()" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+            Previous Step
+          </button>
+<div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+<a class="w-full sm:w-auto px-5 h-12 rounded-lg font-title-sm text-title-sm text-text-secondary-light hover:text-on-surface hover:bg-surface-elevated-light transition flex items-center justify-center" href="/auth/login">
+              Back to Sign In
+            </a>
+<button class="w-full sm:w-auto px-6 h-12 rounded-lg bg-status-assigned-text hover:bg-primary text-on-primary font-title-sm text-title-sm font-semibold shadow-sm transition-all duration-200 flex items-center justify-center gap-2" id="nextOrSubmitBtn" onclick="nextOrSubmit()" type="button">
+<span id="btnLabel">Continue to Workspace</span>
+<span class="material-symbols-outlined text-[18px]" id="btnIcon">arrow_forward</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+<!-- Developer Demonstration Helper Bar -->
+<div class="max-w-4xl mx-auto rounded-xl p-4 bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">terminal</span>
+<div class="text-left">
+<p class="font-title-sm text-title-sm text-on-surface font-semibold">Evaluation Environment</p>
+<p class="font-label-sm text-label-sm text-text-muted-light">Quick-populate with verified SOC-2 Operator credentials</p>
+</div>
+</div>
+<button class="w-full sm:w-auto px-4 py-2 rounded-lg bg-surface-container-lowest hover:bg-secondary-fixed text-on-surface font-label-md text-label-md font-medium shadow-sm transition flex items-center justify-center gap-2" onclick="prefillDemoCredentials()" type="button">
+<span class="material-symbols-outlined text-secondary text-[16px]">bolt</span>
+        Pre-fill with Demo Operator credentials
+      </button>
+</div>
+<!-- SSO SAML Modal Overlay (Hidden by Default) -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden" id="ssoModal">
+<div class="bg-surface-container-lowest max-w-md w-full rounded-xl shadow-xl p-6 space-y-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[24px]">corporate_fare</span>
+<h3 class="font-title-md text-title-md font-semibold">Single Sign-On (SSO / SAML 2.0)</h3>
+</div>
+<button class="text-text-muted-light hover:text-on-surface" onclick="closeSSOModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary-light">
+          Enter your identity provider vanity domain or work email to be redirected to your company's Okta, Ping Identity, or Azure AD gateway.
+        </p>
+<div class="space-y-3">
+<label class="block font-label-sm text-label-sm font-semibold uppercase text-text-secondary-light" for="ssoDomainInput">Identity Enclave URL</label>
+<input class="w-full h-11 px-3.5 rounded-lg bg-surface-elevated-light text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-sm" id="ssoDomainInput" placeholder="acme.identity.okta.com" type="text"/>
+</div>
+<div class="flex items-center justify-end gap-3 pt-2">
+<button class="px-4 py-2 rounded-lg font-title-sm text-title-sm text-text-secondary-light hover:bg-surface-elevated-light" onclick="closeSSOModal()" type="button">
+            Cancel
+          </button>
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-title-sm text-title-sm font-medium shadow-sm hover:bg-primary-container" onclick="simulateSSO()" type="button">
+            Redirect to IdP
+          </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let currentStep = 1;
+  const totalSteps = 3;
+
+  function goToStep(step) {
+    if (step < 1 || step > totalSteps) return;
+    
+    // Hide all step contents
+    for (let i = 1; i <= totalSteps; i++) {
+      const el = document.getElementById(`step-content-${i}`);
+      const tab = document.getElementById(`step-tab-${i}`);
+      const icon = document.getElementById(`step-icon-${i}`);
+      if (el) el.classList.add('hidden');
+      if (tab) {
+        tab.classList.remove('bg-surface-container-lowest', 'shadow-sm');
+        tab.classList.add('text-text-secondary-light');
+      }
+      if (icon) {
+        icon.classList.remove('bg-primary', 'text-on-primary', 'bg-status-closed-bg', 'text-status-closed-text');
+        icon.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+      }
+    }
+
+    // Activate selected
+    const activeEl = document.getElementById(`step-content-${step}`);
+    const activeTab = document.getElementById(`step-tab-${step}`);
+    const activeIcon = document.getElementById(`step-icon-${step}`);
+
+    if (activeEl) activeEl.classList.remove('hidden');
+    if (activeTab) {
+      activeTab.classList.add('bg-surface-container-lowest', 'shadow-sm');
+      activeTab.classList.remove('text-text-secondary-light');
+    }
+    if (activeIcon) {
+      activeIcon.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+      activeIcon.classList.add('bg-primary', 'text-on-primary');
+    }
+
+    // Mark completed steps visually
+    for (let j = 1; j < step; j++) {
+      const prevIcon = document.getElementById(`step-icon-${j}`);
+      if (prevIcon) {
+        prevIcon.innerHTML = '✓';
+        prevIcon.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+        prevIcon.classList.add('bg-status-closed-bg', 'text-status-closed-text');
+      }
+    }
+
+    currentStep = step;
+
+    // Update buttons
+    const prevBtn = document.getElementById('prevButton');
+    const nextBtnLabel = document.getElementById('btnLabel');
+    const nextBtnIcon = document.getElementById('btnIcon');
+    const submitBtn = document.getElementById('nextOrSubmitBtn');
+
+    if (currentStep === 1) {
+      prevBtn.disabled = true;
+      prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+    } else {
+      prevBtn.disabled = false;
+      prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+    }
+
+    if (currentStep === totalSteps) {
+      nextBtnLabel.textContent = 'Complete Enterprise Registration & Enter Workspace';
+      nextBtnIcon.textContent = 'verified';
+      submitBtn.classList.add('bg-primary');
+      submitBtn.classList.remove('bg-status-assigned-text');
+    } else {
+      nextBtnLabel.textContent = 'Continue to ' + (currentStep === 1 ? 'Workspace' : 'Roles');
+      nextBtnIcon.textContent = 'arrow_forward';
+      submitBtn.classList.add('bg-status-assigned-text');
+      submitBtn.classList.remove('bg-primary');
+    }
+  }
+
+  function nextOrSubmit() {
+    if (currentStep < totalSteps) {
+      goToStep(currentStep + 1);
+    } else {
+      // Validate step 3 terms
+      const terms = document.getElementById('termsCheckbox');
+      if (!terms.checked) {
+        alert('Please review and check the Enterprise SLA and Cryptographic Compliance Agreement.');
+        return;
+      }
+      // Registration successful simulation
+      const btn = document.getElementById('nextOrSubmitBtn');
+      btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">sync</span> Provisioning Workspace...';
+      btn.disabled = true;
+      setTimeout(() => {
+        alert('Nexus Enterprise Account provisioned successfully! Redirecting to live incident triage console...');
+        window.location.hash = '#/dashboard/triage';
+      }, 1200);
+    }
+  }
+
+  function previousStep() {
+    if (currentStep > 1) {
+      goToStep(currentStep - 1);
+    }
+  }
+
+  function validateName(input) {
+    const check = document.getElementById('nameCheck');
+    if (input.value.trim().length >= 3) {
+      check.classList.remove('opacity-0');
+      check.classList.add('opacity-100');
+    } else {
+      check.classList.remove('opacity-100');
+      check.classList.add('opacity-0');
+    }
+  }
+
+  function validateCorporateEmail(input) {
+    const val = input.value.trim().toLowerCase();
+    const badge = document.getElementById('emailDomainBadge');
+    const msg = document.getElementById('emailValidationMsg');
+    
+    if (val.endsWith('@acme.com') || val.endsWith('@nexus.io') || val.endsWith('@fintech.corp') || val.includes('.enterprise.')) {
+      badge.classList.remove('hidden');
+      badge.classList.add('inline-flex');
+      msg.textContent = 'Domain whitelisted in automated federated tenant directory.';
+      msg.classList.remove('text-text-muted-light');
+      msg.classList.add('text-status-closed-text');
+    } else if (val.length > 5 && val.includes('@')) {
+      badge.classList.add('hidden');
+      badge.classList.remove('inline-flex');
+      msg.textContent = 'Corporate domain detected. Instant provisioning available.';
+      msg.classList.add('text-text-muted-light');
+      msg.classList.remove('text-status-closed-text');
+    } else {
+      badge.classList.add('hidden');
+      msg.textContent = 'Must be an allowed corporate enclave domain (e.g. acme.com, nexus.io).';
+      msg.classList.add('text-text-muted-light');
+    }
+  }
+
+  function evaluatePasswordStrength(password) {
+    const bar = document.getElementById('strengthBar');
+    const label = document.getElementById('strengthLabel');
+    const rLen = document.getElementById('ruleLength');
+    const rUp = document.getElementById('ruleUpper');
+    const rSp = document.getElementById('ruleSpecial');
+
+    let score = 0;
+    const hasLen = password.length >= 14;
+    const hasUpperLower = /[A-Z]/.test(password) && /[a-z]/.test(password);
+    const hasSpecialNum = /[0-9]/.test(password) && /[^A-Za-z0-9]/.test(password);
+
+    if (hasLen) score += 35;
+    if (hasUpperLower) score += 35;
+    if (hasSpecialNum) score += 30;
+
+    rLen.className = hasLen ? 'w-2 h-2 rounded-full bg-status-closed-text' : 'w-2 h-2 rounded-full bg-text-muted-light';
+    rUp.className = hasUpperLower ? 'w-2 h-2 rounded-full bg-status-closed-text' : 'w-2 h-2 rounded-full bg-text-muted-light';
+    rSp.className = hasSpecialNum ? 'w-2 h-2 rounded-full bg-status-closed-text' : 'w-2 h-2 rounded-full bg-text-muted-light';
+
+    if (score === 0) {
+      bar.style.width = '0%';
+      label.textContent = 'Complexity: Idle';
+      label.className = 'font-label-sm text-label-sm uppercase tracking-wider font-semibold text-text-muted-light';
+    } else if (score < 40) {
+      bar.style.width = '25%';
+      bar.className = 'h-full transition-all duration-300 rounded-full bg-status-breached-text';
+      label.textContent = 'Weak: Non-Compliant';
+      label.className = 'font-label-sm text-label-sm uppercase tracking-wider font-semibold text-status-breached-text';
+    } else if (score < 75) {
+      bar.style.width = '60%';
+      bar.className = 'h-full transition-all duration-300 rounded-full bg-status-investigating-text';
+      label.textContent = 'Fair: Insufficient Entropy';
+      label.className = 'font-label-sm text-label-sm uppercase tracking-wider font-semibold text-status-investigating-text';
+    } else if (score < 100) {
+      bar.style.width = '85%';
+      bar.className = 'h-full transition-all duration-300 rounded-full bg-primary';
+      label.textContent = 'Strong Passphrase';
+      label.className = 'font-label-sm text-label-sm uppercase tracking-wider font-semibold text-primary';
+    } else {
+      bar.style.width = '100%';
+      bar.className = 'h-full transition-all duration-300 rounded-full bg-status-closed-text';
+      label.textContent = 'Enterprise Compliant (Pastel Teal Verified)';
+      label.className = 'font-label-sm text-label-sm uppercase tracking-wider font-semibold text-status-closed-text';
+    }
+  }
+
+  function togglePasswordVisibility(fieldId, btn) {
+    const input = document.getElementById(fieldId);
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (input.type === 'password') {
+      input.type = 'text';
+      icon.textContent = 'visibility_off';
+    } else {
+      input.type = 'password';
+      icon.textContent = 'visibility';
+    }
+  }
+
+  function updateTenantPreview(val) {
+    const card = document.getElementById('tenantMetaCard');
+    if (val === 'fintech') {
+      card.innerHTML = `
+        <div class="flex items-center justify-between">
+          <span class="font-title-sm text-title-sm text-on-surface flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[20px]">assured_workload</span>
+            FinTech US Core Enclave
+          </span>
+          <span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-status-investigating-bg text-status-investigating-text uppercase font-semibold">FedRAMP High</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+          <div class="p-3 bg-surface-container-lowest rounded-lg">
+            <p class="font-label-sm text-label-sm text-text-muted-light uppercase tracking-wider">Zero Spill Enclave</p>
+            <p class="font-title-md text-title-md text-on-surface font-semibold mt-0.5">HSM FIPS 140-3</p>
+          </div>
+          <div class="p-3 bg-surface-container-lowest rounded-lg">
+            <p class="font-label-sm text-label-sm text-text-muted-light uppercase tracking-wider">SLA Target</p>
+            <p class="font-title-md text-title-md text-on-surface font-semibold mt-0.5">< 30s Real-time</p>
+          </div>
+          <div class="p-3 bg-surface-container-lowest rounded-lg">
+            <p class="font-label-sm text-label-sm text-text-muted-light uppercase tracking-wider">Isolation Guard</p>
+            <p class="font-title-md text-title-md text-secondary font-semibold mt-0.5">Air-Gapped Copilot</p>
+          </div>
+        </div>
+      `;
+    } else if (val === 'healthtech') {
+      card.innerHTML = `
+        <div class="flex items-center justify-between">
+          <span class="font-title-sm text-title-sm text-on-surface flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[20px]">local_hospital</span>
+            HealthTech Ingestion Isolation
+          </span>
+          <span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-status-resolution-bg text-status-resolution-text uppercase font-semibold">HIPAA Guarded</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+          <div class="p-3 bg-surface-container-lowest rounded-lg">
+            <p class="font-label-sm text-label-sm text-text-muted-light uppercase tracking-wider">PHI Redaction</p>
+            <p class="font-title-md text-title-md text-on-surface font-semibold mt-0.5">Automated Inline</p>
+          </div>
+          <div class="p-3 bg-surface-container-lowest rounded-lg">
+            <p class="font-label-sm text-label-sm text-text-muted-light uppercase tracking-wider">Retention Term</p>
+            <p class="font-title-md text-title-md text-on-surface font-semibold mt-0.5">7 Years Signed</p>
+          </div>
+          <div class="p-3 bg-surface-container-lowest rounded-lg">
+            <p class="font-label-sm text-label-sm text-text-muted-light uppercase tracking-wider">Audit Frequency</p>
+            <p class="font-title-md text-title-md text-secondary font-semibold mt-0.5">Continuous Ledger</p>
+          </div>
+        </div>
+      `;
+    } else {
+      card.innerHTML = `
+        <div class="flex items-center justify-between">
+          <span class="font-title-sm text-title-sm text-on-surface flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+            Cluster Infrastructure Matrix
+          </span>
+          <span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-status-closed-bg text-status-closed-text uppercase font-semibold">Active Mesh</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+          <div class="p-3 bg-surface-container-lowest rounded-lg">
+            <p class="font-label-sm text-label-sm text-text-muted-light uppercase tracking-wider">SLA Threshold</p>
+            <p class="font-title-md text-title-md text-on-surface font-semibold mt-0.5">99.995% (< 2m)</p>
+          </div>
+          <div class="p-3 bg-surface-container-lowest rounded-lg">
+            <p class="font-label-sm text-label-sm text-text-muted-light uppercase tracking-wider">Audit Trail</p>
+            <p class="font-title-md text-title-md text-on-surface font-semibold mt-0.5">WORM Immutable</p>
+          </div>
+          <div class="p-3 bg-surface-container-lowest rounded-lg">
+            <p class="font-label-sm text-label-sm text-text-muted-light uppercase tracking-wider">Copilot Tier</p>
+            <p class="font-title-md text-title-md text-secondary font-semibold mt-0.5">Autonomous L3</p>
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  function updateRoleBadge(role) {
+    const nameEl = document.getElementById('selectedRoleName');
+    const scopeEl = document.getElementById('selectedRoleScope');
+    const tagEl = document.getElementById('selectedRoleTag');
+
+    // Reset role-cards visually
+    const cards = document.querySelectorAll('.role-card');
+    cards.forEach(card => {
+      const radio = card.querySelector('input[type="radio"]');
+      const check = card.querySelector('.role-check');
+      if (radio.checked) {
+        card.classList.remove('bg-surface-elevated-light');
+        card.classList.add('bg-surface-container-high');
+        if (check) {
+          check.textContent = 'check_circle';
+          check.classList.remove('text-text-muted-light');
+          check.classList.add('text-primary');
+        }
+      } else {
+        card.classList.add('bg-surface-elevated-light');
+        card.classList.remove('bg-surface-container-high');
+        if (check) {
+          check.textContent = 'radio_button_unchecked';
+          check.classList.add('text-text-muted-light');
+          check.classList.remove('text-primary');
+        }
+      }
+    });
+
+    const roleMap = {
+      'Requester': { scope: 'Scope: Ticket creation, telemetric readouts, personal notification channels', tag: 'Policy Set #102-REQ' },
+      'Operator': { scope: 'Scope: Autonomous SLA Defense, Runbook Execution & Triage Queues', tag: 'Policy Set #418-SEC' },
+      'Team Lead': { scope: 'Scope: Roster management, triage reprioritization & emergency override gates', tag: 'Policy Set #520-LEAD' },
+      'Manager': { scope: 'Scope: Financial risk approvals, post-incident SLA breach signing & audit logs', tag: 'Policy Set #610-MGR' },
+      'Administrator': { scope: 'Scope: Multi-cluster key distribution, SAML metadata sync & tenant controls', tag: 'Policy Set #999-ROOT' }
+    };
+
+    if (roleMap[role]) {
+      nameEl.textContent = `Active Clearance: ${role}`;
+      scopeEl.textContent = roleMap[role].scope;
+      tagEl.textContent = roleMap[role].tag;
+    }
+  }
+
+  function prefillDemoCredentials() {
+    goToStep(1);
+    const nameInput = document.getElementById('fullName');
+    const emailInput = document.getElementById('corporateEmail');
+    const passInput = document.getElementById('masterPassword');
+
+    nameInput.value = 'Dr. Julian Thorne (Lead SRE)';
+    validateName(nameInput);
+
+    emailInput.value = 'j.thorne@acme.com';
+    validateCorporateEmail(emailInput);
+
+    passInput.value = 'Nexus#Defense2025!Verified';
+    evaluatePasswordStrength(passInput.value);
+
+    document.getElementById('tenantSelect').value = 'acme';
+    updateTenantPreview('acme');
+
+    // Pre-check terms
+    const terms = document.getElementById('termsCheckbox');
+    if (terms) terms.checked = true;
+
+    // Trigger subtle UI toast
+    const notif = document.createElement('div');
+    notif.className = 'fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-lg shadow-xl font-body-sm text-body-sm flex items-center gap-2';
+    notif.innerHTML = '<span class="material-symbols-outlined text-status-closed-text text-[18px]">check</span> Demo Operator identity and SLA credentials populated.';
+    document.body.appendChild(notif);
+    setTimeout(() => notif.remove(), 2600);
+  }
+
+  function triggerSSOModal() {
+    const modal = document.getElementById('ssoModal');
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  function closeSSOModal() {
+    const modal = document.getElementById('ssoModal');
+    if (modal) modal.classList.add('hidden');
+  }
+
+  function simulateSSO() {
+    const domain = document.getElementById('ssoDomainInput').value || 'acme.identity.okta.com';
+    alert(`Initiating SAML 2.0 handshake with https://${domain}/sso/saml/nexus-sp...`);
+    closeSSOModal();
+  }
+</script></main></body></html>
